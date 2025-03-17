@@ -1,0 +1,168 @@
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import Kia from '../../assets/img/common/Kia.svg'
+import { redes, autos, camionetasSuv, utilitarios, concesionarios, postVenta } from '../../Data/footer/footer'
+
+const Footer = () => {
+
+  // Estado para manejar los acordeones
+  const [openModelos, setOpenModelos] = useState(false);
+  const [openConcesionarios, setOpenConcesionarios] = useState(false);
+  const [openPostVenta, setOpenPostVenta] = useState(false);
+  const [openNuevaKia, setOpenNuevaKia] = useState(false);
+
+  // Función para alternar estado de acordeón
+  const toggleAccordion = (section) => {
+    if (section === 'modelos') {
+      setOpenModelos(!openModelos);
+    } else if (section === 'concesionarios') {
+      setOpenConcesionarios(!openConcesionarios);
+    } else if (section === 'postVenta') {
+      setOpenPostVenta(!openPostVenta);
+    } else if (section === 'nuevaKia') {
+      setOpenNuevaKia(!openNuevaKia);
+    }
+  };
+
+  return (
+    <div className='bg-midnight-black p-5 sm:p-5 md:p-10 lg:p-20 lg:pb-10'>
+      <div className='flex flex-col md:flex-row md:gap-3'>
+        <div className='w-full md:w-1/2'>
+          <div className='pb-7'>
+            <a href='' target='_blank' rel='noreferrer'>
+              <img src={Kia} alt='Kia'/>
+            </a>
+          </div>
+          <div className='flex pb-3'>
+            {redes.map((item) => (
+              item.esExterna ? (
+                <a key={item.nombre} href={item.href} target={item.target} rel='noreferrer'>
+                  <img src={item.logo} alt={item.nombre}/>
+                </a>
+              ) : (
+                <Link key={item.nombre} to={item.href}>
+                  <img src={item.logo} alt={item.nombre}/>
+                </Link>
+              )
+            ))}
+          </div>
+          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+        </div>
+        <div className='w-full flex flex-col gap-3 md:w-1/2 md:flex-row justify-between text-sm'>
+          {/* Modelos */}
+          <div className='w-full'>
+            <h5
+              className='font-semibold text-kia-polar-white cursor-pointer pb-7 md:block'
+              onClick={() => toggleAccordion('modelos')}
+            >
+              Modelos
+            </h5>
+            <div className={`${openModelos ? 'block' : 'hidden'} md:block`}> 
+              <div className='pb-7'>
+                <h6 className='font-semibold text-caption py-1 md:py-3'>Autos</h6>
+                {autos.map((item) => (
+                  <p className='text-caption py-1 md:py-3' key={item.nombre}>
+                    {item.esExterna ? (
+                      <a href={item.href} target='_blank' rel='noreferrer'>
+                        {item.nombre}
+                      </a>
+                    ) : (
+                      <Link to={item.href}>
+                        {item.nombre}
+                      </Link>
+                    )}
+                  </p>
+                ))}
+              </div>
+              <div className='pb-7'>
+                <h6 className='font-semibold text-caption py-1 md:py-3'>Camionetas SUV</h6>
+                {camionetasSuv.map((item) => (
+                  <p className='text-caption py-1 md:py-3' key={item.nombre}>
+                    <a href={item.href} target='_blank' rel='noreferrer'>
+                      {item.nombre}
+                    </a>
+                  </p>
+                ))}
+              </div>
+              <div className='pb-7'>
+                <h6 className='font-semibold text-caption py-1 md:py-3'>Utilitarios</h6>
+                {utilitarios.map((item) => (
+                  <p className='text-caption py-1 md:py-3' key={item.nombre}>
+                    <a href={item.href} target='_blank' rel='noreferrer'>
+                      {item.nombre}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Concesionarios */}
+          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <div className='w-full'>
+            <h5
+              className='font-semibold text-kia-polar-white pb-7 cursor-pointer md:block'
+              onClick={() => toggleAccordion('concesionarios')}
+            >
+              Concesionarios
+            </h5>
+            <div className={`${openConcesionarios ? 'block' : 'hidden'} md:block`}>
+              {concesionarios.map((item) => (
+                <h6 className='font-semibold text-caption py-1 md:py-3' key={item.nombre}>
+                  <a href={item.href} target='_blank' rel='noreferrer'>
+                    {item.nombre}
+                  </a>
+                </h6>
+              ))}
+            </div>
+          </div>
+
+          {/* Post Venta */}
+          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <div className='w-full'>
+            <h5
+              className='font-semibold text-kia-polar-white pb-7 cursor-pointer md:block'
+              onClick={() => toggleAccordion('postVenta')}
+            >
+              Post Venta
+            </h5>
+            <div className={`${openPostVenta ? 'block' : 'hidden'} md:block`}>
+              {postVenta.map((item) => (
+                <h6 className='font-semibold text-caption py-1 md:py-3' key={item.nombre}>
+                  <a href={item.href} target='_blank' rel='noreferrer'>
+                    {item.nombre}
+                  </a>
+                </h6>
+              ))}
+            </div>
+          </div>
+
+          {/* Nueva Kia */}
+          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <div className='w-full'>
+            <h5
+              className='font-semibold text-kia-polar-white pb-7 cursor-pointer md:block'
+              onClick={() => toggleAccordion('nuevaKia')}
+            >
+              Nueva Kia
+            </h5>
+            <div className={`${openNuevaKia ? 'block' : 'hidden'} md:block`}>
+            </div>
+          </div>
+          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+        </div>
+      </div>
+      <div className='flex flex-col gap-3 md:flex-row justify-between pt-7 text-[0.75rem]'>
+        <div className='md:w-1/2'>
+          <p className='font-semibold text-kia-polar-white cursor-pointer'>Home</p>
+        </div>
+        <div className='md:w-1/2'>
+          <p className='font-semibold text-kia-polar-white md:text-end'>Kia Argentina. Todos los derechos reservados 2025.</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Footer
