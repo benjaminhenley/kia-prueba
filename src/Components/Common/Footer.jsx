@@ -56,7 +56,7 @@ const Footer = () => {
               )
             )}
           </div>
-          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
         <div className="w-full flex flex-col  md:w-1/2 md:flex-row justify-between text-sm">
           {/* Modelos */}
@@ -68,11 +68,11 @@ const Footer = () => {
             </h5>
             <div className={`${openModelos ? "block" : "hidden"} md:block`}>
               <div className="pt-3 pb-7">
-                <h6 className="font-semibold text-caption py-1 md:py-3">
+                <h6 className="font-semibold text-kia-gray py-1 md:py-3">
                   Autos
                 </h6>
                 {autos.map((item) => (
-                  <p className="text-caption py-1 md:py-3" key={item.nombre}>
+                  <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
                     {item.esExterna ? (
                       <a href={item.href} target="_blank" rel="noreferrer">
                         {item.nombre}
@@ -84,11 +84,11 @@ const Footer = () => {
                 ))}
               </div>
               <div className="pb-7">
-                <h6 className="font-semibold text-caption py-1 md:py-3">
-                  Camionetas SUV
+                <h6 className="font-semibold text-kia-gray py-1 md:py-3">
+                  SUV
                 </h6>
                 {camionetasSuv.map((item) => (
-                  <p className="text-caption py-1 md:py-3" key={item.nombre}>
+                  <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
                     <a href={item.href} target="_blank" rel="noreferrer">
                       {item.nombre}
                     </a>
@@ -96,11 +96,11 @@ const Footer = () => {
                 ))}
               </div>
               <div className="pb-7">
-                <h6 className="font-semibold text-caption py-1 md:py-3">
+                <h6 className="font-semibold text-kia-gray py-1 md:py-3">
                   Utilitarios
                 </h6>
                 {utilitarios.map((item) => (
-                  <p className="text-caption py-1 md:py-3" key={item.nombre}>
+                  <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
                     <a href={item.href} target="_blank" rel="noreferrer">
                       {item.nombre}
                     </a>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
 
           {/* Concesionarios */}
-          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
           <div className="w-full">
             <h5
               className="font-semibold text-kia-polar-white md:pb-7 cursor-pointer md:block"
@@ -124,7 +124,7 @@ const Footer = () => {
               } md:block`}>
               {concesionarios.map((item) => (
                 <h6
-                  className="font-semibold text-caption py-1 md:py-3"
+                  className="font-semibold text-kia-gray py-1 md:py-3"
                   key={item.nombre}>
                   <a href={item.href} target="_blank" rel="noreferrer">
                     {item.nombre}
@@ -135,7 +135,7 @@ const Footer = () => {
           </div>
 
           {/* Post Venta */}
-          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
           <div className="w-full">
             <h5
               className="font-semibold text-kia-polar-white md:pb-7 cursor-pointer md:block"
@@ -146,7 +146,7 @@ const Footer = () => {
               className={`pt-3 ${openPostVenta ? "block" : "hidden"} md:block`}>
               {postVenta.map((item) => (
                 <h6
-                  className="font-semibold text-caption py-1 md:py-3"
+                  className="font-semibold text-kia-gray py-1 md:py-3"
                   key={item.nombre}>
                   <a href={item.href} target="_blank" rel="noreferrer">
                     {item.nombre}
@@ -157,7 +157,7 @@ const Footer = () => {
           </div>
 
           {/* Nueva Kia */}
-          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
           <div className="w-full">
             <h5
               className="font-semibold text-kia-polar-white md:pb-7 cursor-pointer md:block"
@@ -167,7 +167,7 @@ const Footer = () => {
             <div
               className={`${openNuevaKia ? "block" : "hidden"} md:block`}></div>
           </div>
-          <hr className="border-t border-[0.5px] border-caption w-full my-5 md:border-none md:hidden" />
+          <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
       </div>
       <div className="flex flex-col gap-3 md:flex-row justify-between pt-7 text-[0.75rem]">

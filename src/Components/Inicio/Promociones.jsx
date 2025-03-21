@@ -45,9 +45,9 @@ const Promociones = () => {
         </div>
         
         {/* Sección para desktop */}
-        <div className="relative p-6 md:p-8 text-white z-10 hidden md:block">
-          <h2 className="text-3xl font-bold mb-4">Promociones</h2>
-          <button className="flex items-center text-sm font-medium">
+        <div className="relative p-6 md:py-14 md:px-20 text-white z-10 hidden md:block">
+          <h2 className="text-[1.875rem] font-bold mb-4">Promociones</h2>
+          <button className="flex items-center text-sm font-bold">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#05141F"/>
               </svg>

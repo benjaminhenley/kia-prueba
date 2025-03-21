@@ -54,12 +54,16 @@ export const autos = [
     esNuevo: Nuevo,
     foto: AllNewK3Cross,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $25.000USD <span className="font-regular text-kia-gray">EX*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
+ 
     ),
   },
   {
@@ -70,12 +74,15 @@ export const autos = [
     esNuevo: Nuevo,
     foto: AllNewK3Sedan,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $25.000USD <span className="font-regular text-kia-gray">EX*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
   {
@@ -86,12 +93,13 @@ export const autos = [
     esNuevo: null,
     foto: Cerato,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $34.000USD <span className="font-regular text-kia-gray">SX 2.0 AT*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
 ];
@@ -105,12 +113,15 @@ export const camionetasSuv = [
     esNuevo: null,
     foto: Carnival,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $65.000USD <span className="font-regular text-kia-gray">EX 2.2R A/T*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $78.500USD <span className="font-regular text-kia-gray">SX 2.2R A/T*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
   {
@@ -121,12 +132,15 @@ export const camionetasSuv = [
     esNuevo: null,
     foto: Sportage,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $48.000USD <span className="font-regular text-kia-gray">EX 1.6T 4X2 DCT*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $56.500USD <span className="font-regular text-kia-gray">1.6T AWD DCT*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
   {
@@ -137,12 +151,13 @@ export const camionetasSuv = [
     esNuevo: null,
     foto: Seltos,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $35.000USD <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
 ];
@@ -156,12 +171,13 @@ export const utilitarios = [
     esNuevo: null,
     foto: K2500,
     precio: (
-      <p>
-        $00.000USD{" "}
-        <span className="text[#697279]">
-          modelo especificado<sup>*</sup>
-        </span>
-      </p>
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $33.000USD <span className="font-regular text-kia-gray">CS 2.5T MT*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
     ),
   },
 ];

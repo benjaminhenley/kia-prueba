@@ -9,10 +9,10 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
   ];
 
   return (
-    <div className='relative bg-white text-midnight-black shadow-md p-6 z-40 min-w-[250px] rounded-md'>
+    <div className='absolute top-[-7px] left-0 bg-white text-base font-bold text-midnight-black shadow-md z-40 min-w-[250px]'>
       <div className='flex flex-col'>
         {opciones.map((opcion) => (
-          <div key={opcion.id} className='py-3 border-b border-gray-200 last:border-b-0'>
+          <div key={opcion.id} className='p-4 border-t border-[#CDD0D2] group relative inline-block cursor-pointer'>
             {opcion.esExterna ? (
               <a 
                 href={opcion.href} 
@@ -21,7 +21,8 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
                 className={`block hover:font-bold transition-all ${activeOption === opcion.id ? 'font-bold' : ''}`}
                 onClick={() => onOptionClick(opcion.id)}
               >
-                {opcion.nombre}
+                <span>{opcion.nombre}</span>
+                <span className="absolute bottom-1 h-[0.5px]  bg-[#37434C] transition-transform duration-300"></span>              
               </a>
             ) : (
               <Link 
@@ -29,7 +30,8 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
                 className={`block hover:font-bold transition-all ${activeOption === opcion.id ? 'font-bold' : ''}`}
                 onClick={() => onOptionClick(opcion.id)}
               >
-                {opcion.nombre}
+                <span>{opcion.nombre}</span>
+                <span className="absolute bottom-1 left-0 h-[0.5px] bg-[#37434C] transition-transform duration-300"></span>              
               </Link>
             )}
           </div>

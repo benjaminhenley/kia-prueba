@@ -9,9 +9,10 @@ const VehiculoCard = ({ vehiculo }) => {
       <div className='rounded mb-2 flex items-center justify-center'>
         <img className='text-sm' src={foto} alt={nombre}/>
       </div>
-      <p className='text-sm font-semibold mb-2'>{nombre}</p>
-      <div className='text-sm'>{precio}</div>
-      <button className="mt-3 border border-midnight-black text-xs p-1 pl-3 rounded-full flex items-center justify-center gap-2 mx-auto">
+      <p className='text-[1.125rem] font-bold'>{nombre}</p>
+      {/* Adjusted height to h-16 which should be enough for 2-3 price lines */}
+      <div className='text-sm h-16 flex flex-col justify-start'>{precio}</div>
+      <button className="border border-midnight-black text-xs font-bold p-1 pl-3 rounded-full flex items-center justify-center gap-2 mx-auto">
         Consultar precios
         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="0.5" width="18" height="18" rx="9" fill="#05141F"/>
@@ -40,4 +41,4 @@ const VehiculoCard = ({ vehiculo }) => {
   );
 };
 
-export default VehiculoCard; 
+export default VehiculoCard;

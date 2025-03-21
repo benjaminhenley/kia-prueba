@@ -30,7 +30,7 @@ const MobileMenu = ({
             className={activeSubMenu === 'modelos' ? 'bg-midnight-black' : ''} 
           >
             <FiltroVehiculos activeFilter={activeFilter} onFilterClick={onFilterClick} />
-            <div className="mt-2 grid grid-cols-2 grid-col-1 gap-4 p-2">
+            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2">
               {(activeFilter === 'todos' || activeFilter === 'autos') && 
                 autos.map((auto, index) => (
                   <VehiculoCard key={`auto-${index}`} vehiculo={auto} />

@@ -7,7 +7,6 @@ const Transparentbar = () => {
   return (
     <div className='transparency px-5 py-3 flex justify-between items-center gap-2 text-kia-polar-white text-[0.65rem] font-semibold text-base md:px-10 lg:px-20
         transition-all duration-300 ease-in-out hover:bg-white hover:text-midnight-black'>
-        
         {/* Menú izquierdo */}
         <div className='flex gap-10'>
           {transparentbarLeft.map((item) => (

@@ -4,7 +4,7 @@ const FiltroVehiculos = ({ activeFilter, onFilterClick }) => {
   const filtros = [
     { id: 'todos', label: 'Todos los vehículos' },
     { id: 'autos', label: 'Autos' },
-    { id: 'suv', label: 'Camionetas SUV' },
+    { id: 'suv', label: 'SUV' },
     { id: 'utilitarios', label: 'Utilitarios' },
   ];
 
@@ -14,25 +14,25 @@ const FiltroVehiculos = ({ activeFilter, onFilterClick }) => {
       <div className='flex flex-col w-full'>
         <div className='grid grid-cols-2 w-full'>
           <div 
-            className={`p-2 border-b border-r border[#CDD0D2] ${activeFilter === 'todos' ? 'text-black' : 'text-gray-500'}`}
+            className={`p-2 bg-[#F8F8F8] text-kia-gray text-base border-b border-r border-[#CDD0D2] ${activeFilter === 'todos' ? 'font-bold' : 'text-kia-gray'}`}
             onClick={() => onFilterClick('todos')}
           >
             Todos los vehículos
           </div>
           <div 
-            className={`p-2 border-b border[#CDD0D2 ${activeFilter === 'autos' ? 'text-black' : 'text-gray-500'}`}
+            className={`p-2 bg-[#F8F8F8] text-kia-gray text-base border-b border-[#CDD0D2] ${activeFilter === 'autos' ? 'font-bold' : 'text-kia-gray'}`}
             onClick={() => onFilterClick('autos')}
           >
             Autos
           </div>
           <div 
-            className={`p-2 border-b border-r border[#CDD0D2 ${activeFilter === 'suv' ? 'text-black' : 'text-gray-500'}`}
+            className={`p-2 bg-[#F8F8F8] text-kia-gray text-base border-b border-r border-[#CDD0D2] ${activeFilter === 'suv' ? 'font-bold' : 'text-kia-gray'}`}
             onClick={() => onFilterClick('suv')}
           >
-            Camionetas SUV
+            SUV
           </div>
           <div 
-            className={`p-2 border-b border[#CDD0D2 ${activeFilter === 'utilitarios' ? 'text-black' : 'text-gray-500'}`}
+            className={`p-2 bg-[#F8F8F8] text-kia-gray text-base border-b border-[#CDD0D2] ${activeFilter === 'utilitarios' ? 'font-bold' : 'text-kia-gray'}`}
             onClick={() => onFilterClick('utilitarios')}
           >
             Utilitarios
@@ -50,7 +50,7 @@ const FiltroVehiculos = ({ activeFilter, onFilterClick }) => {
           {filtros.map((filtro) => (
             <div
               key={filtro.id}
-              className={`cursor-pointer ${activeFilter === filtro.id ? 'font-bold text-black' : 'text-gray-500'} transition duration-300`}
+              className={`cursor-pointer ${activeFilter === filtro.id ? 'font-bold' : 'text-midnight-black'} transition duration-300`}
               onClick={() => onFilterClick(filtro.id)}
             >
               <div className='flex items-center gap-2'>
@@ -59,7 +59,7 @@ const FiltroVehiculos = ({ activeFilter, onFilterClick }) => {
                     <div className='w-3 h-3 rounded-full bg-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
                   )}
                 </div>
-                <span className='text-base'>
+                <span className='text-xs'>
                   {filtro.label}
                 </span>
               </div>

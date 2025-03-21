@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { homeSlider } from "../../Data/inicio";
+import { Link } from "react-router-dom";
 
 const HomeSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,18 +41,18 @@ const HomeSlider = () => {
           className="hidden md:block w-full h-full object-cover transition-opacity duration-1000"
         />
         {/* Contenido - Ahora absolutamente posicionado tanto en móvil como en desktop */}
-        <div className="absolute inset-0 flex flex-col items-center justify-end text-white z-10 py-8 md:mb-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-end text-white z-10">
           <h1
-            className="text-2xl md:text-4xl font-bold mb-1 animate-fade-in"
+            className="text-[2.25rem] font-bold  animate-fade-in"
             style={{ animation: "fadeIn 1s ease-in" }}>
             {slide.titulo}
           </h1>
-          <p className="text-base md:text-lg mb-4 md:mb-8">{slide.subtitulo}</p>
-          <a
-            href={slide.linkBoton}
-            className="bg-white text-black px-6 py-2 text-sm font-medium rounded hover:bg-gray-100 transition mb-6 md:mb-12">
-            {slide.textoBoton}
-          </a>
+          <p className="text-[1.5rem]">{slide.subtitulo}</p>
+          <Link to={slide.linkBoton}>
+            <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
+              {slide.textoBoton}
+            </button>
+          </Link>
 
           {/* Indicatores Dots */}
           <div className="flex space-x-2 md:space-x-3 mb-4 md:mb-6">

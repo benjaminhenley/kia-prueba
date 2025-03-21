@@ -230,7 +230,7 @@ const Navbar = () => {
 
             {/* Posicionar el dropdown de Concesionarios debajo de su botón */}
             {showConcesionariosDropdown && (
-              <div className="absolute top-full left-0 mt-[7px]">
+              <div className="relative top-full left-0 w-full">
                 <ConcesionariosDropdown
                   activeOption={activeConcesionariosOption}
                   onOptionClick={handleConcesionariosOptionClick}
