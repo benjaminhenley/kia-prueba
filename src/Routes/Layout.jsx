@@ -1,32 +1,20 @@
-import React, { useContext, useState } from 'react'
-import { Outlet } from 'react-router-dom'
-import Loading from '../Components/Loading';
-import { AppContext } from '../Application/Provider';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Loading from "../Components/Loading";
 
-import useAssetsLoader from '../Hooks/useAssetsLoader';
-import Footer from '../Components/Common/Footer';
-import Navbar from '../Components/Navbar';
-
-
-
-
+import Footer from "../Components/Common/Footer";
+import Navbar from "../Components/Navbar/Navbar";
 
 const Layout = () => {
-
-  const [loading, setLoading] = useState(false);
-  const [state, setState] = useContext(AppContext);
-
-
   return (
-       
-        <div className='layout'>
-          <Navbar />
-          <div className="mt-[-3.5rem]">
-            <Outlet />
-          </div>
-          <Footer />
-        </div>
-  )
-}
+    <div className="layout">
+      <Navbar />
+      <div className="mt-[-3.5rem] w-full font-kia text-[#04141f]">
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
