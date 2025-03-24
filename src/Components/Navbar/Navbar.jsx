@@ -106,7 +106,7 @@ const Navbar = () => {
     }
   };
 
-  // Funciones para manejar los botones del menú derecho
+/*   // Funciones para manejar los botones del menú derecho
   const handlePostVentaClick = (e) => {
     e.preventDefault();
     // Cerrar dropdowns si están abiertos
@@ -125,7 +125,7 @@ const Navbar = () => {
 
     // Cambiar el botón activo
     setActiveButton(activeButton === "nuevaKia" ? "" : "nuevaKia");
-  };
+  }; */
 
   // Funciones para manejar las opciones
   const handleFilterClick = (filter) => {
@@ -167,7 +167,7 @@ const Navbar = () => {
 
       {/* Navbar con transparencia y hover */}
       <div
-        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:px-10 lg:px-20
+        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
         transition-all duration-300 ease-in-out relative
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
@@ -245,7 +245,7 @@ const Navbar = () => {
           <img
             src={Kia}
             alt="Kia"
-            className={`w-auto h-auto transition-all duration-300 ease-in-out 
+            className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
             ${
               shouldInvertLogo || mobileMenuOpen
                 ? "filter brightness-0"
@@ -257,8 +257,8 @@ const Navbar = () => {
         {/* Menú derecho (solo desktop) */}
         <div className="hidden md:flex gap-10">
           <a
-            href=""
-            onClick={handlePostVentaClick}
+            href="https://www.kia.com.ar/cotizar-service"
+            target=''
             className="relative group inline-block">
             <p
               className={`${
@@ -275,8 +275,8 @@ const Navbar = () => {
           </a>
 
           <a
-            href=""
-            onClick={handleNuevaKiaClick}
+            href="https://www.kia.com.ar/ourmovement/"
+            target=''
             className="relative group inline-block">
             <p
               className={`${

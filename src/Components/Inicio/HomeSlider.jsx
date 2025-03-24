@@ -48,11 +48,19 @@ const HomeSlider = () => {
             {slide.titulo}
           </h1>
           <p className="text-[1.5rem]">{slide.subtitulo}</p>
-          <Link to={slide.linkBoton}>
-            <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
-              {slide.textoBoton}
-            </button>
-          </Link>
+          {slide.esExterna ? (
+            <a href={slide.linkBoton} target={slide.target} rel="noopener noreferrer">
+              <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
+                {slide.textoBoton}
+              </button>
+            </a>
+          ) : (
+            <Link to={slide.linkBoton}>
+              <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
+                {slide.textoBoton}
+              </button>
+            </Link>
+          )}
 
           {/* Indicatores Dots */}
           <div className="flex space-x-2 md:space-x-3 mb-4 md:mb-6">
@@ -61,7 +69,7 @@ const HomeSlider = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 style={{
-                  width: index === currentSlide ? "40px" : "30px",
+                  width: "40px",
                   height: "4px",
                   backgroundColor:
                     index === currentSlide

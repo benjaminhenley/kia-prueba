@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <Inicio />,
       },
       {
-        path: "modelos/:modelID",
+        path: ":modelID",
         element: <Modelos />,
       },
     ],

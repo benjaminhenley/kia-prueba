@@ -4,7 +4,7 @@ import {
   camionetasSuv,
   utilitarios,
   concesionarios,
-  postVenta,
+  postVentaFooter,
 } from "../../Data/common";
 import Kia from "../../assets/img/common/Kia.svg";
 import React, { useState } from "react";
@@ -35,9 +35,9 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row md:gap-3">
         <div className="w-full md:w-1/2">
           <div className="pb-7 flex justify-start">
-            <a href="" target="_blank" rel="noreferrer">
+            <Link to='/'>
               <img src={Kia} alt="Kia" />
-            </a>
+            </Link>
           </div>
           <div className="flex pb-3">
             {redes.map((item) =>
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
-        <div className="w-full flex flex-col  md:w-1/2 md:flex-row justify-between text-sm">
+        <div className="w-full flex flex-col  md:w-1/2 md:flex-row md:gap-3 justify-between text-sm">
           {/* Modelos */}
           <div className="w-full">
             <h5
@@ -74,7 +74,7 @@ const Footer = () => {
                 {autos.map((item) => (
                   <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
                     {item.esExterna ? (
-                      <a href={item.href} target="_blank" rel="noreferrer">
+                      <a href={item.href} target={item.target} rel="noreferrer">
                         {item.nombre}
                       </a>
                     ) : (
@@ -89,7 +89,7 @@ const Footer = () => {
                 </h6>
                 {camionetasSuv.map((item) => (
                   <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
-                    <a href={item.href} target="_blank" rel="noreferrer">
+                    <a href={item.href} target={item.target} rel="noreferrer">
                       {item.nombre}
                     </a>
                   </p>
@@ -101,7 +101,7 @@ const Footer = () => {
                 </h6>
                 {utilitarios.map((item) => (
                   <p className="text-kia-gray py-1 md:py-3" key={item.nombre}>
-                    <a href={item.href} target="_blank" rel="noreferrer">
+                    <a href={item.href} target={item.target} rel="noreferrer">
                       {item.nombre}
                     </a>
                   </p>
@@ -126,7 +126,7 @@ const Footer = () => {
                 <h6
                   className="font-semibold text-kia-gray py-1 md:py-3"
                   key={item.nombre}>
-                  <a href={item.href} target="_blank" rel="noreferrer">
+                  <a href={item.href} target={item.target} rel="noreferrer">
                     {item.nombre}
                   </a>
                 </h6>
@@ -144,11 +144,11 @@ const Footer = () => {
             </h5>
             <div
               className={`pt-3 ${openPostVenta ? "block" : "hidden"} md:block`}>
-              {postVenta.map((item) => (
+              {postVentaFooter.map((item) => (
                 <h6
                   className="font-semibold text-kia-gray py-1 md:py-3"
                   key={item.nombre}>
-                  <a href={item.href} target="_blank" rel="noreferrer">
+                  <a href={item.href} target={item.target} rel="noreferrer">
                     {item.nombre}
                   </a>
                 </h6>
@@ -170,12 +170,15 @@ const Footer = () => {
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
       </div>
-      <div className="flex flex-col gap-3 md:flex-row justify-between pt-7 text-[0.75rem]">
-        <div className="md:w-1/2">
-          <p className="font-semibold text-kia-polar-white cursor-pointer">
+      <div className="flex flex-col gap-3 md:flex-row justify-between pt-7 text-[0.75rem]"> 
+        <Link to="/" className="md:w-1/2 flex items-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="Vector" d="M15.2988 10.8732V16.8002H8.69965V10.8732L11.9992 7.49823L15.2988 10.8732ZM18 13.5728V11.8767L12.2112 6.08795C12.1563 6.03298 12.0824 6 11.9992 6C11.916 6 11.8422 6.03298 11.7872 6.08795L6 11.8751V13.5713L7.4998 11.9961V17.6985C7.4998 17.8649 7.63486 17.9984 7.79976 17.9984H16.1987C16.3636 17.9984 16.4986 17.8649 16.4986 17.6985V11.9961L17.9984 13.5713L18 13.5728Z" fill="white"/>
+          </svg>
+          <p className="font-semibold text-kia-polar-white cursor-pointer pt-1">
             Home
           </p>
-        </div>
+        </Link>
         <div className="md:w-1/2">
           <p className="font-semibold text-kia-polar-white md:text-end">
             Kia Argentina. Todos los derechos reservados 2025.

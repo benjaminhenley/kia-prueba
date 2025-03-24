@@ -1,22 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { concesionariosDropdownOpciones } from '../../Data/common';
 
 const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
-  // Opciones del dropdown de concesionarios
-  const opciones = [
-    { id: 'venta', nombre: 'Venta', href: '/concesionarios/venta', esExterna: false },
-    { id: 'postVenta', nombre: 'Post Venta', href: '/concesionarios/post-venta', esExterna: false }
-  ];
 
   return (
-    <div className='absolute top-[-7px] left-0 bg-white text-base font-bold text-midnight-black shadow-md z-40 min-w-[250px]'>
+    <div className='absolute top-0 left-0 bg-white text-base font-bold text-midnight-black shadow-md z-40 min-w-[250px]'>
       <div className='flex flex-col'>
-        {opciones.map((opcion) => (
-          <div key={opcion.id} className='p-4 border-t border-[#CDD0D2] group relative inline-block cursor-pointer'>
+        {concesionariosDropdownOpciones.map((opcion) => (
+          <div key={opcion.nombre} className='p-4 border-t border-[#CDD0D2] group relative inline-block cursor-pointer'>
             {opcion.esExterna ? (
               <a 
                 href={opcion.href} 
-                target='_blank' 
+                target={opcion.target} 
                 rel='noreferrer'
                 className={`block hover:font-bold transition-all ${activeOption === opcion.id ? 'font-bold' : ''}`}
                 onClick={() => onOptionClick(opcion.id)}

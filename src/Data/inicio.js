@@ -24,7 +24,9 @@ export const homeSlider = [
     titulo: "All-new K3 Cross",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "/modelos/k3-cross",
+    linkBoton: "/k3-cross",
+    target: "",
+    esExterna: false,
   },
   {
     imagen: AllNewK3Sedan,
@@ -32,7 +34,9 @@ export const homeSlider = [
     titulo: "All-new K3 Sedán",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "/modelos/k3-sedan",
+    linkBoton: "/k3-sedan",
+    target: "",
+    esExterna: false,
   },
   {
     imagen: Carnival,
@@ -40,7 +44,9 @@ export const homeSlider = [
     titulo: "Carnival",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "",
+    linkBoton: "https://www.kia.com.ar/carnival",
+    target: "",
+    esExterna: true,
   },
   {
     imagen: Sportage,
@@ -48,7 +54,9 @@ export const homeSlider = [
     titulo: "Sportage",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "",
+    linkBoton: "https://www.kia.com.ar/all-new-sportage",
+    target: "",
+    esExterna: true,
   },
   {
     imagen: Seltos,
@@ -56,7 +64,9 @@ export const homeSlider = [
     titulo: "Seltos",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "",
+    linkBoton: "https://www.kia.com.ar/seltos",
+    target: "",
+    esExterna: true,
   },
   {
     imagen: Cerato,
@@ -64,7 +74,9 @@ export const homeSlider = [
     titulo: "Cerato",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "",
+    linkBoton: "https://www.kia.com.ar/cerato",
+    target: "",
+    esExterna: true,
   },
   {
     imagen: K2500,
@@ -72,6 +84,9 @@ export const homeSlider = [
     titulo: "K2500",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
-    linkBoton: "",
+    linkBoton: "https://www.kia.com.ar/k2500",
+    target: "",
+    esExterna: true,
   },
 ];
+
