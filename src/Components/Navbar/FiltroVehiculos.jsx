@@ -44,7 +44,7 @@ const FiltroVehiculos = ({ activeFilter, onFilterClick }) => {
 
   // Componente para escritorio (con radio buttons)
   const DesktopFilter = () => (
-    <div className='hidden md:block'>
+    <div className='hidden md:block bg-[#F8F8F8] border-y borfer-[#CDD0D2]'>
       <div className='px-10 lg:px-20'>
         <div className='flex flex-row space-x-6 py-4'>
           {filtros.map((filtro) => (

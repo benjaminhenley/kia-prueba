@@ -58,27 +58,35 @@ const MobileMenu = ({
             onClick={() => toggleSubMenu('concesionarios')}
           >
             <div className="bg-[#F8F8F8]">
-                <Link to="/concesionarios/venta" className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
-                  Venta
-                </Link>
-                <Link to="/concesionarios/post-venta" className="block py-2 px2 pl-7  hover:font-bold border-b border-[#CDD0D2]">
-                  Post Venta
-                </Link>
+                <div className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
+                  <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer'>
+                    Venta
+                  </a>
+                </div>
+                <div className="block py-2 px2 pl-7  hover:font-bold border-b border-[#CDD0D2]">
+                  <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer'>
+                    Post Venta
+                  </a>  
+                </div>
             </div>
           </MobileMenuSection>
           
           {/* Post Venta (sin desplegable) */}
           <div>
-            <div className="p-3 border-b border-[#CDD0D2]">
-              <span className="font-semibold">Post Venta</span>
-            </div>
+            <a href='https://www.kia.com.ar/cotizar-service' target='' rel='noreferrer'>
+              <div className="p-3 border-b border-[#CDD0D2]">
+                <span className="font-semibold">Post Venta</span>
+              </div>
+            </a>  
           </div>
           
           {/* Nueva Kia (sin desplegable) */}
           <div>
-            <div className="p-3 border-b border-[#CDD0D2]">
-              <span className="font-semibold">Nueva Kia</span>
-            </div>
+            <a href='https://www.kia.com.ar/ourmovement/' target='' rel='noreferrer'>
+              <div className="p-3 border-b border-[#CDD0D2]">
+                <span className="font-semibold">Nueva Kia</span>
+              </div>
+            </a>   
           </div>
           
           {/* Enlaces adicionales */}

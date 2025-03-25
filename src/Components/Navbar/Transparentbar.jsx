@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Kia from '../../assets/img/common/Kia.svg'
-import { transparentbarLeft, transparentbarRight } from '../../Data/navbar/navbar'
+import { transparentbarLeft } from '../../Data/navbar/navbar'
+import { transparentbarRight } from '../../Data/common'
 
 const Transparentbar = () => {
   return (

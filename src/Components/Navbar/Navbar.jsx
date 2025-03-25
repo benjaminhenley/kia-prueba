@@ -106,7 +106,7 @@ const Navbar = () => {
     }
   };
 
-  // Funciones para manejar los botones del menú derecho
+/*   // Funciones para manejar los botones del menú derecho
   const handlePostVentaClick = (e) => {
     e.preventDefault();
     // Cerrar dropdowns si están abiertos
@@ -125,7 +125,7 @@ const Navbar = () => {
 
     // Cambiar el botón activo
     setActiveButton(activeButton === "nuevaKia" ? "" : "nuevaKia");
-  };
+  }; */
 
   // Funciones para manejar las opciones
   const handleFilterClick = (filter) => {
@@ -167,8 +167,8 @@ const Navbar = () => {
 
       {/* Navbar con transparencia y hover */}
       <div
-        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:px-10 lg:px-20
-        transition-all duration-300 ease-in-out relative
+        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
+        transition-all duration-200 ease-in-out relative
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
@@ -184,8 +184,7 @@ const Navbar = () => {
         {/* Menú izquierdo (solo desktop) */}
         <div className="hidden md:flex gap-10">
           <div className="static">
-            <a
-              href=""
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 toggleModelosDropdown();
@@ -198,17 +197,16 @@ const Navbar = () => {
                 Modelos
               </p>
               <div
-                className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+                className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                   activeButton === "modelos"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
-            </a>
+            </button>
           </div>
 
           <div className="static relative">
-            <a
-              href=""
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 toggleConcesionariosDropdown();
@@ -221,12 +219,12 @@ const Navbar = () => {
                 Concesionarios
               </p>
               <div
-                className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+                className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                   activeButton === "concesionarios"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
-            </a>
+            </button>
 
             {/* Posicionar el dropdown de Concesionarios debajo de su botón */}
             {showConcesionariosDropdown && (
@@ -245,7 +243,7 @@ const Navbar = () => {
           <img
             src={Kia}
             alt="Kia"
-            className={`w-auto h-auto transition-all duration-300 ease-in-out 
+            className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
             ${
               shouldInvertLogo || mobileMenuOpen
                 ? "filter brightness-0"
@@ -257,8 +255,8 @@ const Navbar = () => {
         {/* Menú derecho (solo desktop) */}
         <div className="hidden md:flex gap-10">
           <a
-            href=""
-            onClick={handlePostVentaClick}
+            href="https://www.kia.com.ar/cotizar-service"
+            target=''
             className="relative group inline-block">
             <p
               className={`${
@@ -267,7 +265,7 @@ const Navbar = () => {
               Post Venta
             </p>
             <div
-              className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+              className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                 activeButton === "postVenta"
                   ? "bg-midnight-black"
                   : "bg-transparent group-hover:bg-midnight-black"
@@ -275,8 +273,8 @@ const Navbar = () => {
           </a>
 
           <a
-            href=""
-            onClick={handleNuevaKiaClick}
+            href="https://www.kia.com.ar/ourmovement/"
+            target=''
             className="relative group inline-block">
             <p
               className={`${
@@ -285,7 +283,7 @@ const Navbar = () => {
               Nueva Kia
             </p>
             <div
-              className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+              className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                 activeButton === "nuevaKia"
                   ? "bg-midnight-black"
                   : "bg-transparent group-hover:bg-midnight-black"

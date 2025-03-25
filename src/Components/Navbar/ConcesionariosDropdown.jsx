@@ -1,37 +1,85 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { concesionariosDropdownOpciones } from '../../Data/common';
 
 const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
-  // Opciones del dropdown de concesionarios
-  const opciones = [
-    { id: 'venta', nombre: 'Venta', href: '/concesionarios/venta', esExterna: false },
-    { id: 'postVenta', nombre: 'Post Venta', href: '/concesionarios/post-venta', esExterna: false }
-  ];
-
   return (
-    <div className='absolute top-[-7px] left-0 bg-white text-base font-bold text-midnight-black shadow-md z-40 min-w-[250px]'>
+    <div className='absolute top-0 left-0 bg-white text-base text-midnight-black shadow-md z-40 min-w-[250px]'>
       <div className='flex flex-col'>
-        {opciones.map((opcion) => (
-          <div key={opcion.id} className='p-4 border-t border-[#CDD0D2] group relative inline-block cursor-pointer'>
+        {concesionariosDropdownOpciones.map((opcion) => (
+          <div 
+            key={opcion.nombre} 
+            className='border-t border-[#CDD0D2] static'
+          >
             {opcion.esExterna ? (
               <a 
                 href={opcion.href} 
-                target='_blank' 
+                target={opcion.target} 
                 rel='noreferrer'
-                className={`block hover:font-bold transition-all ${activeOption === opcion.id ? 'font-bold' : ''}`}
                 onClick={() => onOptionClick(opcion.id)}
+                className="relative group inline-block w-full"
               >
-                <span>{opcion.nombre}</span>
-                <span className="absolute bottom-1 h-[0.5px]  bg-[#37434C] transition-transform duration-300"></span>              
+                <div 
+                  className={`
+                    p-4 cursor-pointer
+                    transition-all duration-200
+                    ${activeOption === opcion.id 
+                      ? 'text-[#37434C]' 
+                      : 'text-midnight-black hover:text-[#37434C]'}
+                  `}
+                >
+                  <p 
+                    className={`
+                      relative inline-block
+                      ${activeOption === opcion.id ? 'font-bold' : ''}
+                    `}
+                  >
+                    {opcion.nombre}
+                    <div 
+                      className={`
+                        absolute bottom-[2px] left-0 w-full h-[1px] 
+                        transition-all duration-200 
+                        ${activeOption === opcion.id 
+                          ? 'bg-midnight-black'
+                          : 'bg-transparent group-hover:bg-midnight-black'}
+                      `}
+                    ></div>
+                  </p>
+                </div>
               </a>
             ) : (
               <Link 
                 to={opcion.href}
-                className={`block hover:font-bold transition-all ${activeOption === opcion.id ? 'font-bold' : ''}`}
                 onClick={() => onOptionClick(opcion.id)}
+                className="relative group inline-block w-full"
               >
-                <span>{opcion.nombre}</span>
-                <span className="absolute bottom-1 left-0 h-[0.5px] bg-[#37434C] transition-transform duration-300"></span>              
+                <div 
+                  className={`
+                    p-4 cursor-pointer
+                    transition-all duration-200
+                    ${activeOption === opcion.id 
+                      ? 'text-[#37434C]' 
+                      : 'text-midnight-black hover:text-[#37434C]'}
+                  `}
+                >
+                  <p 
+                    className={`
+                      relative inline-block 
+                      ${activeOption === opcion.id ? 'font-bold' : ''}
+                    `}
+                  >
+                    {opcion.nombre}
+                    <div 
+                      className={`
+                        absolute bottom-[2px] left-0 w-full h-[1px] 
+                        transition-all duration-200 
+                        ${activeOption === opcion.id 
+                          ? 'bg-midnight-black'
+                          : 'bg-transparent group-hover:bg-midnight-black'}
+                      `}
+                    ></div>
+                  </p>
+                </div>
               </Link>
             )}
           </div>
@@ -41,4 +89,4 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
   );
 };
 
-export default ConcesionariosDropdown; 
+export default ConcesionariosDropdown;

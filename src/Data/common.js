@@ -17,29 +17,29 @@ export const redes = [
   {
     nombre: "Facebook",
     logo: Facebook,
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://www.facebook.com/KiaArgentinaSA",
+    target: "",
     esExterna: true, // Indica que es un enlace externo
   },
   {
     nombre: "Youtube",
     logo: Youtube,
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://www.youtube.com/user/kiaargentina/videos",
+    target: "",
     esExterna: true,
   },
   {
     nombre: "Instagram",
     logo: Instagram,
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://www.instagram.com/kia_argentina/",
+    target: "",
     esExterna: true,
   },
   {
     nombre: "X",
     logo: X,
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://x.com/Kia_Argentina",
+    target: "",
     esExterna: true,
   },
 ];
@@ -48,7 +48,7 @@ export const redes = [
 export const autos = [
   {
     nombre: "All-new K3 Cross",
-    href: "all-new-k3-cross",
+    href: "k3-cross",
     target: "",
     esExterna: false,
     esNuevo: Nuevo,
@@ -63,7 +63,7 @@ export const autos = [
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
- 
+
     ),
   },
   {
@@ -87,7 +87,7 @@ export const autos = [
   },
   {
     nombre: "Cerato",
-    href: "/autos/cerato",
+    href: "https://www.kia.com.ar/cerato",
     target: "_blank",
     esExterna: true,
     esNuevo: null,
@@ -107,8 +107,8 @@ export const autos = [
 export const camionetasSuv = [
   {
     nombre: "Carnival",
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://www.kia.com.ar/carnival",
+    target: "",
     esExterna: true,
     esNuevo: null,
     foto: Carnival,
@@ -126,7 +126,7 @@ export const camionetasSuv = [
   },
   {
     nombre: "Sportage",
-    href: "http://kia.com.ar/",
+    href: "https://www.kia.com.ar/all-new-sportage",
     target: "_blank",
     esExterna: true,
     esNuevo: null,
@@ -145,8 +145,8 @@ export const camionetasSuv = [
   },
   {
     nombre: "Seltos",
-    href: "http://kia.com.ar/",
-    target: "_blank",
+    href: "https://www.kia.com.ar/seltos",
+    target: "",
     esExterna: true,
     esNuevo: null,
     foto: Seltos,
@@ -165,7 +165,7 @@ export const camionetasSuv = [
 export const utilitarios = [
   {
     nombre: "K2500",
-    href: "http://kia.com.ar/",
+    href: "https://www.kia.com.ar/k2500",
     target: "_blank",
     esExterna: true,
     esNuevo: null,
@@ -185,19 +185,19 @@ export const utilitarios = [
 export const concesionarios = [
   {
     nombre: "Venta",
-    href: "",
-    target: "k",
+    href: "https://www.kia.com.ar/red-venta",
+    target: "",
     esExterna: true,
   },
   {
     nombre: "Post Venta",
-    href: "",
+    href: "https://www.kia.com.ar/red-postventa",
     target: "",
     esExterna: true,
   },
 ];
 
-export const postVenta = [
+export const postVentaFooter = [
   {
     nombre: "Agendá tu cita",
     href: "",
@@ -252,19 +252,19 @@ export const postVenta = [
 export const blackbarLeft = [
   {
     nombre: <p>PROMOCIONES</p>,
-    href: "",
+    href: "https://www.kia.com.ar/promociones",
     target: "",
     esExterna: true,
   },
   {
-    nombre: <span>|</span>,
+    nombre: <span className="cursor-default">|</span>,
     href: null,
     target: null,
     esExterna: null,
   },
   {
     nombre: <p>CONTÁCTENOS</p>,
-    href: "",
+    href: "https://www.kia.com.ar/contacto",
     target: "",
     esExterna: true,
   },
@@ -273,19 +273,19 @@ export const blackbarLeft = [
 export const blackbarRight = [
   {
     nombre: <p>WORLDWIDE</p>,
-    href: "",
+    href: "https://worldwide.kia.com/int",
     target: "",
     esExterna: true,
   },
   {
-    nombre: <span>|</span>,
+    nombre: <span className="cursor-default">|</span>,
     href: null,
     target: null,
     esExterna: null,
   },
   {
     nombre: <p>POLÍTICA DE PRIVACIDAD</p>,
-    href: "",
+    href: "https://www.kia.com.ar/cookies",
     target: "",
     esExterna: true,
   },
@@ -318,14 +318,32 @@ export const logo = [
 export const transparentbarRight = [
   {
     nombre: <p>Post Venta</p>,
-    href: "",
+    href: "https://www.kia.com.ar/cotizar-service",
     target: "",
     esExterna: true,
   },
   {
     nombre: <p>Nueva Kia</p>,
-    href: "",
+    href: "https://www.kia.com.ar/ourmovement/",
     target: "",
     esExterna: true,
+  },
+];
+
+// Opciones del dropdown de concesionarios
+export const concesionariosDropdownOpciones = [
+  {
+    id: 'venta',
+    nombre: 'Venta',
+    href: 'https://www.kia.com.ar/red-venta',
+    target: "",
+    esExterna: true,
+  },
+  {
+    id: 'postVenta',
+    nombre: 'Post Venta',
+    href: 'https://www.kia.com.ar/red-postventa',
+    target: "",
+    esExterna: true
   },
 ];
