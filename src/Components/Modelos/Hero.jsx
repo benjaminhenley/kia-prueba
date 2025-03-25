@@ -67,7 +67,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const showVideo = videoSrc && !hasVideoError;
 
   return (
-    <div className="relative w-full h-screen md:h-[calc(100vh-20px)] overflow-hidden">
+    <div className="relative w-full h-[calc(100vh-55px)] md:h-[calc(100vh-41px)] overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
         {/* Fallback image - always rendered */}
@@ -153,12 +153,13 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
           </div>
         )}
       </div>
-
       {/* Text Overlay */}
-      <div className="absolute bg-black bg-opacity-50 bottom-0 left-0 right-0 flex flex-col items-start justify-end p-2 text-white mx-auto">
+      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute bg-black bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex  p-2 text-white mx-auto">
         <div className="max-w-screen-2xl mx-auto w-full py-4 px-4 md:px-20">
-          <div className="relative flex flex-col lg:flex-row justify-between gap-5 ">
-            <div className="flex flex-col px-4">
+          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full py-4">
+            <div className="flex flex-col px-4 relative">
+              {/* Decorative border line */}
+              <div className="absolute left-0 h-full w-0.5 bg-gray-500"></div>
               <h2 className="font-light mb-1">All-new</h2>
               <h1 className="font-bold">{title}</h1>
               <h3 className="mt-2 font-light">{tagline}</h3>
@@ -181,9 +182,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                 ))}
               </div>
             )}
-
-            {/* Decorative border line */}
-            <div className="absolute left-0 bottom-20 top-0 h-[20%] lg:h-[60%] w-0.5 bg-gray-500"></div>
           </div>
         </div>
       </div>

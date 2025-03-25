@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import Hero from "../Components/Modelos/Hero.jsx";
 import TabSelector from "../Components/Modelos/TabsSection.jsx";
@@ -8,9 +8,19 @@ import { getSafeModelData, modelExists } from "../Data/modelMapper.js";
 
 const Modelos = () => {
   const { modelID } = useParams();
-  const [activeTab, setActiveTab] = useState("specifications");
+  const [activeTab, setActiveTab] = useState("characteristics");
 
   const model = getSafeModelData(modelID);
+
+  // Update document title when model changes
+  useEffect(() => {
+    document.title = `KIA | ${model.name} `;
+
+    // Restore the original title when component unmounts
+    return () => {
+      document.title = "KIA Argentina";
+    };
+  }, [modelID, model.name]);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);

@@ -4,11 +4,11 @@ import { formatTextWithBold } from "../../../../utils/textFormatter";
 const Atributes = ({ content }) => {
   return (
     <section className="py-12 sm:py-20 bg-[#F8F8F8]">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
           <div className="flex flex-col justify-start">
             <h4 className="font-normal mb-4">{content.category}</h4>
-            <h2 className="font-semibold mb-3">{content.title}</h2>
+            <h2 className="font-semibold mb-3">{content.subtitle}</h2>
             <hr className="w-full h-[1.5px] text-[#04141f] mb-5 md:mb-10" />
 
             <ul className="flex flex-col gap-5">

@@ -20,7 +20,6 @@ import sedanExteriorRear from "../assets/img/models/sedan/exterior/sedan-exterio
 import sedanExteriorWheel from "../assets/img/models/sedan/exterior/sedan-exterior-3.webp";
 import sedanExteriorMirror from "../assets/img/models/sedan/exterior/sedan-exterior-4.webp";
 import sedanExteriorGrille from "../assets/img/models/sedan/exterior/sedan-exterior-5.webp";
-import sedanExteriorSides from "../assets/img/models/sedan/exterior/sedan-exterior-6.webp";
 
 // Cross exterior images
 import crossExteriorFront from "../assets/img/models/cross/exterior/cross-exterior-1.webp";
@@ -91,7 +90,6 @@ export const imageMap = {
       wheel: sedanExteriorWheel,
       mirror: sedanExteriorMirror,
       grille: sedanExteriorGrille,
-      sides: sedanExteriorSides,
     },
     interior: {
       panel: sedanInteriorPanel,

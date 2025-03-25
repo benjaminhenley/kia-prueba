@@ -8,8 +8,8 @@ import ImageModal from "./ImageModal";
 import Disclaimer from "./Disclaimer";
 import FeatureSummary from "../../FeatureSummary";
 import ColorPicker from "./ColorPicker";
-import SedanGallery from "./SedanGallery";
-import CrossGallery from "./CrossGallery";
+import SedanGallery from "./GalleryTwo";
+import CrossGallery from "./GalleryOne";
 
 const Characteristics = ({ content, modelID }) => {
   const [showModal, setShowModal] = useState(false);
@@ -42,11 +42,7 @@ const Characteristics = ({ content, modelID }) => {
       {/* Model Exterior section */}
       <section className={`py-20  bg-[#05141F] text-white`}>
         <div className=" mx-auto px-4 sm:px-6">
-          {content.exterior.layout === "sedan" ? (
-            <SedanGallery content={content.exterior} onImageClick={openModal} />
-          ) : (
-            <CrossGallery content={content.exterior} onImageClick={openModal} />
-          )}
+          <CrossGallery content={content.exterior} onImageClick={openModal} />
         </div>
       </section>
 
