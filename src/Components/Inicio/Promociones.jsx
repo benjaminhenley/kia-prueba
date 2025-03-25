@@ -12,15 +12,14 @@ const Promociones = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 w-full md:h-screen">
       {/* Sección de promociones con imagen de fondo */}
-      <div className="relative w-full h-auto md:h-full min-h-[320px] flex items-end">
+      <div className="relative w-full h-auto md:h-full min-h-[320px] flex items-end overflow-hidden">
         {/* Imagen para escritorio (oculta en móvil) */}
         <img 
             src={promociones}
             alt="SUV KIA en camino rural" 
-            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            className="absolute inset-0 w-full h-full object-cover hidden md:block transition-transform duration-300 hover:scale-110 origin-center"
             loading="lazy"
           />
-          
         {/* Contenedor para mobile con posicionamiento relativo */}
         <div className="relative w-full block md:hidden">
           {/* Imagen para móvil (oculta en escritorio) */}
@@ -34,9 +33,9 @@ const Promociones = () => {
           
           {/* Contenido específico para móvil, posicionado absolutamente */}
           <div className="absolute bottom-0 left-0 p-6 text-white z-10">
-            <h2 className="text-3xl font-bold mb-4">Promociones</h2>
+            <h2 className="text-[1rem] font-bold mb-1">Promociones</h2>
             <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer'>
-              <button className="flex items-center text-sm font-medium">
+              <button className="flex items-center text-xs font-medium">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#05141F"/>
                 </svg>
