@@ -23,7 +23,6 @@ const HomeSlider = () => {
 
   return (
     <div className="relative w-full h-auto md:h-screen overflow-hidden">
-      {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile */}
         <div className="block md:hidden relative w-full aspect-[3/4]">
@@ -49,15 +48,21 @@ const HomeSlider = () => {
           </h1>
           <p className="text-[1.5rem]">{slide.subtitulo}</p>
           {slide.esExterna ? (
-            <a href={slide.linkBoton} target={slide.target} rel="noopener noreferrer">
-              <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
-                {slide.textoBoton}
+            <a href={slide.linkBoton} target={slide.target} rel="noopener noreferrer" className="group inline-block">
+              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
+                <span className="relative">
+                  {slide.textoBoton}
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                </span>
               </button>
             </a>
           ) : (
-            <Link to={slide.linkBoton}>
-              <button className="bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10">
-                {slide.textoBoton}
+            <Link to={slide.linkBoton} className="group inline-block">
+              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
+                <span className="relative">
+                  {slide.textoBoton}
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                </span>
               </button>
             </Link>
           )}

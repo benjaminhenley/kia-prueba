@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "midnight-black": "rgba(5, 20, 31, 1)",
+        "midnight-black": "#05141F",
         "kia-polar-white": "#FFF",
         "kia-gray": "#697279"
       },

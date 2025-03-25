@@ -168,7 +168,7 @@ const Navbar = () => {
       {/* Navbar con transparencia y hover */}
       <div
         className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
-        transition-all duration-300 ease-in-out relative
+        transition-all duration-200 ease-in-out relative
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
@@ -184,8 +184,7 @@ const Navbar = () => {
         {/* Menú izquierdo (solo desktop) */}
         <div className="hidden md:flex gap-10">
           <div className="static">
-            <a
-              href=""
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 toggleModelosDropdown();
@@ -198,17 +197,16 @@ const Navbar = () => {
                 Modelos
               </p>
               <div
-                className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+                className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                   activeButton === "modelos"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
-            </a>
+            </button>
           </div>
 
           <div className="static relative">
-            <a
-              href=""
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 toggleConcesionariosDropdown();
@@ -221,12 +219,12 @@ const Navbar = () => {
                 Concesionarios
               </p>
               <div
-                className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+                className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                   activeButton === "concesionarios"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
-            </a>
+            </button>
 
             {/* Posicionar el dropdown de Concesionarios debajo de su botón */}
             {showConcesionariosDropdown && (
@@ -267,7 +265,7 @@ const Navbar = () => {
               Post Venta
             </p>
             <div
-              className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+              className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                 activeButton === "postVenta"
                   ? "bg-midnight-black"
                   : "bg-transparent group-hover:bg-midnight-black"
@@ -285,7 +283,7 @@ const Navbar = () => {
               Nueva Kia
             </p>
             <div
-              className={`absolute bottom-[-5px] left-0 w-full h-[2px] transition-all duration-200 ${
+              className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
                 activeButton === "nuevaKia"
                   ? "bg-midnight-black"
                   : "bg-transparent group-hover:bg-midnight-black"
