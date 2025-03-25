@@ -23,7 +23,6 @@ const HomeSlider = () => {
 
   return (
     <div className="relative w-full h-auto md:h-[calc(100vh-25px)] overflow-hidden">
-      {/* Contenedor de imagen para móvil con 100vh */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile - Ahora con 100vh */}
         <div className="block md:hidden relative w-full h-screen">
@@ -53,22 +52,26 @@ const HomeSlider = () => {
               href={slide.linkBoton}
               target={slide.target}
               rel="noopener noreferrer"
-              className="group inline-block">
-              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
-                <span className="relative">
+              className="group mt-5 mb-10 inline-block"
+            >
+              <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
+                <span className="relative block">
                   {slide.textoBoton}
-                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out"></div>
                 </span>
-              </button>
+              </div>
             </a>
           ) : (
-            <Link to={slide.linkBoton} className="group inline-block">
-              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
-                <span className="relative">
+            <Link 
+              to={slide.linkBoton} 
+              className="group mt-5 mb-10 inline-block"
+            >
+              <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
+                <span className="relative block">
                   {slide.textoBoton}
-                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] group-hover:bg-white transition-all duration-300 ease-in-out"></div>
                 </span>
-              </button>
+              </div>
             </Link>
           )}
 
