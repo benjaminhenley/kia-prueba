@@ -6,6 +6,7 @@ import ModelosDropdown from "./ModelosDropdown";
 import ConcesionariosDropdown from "./ConcesionariosDropdown";
 import HamburgerButton from "./Mobile/HamburgerButton";
 import MobileMenu from "./Mobile/MobileMenu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   // Estados para los dropdowns
@@ -240,16 +241,18 @@ const Navbar = () => {
 
         {/* Logo con cambio de color responde al hover de toda la barra */}
         <div className="flex justify-center items-center">
-          <img
-            src={Kia}
-            alt="Kia"
-            className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
-            ${
-              shouldInvertLogo || mobileMenuOpen
-                ? "filter brightness-0"
-                : "filter brightness-100"
-            }`}
-          />
+          <Link to='/'>
+            <img
+              src={Kia}
+              alt="Kia"
+              className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
+              ${
+                shouldInvertLogo || mobileMenuOpen
+                  ? "filter brightness-0"
+                  : "filter brightness-100"
+              }`}
+            />
+          </Link>
         </div>
 
         {/* Menú derecho (solo desktop) */}

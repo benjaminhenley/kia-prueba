@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const VehiculoCard = ({ vehiculo }) => {
-  const { nombre, href, target, esExterna, esNuevo, foto, precio } = vehiculo;
+  const { nombre, esNuevo, foto, precio } = vehiculo;
   
   const cardContent = (
     <>
@@ -12,6 +11,7 @@ const VehiculoCard = ({ vehiculo }) => {
       <p className='text-[1.125rem] font-bold'>{nombre}</p>
       {/* Adjusted height to h-16 which should be enough for 2-3 price lines */}
       <div className='text-sm h-16 flex flex-col justify-start'>{precio}</div>
+      <a href='https://www.kia.com.ar/precios' target='' rel='noreferrer' >
       <button className="border border-midnight-black text-xs font-bold p-1 pl-3 rounded-full flex flex-col items-center justify-center gap-2 mx-auto 
         hover:border-[#37434C] hover:text-[#37434C] 
         transition-all duration-300 group relative">
@@ -28,6 +28,7 @@ const VehiculoCard = ({ vehiculo }) => {
           </svg>
         </div>
       </button>
+      </a>
     </>
   );
   
@@ -36,16 +37,7 @@ const VehiculoCard = ({ vehiculo }) => {
       <div className='h-6 flex justify-start'>
         {esNuevo && <img src={esNuevo} alt="Nuevo" className="h-5" />}
       </div>
-      
-      {esExterna ? (
-        <a href={href} target={target} rel='noreferrer'>
-          {cardContent}
-        </a>
-      ) : (
-        <Link to={href}>
-          {cardContent}
-        </Link>
-      )}
+      {cardContent}
     </div>
   );
 };
