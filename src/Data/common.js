@@ -47,26 +47,6 @@ export const redes = [
 // Datos de los modelos tanto para el Footer como para el Navbar
 export const autos = [
   {
-    nombre: "All-new K3 Cross",
-    href: "k3-cross",
-    target: "",
-    esExterna: false,
-    esNuevo: Nuevo,
-    foto: AllNewK3Cross,
-    precio: (
-      <>
-        <p className="text-sm font-bold py-0.5">
-          $25.000USD <span className="font-regular text-kia-gray">EX*</span>
-        </p>
-        <p className="text-sm font-bold py-0.5">
-          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
-        </p>
-        <p className="text-sm font-bold py-0.5"></p>
-      </>
-
-    ),
-  },
-  {
     nombre: "All-new K3 Sedán",
     href: "all-new-k3-sedan",
     target: "",
@@ -105,6 +85,26 @@ export const autos = [
 ];
 
 export const camionetasSuv = [
+  {
+    nombre: "All-new K3 Cross",
+    href: "k3-cross",
+    target: "",
+    esExterna: false,
+    esNuevo: Nuevo,
+    foto: AllNewK3Cross,
+    precio: (
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $25.000USD <span className="font-regular text-kia-gray">EX*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
+
+    ),
+  },
   {
     nombre: "Carnival",
     href: "https://www.kia.com.ar/carnival",
