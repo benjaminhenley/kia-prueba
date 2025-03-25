@@ -73,7 +73,7 @@ const Promociones = () => {
             </div>
             <h3 className="text-center text-lg font-medium relative">
               Concesionarios
-              <span className="absolute left-0 bottom-[2px] h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
           </a>
         </div>
@@ -86,7 +86,7 @@ const Promociones = () => {
             </div>
             <h3 className="text-center text-lg font-medium relative">
               Turno Online
-              <span className="absolute left-0 bottom-[2px] h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
           </a>  
         </div>
@@ -99,7 +99,7 @@ const Promociones = () => {
             </div>
             <h3 className="text-center text-lg font-medium relative">
               Post Venta
-              <span className="absolute left-0 bottom-[2px] h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
           </a>  
         </div>
@@ -112,7 +112,7 @@ const Promociones = () => {
             </div>
             <h3 className="text-center text-lg font-medium relative">
               Garantía
-              <span className="absolute left-0 bottom-[2px] h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
           </a>  
         </div>

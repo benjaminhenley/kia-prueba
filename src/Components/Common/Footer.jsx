@@ -82,18 +82,18 @@ const Footer = () => {
                         href={item.href} 
                         target={item.target} 
                         rel="noreferrer"
-                        className="hover:text-[#37434C] transition-colors relative group"
+                        className="hover:text-[#CDD0D2] transition-colors relative group"
                       >
                         {item.nombre}
-                        <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     ) : (
                       <Link 
                         to={item.href}
-                        className="hover:text-[#37434C] transition-colors relative group"
+                        className="hover:text-[#CDD0D2] transition-colors relative group"
                       >
                         {item.nombre}
-                        <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                       </Link>
                     )}
                   </p>
@@ -109,10 +109,10 @@ const Footer = () => {
                       href={item.href} 
                       target={item.target} 
                       rel="noreferrer"
-                      className="hover:text-[#37434C] transition-colors relative group"
+                      className="hover:text-[#CDD0D2] transition-colors relative group"
                     >
                       {item.nombre}
-                      <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute left-0 bottom-0 h-[0.5px] bg-[CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   </p>
                 ))}
@@ -127,10 +127,10 @@ const Footer = () => {
                       href={item.href} 
                       target={item.target} 
                       rel="noreferrer"
-                      className="hover:text-[#37434C] transition-colors relative group"
+                      className="hover:text-[#CDD0D2] transition-colors relative group"
                     >
                       {item.nombre}
-                      <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   </p>
                 ))}
@@ -158,10 +158,10 @@ const Footer = () => {
                     href={item.href} 
                     target={item.target} 
                     rel="noreferrer"
-                    className="hover:text-[#37434C] transition-colors relative group"
+                    className="hover:text-[#CDD0D2] transition-colors relative group"
                   >
                     {item.nombre}
-                    <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 </h6>
               ))}
@@ -186,10 +186,10 @@ const Footer = () => {
                     href={item.href} 
                     target={item.target} 
                     rel="noreferrer"
-                    className="hover:text-[#37434C] transition-colors relative group"
+                    className="hover:text-[#CDD0D2] transition-colors relative group"
                   >
                     {item.nombre}
-                    <span className="absolute left-0 bottom-0 h-[1px] bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 </h6>
               ))}
@@ -204,7 +204,7 @@ const Footer = () => {
               onClick={() => toggleAccordion("nuevaKia")}>
               <span className="relative inline-block">
                 Nueva Kia
-                <span className="absolute left-0 bottom-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 h-[0.5px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
               </span>
             </h5>
             <div
@@ -223,7 +223,7 @@ const Footer = () => {
           </svg>
           <p className="font-semibold text-kia-polar-white cursor-pointer pt-1 relative group">
             Home
-            <span className="absolute left-0 bottom-[1px] h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 bottom-[1px] h-[1px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
           </p>
         </Link>
         <div className="md:w-1/2">

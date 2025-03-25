@@ -25,8 +25,8 @@ const HomeSlider = () => {
     <div className="relative w-full h-auto md:h-[calc(100vh-35px)] overflow-hidden">
       {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
-        {/* Imagen Mobile */}
-        <div className="block md:hidden relative w-full aspect-[3/4]">
+        {/* Imagen Mobile - Ahora con 100vh */}
+        <div className="block md:hidden relative w-full h-screen">
           <img
             src={slide.imagenMobile}
             alt={slide.titulo}
@@ -41,34 +41,36 @@ const HomeSlider = () => {
           className="hidden md:block w-full h-full object-cover transition-opacity duration-1000"
         />
         {/* Contenido - Ahora absolutamente posicionado tanto en móvil como en desktop */}
-        <div className="absolute inset-0 flex flex-col items-center justify-end text-white z-10">
+        <div className="absolute px-1 pb-3 inset-0 flex flex-col items-center justify-end text-white z-10">
           <h1
-            className="text-[2.25rem] font-bold  animate-fade-in"
+            className="text-[2rem] md:text-[2.25rem] font-bold  animate-fade-in"
             style={{ animation: "fadeIn 1s ease-in" }}>
             {slide.titulo}
           </h1>
-          <p className="text-[1.5rem]">{slide.subtitulo}</p>
+          <p className="text-[1rem] md:text-[1.5rem] py-1">{slide.subtitulo}</p>
           {slide.esExterna ? (
             <a
               href={slide.linkBoton}
               target={slide.target}
               rel="noopener noreferrer"
-              className="group inline-block">
-              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
-                <span className="relative">
+              className="group mt-5 mb-10 inline-block">
+              <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
+                <span className="relative block">
                   {slide.textoBoton}
-                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out"></div>
                 </span>
-              </button>
+              </div>
             </a>
           ) : (
-            <Link to={slide.linkBoton} className="group inline-block">
-              <button className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition mt-5 mb-10 inline-block">
-                <span className="relative">
+            <Link
+              to={slide.linkBoton}
+              className="group mt-5 mb-10 inline-block">
+              <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
+                <span className="relative block">
                   {slide.textoBoton}
-                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] bg-white transition-all duration-300 ease-in-out origin-left"></div>
+                  <div className="absolute left-0 bottom-[-2px] group-hover:w-full h-[1px] group-hover:bg-white transition-all duration-300 ease-in-out"></div>
                 </span>
-              </button>
+              </div>
             </Link>
           )}
 
@@ -78,16 +80,9 @@ const HomeSlider = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                style={{
-                  width: "40px",
-                  height: "4px",
-                  backgroundColor:
-                    index === currentSlide
-                      ? "white"
-                      : "rgba(255, 255, 255, 0.5)",
-                  transition: "all 0.3s ease",
-                }}
-                className="rounded-sm"
+                className={`w-8 sm:w-10 h-[4px] transition-all duration-300 ease-in-out ${
+                  index === currentSlide ? "bg-white" : "bg-white bg-opacity-50"
+                }`}
                 aria-label={`Go to slide ${index + 1}`}></button>
             ))}
           </div>
