@@ -15,7 +15,7 @@ const SedanGallery = ({ content, onImageClick, bgColor }) => {
   return (
     <section className={` ${bgColor ? bgColor + " text-white" : ""}`}>
       <div className="container mx-auto px-4 sm:px-6">
-        <h4 className="mb-1 sm:mb-4">{content.category}</h4>
+        <h4 className="mb-3 sm:mb-4">{content.category}</h4>
         <h2 className="font-bold mb-3 sm:mb-6">{content.title}</h2>
         <p className="mb-6 sm:mb-10 text-sm sm:text-base">
           {content.description}

@@ -14,8 +14,8 @@ const CrossGallery = ({ content, onImageClick, bgColor }) => {
 
   return (
     <section className={` ${bgColor ? bgColor + " text-white" : ""}`}>
-      <div className="container mx-auto px-4 sm:px-6">
-        <h4 className="mb-1 sm:mb-4">{content.category}</h4>
+      <div className="container mx-auto sm:px-6">
+        <h4 className="mb-3 sm:mb-4">{content.category}</h4>
         <h2 className="font-bold mb-3 sm:mb-6">{content.title}</h2>
         <p className="mb-6 sm:mb-10 text-sm sm:text-base">
           {content.description}
@@ -66,9 +66,11 @@ const CrossGallery = ({ content, onImageClick, bgColor }) => {
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`w-8 h-2 rounded-sm transition-colors touch-manipulation bg-[#FFFFFF] ${
-                    index === currentIndex ? "" : "bg-opacity-50"
-                  }`}
+                  className={`w-8 h-2 rounded-sm transition-colors touch-manipulation ${
+                    content.category === "Exterior"
+                      ? "bg-[#FFFFFF]"
+                      : "bg-[#05141F]"
+                  } ${index === currentIndex ? "" : "bg-opacity-50"}`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

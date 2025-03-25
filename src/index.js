@@ -9,7 +9,7 @@ import "./assets/css/styles.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider>
-      <div className="App font-kia">
+      <div className="font-kia">
         <RouterProvider router={router} />
       </div>
     </Provider>

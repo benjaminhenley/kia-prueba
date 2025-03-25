@@ -53,7 +53,7 @@ const ColorPicker = ({ colorPickerData }) => {
         </div>
 
         {/* Finish Toggle Buttons */}
-        <div className="flex justify-center mb-12">
+        {/* <div className="flex justify-center mb-12">
           <div className="flex gap-2">
             {finishOptions.map((finish) => (
               <button
@@ -77,7 +77,7 @@ const ColorPicker = ({ colorPickerData }) => {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Color Name Display */}
         <h4 className=" font-normal text-center mb-8">{activeColorName}</h4>

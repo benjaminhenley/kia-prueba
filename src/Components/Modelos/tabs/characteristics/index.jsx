@@ -52,11 +52,13 @@ const Characteristics = ({ content, modelID }) => {
 
       {/* Model Interior section */}
       <section className={`py-20 `}>
-        {content.interior.layout === "sedan" ? (
-          <SedanGallery content={content.interior} onImageClick={openModal} />
-        ) : (
-          <CrossGallery content={content.interior} onImageClick={openModal} />
-        )}
+        <div className=" mx-auto px-4 sm:px-6">
+          {content.interior.layout === "sedan" ? (
+            <SedanGallery content={content.interior} onImageClick={openModal} />
+          ) : (
+            <CrossGallery content={content.interior} onImageClick={openModal} />
+          )}
+        </div>
       </section>
       {showModal && <ImageModal image={modalImage} onClose={closeModal} />}
 

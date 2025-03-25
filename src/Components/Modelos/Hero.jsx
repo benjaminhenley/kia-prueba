@@ -67,7 +67,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const showVideo = videoSrc && !hasVideoError;
 
   return (
-    <div className="relative w-full h-[calc(100vh-20px)] overflow-hidden">
+    <div className="relative w-full h-screen md:h-[calc(100vh-20px)] overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
         {/* Fallback image - always rendered */}
