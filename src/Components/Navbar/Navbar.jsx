@@ -162,7 +162,7 @@ const Navbar = () => {
     isAnyDropdownActive || isNavbarHovered || hasScrolled;
 
   return (
-    <div className="z-50 sticky top-0 left-0 right-0">
+    <div className="z-50 sticky top-0 left-0">
       {/* Navbar superior */}
       <Blackbar />
 

@@ -32,8 +32,8 @@ const Footer = () => {
 
   return (
     <div className="bg-midnight-black p-5 md:p-10 lg:p-20 lg:pb-10">
-      <div className="flex flex-col md:flex-row md:gap-3">
-        <div className="w-full md:w-1/2">
+      <div className="flex flex-col md:flex-row md:gap-3 justify-between">
+        <div className="w-full md:w-1/3">
           <div className="pb-7 flex justify-start">
             <Link to='/' className="hover:opacity-70 transition-opacity">
               <img src={Kia} alt="Kia" />
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
-        <div className="w-full flex flex-col md:w-1/2 md:flex-row md:gap-3 justify-between text-sm">
+        <div className="w-full flex flex-col md:w-2/3 md:flex-row md:gap-3 justify-between text-sm">
           {/* Modelos */}
           <div className="w-full">
             <h5
