@@ -13,6 +13,22 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const [hasVideoError, setHasVideoError] = useState(false);
   const videoRef = useRef(null);
 
+  // Reset video state when videoSrc changes (user selects different car)
+  useEffect(() => {
+    if (videoRef.current) {
+      // Stop any current playback
+      videoRef.current.pause();
+
+      // Reset loading state
+      setIsVideoLoaded(false);
+      setIsPlaying(false);
+      setHasVideoError(false);
+
+      // Force the video element to reload
+      videoRef.current.load();
+    }
+  }, [videoSrc]);
+
   const renderIcon = (icon, className) => {
     const icons = {
       stars: <StarsIcon className={className} />,
@@ -91,16 +107,17 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
               playsInline
               loop
               preload="auto"
+              key={videoSrc.desktop + videoSrc.mobile} // Add key to force re-render when sources change
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}>
               {/* Provide multiple source formats for better compatibility */}
               <source
-                src={videoSrc.desktop}
+                src={videoSrc.mobile}
                 type="video/mp4"
                 className="md:hidden"
               />
               <source
-                src={videoSrc.mobile}
+                src={videoSrc.desktop}
                 type="video/mp4"
                 className="hidden md:block"
               />
