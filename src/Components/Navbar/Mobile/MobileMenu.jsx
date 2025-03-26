@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MobileMenuSection from './MobileMenuSection';
 import FiltroVehiculos from '../FiltroVehiculos';
 import VehiculoCard from '../VehiculoCard';
@@ -13,7 +12,8 @@ const MobileMenu = ({
   onFilterClick,
   autos,
   camionetasSuv,
-  utilitarios
+  utilitarios,
+  onLinkClick
 }) => {
   return (
     <div 
@@ -33,19 +33,37 @@ const MobileMenu = ({
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2">
               {(activeFilter === 'todos' || activeFilter === 'autos') && 
                 autos.map((auto, index) => (
-                  <VehiculoCard key={`auto-${index}`} vehiculo={auto} />
+                  <VehiculoCard 
+                    key={`auto-${index}`} 
+                    vehiculo={auto} 
+                    onClick={(e) => {
+                      onLinkClick(e);
+                    }} 
+                  />
                 ))
               }
               
               {(activeFilter === 'todos' || activeFilter === 'suv') && 
                 camionetasSuv.map((suv, index) => (
-                  <VehiculoCard key={`suv-${index}`} vehiculo={suv} />
+                  <VehiculoCard 
+                    key={`suv-${index}`} 
+                    vehiculo={suv} 
+                    onClick={(e) => {
+                      onLinkClick(e);
+                    }} 
+                  />
                 ))
               }
               
               {(activeFilter === 'todos' || activeFilter === 'utilitarios') && 
                 utilitarios.map((util, index) => (
-                  <VehiculoCard key={`util-${index}`} vehiculo={util} />
+                  <VehiculoCard 
+                    key={`util-${index}`} 
+                    vehiculo={util} 
+                    onClick={(e) => {
+                      onLinkClick(e);
+                    }} 
+                  />
                 ))
               }
             </div>

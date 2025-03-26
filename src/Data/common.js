@@ -48,7 +48,7 @@ export const redes = [
 export const autos = [
   {
     nombre: "All-new K3 Sedán",
-    href: "all-new-k3-sedan",
+    href: "k3-sedan",
     target: "",
     esExterna: false,
     esNuevo: Nuevo,
@@ -68,7 +68,7 @@ export const autos = [
   {
     nombre: "Cerato",
     href: "https://www.kia.com.ar/cerato",
-    target: "_blank",
+    target: "",
     esExterna: true,
     esNuevo: null,
     foto: Cerato,
@@ -127,7 +127,7 @@ export const camionetasSuv = [
   {
     nombre: "Sportage",
     href: "https://www.kia.com.ar/all-new-sportage",
-    target: "_blank",
+    target: "",
     esExterna: true,
     esNuevo: null,
     foto: Sportage,
@@ -166,7 +166,7 @@ export const utilitarios = [
   {
     nombre: "K2500",
     href: "https://www.kia.com.ar/k2500",
-    target: "_blank",
+    target: "",
     esExterna: true,
     esNuevo: null,
     foto: K2500,
