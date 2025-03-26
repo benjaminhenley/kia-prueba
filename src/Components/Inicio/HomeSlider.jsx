@@ -22,14 +22,14 @@ const HomeSlider = () => {
   const slide = homeSlider[currentSlide];
 
   return (
-    <div className="relative w-full h-auto md:h-[calc(100vh-25px)] overflow-hidden">
+    <div className="relative w-full h-[calc(100vh-25px)] overflow-hidden">
       {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile - Ahora con 100vh */}
           <img
             src={slide.imagenMobile}
             alt={slide.titulo}
-            className="block lg:hidden relative w-full h-screen absolute w-full h-full object-cover transition-opacity duration-1000"
+            className="block lg:hidden relative absolute w-full h-full object-cover transition-opacity duration-1000"
           />
 
         {/* Imagen Desktop */}
