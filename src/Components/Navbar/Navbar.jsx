@@ -229,7 +229,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="static relative">
+          <div className="relative">
             <button
               onClick={(e) => {
                 e.preventDefault();
