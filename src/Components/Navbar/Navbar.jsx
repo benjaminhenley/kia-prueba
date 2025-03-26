@@ -107,7 +107,7 @@ const Navbar = () => {
     }
   };
 
-/*   // Funciones para manejar los botones del menú derecho
+  /*   // Funciones para manejar los botones del menú derecho
   const handlePostVentaClick = (e) => {
     e.preventDefault();
     // Cerrar dropdowns si están abiertos
@@ -241,7 +241,7 @@ const Navbar = () => {
 
         {/* Logo con cambio de color responde al hover de toda la barra */}
         <div className="flex justify-center items-center">
-          <Link to='/'>
+          <Link to="/">
             <img
               src={Kia}
               alt="Kia"
@@ -259,7 +259,7 @@ const Navbar = () => {
         <div className="hidden md:flex gap-10">
           <a
             href="https://www.kia.com.ar/cotizar-service"
-            target=''
+            target=""
             className="relative group inline-block">
             <p
               className={`${
@@ -277,7 +277,7 @@ const Navbar = () => {
 
           <a
             href="https://www.kia.com.ar/ourmovement/"
-            target=''
+            target=""
             className="relative group inline-block">
             <p
               className={`${
