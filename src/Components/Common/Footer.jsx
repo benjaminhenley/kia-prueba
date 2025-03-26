@@ -112,8 +112,8 @@ const Footer = () => {
                       className="hover:text-[#CDD0D2] transition-colors relative group"
                     >
                       {item.nombre}
-                      <span className="absolute left-0 bottom-0 h-[0.5px] bg-[CDD0D2] transition-all duration-300 group-hover:w-full"></span>
-                    </a>
+                      <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
+                      </a>
                   </p>
                 ))}
               </div>
