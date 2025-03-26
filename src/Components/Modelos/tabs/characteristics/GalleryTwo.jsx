@@ -14,9 +14,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
       <div className="container mx-auto sm:px-6">
         <h4 className="mb-3 sm:mb-4">{content.category}</h4>
         <h2 className="font-bold mb-3 sm:mb-6">{content.title}</h2>
-        <p className="mb-6 sm:mb-10 text-sm sm:text-base">
-          {content.description}
-        </p>
+        <h5 className="mb-6">{content.description}</h5>
 
         {/* Mobile Slider View */}
         <div className="block lg:hidden">

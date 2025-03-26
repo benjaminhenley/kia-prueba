@@ -7,35 +7,32 @@ const ImageModal = ({ image, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-hidden flex justify-center items-center p-4"
+      className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-hidden flex justify-center items-center p-2 sm:p-4"
       onClick={onClose}>
       <div
-        className="relative w-full h-auto max-w-4xl mx-auto flex flex-col bg-white"
+        className="relative w-full h-auto max-w-2xl mx-auto flex flex-col bg-white overflow-hidden max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}>
         <button
           className="absolute top-0 right-0 p-2 z-10 text-white hover:bg-gray-800 bg-[#05141F]"
           onClick={onClose}
           aria-label="Close modal">
-          <FiX size={28} />
+          <FiX size={24} />
         </button>
 
-        <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+        <div className="relative w-full overflow-hidden">
           <img
             src={image.src}
             alt={image.alt}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="w-full h-auto object-contain"
           />
         </div>
-
-        <div className="bg-white px-8 py-6 flex-shrink-0 relative -mt-16">
+        <div className="bg-white px-4 sm:px-8 py-4 sm:py-6 flex-shrink-0">
           <div className="max-w-5xl mx-auto">
-            <div className="w-10 h-[2px] bg-gray-800 mb-4"></div>
-            <h3 className="text-2xl font-medium text-gray-900 mb-3">
-              {image.title}
-            </h3>
-            <p className="text-base text-gray-700">
+            <div className="w-10 h-[2px] bg-gray-800 mb-3"></div>
+            <h3 className="font-medium text-gray-900 mb-5">{image.title}</h3>
+            <h5 className="text-gray-700">
               {formatTextWithBold(image.description)}
-            </p>
+            </h5>
           </div>
         </div>
       </div>

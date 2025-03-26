@@ -1,12 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { formatTextWithBold } from "../../../../utils/textFormatter";
 
 export default function MobileSlider({ content, onImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Function to move to the next slide
+  const goToNextSlide = useCallback(() => {
+    if (content.images.length > 0) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === content.images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  }, [content.images]);
+
+  // Reset index when content changes
   useEffect(() => {
     setCurrentIndex(0);
   }, [content]);
+
+  // Auto-slide effect
+  useEffect(() => {
+    // Set up interval for automatic sliding
+    const slideInterval = setInterval(goToNextSlide, 5000);
+
+    // Clean up interval on component unmount or content change
+    return () => {
+      clearInterval(slideInterval);
+    };
+  }, [goToNextSlide]);
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
@@ -18,15 +39,17 @@ export default function MobileSlider({ content, onImageClick }) {
         <div
           className="relative w-full"
           style={{
-            height: "min(calc(100vw * 0.75), 70vh)", // Responsive height: either 75% of width or 70% of viewport height, whichever is smaller
+            height: "min(calc(100vw * 0.75), 70vh)", // Original height calculation
           }}>
           {content.images.map((image, index) => (
             <div
               key={image.id}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${
+              className={`absolute inset-0 w-full h-full transform transition-all duration-700 ease-in-out ${
                 index === currentIndex
-                  ? "opacity-100"
-                  : "opacity-0 pointer-events-none"
+                  ? "opacity-100 translate-x-0"
+                  : index < currentIndex
+                  ? "opacity-0 -translate-x-full pointer-events-none"
+                  : "opacity-0 translate-x-full pointer-events-none"
               }`}>
               <img
                 src={image.src}
@@ -39,18 +62,21 @@ export default function MobileSlider({ content, onImageClick }) {
         </div>
       </div>
 
-      {/* Decorative line above title */}
-      <div className="w-10 h-[2px] bg-current mt-8 mb-4"></div>
+      {/* Text content with smooth fade transition */}
+      <div className="transition-opacity duration-500 ease-in-out">
+        {/* Decorative line above title */}
+        <div className="w-10 h-[2px] bg-current mt-8 mb-4"></div>
 
-      {/* Feature title below mobile image */}
-      <h3 className="text-xl font-medium mb-2">
-        {content.images[currentIndex]?.title || ""}
-      </h3>
+        {/* Feature title below mobile image */}
+        <h3 className="text-xl font-medium mb-2">
+          {content.images[currentIndex]?.title || ""}
+        </h3>
 
-      {/* Description for mobile view */}
-      <p className="text-sm mb-4">
-        {formatTextWithBold(content.images[currentIndex]?.description || "")}
-      </p>
+        {/* Description for mobile view */}
+        <p className="text-sm mb-4">
+          {formatTextWithBold(content.images[currentIndex]?.description || "")}
+        </p>
+      </div>
 
       {/* Equal-sized Navigation Dots */}
       <div className="flex justify-center items-center space-x-3 mt-6 py-4">
@@ -58,7 +84,7 @@ export default function MobileSlider({ content, onImageClick }) {
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-8 h-2 rounded-sm transition-colors touch-manipulation ${
+            className={`w-8 h-2 rounded-sm transition-all duration-500 ease-in-out touch-manipulation ${
               content.category === "Exterior" ? "bg-[#FFFFFF]" : "bg-[#05141F]"
             } ${index === currentIndex ? "" : "bg-opacity-50"}`}
             aria-label={`Go to slide ${index + 1}`}

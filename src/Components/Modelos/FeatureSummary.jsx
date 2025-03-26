@@ -58,10 +58,10 @@ const FeatureSummary = ({ features }) => {
               key={item.id}
               className="px-2 md:px-6 py-3 border-b border-gray-200">
               <div className="flex items-center">
-                <div className="w-12 h-12 flex-shrink-0 grid place-items-center text-gray-500">
-                  {renderIcon(item.id, "text-gray-500 w-full h-full")}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 grid place-items-center text-gray-500">
+                  {renderIcon(item.id, "text-gray-500 w-3/4 h-3/4")}
                 </div>
-                <div className="ml-2">
+                <div className="ml-2 sm:ml-4">
                   {isFourItems && (
                     <h4 className="mb-1 font-semibold text-[#37434C]">
                       {item.title}
@@ -91,14 +91,16 @@ const FeatureSummary = ({ features }) => {
                     key={item.id}
                     className={`${
                       key === 0 && "lg:border-l"
-                    } bg-white py-12 text-center border-r border-gray-200 shadow-sm hover:shadow-md transition-shadow`}>
+                    } bg-white py-8 md:py-10 lg:py-12 text-center border-r border-gray-200 shadow-sm hover:shadow-md transition-shadow`}>
                     <div className="">
-                      <div className="w-16 h-16 mx-auto grid place-items-center">
-                        {renderIcon(item.id, "w-12 h-12")}
+                      <div className="w-14 h-14 md:w-16 md:h-16 mx-auto grid place-items-center">
+                        {renderIcon(item.id, "w-3/4 h-3/4")}
                       </div>
                     </div>
                     {isFourItems && (
-                      <h3 className="text-xl font-bold">{item.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold">
+                        {item.title}
+                      </h3>
                     )}
                     <p className="text-gray-600">
                       {renderWithLineBreaks(item.value)}
