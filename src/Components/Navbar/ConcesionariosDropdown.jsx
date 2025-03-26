@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { concesionariosDropdownOpciones } from '../../Data/common';
 
-const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
+const ConcesionariosDropdown = ({ activeOption, onOptionClick, onLinkClick }) => {
   return (
     <div className='absolute top-0 left-0 bg-white text-base text-midnight-black shadow-md z-40 min-w-[250px]'>
       <div className='flex flex-col'>
@@ -16,7 +16,10 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
                 href={opcion.href} 
                 target={opcion.target} 
                 rel='noreferrer'
-                onClick={() => onOptionClick(opcion.id)}
+                onClick={(e) => {
+                  onLinkClick(e);
+                  onOptionClick(opcion.id);
+                }}
                 className="relative group inline-block w-full"
               >
                 <div 
@@ -49,8 +52,12 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick }) => {
               </a>
             ) : (
               <Link 
+                key={opcion.nombre}
                 to={opcion.href}
-                onClick={() => onOptionClick(opcion.id)}
+                onClick={(e) => {
+                  onLinkClick(e);
+                  onOptionClick(opcion.id);
+                }}
                 className="relative group inline-block w-full"
               >
                 <div 

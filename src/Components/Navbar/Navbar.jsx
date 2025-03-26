@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Kia from "../../assets/img/common/KiaWhite.svg";
 import Blackbar from "./Blackbar";
 import { autos, camionetasSuv, utilitarios } from "../../Data/common";
@@ -32,8 +32,8 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState("");
 
-  // Efecto para detectar el scroll
-  // En el componente Navbar
+  const modelosDropdownRef = useRef(null);
+  const concesionariosDropdownRef = useRef(null);
 
   // Efecto para detectar el scroll
   useEffect(() => {
@@ -76,6 +76,40 @@ const Navbar = () => {
     };
   }, []);
 
+  // Efecto para cerrar el dropdown de modelos y concesionarios al hacer clic fuera de ellos
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        modelosDropdownRef.current &&
+        !modelosDropdownRef.current.contains(event.target)
+      ) {
+        setShowModelosDropdown(false);
+        setActiveButton(""); // Restablecer el botón activo al cerrar el dropdown de modelos
+      }
+      if (
+        concesionariosDropdownRef.current &&
+        !concesionariosDropdownRef.current.contains(event.target)
+      ) {
+        setShowConcesionariosDropdown(false);
+        setActiveButton(""); // Restablecer el botón activo al cerrar el dropdown de concesionarios
+      }
+    };
+
+    const handleScroll = () => {
+      setShowModelosDropdown(false); // Cerrar el dropdown de modelos al hacer scroll
+      setShowConcesionariosDropdown(false); // Cerrar el dropdown de concesionarios al hacer scroll
+      setActiveButton(""); // Restablecer el botón activo al hacer scroll
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // Funciones para manejar los dropdowns
   const toggleModelosDropdown = () => {
     // Si abrimos el dropdown de modelos, cerramos el de concesionarios
@@ -107,27 +141,6 @@ const Navbar = () => {
     }
   };
 
-  /*   // Funciones para manejar los botones del menú derecho
-  const handlePostVentaClick = (e) => {
-    e.preventDefault();
-    // Cerrar dropdowns si están abiertos
-    if (showModelosDropdown) setShowModelosDropdown(false);
-    if (showConcesionariosDropdown) setShowConcesionariosDropdown(false);
-
-    // Cambiar el botón activo
-    setActiveButton(activeButton === "postVenta" ? "" : "postVenta");
-  };
-
-  const handleNuevaKiaClick = (e) => {
-    e.preventDefault();
-    // Cerrar dropdowns si están abiertos
-    if (showModelosDropdown) setShowModelosDropdown(false);
-    if (showConcesionariosDropdown) setShowConcesionariosDropdown(false);
-
-    // Cambiar el botón activo
-    setActiveButton(activeButton === "nuevaKia" ? "" : "nuevaKia");
-  }; */
-
   // Funciones para manejar las opciones
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
@@ -148,6 +161,16 @@ const Navbar = () => {
 
   const toggleMobileSubMenu = (menu) => {
     setMobileSubMenu(mobileSubMenu === menu ? "" : menu);
+  };
+
+  // Función para manejar clics en los enlaces
+  const handleLinkClick = (e) => {
+    if (e.target.closest(".filtro-link")) {
+      return; // No cerrar si es un enlace de filtro
+    }
+    setShowModelosDropdown(false); // Cerrar el dropdown de modelos
+    setShowConcesionariosDropdown(false); // Cerrar el dropdown de concesionarios
+    setMobileMenuOpen(false); // Cerrar el menú móvil
   };
 
   // Determinar si algún dropdown está activo para cambiar el estilo del navbar
@@ -229,10 +252,13 @@ const Navbar = () => {
 
             {/* Posicionar el dropdown de Concesionarios debajo de su botón */}
             {showConcesionariosDropdown && (
-              <div className="relative top-full left-0 w-full">
+              <div
+                className="relative top-full left-0 w-full"
+                ref={concesionariosDropdownRef}>
                 <ConcesionariosDropdown
                   activeOption={activeConcesionariosOption}
                   onOptionClick={handleConcesionariosOptionClick}
+                  onLinkClick={handleLinkClick}
                 />
               </div>
             )}
@@ -308,17 +334,19 @@ const Navbar = () => {
         autos={autos}
         camionetasSuv={camionetasSuv}
         utilitarios={utilitarios}
+        onLinkClick={handleLinkClick}
       />
 
       {/* Usar el componente ModelosDropdown para desktop */}
       {showModelosDropdown && (
-        <div className="hidden md:block">
+        <div className="hidden md:block" ref={modelosDropdownRef}>
           <ModelosDropdown
             activeFilter={activeFilter}
             onFilterClick={handleFilterClick}
             autos={autos}
             camionetasSuv={camionetasSuv}
             utilitarios={utilitarios}
+            onLinkClick={handleLinkClick}
           />
         </div>
       )}
