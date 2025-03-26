@@ -64,6 +64,12 @@ import heroVideoSedanMobile from "../assets/videos/sedan-hero-mobile.mp4";
 import heroVideoCrossDesktop from "../assets/videos/cross-hero-desktop.mp4";
 import heroVideoCrossMobile from "../assets/videos/cross-hero-mobile.mp4";
 
+import sedanEtiqueta from "../assets/etiquetas/etiqueta-sedan.pdf";
+import crossEtiqueta from "../assets/etiquetas/etiqueta-cross.pdf";
+
+import sedanFichas from "../assets/fichas/ficha-sedan.pdf";
+import crossFichas from "../assets/fichas/ficha-cross.pdf";
+
 /**
  * Centralized image mapping for all car models
  * Organized by model (sedan/cross) and category
@@ -104,6 +110,8 @@ export const imageMap = {
       desktop: heroVideoSedanDesktop,
       mobile: heroVideoSedanMobile,
     },
+    etiqueta: sedanEtiqueta,
+    fichas: sedanFichas,
   },
   cross: {
     carousel: {
@@ -151,6 +159,8 @@ export const imageMap = {
       back: crossBack,
       side: crossSide,
     },
+    etiqueta: crossEtiqueta,
+    fichas: crossFichas,
   },
 };
 

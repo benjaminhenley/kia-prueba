@@ -14,16 +14,16 @@ export const carMenuOptions = [
     text: "Folletos",
     link: "/folletos",
   },
-  {
-    id: "energy-efficiency",
-    icon: CarDropdownIcons.energy,
-    text: "Eficiencia energética",
-    link: "/eficiencia-energetica",
-  },
-  {
-    id: "promotions",
-    icon: CarDropdownIcons.promotions,
-    text: "Promociones",
-    link: "/promociones",
-  },
+  // {
+  //   id: "energy-efficiency",
+  //   icon: CarDropdownIcons.energy,
+  //   text: "Eficiencia energética",
+  //   link: "/eficiencia-energetica",
+  // },
+  // {
+  //   id: "promotions",
+  //   icon: CarDropdownIcons.promotions,
+  //   text: "Promociones",
+  //   link: "/promociones",
+  // },
 ];

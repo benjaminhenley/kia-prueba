@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import MenuIcons from "../Icons/CarDropdownIcons";
-import { carMenuOptions } from "../../Data/menu";
 
-const ModelTabSelector = ({ activeTab, onTabChange }) => {
+const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef(null);
   const buttonRef = useRef(null);
@@ -28,6 +27,32 @@ const ModelTabSelector = ({ activeTab, onTabChange }) => {
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
+
+  // Map the icon names to their components
+  const getIcon = (iconId) => {
+    const iconMap = {
+      "technical-sheet": MenuIcons.car,
+      brochures: MenuIcons.brochure,
+      etiqueta: MenuIcons.brochure,
+      fichas: MenuIcons.car,
+    };
+    return iconMap[iconId] || MenuIcons.car; // Fallback to car icon
+  };
+
+  // Convert menu object to array for mapping
+  const menuItems = menu
+    ? Object.entries(menu).map(([key, item]) => ({
+        id: item.id,
+        text:
+          key === "etiqueta"
+            ? "Etiqueta"
+            : key === "fichas"
+            ? "Ficha técnica"
+            : item.id,
+        link: item.link,
+        icon: getIcon(item.id),
+      }))
+    : [];
 
   return (
     <div className="bg-[#05141f] text-white">
@@ -91,25 +116,35 @@ const ModelTabSelector = ({ activeTab, onTabChange }) => {
               ref={popupRef}
               className="absolute top-full right-0 mt-2 bg-white shadow-lg rounded-md z-50 w-56 sm:w-64 overflow-hidden"
               role="menu">
-              {/* Menu items mapped from data */}
+              {/* Menu items mapped from the model's menu */}
               <div>
-                {carMenuOptions.map((option, index) => (
-                  <a
-                    key={option.id}
-                    href={option.link}
-                    className={`flex items-center p-3 sm:p-4 text-gray-800 hover:bg-gray-100 ${
-                      index < carMenuOptions.length - 1
-                        ? "border-b border-gray-100"
-                        : ""
-                    }`}>
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4 flex items-center justify-center">
-                      {option.icon}
-                    </div>
-                    <span className="text-xs sm:text-sm md:text-base font-medium">
-                      {option.text}
-                    </span>
-                  </a>
-                ))}
+                {menuItems.length > 0 ? (
+                  menuItems.map((option, index) => (
+                    <a
+                      key={option.id}
+                      href={option.link}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center p-3 sm:p-4 text-gray-800 hover:bg-gray-100 ${
+                        index < menuItems.length - 1
+                          ? "border-b border-gray-100"
+                          : ""
+                      }`}
+                      onClick={() => setShowPopup(false)}>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4 flex items-center justify-center">
+                        {option.icon}
+                      </div>
+                      <span className="text-xs sm:text-sm md:text-base font-medium">
+                        {option.text}
+                      </span>
+                    </a>
+                  ))
+                ) : (
+                  <div className="p-4 text-gray-500 text-center">
+                    No hay documentos disponibles
+                  </div>
+                )}
               </div>
             </div>
           )}

@@ -14,6 +14,10 @@ export const k3Sedan = {
   name: "K3 Sedán",
   tagline: "Más allá de lo posible",
   heroImage: "/images/placeholder-sedan-hero.jpg",
+  menu: {
+    etiqueta: { id: "brochures", link: imageMap.sedan.etiqueta },
+    fichas: { id: "technical-sheet", link: imageMap.sedan.fichas },
+  },
   heroVideo: imageMap.sedan.heroVideo,
   heroInfo: {
     stars: {
@@ -303,6 +307,10 @@ export const k3Cross = {
   tagline: "Mas allá de lo posible",
   heroImage: "/images/placeholder-cross-hero.jpg",
   heroVideo: imageMap.cross.heroVideo,
+  menu: {
+    etiqueta: { id: "brochures", link: imageMap.cross.etiqueta },
+    fichas: { id: "technical-sheet", link: imageMap.cross.fichas },
+  },
   heroInfo: {
     stars: {
       icon: HeroIcons.stars,

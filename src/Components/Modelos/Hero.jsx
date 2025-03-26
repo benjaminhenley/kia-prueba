@@ -113,7 +113,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
         {/* Play button overlay - only shown if video is available */}
         {!hasVideoError && (
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center z-20">
             <button
               onClick={handlePlayClick}
               className="w-20 h-20 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
@@ -154,9 +154,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
         )}
       </div>
       {/* Text Overlay */}
-      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute bg-black bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex  p-2 text-white mx-auto">
+      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute bg-black bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex p-2 text-white mx-auto z-10 pointer-events-none">
         <div className="max-w-screen-2xl mx-auto w-full py-4 px-4 md:px-20">
-          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full py-4">
+          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full py-4 pointer-events-auto">
             <div className="flex flex-col px-4 relative">
               {/* Decorative border line */}
               <div className="absolute left-0 h-full w-0.5 bg-gray-500"></div>

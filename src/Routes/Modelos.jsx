@@ -37,7 +37,11 @@ const Modelos = () => {
       />
 
       {/* Tabs Navigation */}
-      <TabSelector activeTab={activeTab} onTabChange={handleTabChange} />
+      <TabSelector
+        activeTab={activeTab}
+        menu={model.menu}
+        onTabChange={handleTabChange}
+      />
 
       {/* Content based on active tab */}
       <div className="mx-auto w-full">
