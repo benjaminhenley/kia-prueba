@@ -60,7 +60,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
         <div className="flex gap-2 xs:gap-4 sm:gap-8">
           <div className="relative">
             <button
-              className={`py-1 sm:py-2 text-[1rem] sm:text-sm md:text-base font-semibold focus:outline-none ${
+              className={`py-2.5 sm:py-2 text-[1rem] sm:text-sm md:text-base font-semibold focus:outline-none ${
                 activeTab === "characteristics" ? "text-white" : "text-gray-400"
               }`}
               onClick={() => onTabChange("characteristics")}>
@@ -73,7 +73,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
 
           <div className="relative">
             <button
-              className={`py-1 sm:py-2 text-[1rem] sm:text-sm md:text-base font-semibold focus:outline-none ${
+              className={`py-2.5 sm:py-2 text-[1rem] sm:text-sm md:text-base font-semibold focus:outline-none ${
                 activeTab === "specifications" ? "text-white" : "text-gray-400"
               }`}
               onClick={() => onTabChange("specifications")}>

@@ -23,7 +23,7 @@ export const k3Sedan = {
     stars: {
       icon: HeroIcons.stars,
       title: "Stars",
-      description: "5 <br/> Estrellas <br/> Latin NCAP",
+      description: "5 Estrellas Latin <br/> NCAP",
     },
     airbag: {
       icon: HeroIcons.airbag,
@@ -33,17 +33,17 @@ export const k3Sedan = {
     adas: {
       icon: HeroIcons.adas,
       title: "ADAS",
-      description: "Asistencias <br/> Avanzadas a <br/> la conducción",
+      description: "Asistencias Avanzadas <br/> a la conducción",
     },
     radio: {
       icon: HeroIcons.radio,
       title: "Radio",
-      description: "Radio 10,25'' <br/> con conectividad <br/> inalámbrica",
+      description: "Radio 10,25' con <br/> conectividad inalámbrica",
     },
     roof: {
       icon: HeroIcons.roof,
       title: "Roof",
-      description: "Techo solar <br/> OneTouch <br/> + Safety",
+      description: "Techo solar <br/> OneTouch + Safety",
     },
   },
   sections: {

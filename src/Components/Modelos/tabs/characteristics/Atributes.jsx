@@ -3,7 +3,7 @@ import { formatTextWithBold } from "../../../../utils/textFormatter";
 
 const Atributes = ({ content }) => {
   return (
-    <section className="py-10 sm:py-20 bg-[#F8F8F8]">
+    <section className="py-10 md:py-20 bg-[#F8F8F8]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           <div className="flex flex-col justify-start">

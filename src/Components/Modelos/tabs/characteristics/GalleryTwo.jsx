@@ -12,9 +12,9 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
   return (
     <section className={` ${bgColor ? bgColor + " text-white" : ""}`}>
       <div className="container mx-auto sm:px-6">
-        <h4 className="mb-3 sm:mb-4">{content.category}</h4>
-        <h2 className="font-bold mb-3 sm:mb-6">{content.title}</h2>
-        <h5 className="mb-6">{content.description}</h5>
+        <h4 className="mb-2 md:mb-3">{content.category}</h4>
+        <h2 className="font-bold mb-4 md:mb-5">{content.title}</h2>
+        <h5 className="mb-8 md:mb-16">{content.description}</h5>
 
         {/* Mobile Slider View */}
         <div className="block lg:hidden">
@@ -31,7 +31,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
               {/* First image takes up 2/3 of height */}
               <div className="row-span-2 overflow-hidden">
                 <img
-                  src={content.images[0].src}
+                  src={content.images[0].src.desktop}
                   alt={content.images[0].alt}
                   className="w-full h-full object-cover cursor-pointer"
                   onClick={() => onImageClick(content.images[0])}
@@ -42,7 +42,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
               <div className="grid grid-cols-2 overflow-hidden">
                 <div className="overflow-hidden">
                   <img
-                    src={content.images[1].src}
+                    src={content.images[1].src.desktop}
                     alt={content.images[1].alt}
                     className="w-full h-full object-cover cursor-pointer"
                     onClick={() => onImageClick(content.images[1])}
@@ -50,7 +50,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
                 </div>
                 <div className="overflow-hidden">
                   <img
-                    src={content.images[2].src}
+                    src={content.images[2].src.desktop}
                     alt={content.images[2].alt}
                     className="w-full h-full object-cover cursor-pointer"
                     onClick={() => onImageClick(content.images[2])}
@@ -65,7 +65,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
               <div className="grid grid-cols-2 overflow-hidden">
                 <div className="overflow-hidden">
                   <img
-                    src={content.images[3].src}
+                    src={content.images[3].src.desktop}
                     alt={content.images[3].alt}
                     className="w-full h-full object-cover cursor-pointer"
                     onClick={() => onImageClick(content.images[3])}
@@ -73,7 +73,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
                 </div>
                 <div className="overflow-hidden">
                   <img
-                    src={content.images[4].src}
+                    src={content.images[4].src.desktop}
                     alt={content.images[4].alt}
                     className="w-full h-full object-cover cursor-pointer"
                     onClick={() => onImageClick(content.images[4])}
@@ -84,7 +84,7 @@ const GalleryLayoutTwo = ({ content, onImageClick, bgColor }) => {
               {/* Bottom row with one wide image */}
               <div className="overflow-hidden">
                 <img
-                  src={content.images[5].src}
+                  src={content.images[5].src.desktop}
                   alt={content.images[5].alt}
                   className="w-full h-full object-cover cursor-pointer"
                   onClick={() => onImageClick(content.images[5])}

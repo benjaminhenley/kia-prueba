@@ -210,27 +210,54 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-20 w-0.5 bg-gray-500  mx-4 md:mx-16"></div>
 
-              <h2 className="font-light mb-1">All-new</h2>
-              <h1 className="font-bold">{title}</h1>
-              <h3 className="mt-2 font-light">{tagline}</h3>
+              <h2 className="font-normal mb-1">All-new</h2>
+              <h1 className="font-bold mb-1">{title}</h1>
+              <h3 className=" font-normal">{tagline}</h3>
               <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>
             </div>
 
             {/* Hero Icons - Has dark overlay on both mobile and desktop */}
             {heroInfo && (
-              <div className="py-4 px-4 md:px-20 flex items-start justify-between md:justify-center gap-2 md:gap-10 w-full lg:w-fit bg-black bg-opacity-50 md:bg-transparent">
-                {Object.entries(heroInfo).map(([key, item]) => (
-                  <div
-                    key={key}
-                    className="flex flex-col items-start text-center md:gap-5 ">
-                    <div className="grid place-items-center h-6 w-full">
-                      {renderIcon(key, "w-full h-6 md:h-10")}
-                    </div>
-                    <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center">
-                      {item.description.replace(/<br\/>/g, "\n")}
-                    </h6>
+              <div className="py-4 px-4 md:px-20 bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit max-w-[628px]">
+                <div className="flex flex-wrap md:flex-nowrap md:justify-center w-full">
+                  {/* Top row - first 3 items */}
+                  <div className="w-full flex justify-between mb-6 md:mb-0 md:justify-start">
+                    {Object.entries(heroInfo)
+                      .slice(0, 3)
+                      .map(([key, item]) => (
+                        <div
+                          key={key}
+                          className="flex flex-col items-center text-center md:w-[30%] md:mx-5 w-fit">
+                          <div className="grid place-items-center h-8 w-full md:h-10">
+                            {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
+                          </div>
+                          <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center h-12 md:h-14 flex items-start justify-center">
+                            {item.description.replace(/<br\/>/g, "\n")}
+                          </h6>
+                        </div>
+                      ))}
                   </div>
-                ))}
+
+                  {/* Bottom row - remaining items */}
+                  {Object.entries(heroInfo).length > 3 && (
+                    <div className="flex justify-evenly md:justify-start md:mx-auto w-fit">
+                      {Object.entries(heroInfo)
+                        .slice(3)
+                        .map(([key, item]) => (
+                          <div
+                            key={key}
+                            className="flex flex-col items-center text-center md:w-auto md:mx-5">
+                            <div className="grid place-items-center h-8 w-full md:h-10">
+                              {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
+                            </div>
+                            <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center h-12 md:h-14 flex items-start justify-center">
+                              {item.description.replace(/<br\/>/g, "\n")}
+                            </h6>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>

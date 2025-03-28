@@ -49,14 +49,14 @@ const FeatureSummary = ({ features }) => {
   const isFourItems = features && features.length === 4;
 
   return (
-    <section className="w-full bg-white px-4 py-5 md:px-0">
+    <section className="w-full bg-white px-4 py-5 lg:py-0 md:px-0 ">
       {/* Mobile View - Stacked List */}
       <div className="lg:hidden">
         {features &&
           features.map((item, index) => (
             <div
               key={item.id}
-              className={`px-0 py-4 md:px-6  border-b border-gray-200 ${
+              className={`px-0 py-4 md:px-6 border-b border-gray-200 ${
                 index + 1 === features.length ? "border-b-0" : ""
               }`}>
               <div className="flex items-center">
@@ -93,20 +93,20 @@ const FeatureSummary = ({ features }) => {
                     key={item.id}
                     className={`${
                       key === 0 && "lg:border-l"
-                    } bg-white py-8 md:py-10 lg:py-12 text-center border-r border-gray-200 shadow-sm hover:shadow-md transition-shadow`}>
+                    } bg-white py-8 md:py-10 lg:py-16 text-center border-r border-gray-200 shadow-sm hover:shadow-md transition-shadow`}>
                     <div className="">
-                      <div className="w-14 h-14 md:w-16 md:h-16 mx-auto grid place-items-center">
-                        {renderIcon(item.id, "w-3/4 h-3/4")}
+                      <div className="w-14 h-14 md:w-12 md:h-12 mx-auto grid place-items-center">
+                        {renderIcon(item.id, "w-full h-full")}
                       </div>
                     </div>
                     {isFourItems && (
-                      <h3 className="text-lg md:text-xl font-bold">
+                      <h3 className="text-lg md:text-xl font-bold mb-2">
                         {item.title}
                       </h3>
                     )}
-                    <p className="text-gray-600">
+                    <h5 className="text-[#37434C]">
                       {renderWithLineBreaks(item.value)}
-                    </p>
+                    </h5>
                   </div>
                 ))}
             </div>

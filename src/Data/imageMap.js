@@ -20,6 +20,11 @@ import sedanExteriorRear from "../assets/img/models/sedan/exterior/sedan-exterio
 import sedanExteriorWheel from "../assets/img/models/sedan/exterior/sedan-exterior-3.webp";
 import sedanExteriorMirror from "../assets/img/models/sedan/exterior/sedan-exterior-4.webp";
 import sedanExteriorGrille from "../assets/img/models/sedan/exterior/sedan-exterior-5.webp";
+import sedanExteriorFrontMobile from "../assets/img/models/sedan/exterior/sedan-exterior-1-mobile.webp";
+import sedanExteriorRearMobile from "../assets/img/models/sedan/exterior/sedan-exterior-2-mobile.webp";
+import sedanExteriorWheelMobile from "../assets/img/models/sedan/exterior/sedan-exterior-3-mobile.webp";
+import sedanExteriorMirrorMobile from "../assets/img/models/sedan/exterior/sedan-exterior-4-mobile.webp";
+import sedanExteriorGrilleMobile from "../assets/img/models/sedan/exterior/sedan-exterior-5-mobile.webp";
 
 // Cross exterior images
 import crossExteriorFront from "../assets/img/models/cross/exterior/cross-exterior-1.webp";
@@ -36,12 +41,20 @@ import crossWhite from "../assets/img/models/cross/colors/cross-white.webp";
 import crossBlue from "../assets/img/models/cross/colors/cross-blue.webp";
 
 // Sedan interior images
+import sedanInteriorSeats from "../assets/img/models/sedan/interior/sedan-interior-1.webp";
 import sedanInteriorPanel from "../assets/img/models/sedan/interior/sedan-interior-2.webp";
 import sedanInteriorKeys from "../assets/img/models/sedan/interior/sedan-interior-3.webp";
 import sedanInteriorAirConditioner from "../assets/img/models/sedan/interior/sedan-interior-4.webp";
 import sedanInteriorTrunk from "../assets/img/models/sedan/interior/sedan-interior-6.webp";
-import sedanInteriorSeats from "../assets/img/models/sedan/interior/sedan-interior-1.webp";
 import sedanInteriorGears from "../assets/img/models/sedan/interior/sedan-interior-5.webp";
+
+import sedanInteriorPanelMobile from "../assets/img/models/sedan/interior/sedan-interior-2-mobile.webp";
+import sedanInteriorKeysMobile from "../assets/img/models/sedan/interior/sedan-interior-3-mobile.webp";
+import sedanInteriorAirConditionerMobile from "../assets/img/models/sedan/interior/sedan-interior-4-mobile.webp";
+import sedanInteriorTrunkMobile from "../assets/img/models/sedan/interior/sedan-interior-6-mobile.webp";
+import sedanInteriorSeatsMobile from "../assets/img/models/sedan/interior/sedan-interior-1-mobile.webp";
+import sedanInteriorGearsMobile from "../assets/img/models/sedan/interior/sedan-interior-5-mobile.webp";
+
 // Cross interior images
 import crossInteriorSeats from "../assets/img/models/cross/interior/cross-interior-5.webp";
 import crossInteriorPanel from "../assets/img/models/cross/interior/cross-interior-1.webp";
@@ -94,19 +107,52 @@ export const imageMap = {
       },
     },
     exterior: {
-      front: sedanExteriorFront,
-      rear: sedanExteriorRear,
-      wheel: sedanExteriorWheel,
-      mirror: sedanExteriorMirror,
-      grille: sedanExteriorGrille,
+      front: {
+        desktop: sedanExteriorFront,
+        mobile: sedanExteriorFrontMobile,
+      },
+      rear: {
+        desktop: sedanExteriorRear,
+        mobile: sedanExteriorRearMobile,
+      },
+      wheel: {
+        desktop: sedanExteriorWheel,
+        mobile: sedanExteriorWheelMobile,
+      },
+      mirror: {
+        desktop: sedanExteriorMirror,
+        mobile: sedanExteriorMirrorMobile,
+      },
+      grille: {
+        desktop: sedanExteriorGrille,
+        mobile: sedanExteriorGrilleMobile,
+      },
     },
     interior: {
-      panel: sedanInteriorPanel,
-      keys: sedanInteriorKeys,
-      airConditioner: sedanInteriorAirConditioner,
-      trunk: sedanInteriorTrunk,
-      gears: sedanInteriorGears,
-      seats: sedanInteriorSeats,
+      panel: {
+        desktop: sedanInteriorPanel,
+        mobile: sedanInteriorPanelMobile,
+      },
+      keys: {
+        desktop: sedanInteriorKeys,
+        mobile: sedanInteriorKeysMobile,
+      },
+      airConditioner: {
+        desktop: sedanInteriorAirConditioner,
+        mobile: sedanInteriorAirConditionerMobile,
+      },
+      trunk: {
+        desktop: sedanInteriorTrunk,
+        mobile: sedanInteriorTrunkMobile,
+      },
+      gears: {
+        desktop: sedanInteriorGears,
+        mobile: sedanInteriorGearsMobile,
+      },
+      seats: {
+        desktop: sedanInteriorSeats,
+        mobile: sedanInteriorSeatsMobile,
+      },
     },
     attributes: {
       desktop: sedanAtributesDesktop,
@@ -135,18 +181,48 @@ export const imageMap = {
       },
     },
     exterior: {
-      front: crossExteriorFront,
-      rear: crossExteriorRear,
-      wheel: crossExteriorWheel,
-      mirror: crossExteriorMirror,
-      grille: crossExteriorGrille,
+      front: {
+        desktop: crossExteriorFront,
+        mobile: crossExteriorFront,
+      },
+      rear: {
+        desktop: crossExteriorRear,
+        mobile: crossExteriorRear,
+      },
+      wheel: {
+        desktop: crossExteriorWheel,
+        mobile: crossExteriorWheel,
+      },
+      mirror: {
+        desktop: crossExteriorMirror,
+        mobile: crossExteriorMirror,
+      },
+      grille: {
+        desktop: crossExteriorGrille,
+        mobile: crossExteriorGrille,
+      },
     },
     interior: {
-      seats: crossInteriorSeats,
-      panel: crossInteriorPanel,
-      keys: crossInteriorKeys,
-      airConditioner: crossInteriorAirConditioner,
-      box: crossInteriorBox,
+      seats: {
+        desktop: crossInteriorSeats,
+        mobile: crossInteriorSeats,
+      },
+      panel: {
+        desktop: crossInteriorPanel,
+        mobile: crossInteriorPanel,
+      },
+      keys: {
+        desktop: crossInteriorKeys,
+        mobile: crossInteriorKeys,
+      },
+      airConditioner: {
+        desktop: crossInteriorAirConditioner,
+        mobile: crossInteriorAirConditioner,
+      },
+      box: {
+        desktop: crossInteriorBox,
+        mobile: crossInteriorBox,
+      },
     },
     colors: {
       blue: crossBlue,
