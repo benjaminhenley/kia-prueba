@@ -3,9 +3,9 @@ import { formatTextWithBold } from "../../../../utils/textFormatter";
 
 const Atributes = ({ content }) => {
   return (
-    <section className="py-12 sm:py-20 bg-[#F8F8F8]">
+    <section className="py-10 sm:py-20 bg-[#F8F8F8]">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           <div className="flex flex-col justify-start">
             <h4 className="font-normal mb-4">{content.category}</h4>
             <h2 className="font-semibold mb-3">{content.subtitle}</h2>
@@ -23,11 +23,16 @@ const Atributes = ({ content }) => {
 
           <div className="flex items-center flex-col w-full">
             <img
-              src={content.image}
+              src={content.image.desktop}
               alt={content.title}
-              className="max-w-full h-auto object-fill w-full"
+              className="max-w-full hidden md:flex object-fill w-full"
             />
-            <div className="mt-4 order-3">
+            <img
+              src={content.image.mobile}
+              alt={content.title}
+              className="max-w-full md:hidden object-fill w-full"
+            />
+            <div className="mt-5 order-3">
               <h6 className="font-normal text-[#697279]">
                 {content.description}
               </h6>

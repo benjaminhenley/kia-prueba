@@ -49,19 +49,21 @@ const FeatureSummary = ({ features }) => {
   const isFourItems = features && features.length === 4;
 
   return (
-    <section className="w-full bg-white px-2 md:px-0">
+    <section className="w-full bg-white px-4 py-5 md:px-0">
       {/* Mobile View - Stacked List */}
       <div className="lg:hidden">
         {features &&
-          features.map((item) => (
+          features.map((item, index) => (
             <div
               key={item.id}
-              className="px-2 md:px-6 py-3 border-b border-gray-200">
+              className={`px-0 py-4 md:px-6  border-b border-gray-200 ${
+                index + 1 === features.length ? "border-b-0" : ""
+              }`}>
               <div className="flex items-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 grid place-items-center text-gray-500">
-                  {renderIcon(item.id, "text-gray-500 w-3/4 h-3/4")}
+                  {renderIcon(item.id, "text-gray-500 w-full h-full")}
                 </div>
-                <div className="ml-2 sm:ml-4">
+                <div className="ml-1 sm:ml-4">
                   {isFourItems && (
                     <h4 className="mb-1 font-semibold text-[#37434C]">
                       {item.title}

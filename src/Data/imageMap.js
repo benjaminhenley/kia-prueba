@@ -50,8 +50,11 @@ import crossInteriorAirConditioner from "../assets/img/models/cross/interior/cro
 import crossInteriorKeys from "../assets/img/models/cross/interior/cross-interior-4.webp";
 
 // Atributes images
-import sedanAtributes from "../assets/img/models/sedan/atributes/sedan-atributes.webp";
-import crossAtributes from "../assets/img/models/cross/atributes/cross-atributes.webp";
+import sedanAtributesDesktop from "../assets/img/models/sedan/atributes/sedan-atributes.webp";
+import sedanAtributesMobile from "../assets/img/models/sedan/atributes/sedan-atributes-mobile.webp";
+
+import crossAtributesDesktop from "../assets/img/models/cross/atributes/cross-atributes.webp";
+import crossAtributesMobile from "../assets/img/models/cross/atributes/cross-atributes.webp";
 
 // Cross images
 import crossBack from "../assets/img/models/cross/cross-back.webp";
@@ -105,7 +108,10 @@ export const imageMap = {
       gears: sedanInteriorGears,
       seats: sedanInteriorSeats,
     },
-    attributes: sedanAtributes,
+    attributes: {
+      desktop: sedanAtributesDesktop,
+      mobile: sedanAtributesMobile,
+    },
     heroVideo: {
       desktop: heroVideoSedanDesktop,
       mobile: heroVideoSedanMobile,
@@ -149,7 +155,10 @@ export const imageMap = {
       silver: crossSilver,
       white: crossWhite,
     },
-    attributes: crossAtributes,
+    attributes: {
+      desktop: crossAtributesDesktop,
+      mobile: crossAtributesMobile,
+    },
     heroVideo: {
       desktop: heroVideoCrossDesktop,
       mobile: heroVideoCrossMobile,

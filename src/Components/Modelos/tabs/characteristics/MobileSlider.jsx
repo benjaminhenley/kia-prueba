@@ -63,19 +63,19 @@ export default function MobileSlider({ content, onImageClick }) {
       </div>
 
       {/* Text content with smooth fade transition */}
-      <div className="transition-opacity duration-500 ease-in-out">
+      <div className="transition-opacity duration-500 ease-in-out ">
         {/* Decorative line above title */}
         <div className="w-10 h-[2px] bg-current mt-8 mb-4"></div>
 
         {/* Feature title below mobile image */}
-        <h3 className="text-xl font-medium mb-2">
+        <h3 className=" font-medium mb-2 h-[46px]">
           {content.images[currentIndex]?.title || ""}
         </h3>
 
         {/* Description for mobile view */}
-        <p className="text-sm mb-4">
+        <h6 className="h-[56px] mb-4">
           {formatTextWithBold(content.images[currentIndex]?.description || "")}
-        </p>
+        </h6>
       </div>
 
       {/* Equal-sized Navigation Dots */}
@@ -84,7 +84,7 @@ export default function MobileSlider({ content, onImageClick }) {
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-8 h-2 rounded-sm transition-all duration-500 ease-in-out touch-manipulation ${
+            className={`w-8 h-1 transition-all duration-500 ease-in-out touch-manipulation ${
               content.category === "Exterior" ? "bg-[#FFFFFF]" : "bg-[#05141F]"
             } ${index === currentIndex ? "" : "bg-opacity-50"}`}
             aria-label={`Go to slide ${index + 1}`}

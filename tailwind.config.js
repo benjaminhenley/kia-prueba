@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         "midnight-black": "#05141F",
         "kia-polar-white": "#FFF",
-        "kia-gray": "#697279"
+        "kia-gray": "#697279",
       },
       backgroundImage: {
         "nav-gradient":
@@ -34,8 +34,8 @@ module.exports = {
       addBase({
         // H1 Headline (36px/38px on desktop, 18px/20px on mobile)
         h1: {
-          fontSize: "1.125rem", // 18px
-          lineHeight: "1.25rem", // 20px
+          fontSize: "1.5rem", // 24px
+          lineHeight: "1.625rem", // 20px
           fontWeight: 400, // Default to regular weight
           "@screen md": {
             fontSize: "2.25rem", // 36px
@@ -45,8 +45,8 @@ module.exports = {
 
         // H2 Title (30px/32px on desktop, 16px/18px on mobile)
         h2: {
-          fontSize: "1rem", // 16px
-          lineHeight: "1.125rem", // 18px
+          fontSize: "1.25rem", // 20px
+          lineHeight: "1.375rem", // 22px
           fontWeight: 400,
           "@screen md": {
             fontSize: "1.875rem", // 30px
@@ -56,8 +56,8 @@ module.exports = {
 
         // H3 Subtitle (24px/26px on desktop, 14px/16px on mobile)
         h3: {
-          fontSize: "0.875rem", // 14px
-          lineHeight: "1rem", // 16px
+          fontSize: "1.125rem", // 18px
+          lineHeight: "1.25rem", // 20px
           fontWeight: 400,
           "@screen md": {
             fontSize: "1.5rem", // 24px
@@ -67,8 +67,8 @@ module.exports = {
 
         // H4 (T1 Body large) (18px/20px on desktop, 14px/16px on mobile)
         h4: {
-          fontSize: "0.875rem", // 14px
-          lineHeight: "1rem", // 16px
+          fontSize: "1rem", // 16px
+          lineHeight: "1.125rem", // 18px
           fontWeight: 400,
           "@screen md": {
             fontSize: "1.125rem", // 18px
@@ -78,8 +78,8 @@ module.exports = {
 
         // H5 (T2 Body medium) (16px/18px on desktop, 12px/14px on mobile)
         h5: {
-          fontSize: "0.75rem", // 12px
-          lineHeight: "0.875rem", // 14px
+          fontSize: "0.875rem", // 14px
+          lineHeight: "1rem", // 16px
           fontWeight: 400,
           "@screen md": {
             fontSize: "1rem", // 16px
@@ -89,8 +89,8 @@ module.exports = {
 
         // H6 (T3 Body small) (14px/16px on desktop, 10px/12px on mobile)
         h6: {
-          fontSize: "0.625rem", // 10px
-          lineHeight: "0.75rem", // 12px
+          fontSize: "0.75rem", // 12px
+          lineHeight: "0.875rem", // 14px
           fontWeight: 400,
           "@screen md": {
             fontSize: "0.875rem", // 14px

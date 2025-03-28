@@ -11,7 +11,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(true);
   const videoRef = useRef(null);
+  const isMobile = useRef(window.innerWidth < 768);
 
   // Reset video state when videoSrc changes (user selects different car)
   useEffect(() => {
@@ -23,11 +25,40 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
       setIsVideoLoaded(false);
       setIsPlaying(false);
       setHasVideoError(false);
+      setShowPlayButton(true);
 
       // Force the video element to reload
       videoRef.current.load();
     }
   }, [videoSrc]);
+
+  // Auto-play video on desktop when loaded
+  useEffect(() => {
+    if (videoRef.current && isVideoLoaded && !isMobile.current) {
+      const playPromise = videoRef.current.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            console.error("Autoplay was prevented:", error);
+            setIsPlaying(false);
+          });
+      }
+    }
+  }, [isVideoLoaded]);
+
+  // Set up listener for window resize to detect mobile/desktop
+  useEffect(() => {
+    const handleResize = () => {
+      isMobile.current = window.innerWidth < 768;
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const renderIcon = (icon, className) => {
     const icons = {
@@ -55,6 +86,10 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
             .then(() => {
               console.log("Video playback started successfully");
               setIsPlaying(true);
+              // Hide play button on mobile after clicking
+              if (isMobile.current) {
+                setShowPlayButton(false);
+              }
             })
             .catch((error) => {
               console.error("Play was prevented:", error);
@@ -68,7 +103,13 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   };
 
   const handleVideoLoaded = () => {
-    console.log("Video loaded successfully");
+    // Enable hardware acceleration to improve video quality
+    if (videoRef.current) {
+      videoRef.current.style.transform = "translateZ(0)";
+      videoRef.current.style.webkitTransform = "translateZ(0)";
+      // Force highest quality playback
+      videoRef.current.playbackQuality = "high";
+    }
     setIsVideoLoaded(true);
     setHasVideoError(false);
   };
@@ -86,28 +127,17 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
     <div className="relative w-full h-[calc(100vh-55px)] md:h-[calc(100vh-20px)] overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
-        {/* Fallback image - always rendered */}
-        {/* <img
-          src={image}
-          alt="Video fallback"
-          className={`w-full h-full object-cover transition-opacity duration-700 ${
-            showVideo ? "opacity-0" : "opacity-100"
-          }`}
-        /> */}
-
         {/* Video element - only rendered if we have a valid source */}
         {showVideo && (
           <div className="absolute inset-0 w-full">
             <video
               ref={videoRef}
-              className={`w-full h-full object-cover transition-opacity duration-700 ${
-                isVideoLoaded ? "opacity-60" : "opacity-0"
-              }`}
+              className="w-full h-full object-cover"
               muted
               playsInline
               loop
               preload="auto"
-              key={videoSrc.desktop + videoSrc.mobile} // Add key to force re-render when sources change
+              key={videoSrc.desktop + videoSrc.mobile}
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}>
               {/* Provide multiple source formats for better compatibility */}
@@ -128,9 +158,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
           </div>
         )}
 
-        {/* Play button overlay - only shown if video is available */}
-        {!hasVideoError && (
-          <div className="absolute inset-0 flex items-center justify-center z-20">
+        {/* Play button overlay - only shown if video is available and on mobile */}
+        {!hasVideoError && showPlayButton && (
+          <div className="absolute inset-0 flex items-center justify-center z-20 md:hidden">
             <button
               onClick={handlePlayClick}
               className="w-20 h-20 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
@@ -170,21 +200,25 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
           </div>
         )}
       </div>
-      {/* Text Overlay */}
-      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute bg-black bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex p-2 text-white mx-auto z-10 pointer-events-none">
-        <div className="max-w-screen-2xl mx-auto w-full py-4 px-4 md:px-20">
-          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full py-4 pointer-events-auto">
-            <div className="flex flex-col px-4 relative">
+
+      {/* Text Overlay - No dark background on mobile */}
+      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
+        <div className="max-w-screen-2xl mx-auto w-full md:py-4">
+          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full pointer-events-auto">
+            {/* Title section - No overlay on mobile */}
+            <div className="flex flex-col relative py-4 px-4 md:px-20">
               {/* Decorative border line */}
-              <div className="absolute left-0 h-full w-0.5 bg-gray-500"></div>
+              <div className="hidden md:block absolute left-0 h-10 md:h-20 w-0.5 bg-gray-500  mx-4 md:mx-16"></div>
+
               <h2 className="font-light mb-1">All-new</h2>
               <h1 className="font-bold">{title}</h1>
               <h3 className="mt-2 font-light">{tagline}</h3>
+              <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>
             </div>
 
-            {/* Hero Icons */}
+            {/* Hero Icons - Has dark overlay on both mobile and desktop */}
             {heroInfo && (
-              <div className="flex items-start justify-between md:justify-center gap-2 md:gap-10 w-full lg:w-fit">
+              <div className="py-4 px-4 md:px-20 flex items-start justify-between md:justify-center gap-2 md:gap-10 w-full lg:w-fit bg-black bg-opacity-50 md:bg-transparent">
                 {Object.entries(heroInfo).map(([key, item]) => (
                   <div
                     key={key}
@@ -192,7 +226,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                     <div className="grid place-items-center h-6 w-full">
                       {renderIcon(key, "w-full h-6 md:h-10")}
                     </div>
-                    <h6 className=" mt-2 font-normal whitespace-pre-line w-full text-center">
+                    <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center">
                       {item.description.replace(/<br\/>/g, "\n")}
                     </h6>
                   </div>
