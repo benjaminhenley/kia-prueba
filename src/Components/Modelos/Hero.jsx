@@ -140,19 +140,12 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
               key={videoSrc.desktop + videoSrc.mobile}
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}>
-              {/* Provide multiple source formats for better compatibility */}
+              {/* Proporciona múltiples formatos de fuente para mejor compatibilidad */}
               <source
-                src={videoSrc.mobile}
+                src={isMobile.current ? videoSrc.mobile : videoSrc.desktop}
                 type="video/mp4"
-                className="md:hidden"
               />
-              <source
-                src={videoSrc.desktop}
-                type="video/mp4"
-                className="hidden md:block"
-              />
-              {/* You can add more source formats if available */}
-              {/* <source src={videoSrc.replace('.mp4', '.webm')} type="video/webm" /> */}
+              {/* Puedes agregar más formatos de fuente si están disponibles */}
               Your browser does not support the video tag.
             </video>
           </div>
