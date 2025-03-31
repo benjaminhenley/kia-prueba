@@ -15,7 +15,6 @@ const Footer = () => {
   const [openModelos, setOpenModelos] = useState(false);
   const [openConcesionarios, setOpenConcesionarios] = useState(false);
   const [openPostVenta, setOpenPostVenta] = useState(false);
-  const [openNuevaKia, setOpenNuevaKia] = useState(false);
 
   // Función para alternar estado de acordeón
   const toggleAccordion = (section) => {
@@ -25,9 +24,7 @@ const Footer = () => {
       setOpenConcesionarios(!openConcesionarios);
     } else if (section === "postVenta") {
       setOpenPostVenta(!openPostVenta);
-    } else if (section === "nuevaKia") {
-      setOpenNuevaKia(!openNuevaKia);
-    }
+    } 
   };
 
   return (
@@ -199,16 +196,18 @@ const Footer = () => {
           {/* Nueva Kia */}
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
           <div className="w-full">
-            <h5
-              className="font-semibold text-kia-polar-white md:pb-7 md:hover:pb-[1px] cursor-pointer md:block transition-colors relative group"
-              onClick={() => toggleAccordion("nuevaKia")}>
-              <span className="relative inline-block">
-                Nueva Kia
-                <span className="absolute left-0 bottom-0 h-[0.5px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
-              </span>
-            </h5>
+            <a href='https://www.kia.com.ar/ourmovement/' target='_blank' rel='noreferrer'>
+              <h5
+                className="font-semibold text-kia-polar-white md:pb-7 md:hover:pb-[1px] cursor-pointer md:block transition-colors relative group"
+              >
+                <span className="relative inline-block">
+                  Nueva Kia
+                  <span className="absolute left-0 bottom-0 h-[0.5px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
+                </span>
+              </h5>
+            </a>
             <div
-              className={`${openNuevaKia ? "block" : "hidden"} md:block`}></div>
+              className={``}></div>
           </div>
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import promociones from '../../assets/img/inicio/promociones/desktop/Promociones.webp'
-import promocionesMobile from '../../assets/img/inicio/promociones/mobile/PromocionesMobile.webp'
 import concesionarios from '../../assets/img/inicio/promociones/Concesionarios.svg'
 import turno from '../../assets/img/inicio/promociones/Turno.svg'
 import postVenta from '../../assets/img/inicio/promociones/PostVenta.svg'
@@ -36,7 +35,7 @@ const Promociones = () => {
             <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer'>
               <button className="flex items-center text-xs fon-bold md:text-sm">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#05141F"/>
+                  <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#fff"/>
                 </svg>
                 Saber más
               </button>
@@ -50,7 +49,7 @@ const Promociones = () => {
           <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer' className="relative group">
             <button className="flex items-center text-sm font-bold">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#05141F"/>
+                  <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#fff"/>
                 </svg>
                 <span className="relative ml-1 group-hover:text-[#CDD0D2]">
                   Saber más
@@ -78,7 +77,7 @@ const Promociones = () => {
 
         {/* Turno Online */}
         <div className="bg-[#37434CCC] flex flex-col items-center justify-center p-4 md:p-8 text-[1rem] text-white min-h-[200px] relative group">
-          <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer' className="relative">
+          <a href='https://mkt.pilotsolution.net/kiaarg/postventa/' target='' rel='noreferrer' className="relative">
             <div className="mb-2 md:mb-4 flex items-center justify-center h-12">
               <img src={turno} alt='turno online' className="max-h-full" />
             </div>
