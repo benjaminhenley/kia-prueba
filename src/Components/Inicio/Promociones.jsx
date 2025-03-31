@@ -47,13 +47,13 @@ const Promociones = () => {
         <div className="relative p-6 md:py-14 md:px-20 text-white z-10 hidden lg:block">
           <h2 className="text-[1.875rem] font-bold mb-4">Promociones</h2>
           <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer' className="relative group">
-            <button className="flex items-center text-sm font-bold">
+            <button className="flex items-center text-sm font-bold transition-all duration-300 group-hover:text-[#CDD0D2]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#fff"/>
                 </svg>
-                <span className="relative ml-1 group-hover:text-[#CDD0D2]">
+                <span className="relative ml-1">
                   Saber más
-                  <span className="absolute left-0 bottom-[1px] h-[1px] bg-white group-hover:w-full group-hover:bg-[#CDD0D2]"></span>
+                  <span className="absolute left-0 bottom-[1px] h-[1px] bg-white group-hover:w-full group-hover:bg-[#CDD0D2] transition-all duration-300"></span>
                 </span>
             </button>
           </a>  
