@@ -196,12 +196,12 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
       {/* Text Overlay - No dark background on mobile */}
       <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
-        <div className="max-w-screen-2xl mx-auto w-full md:py-4">
-          <div className="relative flex flex-col lg:flex-row justify-between gap-5 h-full pointer-events-auto">
+        <div className="max-w-screen-2xl mx-auto w-full md:py-[30px]">
+          <div className="relative flex flex-col lg:flex-row justify-between h-full pointer-events-auto">
             {/* Title section - No overlay on mobile */}
-            <div className="flex flex-col relative py-4 px-4 md:px-20">
+            <div className="flex flex-col relative pl-4 md:pl-20 flex-shrink-0">
               {/* Decorative border line */}
-              <div className="hidden md:block absolute left-0 h-10 md:h-20 w-0.5 bg-gray-500  mx-4 md:mx-16"></div>
+              <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500  mx-4 md:mx-16"></div>
 
               <h2 className="font-normal mb-1">All-new</h2>
               <h1 className="font-bold mb-1">{title}</h1>
@@ -211,20 +211,23 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
             {/* Hero Icons - Has dark overlay on both mobile and desktop */}
             {heroInfo && (
-              <div className="py-4 px-4 md:px-20 bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit max-w-[628px]">
-                <div className="flex flex-wrap md:flex-nowrap md:justify-center w-full">
+              <div className="  bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit ">
+                <div className="flex flex-wrap md:flex-nowrap md:justify-center w-fit m-auto p-4 md:p-0">
                   {/* Top row - first 3 items */}
-                  <div className="w-full flex justify-between mb-6 md:mb-0 md:justify-start">
+                  <div className="w-full flex justify-between md:justify-start">
                     {Object.entries(heroInfo)
                       .slice(0, 3)
                       .map(([key, item]) => (
                         <div
                           key={key}
-                          className="flex flex-col items-center text-center md:w-[30%] md:mx-5 w-fit">
-                          <div className="grid place-items-center h-8 w-full md:h-10">
+                          className="flex flex-col items-center text-center  w-fit p-2 xl:p-4">
+                          <div className="flex justify-center items-end h-8 w-full md:h-10">
                             {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
                           </div>
-                          <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center h-12 md:h-14 flex items-start justify-center">
+                          <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
+                            {item.description_mobile.replace(/<br\/>/g, "\n")}
+                          </h6>
+                          <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
                             {item.description.replace(/<br\/>/g, "\n")}
                           </h6>
                         </div>
@@ -233,17 +236,20 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
                   {/* Bottom row - remaining items */}
                   {Object.entries(heroInfo).length > 3 && (
-                    <div className="flex justify-evenly md:justify-start md:mx-auto w-fit">
+                    <div className="flex justify-between md:justify-start md:mx-auto w-full md:w-fit">
                       {Object.entries(heroInfo)
                         .slice(3)
                         .map(([key, item]) => (
                           <div
                             key={key}
-                            className="flex flex-col items-center text-center md:w-auto md:mx-5">
-                            <div className="grid place-items-center h-8 w-full md:h-10">
+                            className="flex flex-col flex-grow items-center text-center w-auto md:w-auto p-2 xl:p-4">
+                            <div className="flex justify-center items-end h-8 w-full md:h-10">
                               {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
                             </div>
-                            <h6 className="mt-2 font-normal whitespace-pre-line w-full text-center h-12 md:h-14 flex items-start justify-center">
+                            <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
+                              {item.description_mobile.replace(/<br\/>/g, "\n")}
+                            </h6>
+                            <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
                               {item.description.replace(/<br\/>/g, "\n")}
                             </h6>
                           </div>

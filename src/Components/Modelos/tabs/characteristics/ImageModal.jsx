@@ -7,10 +7,10 @@ const ImageModal = ({ image, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-scroll flex justify-center items-center p-2 sm:p-4 "
+      className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-hidden flex justify-center items-center p-2 sm:p-4 "
       onClick={onClose}>
       <div
-        className="relative mx-auto flex flex-col bg-white overflow-scroll  w-[700px] mt-10 "
+        className="relative mx-auto flex flex-col bg-white overflow-hidden  w-[700px] mt-10 "
         onClick={(e) => e.stopPropagation()}>
         <button
           className="absolute top-0 right-0 p-2 z-10 text-white hover:bg-gray-800 bg-[#05141F]"
@@ -26,7 +26,7 @@ const ImageModal = ({ image, onClose }) => {
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="bg-white px-4 sm:px-6 py-4 sm:py-6 flex-shrink-0 h-[136px]">
+        <div className="bg-white px-4 sm:px-6 py-4 sm:py-6 flex-shrink-0 ">
           <div className="max-w-5xl mx-auto">
             <div className="w-10 h-[2px] bg-gray-800 mb-3"></div>
             <h3 className="font-medium text-gray-900 mb-5">{image.title}</h3>

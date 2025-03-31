@@ -93,7 +93,7 @@ const FeatureSummary = ({ features }) => {
                     key={item.id}
                     className={`${
                       key === 0 && "lg:border-l"
-                    } bg-white py-8 md:py-10 lg:py-16 text-center border-r border-gray-200 shadow-sm hover:shadow-md transition-shadow`}>
+                    } bg-white py-8 md:py-10 lg:py-16 text-center border-r border-gray-200 shadow-sm transition-shadow`}>
                     <div className="">
                       <div className="w-14 h-14 md:w-12 md:h-12 mx-auto grid place-items-center">
                         {renderIcon(item.id, "w-full h-full")}

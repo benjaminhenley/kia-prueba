@@ -3,6 +3,8 @@ import ErrorPage from "../Routes/ErrorPage";
 import Layout from "../Routes/Layout";
 import Inicio from "../Routes/Inicio";
 import Modelos from "../Routes/Modelos";
+import Promociones from "../Routes/Promociones";
+import Cookies from "../Routes/Cookies";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ export const router = createBrowserRouter([
       {
         path: ":modelID",
         element: <Modelos />,
+      },
+      {
+        path: "/promociones",
+        element: <Promociones />,
+      },
+      {
+        path: "/cookies",
+        element: <Cookies />,
       },
     ],
   },

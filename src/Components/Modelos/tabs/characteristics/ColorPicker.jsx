@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const ColorPicker = ({ colorPickerData }) => {
-  const [activeFinish, setActiveFinish] = useState("glossy");
+  // const [activeFinish, setActiveFinish] = useState("glossy");
   const [activeColor, setActiveColor] = useState("blue");
 
-  const finishOptions = [
-    { id: "glossy", label: "Glossy" },
-    { id: "matt", label: "Matt", disabled: true },
-  ];
+  // const finishOptions = [
+  //   { id: "glossy", label: "Glossy" },
+  //   { id: "matt", label: "Matt", disabled: true },
+  // ];
 
   const activeColorName =
     colorPickerData.find((color) => color.id === activeColor)?.name || "";
@@ -92,7 +92,7 @@ const ColorPicker = ({ colorPickerData }) => {
                 key={color.id}
                 onClick={() => setActiveColor(color.id)}
                 className={`relative group transition-transform duration-200 ${
-                  isActive ? "scale-150 z-10" : ""
+                  isActive ? "scale-[1.3] z-10" : ""
                 }`}
                 aria-label={color.name}>
                 {/* Main Circle with Shadow Effect */}
@@ -103,9 +103,7 @@ const ColorPicker = ({ colorPickerData }) => {
                     
                   `}
                   style={{
-                    borderColor:
-                      color.color === "#f6f6f6" ? "#d6d6d6" : color.color,
-                    borderOpacity: 40,
+                    borderColor: color.border,
                   }}>
                   {/* Background Color */}
                   <div
@@ -115,8 +113,9 @@ const ColorPicker = ({ colorPickerData }) => {
 
                   {/* Shadow/Gradient Effect - Rotated to the left */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-tr from-[black]/40 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-tr"
                     style={{
+                      backgroundColor: color.outline,
                       clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0% 100%)",
                       transform: "rotate(-45deg)",
                     }}
@@ -125,9 +124,10 @@ const ColorPicker = ({ colorPickerData }) => {
 
                 {/* Selection Ring for Active Color */}
                 <div
+                  style={{ borderColor: color.border }}
                   className={`absolute ${
-                    isActive ? "hidden" : "-inset-1"
-                  } rounded-full border border-black `}
+                    isActive ? "hidden" : "-inset-[3px]"
+                  } rounded-full border`}
                 />
               </button>
             );
