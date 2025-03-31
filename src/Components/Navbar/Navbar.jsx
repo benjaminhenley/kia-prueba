@@ -217,7 +217,7 @@ const Navbar = () => {
               <p
                 className={`${
                   activeButton === "modelos" ? "font-bold" : ""
-                } cursor-pointer transition-all duration-200 whitespace-nowrap`}>
+                } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
                 Modelos
               </p>
               <div
@@ -239,7 +239,7 @@ const Navbar = () => {
               <p
                 className={`${
                   activeButton === "concesionarios" ? "font-bold" : ""
-                } cursor-pointer transition-all duration-200 whitespace-nowrap`}>
+                } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
                 Concesionarios
               </p>
               <div
@@ -290,7 +290,7 @@ const Navbar = () => {
             <p
               className={`${
                 activeButton === "postVenta" ? "font-bold" : ""
-              } cursor-pointer transition-all duration-200 whitespace-nowrap`}>
+              } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
               Post Venta
             </p>
             <div
@@ -308,7 +308,7 @@ const Navbar = () => {
             <p
               className={`${
                 activeButton === "nuevaKia" ? "font-bold" : ""
-              } cursor-pointer transition-all duration-200 whitespace-nowrap`}>
+              } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
               Nueva Kia
             </p>
             <div

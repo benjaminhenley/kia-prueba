@@ -22,7 +22,7 @@ const HomeSlider = () => {
   const slide = homeSlider[currentSlide];
 
   return (
-    <div className="relative w-full h-[calc(100vh-25px)] overflow-hidden">
+    <div className="relative w-full h-[calc(100vh-1rem)] overflow-hidden">
       {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile - Ahora con 100vh */}

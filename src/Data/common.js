@@ -106,20 +106,18 @@ export const camionetasSuv = [
     ),
   },
   {
-    nombre: "Carnival",
-    href: "https://www.kia.com.ar/carnival",
+    nombre: "Seltos",
+    href: "https://www.kia.com.ar/seltos",
     target: "",
     esExterna: true,
     esNuevo: null,
-    foto: Carnival,
+    foto: Seltos,
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $65.000USD <span className="font-regular text-kia-gray">EX 2.2R A/T*</span>
+          $35.000USD <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
         </p>
-        <p className="text-sm font-bold py-0.5">
-          $78.500USD <span className="font-regular text-kia-gray">SX 2.2R A/T*</span>
-        </p>
+        <p className="text-sm font-bold py-0.5"></p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
     ),
@@ -144,18 +142,20 @@ export const camionetasSuv = [
     ),
   },
   {
-    nombre: "Seltos",
-    href: "https://www.kia.com.ar/seltos",
+    nombre: "Carnival",
+    href: "https://www.kia.com.ar/carnival",
     target: "",
     esExterna: true,
     esNuevo: null,
-    foto: Seltos,
+    foto: Carnival,
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $35.000USD <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
+          $65.000USD <span className="font-regular text-kia-gray">EX 2.2R A/T*</span>
         </p>
-        <p className="text-sm font-bold py-0.5"></p>
+        <p className="text-sm font-bold py-0.5">
+          $78.500USD <span className="font-regular text-kia-gray">SX 2.2R A/T*</span>
+        </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
     ),
