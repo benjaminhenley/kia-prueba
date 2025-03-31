@@ -27,7 +27,7 @@ export const homeSlider = [
     subtitulo: "Más allá de lo posible",
     textoBoton: "Lo quiero",
     linkBoton: "https://reservak3.kia.com.ar/ess",
-    target: "",
+    target: "_blank",
     esExterna: true,
   },
   {
