@@ -25,7 +25,5 @@ export const modelExists = (modelId) => {
 
 // Helper function to get model data safely
 export const getSafeModelData = (modelId) => {
-  return modelExists(modelId)
-    ? carModelsData[modelId]
-    : carModelsData[MODEL_IDS.SEDAN];
+  return modelExists(modelId) ? carModelsData[modelId] : null;
 };

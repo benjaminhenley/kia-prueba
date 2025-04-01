@@ -288,27 +288,32 @@ export const k3Cross = {
     stars: {
       icon: HeroIcons.stars,
       title: "Stars",
-      description: "5 Estrellas <br/> Latin NCAP",
+      description: "5 <br/> Estrellas Latin <br/> NCAP",
+      description_mobile: "5 Estrellas Latin <br/> NCAP",
     },
     airbag: {
       icon: HeroIcons.airbag,
       title: "Airbag",
       description: "6 <br/> Airbags",
+      description_mobile: "6 Airbags <br/>",
     },
     adas: {
       icon: HeroIcons.adas,
       title: "ADAS",
       description: "Asistencias <br/> Avanzadas a <br/> la conducción",
+      description_mobile: "Asistencias Avanzadas <br/> a la conducción",
     },
     radio: {
       icon: HeroIcons.radio,
       title: "Radio",
-      description: "Radio 10,25'' <br/> con conectividad <br/> inalámbrica",
+      description: 'Radio 10,25" <br/> con conectividad <br/> inalámbrica',
+      description_mobile: 'Radio 10,25" con <br/> conectividad inalámbrica',
     },
     roof: {
       icon: HeroIcons.roof,
       title: "Roof",
       description: "Techo solar <br/> OneTouch <br/> + Safety",
+      description_mobile: "Techo solar <br/> OneTouch + Safety",
     },
   },
   sections: {

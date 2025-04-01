@@ -10,7 +10,7 @@ function Cookies() {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto bg-white pt-[80px]">
+    <div className="w-full max-w-[1440px] mx-auto bg-white pt-[56px]">
       <div className="px-5 md:px-20 py-10">
         {/* Header */}
         <h1 className="text-gray-900 font-bold font-kia mb-2.5">
@@ -50,7 +50,7 @@ function Cookies() {
                 onClick={() => toggleSection(section.id)}
                 className="flex items-center justify-start w-full py-[22px] px-[25px] text-left focus:outline-none gap-[15px]">
                 <Arrow
-                  className={`transition-transform h-[20px] w-[20px] ${
+                  className={`transition-transform h-[25px] w-[25px] ${
                     activeSection === section.id ? "" : "-rotate-90"
                   }`}
                 />
@@ -67,21 +67,24 @@ function Cookies() {
 
         {/* Configuration button */}
         <div className="mt-10 flex justify-start">
-          <button className="border border-gray-900 rounded-full py-2 px-6 text-gray-900 font-medium flex items-center">
-            <span>Cambiar configuración de Cookies</span>
+          <button className="border border-[#05141F] rounded-full py-[3px] px-[3px] pl-5 gap-[15px] text-[#05141F] font-medium flex items-center">
+            <h4 className="font-bold">Cambiar configuración de Cookies</h4>
             <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
+              width="32"
+              height="33"
+              viewBox="0 0 32 33"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-2">
+              xmlns="http://www.w3.org/2000/svg">
+              <rect
+                y="0.47583"
+                width="32"
+                height="32.0484"
+                rx="16"
+                fill="#05141F"
+              />
               <path
-                d="M9 5L16 12L9 19"
-                stroke="#000000"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                d="M19.9071 16.217C19.9652 16.2904 20 16.389 20 16.5001C20 16.6113 19.9652 16.7099 19.9071 16.7833L13.7934 24.5122H12.0017L18.3393 16.5001L12 8.48804H13.7918L19.9071 16.217Z"
+                fill="white"
               />
             </svg>
           </button>

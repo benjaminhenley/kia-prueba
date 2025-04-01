@@ -26,7 +26,7 @@ const ImageModal = ({ image, onClose }) => {
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="bg-white px-4 sm:px-6 py-4 sm:py-6 flex-shrink-0 ">
+        <div className="bg-white px-4 sm:px-8 py-4 sm:py-6 flex-shrink-0 ">
           <div className="max-w-5xl mx-auto">
             <div className="w-10 h-[2px] bg-gray-800 mb-3"></div>
             <h3 className="font-medium text-gray-900 mb-5">{image.title}</h3>

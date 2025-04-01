@@ -1,16 +1,17 @@
 // Reusable table component
-const CookiesTable = ({ data, title }) => (
+const CookiesTable = ({ data, title, spanish }) => (
   <div className="mt-4">
-    <h3 className="text-gray-900 font-semibold border-b pb-2 mb-4">{title}</h3>
+    <h4 className="text-gray-900 font-semibold mb-2">{title}</h4>
+    <div className="h-[1px] w-16 bg-gray-900 mb-3"></div>
     <div className="overflow-x-auto">
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-gray-900 text-white">
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Host
+              Nombre
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Nombre
+              {spanish ? "Huésped" : "Host"}
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
               Duración
@@ -35,10 +36,10 @@ const CookiesTable = ({ data, title }) => (
               key={index}
               className={index % 2 === 0 ? "bg-gray-200" : "bg-white"}>
               <td className="py-2 px-4 border border-gray-300">
-                <h6>{cookie.host}</h6>
+                <h6>{cookie.name}</h6>
               </td>
               <td className="py-2 px-4 border border-gray-300">
-                <h6>{cookie.name}</h6>
+                <h6>{cookie.host}</h6>
               </td>
               <td className="py-2 px-4 border border-gray-300">
                 <h6>{cookie.duration}</h6>

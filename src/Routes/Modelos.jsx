@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import Hero from "../Components/Modelos/Hero.jsx";
 import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
 import Characteristics from "../Components/Modelos/tabs/characteristics/index.jsx";
-import { getSafeModelData, modelExists } from "../Data/modelMapper.js";
+import { getSafeModelData } from "../Data/modelMapper.js";
 
 const Modelos = () => {
   const { modelID } = useParams();
-  const [activeTab, setActiveTab] = useState("characteristics");
 
+  const [activeTab, setActiveTab] = useState("characteristics");
   const model = getSafeModelData(modelID);
 
   // Update document title when model changes
   useEffect(() => {
-    document.title = `KIA | ${model.name} `;
+    if (!model) return;
 
-    // Restore the original title when component unmounts
+    document.title = `KIA | ${model.name}`;
     return () => {
       document.title = "KIA Argentina";
     };
-  }, [modelID, model.name]);
+  }, [model]);
+
+  // Redirect if no model found
+  if (!model) {
+    return <Navigate to="/" replace />;
+  }
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);

@@ -229,6 +229,7 @@ const sections = [
         <CookiesTable data={TECHNICAL_COOKIES} title="Cookies técnicas" />
         <CookiesTable data={ANALYTICS_COOKIES} title="Cookies analíticas" />
         <CookiesTable
+          spanish={true}
           data={ADVERTISING_COOKIES}
           title="Cookies de publicidad"
         />
@@ -241,61 +242,59 @@ const sections = [
     title: "Administración de las Cookies",
     content: (
       <>
-        <h4 className="font-semibold mt-4 mb-2">
-          3.1.- Rechazo del Uso de las Cookies.
-        </h4>
-        <h5 className="mb-4">
+        <h6 className="font-regular">3.1.- Rechazo del Uso de las Cookies.</h6>
+        <h6 className="">
           Ud. puede aceptar el uso de cookies que le permiten usar la totalidad
           de las funciones del sitio web sin restricciones en su visita. El
           rechazo de las Cookies estrictamente necesarias para el funcionamiento
           de la página web puede afectar a su visita y a las funciones de la
           página durante su uso.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6 className="">
           Si Ud. rechaza el uso de todas las cookies, se desactivarán tanto las
           cookies propias como las de terceros. Además, las cookies propias se
           eliminarán. Tenga en cuenta que si acepta cookies de terceros deberá
           eliminarlas desde las opciones del navegador o desde el sistema
           ofrecido por el propio tercero.
-        </h5>
+        </h6>
 
-        <h4 className="font-semibold mt-4 mb-2">
+        <h6 className="font-regular mt-4">
           3.2.- Información Recopilada por el Uso de las Cookies.
-        </h4>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Cuando se instalan cookies técnicas (necesarias) en su dispositivo o
           cuando los Usuarios consienten expresamente la instalación de
           cualquier otra tipología de cookies en sus dispositivos, la entidad y
           los terceros (proveedores de servicios o terceros ajenos) pueden
           recabar una serie de datos, entre los cuales se incluyen los
           siguientes:
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Detalles técnicos acerca de los dispositivos utilizados por los
           Usuarios, entre los que se incluyen: conexión a internet y/o a otras
           redes (incluyendo dirección ip), identificador de dispositivo móvil,
           su sistema operativo, tipo de navegador u otra clase de software o
           datos de su equipo u otros detalles técnicos.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Detalles del uso de los servicios de esta página web incluidos, entre
           otros: información métrica acerca de cuándo y cómo los Usuarios
           utilizan el sitio web, datos de tráfico, la fecha y la hora de la
           última vez que el Usuario visitó nuestro sitio web, el acceso a los
           contenidos que el Usuario escogió en su última visita a nuestra página
           web.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Datos respecto al consentimiento informado prestado expresamente por
           los Usuarios para la instalación de cookies en sus dispositivos,
           incluido el estado de consentimiento del Usuario como prueba del
           consentimiento requerido y prestado.
-        </h5>
+        </h6>
 
-        <h4 className="font-semibold mt-4 mb-2">
+        <h6 className="font-regular mt-4">
           3.3.- Eliminación de Cookies de su Navegador.
-        </h4>
-        <h5 className="mb-4">
+        </h6>
+        <h6 className="">
           Ud. podrá gestionar el uso de cookies a través del navegador instalado
           en su equipo. Su navegador de Internet le permite modificar la
           configuración de las cookies. Esta configuración suele encontrarse en
@@ -303,43 +302,79 @@ const sections = [
           Usuarios también pueden consultar el menú «ayuda» del navegador. Los
           distintos navegadores utilizan distintos mecanismos para desactivar
           las cookies.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6 className="mb-4">
           En los siguientes enlaces Ud. podrá conocer qué tipo de cookies han
           sido instaladas, así como el procedimiento para su bloqueo o
           eliminación de su ordenador. En función del navegador empleado, podrá
           utilizar alguno de los siguientes links:
-        </h5>
+        </h6>
         <ul className="list-none mb-4">
           <li className="mb-1">
-            <h6>Firefox</h6>
+            <h6>
+              <a
+                href="https://support.mozilla.org/es/kb/Borrar%20cookies"
+                className="underline">
+                Firefox
+              </a>
+            </h6>
           </li>
           <li className="mb-1">
-            <h6>Chrome</h6>
+            <h6>
+              <a
+                href="https://support.google.com/chrome/answer/95647?hl=es"
+                className="underline">
+                Chrome
+              </a>
+            </h6>
           </li>
           <li className="mb-1">
-            <h6>Safari</h6>
+            <h6>
+              <a
+                href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac"
+                className="underline">
+                Safari
+              </a>
+            </h6>
           </li>
           <li className="mb-1">
-            <h6>Microsoft Edge</h6>
+            <h6>
+              <a
+                href="https://support.microsoft.com/en-us/microsoft-edge/microsoft-edge-browsing-data-and-privacy-bb8174ba-9d73-dcf2-9b4a-c582b4e640dd"
+                className="underline">
+                Microsoft Edge
+              </a>
+            </h6>
           </li>
           <li className="mb-1">
-            <h6>Microsoft Explorer</h6>
+            <h6>
+              <a
+                href="https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d"
+                className="underline">
+                Microsoft Explorer
+              </a>
+            </h6>
           </li>
           <li className="mb-1">
-            <h6>Opera</h6>
+            <h6>
+              <a
+                href="https://help.opera.com/en/latest/web-preferences/#cookies"
+                className="underline">
+                Opera
+              </a>
+            </h6>
           </li>
         </ul>
-        <h5 className="mb-4">
+        <h6 className="mb-4">
           Asimismo, Ud. puede acceder nuevamente al panel de configuración de
           las cookies de esta página web a través del enlace ubicado en el pie
           de página en el apartado "Configurar Cookies".
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Tenga en cuenta que, si acepta las cookies de terceros, deberá
           eliminarlas desde las opciones del navegador o desde el sistema
           ofrecido por el propio tercero.
-        </h5>
+        </h6>
       </>
     ),
     specialStyle: true,
@@ -349,16 +384,16 @@ const sections = [
     title: "Transferencias de datos a terceros países",
     content: (
       <>
-        <h5 className="mb-4">
+        <h6 className="mb-4">
           Respecto de los datos recabados a través de cookies propias, éstos son
           tratados dentro del Espacio Económico Europeo o en países que han sido
           declarados con un nivel adecuado de protección.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Sin perjuicio de lo anterior, la página web cuenta con cookies de
           terceros que prestan servicios a la entidad y que pueden almacenar y
           acceder la información que recaban incluso fuera del EEE.
-        </h5>
+        </h6>
       </>
     ),
     specialStyle: false,
@@ -368,20 +403,20 @@ const sections = [
     title: "Información sobre datos de carácter personal",
     content: (
       <>
-        <h5 className="mb-4">
+        <h6 className="mb-4">
           El responsable trata los datos personales de acuerdo a lo establecido
           en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo,
           de 27 de abril de 2016, relativo a la protección de las personas
           físicas en lo que respecta al tratamiento de datos personales y a la
           libre circulación de estos datos, y demás legislación aplicable.
-        </h5>
-        <h5 className="mb-4">
+        </h6>
+        <h6>
           Te recomendamos que consultes nuestra Política de Privacidad para
           obtener más información acerca del tratamiento de datos personales que
           realizamos, así como la forma de ejercer tus derechos y reclamaciones
           ante el Delegado de Protección de Datos y/o la autoridad de control
           correspondiente.
-        </h5>
+        </h6>
       </>
     ),
     specialStyle: false,
@@ -391,15 +426,13 @@ const sections = [
     title: "Actualización de la corriente Política de Cookies",
     content: (
       <>
-        <h5 className="mb-4">
+        <h6 className="mb-4">
           Esta Política se revisa periódicamente para asegurar su vigencia, por
           lo que puede ser modificada. Le recomendamos que visite la página con
           regularidad donde le informaremos de cualquier actualización al
           respecto.
-        </h5>
-        <h5 className="mb-4">
-          Copyright 2024, 2/05/2024. Todos los derechos reservados.
-        </h5>
+        </h6>
+        <h6>Copyright 2024, 2/05/2024. Todos los derechos reservados.</h6>
       </>
     ),
     specialStyle: false,
