@@ -196,7 +196,7 @@ const Navbar = () => {
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
-            : "transparency text-kia-polar-white hover:bg-white hover:text-midnight-black"
+            : "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
         }`}
         onMouseEnter={() => setIsNavbarHovered(true)}
         onMouseLeave={() => setIsNavbarHovered(false)}>
