@@ -225,7 +225,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                             {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
                           </div>
                           <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
-                            {item.description_mobile.replace(/<br\/>/g, "\n")}
+                            {(
+                              item.description_mobile || item.description
+                            ).replace(/<br\/>/g, "\n")}
                           </h6>
                           <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
                             {item.description.replace(/<br\/>/g, "\n")}
@@ -247,7 +249,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                               {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
                             </div>
                             <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
-                              {item.description_mobile.replace(/<br\/>/g, "\n")}
+                              {(
+                                item.description_mobile || item.description
+                              ).replace(/<br\/>/g, "\n")}
                             </h6>
                             <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
                               {item.description.replace(/<br\/>/g, "\n")}
