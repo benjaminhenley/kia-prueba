@@ -79,24 +79,10 @@ const ModelCarousel = ({ images }) => {
             viewBox="0 0 80 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_410_9354)">
-              <path
-                d="M47.5 55.5355L32.8793 40.9148C32.3736 40.4091 32.3736 39.5893 32.8793 39.0836L47.5 24.4629"
-                stroke="#05141F"
-                stroke-width="4"
-                stroke-linecap="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_410_9354">
-                <rect
-                  width="80"
-                  height="80"
-                  fill="white"
-                  transform="matrix(-1 0 0 1 80 0)"
-                />
-              </clipPath>
-            </defs>
+            <path
+              d="M30.2323 39.2932C30.0871 39.4764 30 39.7225 30 40C30 40.2775 30.0871 40.5236 30.2323 40.7068L45.5164 60H49.9959L34.1518 40L50 20H45.5205L30.2323 39.2932Z"
+              fill="#05141F"
+            />
           </svg>
         </button>
 
@@ -111,27 +97,11 @@ const ModelCarousel = ({ images }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M32.5 55.5355L47.1207 40.9148C47.6264 40.4091 47.6264 39.5893 47.1207 39.0836L32.5 24.4629"
-              stroke="#05141F"
-              stroke-width="4"
-              stroke-linecap="round"
+              d="M49.7677 39.2932C49.9129 39.4764 50 39.7225 50 40C50 40.2775 49.9129 40.5236 49.7677 40.7068L34.4836 60H30.0041L45.8482 40L30 20H34.4795L49.7677 39.2932Z"
+              fill="#05141F"
             />
           </svg>
         </button>
-
-        {/* Navigation Dots */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 mb-4 md:hidden">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? "bg-gray-800" : "bg-gray-300"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );

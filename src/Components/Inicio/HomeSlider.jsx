@@ -26,11 +26,11 @@ const HomeSlider = () => {
       {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile - Ahora con 100vh */}
-          <img
-            src={slide.imagenMobile}
-            alt={slide.titulo}
-            className="block lg:hidden relative absolute w-full h-full object-cover transition-opacity duration-1000"
-          />
+        <img
+          src={slide.imagenMobile}
+          alt={slide.titulo}
+          className="block lg:hidden relative absolute w-full h-full object-cover transition-opacity duration-1000"
+        />
 
         {/* Imagen Desktop */}
         <img

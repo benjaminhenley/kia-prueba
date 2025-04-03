@@ -199,7 +199,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
         <div className="max-w-screen-2xl mx-auto w-full md:py-[30px]">
           <div className="relative flex flex-col lg:flex-row justify-between h-full pointer-events-auto">
             {/* Title section - No overlay on mobile */}
-            <div className="flex flex-col relative pl-4 md:pl-20 flex-shrink-0">
+            <div className="flex flex-col relative mt-5 md:mt-0 pl-4 md:pl-20 flex-shrink-0">
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500  mx-4 md:mx-16"></div>
 
