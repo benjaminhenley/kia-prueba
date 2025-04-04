@@ -9,12 +9,14 @@ import {
 import Kia from "../../assets/img/common/Kia.svg";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Breadcrumbs from "./Breadcrumbs";
 
 const Footer = () => {
   // Estado para manejar los acordeones
   const [openModelos, setOpenModelos] = useState(false);
   const [openConcesionarios, setOpenConcesionarios] = useState(false);
   const [openPostVenta, setOpenPostVenta] = useState(false);
+
 
   // Función para alternar estado de acordeón
   const toggleAccordion = (section) => {
@@ -212,21 +214,10 @@ const Footer = () => {
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
       </div>
-      <div className="flex flex-col gap-3 md:flex-row justify-between pt-7 text-[0.75rem]"> 
-        <Link 
-          to="/" 
-          className="md:w-1/2 flex items-center hover:text-[#37434C] transition-colors group relative"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:fill-[#37434C] transition-colors">
-            <path id="Vector" d="M15.2988 10.8732V16.8002H8.69965V10.8732L11.9992 7.49823L15.2988 10.8732ZM18 13.5728V11.8767L12.2112 6.08795C12.1563 6.03298 12.0824 6 11.9992 6C11.916 6 11.8422 6.03298 11.7872 6.08795L6 11.8751V13.5713L7.4998 11.9961V17.6985C7.4998 17.8649 7.63486 17.9984 7.79976 17.9984H16.1987C16.3636 17.9984 16.4986 17.8649 16.4986 17.6985V11.9961L17.9984 13.5713L18 13.5728Z" fill="white"/>
-          </svg>
-          <p className="font-semibold text-kia-polar-white cursor-pointer pt-1 relative group">
-            Home
-            <span className="absolute left-0 bottom-[1px] h-[1px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
-          </p>
-        </Link>
+      <div className="flex flex-col gap-2 md:flex-row justify-between pt-7 text-[0.75rem]"> 
+        <Breadcrumbs/>
         <div className="md:w-1/2">
-          <p className="font-semibold text-kia-polar-white md:text-end">
+          <p className="pt-1 font-semibold text-kia-polar-white md:text-end">
             Kia Argentina. Todos los derechos reservados 2025.
           </p>
         </div>
