@@ -41,17 +41,17 @@ const HomeSlider = () => {
         {/* Contenido - Ahora absolutamente posicionado tanto en móvil como en desktop */}
         <div className="absolute px-1 pb-3 inset-0 flex flex-col items-center justify-end text-white z-10">
           <h1
-            className="text-[2rem] md:text-[2.25rem] font-bold  animate-fade-in"
+            className="text-[2rem] xl:text-[2.25rem] 2xl:text-[4rem] font-bold  animate-fade-in"
             style={{ animation: "fadeIn 1s ease-in" }}>
             {slide.titulo}
           </h1>
-          <p className="text-[1rem] md:text-[1.5rem] py-1">{slide.subtitulo}</p>
+          <p className="text-[1rem] py-1 xl:text-[1.5rem] 2xl:text-[2.5rem] 2xl:py-3">{slide.subtitulo}</p>
           {slide.esExterna ? (
             <a
               href={slide.linkBoton}
               target={slide.target}
               rel="noopener noreferrer"
-              className="group mt-5 mb-10 inline-block">
+              className="group mt-5 mb-10 lg:mt-3 lg:mb-6 xl:mt-5 xl:mb-10 inline-block">
               <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
                 <span className="relative block">
                   {slide.textoBoton}
@@ -62,7 +62,7 @@ const HomeSlider = () => {
           ) : (
             <Link
               to={slide.linkBoton}
-              className="group mt-5 mb-10 inline-block">
+              className="group mt-5 mb-10 lg:mt-3 lg:mb-6 xl:mt-5 xl:mb-10 inline-block">
               <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
                 <span className="relative block">
                   {slide.textoBoton}
