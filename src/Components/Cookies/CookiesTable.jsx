@@ -1,32 +1,41 @@
 // Reusable table component
-const CookiesTable = ({ data, title, spanish }) => (
-  <div className="mt-4">
+const CookiesTable = ({ data, title, spanish, className = "mt-5" }) => (
+  <div className={className}>
     <h4 className="text-gray-900 font-semibold mb-2">{title}</h4>
     <div className="h-[1px] w-16 bg-gray-900 mb-3"></div>
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse">
+      <table className="w-full table-fixed border-collapse">
+        <colgroup>
+          <col className="w-[196px]" />
+          <col className="w-[137px]" />
+          <col className="w-[89px]" />
+          <col className="w-[90px]" />
+          <col className="w-[160px]" />
+          <col className="w-[350px]" /> {/* Description column */}
+          <col className="w-[150px]" />
+        </colgroup>
         <thead>
           <tr className="bg-gray-900 text-white">
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Nombre
+              <h5 className="font-bold">Nombre</h5>
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              {spanish ? "Huésped" : "Host"}
+              <h5 className="font-bold">{spanish ? "Huésped" : "Host"}</h5>
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Duración
+              <h5 className="font-bold">Duración</h5>
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Tipo de Servicio
+              <h5 className="font-bold">Tipo de Servicio</h5>
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Categoría
+              <h5 className="font-bold">Categoría</h5>
             </th>
             <th className="py-2 px-4 text-left border-r border-gray-700">
-              Descripción
+              <h5 className="font-bold">Descripción</h5>
             </th>
             <th className="py-2 px-4 text-left">
-              Transferencias internacionales
+              <h5 className="font-bold">Transferencias internacionales</h5>
             </th>
           </tr>
         </thead>
@@ -50,8 +59,8 @@ const CookiesTable = ({ data, title, spanish }) => (
               <td className="py-2 px-4 border border-gray-300">
                 <h6>{cookie.category}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300 max-w-md">
-                <h6>{cookie.description}</h6>
+              <td className="py-2 px-4 border border-gray-300">
+                <h6 className="break-words">{cookie.description}</h6>
               </td>
               <td className="py-2 px-4 border border-gray-300">
                 <h6>{cookie.transfers}</h6>

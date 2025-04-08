@@ -24,10 +24,10 @@ export const router = createBrowserRouter([
         path: "/promociones",
         element: <Promociones />,
       },
-      // {
-      //   path: "/cookies",
-      //   element: <Cookies />,
-      // },
+      {
+        path: "/cookies",
+        element: <Cookies />,
+      },
     ],
   },
 ]);

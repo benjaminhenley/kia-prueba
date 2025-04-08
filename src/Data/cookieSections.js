@@ -110,128 +110,138 @@ const sections = [
     title: "¿Qué tipos de Cookies utilizamos?",
     content: (
       <>
-        <h6 className="font-normal">
-          El Usuario que navega por este sitio web puede encontrar cookies
-          instaladas directamente desde la entidad responsable, o bien cookies
-          instaladas desde dominios o equipos gestionados por terceras entidades
-          de conformidad con la información detallada en el siguiente apartado:
-        </h6>
-        <h6 className="font-normal mt-4">
-          2.1.- Según la entidad que las gestione:
-        </h6>
-        <h6 className="font-normal">
-          <span className="">Cookies Propias:</span> Son aquellas que se envían
-          al equipo terminal del Usuario desde un equipo o dominio gestionado
-          por el titular del sitio web y desde que se presta el servicio
-          solicitado por el Usuario.
-        </h6>
-        <h6 className="font-normal mb-4">
-          <span className="">Cookies de terceros:</span> Son aquellas que se
-          envían al equipo terminal del Usuario desde un equipo o dominio que no
-          es gestionado por el titular del Sitio, sino por otra entidad que
-          trata los datos obtenidos a través de las cookies.
-        </h6>
+        <div className="px-9 py-4 md:px-[50px] md:py-[22px]">
+          <h6 className="font-normal">
+            El Usuario que navega por este sitio web puede encontrar cookies
+            instaladas directamente desde la entidad responsable, o bien cookies
+            instaladas desde dominios o equipos gestionados por terceras
+            entidades de conformidad con la información detallada en el
+            siguiente apartado:
+          </h6>
+          <h6 className="font-normal mt-4">
+            2.1.- Según la entidad que las gestione:
+          </h6>
+          <h6 className="font-normal">
+            <span className="">Cookies Propias:</span> Son aquellas que se
+            envían al equipo terminal del Usuario desde un equipo o dominio
+            gestionado por el titular del sitio web y desde que se presta el
+            servicio solicitado por el Usuario.
+          </h6>
+          <h6 className="font-normal mb-4">
+            <span className="">Cookies de terceros:</span> Son aquellas que se
+            envían al equipo terminal del Usuario desde un equipo o dominio que
+            no es gestionado por el titular del Sitio, sino por otra entidad que
+            trata los datos obtenidos a través de las cookies.
+          </h6>
 
-        <h6 className="font-normal mt-4">
-          2.2.- Según el plazo de tiempo que permanecen activas:
-        </h6>
-        <h6 className="font-normal mb-2">
-          <span className="">Cookies de sesión:</span> Son un tipo de cookies
-          diseñadas para recabar y almacenar datos mientras el Usuario accede a
-          un sitio web y desaparecen al terminar la sesión. Estas Cookies no
-          quedan almacenadas en el ordenador del Usuario una vez finalizada la
-          sesión o cierra el navegador.
-        </h6>
-        <h6 className="font-normal mb-4">
-          <span className="">Cookies persistentes:</span> Este tipo de cookie
-          permanece almacenada en el terminal del Usuario y pueden ser accedidos
-          y tratados durante un periodo de tiempo determinado por el responsable
-          de la cookie, que puede ir desde unos minutos hasta varios años.
-        </h6>
+          <h6 className="font-normal mt-4">
+            2.2.- Según el plazo de tiempo que permanecen activas:
+          </h6>
+          <h6 className="font-normal mb-2">
+            <span className="">Cookies de sesión:</span> Son un tipo de cookies
+            diseñadas para recabar y almacenar datos mientras el Usuario accede
+            a un sitio web y desaparecen al terminar la sesión. Estas Cookies no
+            quedan almacenadas en el ordenador del Usuario una vez finalizada la
+            sesión o cierra el navegador.
+          </h6>
+          <h6 className="font-normal mb-4">
+            <span className="">Cookies persistentes:</span> Este tipo de cookie
+            permanece almacenada en el terminal del Usuario y pueden ser
+            accedidos y tratados durante un periodo de tiempo determinado por el
+            responsable de la cookie, que puede ir desde unos minutos hasta
+            varios años.
+          </h6>
 
-        <h6 className="font-normal mt-4">2.3.- Según su finalidad:</h6>
-        <h6 className="font-normal ">
-          A continuación, se detallan las categorías de cookies que podrían ser
-          instaladas en el dispositivo del Usuario según su finalidad y
-          considerando que, de acuerdo con la información de la tabla sobre cada
-          cookie en particular, tales cookies pueden ser instaladas por el
-          titular del sitio web o por terceros:
-        </h6>
+          <h6 className="font-normal mt-4">2.3.- Según su finalidad:</h6>
+          <h6 className="font-normal ">
+            A continuación, se detallan las categorías de cookies que podrían
+            ser instaladas en el dispositivo del Usuario según su finalidad y
+            considerando que, de acuerdo con la información de la tabla sobre
+            cada cookie en particular, tales cookies pueden ser instaladas por
+            el titular del sitio web o por terceros:
+          </h6>
 
-        <h6 className="font-normal">
-          Cookies técnicas: Son aquellas que permiten al Usuario la navegación a
-          través de una página web, plataforma o aplicación y la utilización de
-          las diferentes opciones o servicios que en ella existan, incluyendo
-          aquellas que el responsable utiliza para permitir la gestión y
-          operativa de la página web y habilitar sus funciones y servicios,
-          como, por ejemplo, controlar el tráfico y la comunicación de datos,
-          identificar la sesión, acceder a partes de acceso restringido,
-          recordar los elementos que integran un pedido, realizar el proceso de
-          compra de un pedido, gestionar el pago, controlar el fraude vinculado
-          a la seguridad del servicio, realizar la solicitud de inscripción o
-          participación en un evento, contar visitas a efectos de la facturación
-          de licencias del software con el que funciona el servicio (sitio web,
-          plataforma o aplicación), utilizar elementos de seguridad durante la
-          navegación, almacenar contenidos para la difusión de vídeos o sonido,
-          habilitar contenidos dinámicos (por ejemplo, animación de carga de un
-          texto o imagen) o compartir contenidos a través de redes sociales.
-        </h6>
+          <h6 className="font-normal">
+            Cookies técnicas: Son aquellas que permiten al Usuario la navegación
+            a través de una página web, plataforma o aplicación y la utilización
+            de las diferentes opciones o servicios que en ella existan,
+            incluyendo aquellas que el responsable utiliza para permitir la
+            gestión y operativa de la página web y habilitar sus funciones y
+            servicios, como, por ejemplo, controlar el tráfico y la comunicación
+            de datos, identificar la sesión, acceder a partes de acceso
+            restringido, recordar los elementos que integran un pedido, realizar
+            el proceso de compra de un pedido, gestionar el pago, controlar el
+            fraude vinculado a la seguridad del servicio, realizar la solicitud
+            de inscripción o participación en un evento, contar visitas a
+            efectos de la facturación de licencias del software con el que
+            funciona el servicio (sitio web, plataforma o aplicación), utilizar
+            elementos de seguridad durante la navegación, almacenar contenidos
+            para la difusión de vídeos o sonido, habilitar contenidos dinámicos
+            (por ejemplo, animación de carga de un texto o imagen) o compartir
+            contenidos a través de redes sociales.
+          </h6>
 
-        <h6 className="font-normal ">
-          Cookies de preferencias o personalización: Son aquellas que permiten
-          recordar información para que el Usuario acceda al servicio con
-          determinadas características que pueden diferenciar su experiencia de
-          la de otros Usuarios, como, por ejemplo, el idioma, el número de
-          resultados a mostrar cuando el Usuario realiza una búsqueda, el
-          aspecto o contenido del servicio en función del tipo de navegador a
-          través del cual el Usuario accede al servicio o de la región desde la
-          que accede al servicio, etc.
-        </h6>
+          <h6 className="font-normal ">
+            Cookies de preferencias o personalización: Son aquellas que permiten
+            recordar información para que el Usuario acceda al servicio con
+            determinadas características que pueden diferenciar su experiencia
+            de la de otros Usuarios, como, por ejemplo, el idioma, el número de
+            resultados a mostrar cuando el Usuario realiza una búsqueda, el
+            aspecto o contenido del servicio en función del tipo de navegador a
+            través del cual el Usuario accede al servicio o de la región desde
+            la que accede al servicio, etc.
+          </h6>
 
-        <h6 className="font-normal">
-          Cookies de análisis o medición: Son aquellas que permiten al
-          responsable de las mismas el seguimiento y análisis del comportamiento
-          de los Usuarios de los sitios web a los que están vinculadas, incluida
-          la cuantificación de los impactos de los anuncios. La información
-          recogida mediante este tipo de cookies se utiliza en la medición de la
-          actividad de los sitios web, aplicación o plataforma, con el fin de
-          introducir mejoras en función del análisis de los datos de uso que
-          hacen los Usuarios del servicio.
-        </h6>
+          <h6 className="font-normal">
+            Cookies de análisis o medición: Son aquellas que permiten al
+            responsable de las mismas el seguimiento y análisis del
+            comportamiento de los Usuarios de los sitios web a los que están
+            vinculadas, incluida la cuantificación de los impactos de los
+            anuncios. La información recogida mediante este tipo de cookies se
+            utiliza en la medición de la actividad de los sitios web, aplicación
+            o plataforma, con el fin de introducir mejoras en función del
+            análisis de los datos de uso que hacen los Usuarios del servicio.
+          </h6>
 
-        <h6 className="font-normal">
-          Cookies publicitarias: Son aquéllas que permiten la gestión, de la
-          forma más eficaz posible, de los espacios publicitarios que, en su
-          caso, el responsable haya incluido en una página web, aplicación o
-          plataforma desde la que presta el servicio solicitado en base a
-          criterios como el contenido editado o la frecuencia con la que se
-          muestran los anuncios.Cookies de publicidad comportamental: Son
-          aquéllas que permiten la gestión, de la forma más eficaz posible, de
-          los espacios publicitarios que, en su caso, el responsable haya
-          incluido en una página web, aplicación o plataforma desde la que
-          presta el servicio solicitado. Estas cookies almacenan información del
-          comportamiento de los Usuarios y se obtiene a través de la observación
-          continuada de sus hábitos de navegación, lo que permite desarrollar un
-          perfil específico para mostrar publicidad en función del mismo, en
-          base a una decisión automatizada.
-        </h6>
+          <h6 className="font-normal">
+            Cookies publicitarias: Son aquéllas que permiten la gestión, de la
+            forma más eficaz posible, de los espacios publicitarios que, en su
+            caso, el responsable haya incluido en una página web, aplicación o
+            plataforma desde la que presta el servicio solicitado en base a
+            criterios como el contenido editado o la frecuencia con la que se
+            muestran los anuncios.Cookies de publicidad comportamental: Son
+            aquéllas que permiten la gestión, de la forma más eficaz posible, de
+            los espacios publicitarios que, en su caso, el responsable haya
+            incluido en una página web, aplicación o plataforma desde la que
+            presta el servicio solicitado. Estas cookies almacenan información
+            del comportamiento de los Usuarios y se obtiene a través de la
+            observación continuada de sus hábitos de navegación, lo que permite
+            desarrollar un perfil específico para mostrar publicidad en función
+            del mismo, en base a una decisión automatizada.
+          </h6>
 
-        <h6 className="font-normal">
-          Puede consultar las cookies que utilizamos a continuación:
-        </h6>
-        <h6 className="font-normal mt-4">
-          Siguiendo las directrices de la Agencia Española de Protección de
-          Datos procedemos a detallar el uso de cookies que hace esta web con el
-          fin de informarle con la máxima exactitud posible:
-        </h6>
+          <h6 className="font-normal">
+            Puede consultar las cookies que utilizamos a continuación:
+          </h6>
+          <h6 className="font-normal mt-4">
+            Siguiendo las directrices de la Agencia Española de Protección de
+            Datos procedemos a detallar el uso de cookies que hace esta web con
+            el fin de informarle con la máxima exactitud posible:
+          </h6>
+        </div>
 
         {/* Cookie tables */}
-        <CookiesTable data={TECHNICAL_COOKIES} title="Cookies técnicas" />
+        <CookiesTable
+          data={TECHNICAL_COOKIES}
+          title="Cookies técnicas"
+          className="mt-1.5"
+        />
         <CookiesTable data={ANALYTICS_COOKIES} title="Cookies analíticas" />
         <CookiesTable
           spanish={true}
           data={ADVERTISING_COOKIES}
           title="Cookies de publicidad"
+          className="mt-4"
         />
       </>
     ),

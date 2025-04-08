@@ -4,6 +4,9 @@ import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
 import FormButton from "../Components/Common/forms/FormButton";
+import Arrow from "../Components/Icons/Arrow";
+import Checkbox from "../Components/Icons/Checkbox";
+import CarModelGallery from "../Components/gallery/CarModelGallery";
 // Dropdown data collections
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
@@ -53,25 +56,6 @@ const PROVINCES = [
   { value: "tucuman", label: "Tucumán" },
 ];
 
-// Car models data
-const CAR_MODELS = [
-  { id: "cerato", name: "Cerato", image: "https://placehold.co/256x88" },
-  { id: "seltos", name: "Seltos", image: "https://placehold.co/256x88" },
-  { id: "sportage", name: "Sportage", image: "https://placehold.co/256x88" },
-  { id: "carnival", name: "Carnival", image: "https://placehold.co/256x88" },
-  { id: "k2500", name: "K2500", image: "https://placehold.co/256x88" },
-  {
-    id: "k3-cross",
-    name: "All-new K3 Cross",
-    image: "https://placehold.co/256x88",
-  },
-  {
-    id: "k3-sedan",
-    name: "All-new K3 Sedán",
-    image: "https://placehold.co/256x88",
-  },
-];
-
 // Helper function to generate days options
 const generateDaysOptions = () => {
   return Array.from({ length: 31 }, (_, i) => ({
@@ -86,6 +70,22 @@ const generateYearsOptions = () => {
     value: String(new Date().getFullYear() - i),
     label: String(new Date().getFullYear() - i),
   }));
+};
+
+// Add a new constant for dealers by province
+const DEALERS_BY_PROVINCE = {
+  caba: [
+    { value: "alpina-motors", label: "Alpina Motors" },
+    { value: "autodrive", label: "Autodrive" },
+    { value: "autovisiones", label: "Autovisiones" },
+    { value: "car-bureau", label: "Car Bureau" },
+    { value: "one-saw", label: "One Saw" },
+  ],
+  buenosaires: [
+    { value: "del-plata", label: "KIA Del Plata" },
+    { value: "del-oeste", label: "KIA Del Oeste" },
+    { value: "del-sur", label: "KIA Del Sur" },
+  ],
 };
 
 export default function Promociones() {
@@ -103,24 +103,25 @@ export default function Promociones() {
     dealer: "",
   });
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [showModelGallery, setShowModelGallery] = useState(true);
+  const [availableDealers, setAvailableDealers] = useState([]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
 
-  // Handle model navigation
-  const handleModelNavigation = (direction) => {
-    const currentIndex = CAR_MODELS.findIndex(
-      (model) => model.name === selectedModel
-    );
-    const newIndex = currentIndex + direction;
-
-    if (newIndex >= 0 && newIndex < CAR_MODELS.length) {
-      setSelectedModel(CAR_MODELS[newIndex].name);
+    // If province changes, update available dealers and reset dealer selection
+    if (name === "province") {
+      setAvailableDealers(DEALERS_BY_PROVINCE[value] || []);
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+        dealer: "", // Reset dealer when province changes
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
   };
 
@@ -137,19 +138,28 @@ export default function Promociones() {
     );
   };
 
+  // Toggle model gallery visibility
+  const toggleModelGallery = () => {
+    setShowModelGallery(!showModelGallery);
+  };
+
+  const submitForm = () => {
+    console.log("Form submitted", formData);
+  };
+
   return (
-    <div className="w-full max-w-[1440px] mx-auto bg-white pt-[80px]">
+    <div className="w-full max-w-[1440px] mx-auto bg-white pt-[55px] md:pt-[80px]">
       {/* Main Content Container */}
-      <div className="px-5 md:px-20 py-10 flex flex-col gap-10">
+      <div className="px-4 md:px-20 py-10 flex flex-col gap-5 md:gap-10">
         {/* Header Section */}
         <div className="flex flex-col">
           <div className="relative items-start">
-            <h1 className="text-gray-900 font-semibold font-kia">
+            <h1 className="text-[#05141F] font-semibold font-kia">
               Promociones
             </h1>
-            <div className="mt-2.5 h-0.5 w-10 bg-gray-900"></div>
+            <div className="mt-2.5 h-[1.5px] md:w-12 md:h-[2px] w-8 bg-[#05141F]"></div>
           </div>
-          <div className="text-gray-900 font-normal font-kia mt-5">
+          <div className="text-[#05141F] font-normal font-kia mt-2.5 md:mt-5">
             <h4>
               Completá el formulario y un concesionario te contactará para
               brindarte más información.
@@ -159,71 +169,41 @@ export default function Promociones() {
 
         {/* Form Section */}
         <div className="flex flex-col">
-          <div className="w-full flex flex-col overflow-hidden">
+          <div className="w-full flex flex-col">
             {/* Top Border */}
-            <div className="self-stretch h-0 outline outline-[2.5px] outline-gray-900" />
+            <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
 
             {/* Form Content */}
-            <div className="self-stretch px-3 md:px-6 py-[22px] flex flex-col gap-5">
+            <div className="self-stretch md:px-6 py-5 md:p-6 flex flex-col gap-5">
               {/* Model Selection Section */}
               <div className="flex flex-col gap-5">
-                <h4 className="text-gray-900 font-bold font-kia">
-                  Seleccione un modelo de interés
-                </h4>
-
-                {/* Simple car model selection with navigation */}
-                <div className="relative w-full border border-neutral-200">
-                  {/* Left arrow */}
-                  <button
-                    className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-900 text-white w-8 h-8 flex items-center justify-center"
-                    onClick={() => handleModelNavigation(-1)}
-                    aria-label="Previous model">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.9303 12.212C15.9739 12.1571 16 12.0832 16 12C16 11.9168 15.9739 11.8429 15.9303 11.788L11.3451 6H10.0012L14.7545 12L10 18H11.3438L15.9303 12.212Z"
-                        fill="white"
-                        transform="rotate(180 13 12)"
-                      />
-                    </svg>
-                  </button>
-
-                  {/* Current model display */}
-                  <div className="flex items-center justify-center py-4 px-16">
-                    <h5 className="text-gray-900 font-normal font-kia text-center">
-                      {selectedModel}
-                    </h5>
-                  </div>
-
-                  {/* Right arrow */}
-                  <button
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gray-900 text-white w-8 h-8 flex items-center justify-center"
-                    onClick={() => handleModelNavigation(1)}
-                    aria-label="Next model">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M9.06968 12.212C9.02613 12.1571 9 12.0832 9 12C9 11.9168 9.02613 11.8429 9.06968 11.788L13.6549 6H14.9988L10.2455 12L15 18H13.6562L9.06968 12.212Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </button>
+                {/* Model selection header - clickable */}
+                <div
+                  className="flex flex-row items-center gap-2 cursor-pointer"
+                  onClick={toggleModelGallery}>
+                  <Arrow
+                    className={`transition-transform h-[25px] w-[25px] ml-[-7px] ${
+                      showModelGallery ? "" : "-rotate-90"
+                    }`}
+                  />
+                  <h4 className="text-[#05141F] font-bold font-kia">
+                    Seleccione un modelo de interés
+                  </h4>
                 </div>
 
+                {/* Simple car model selection with navigation - conditionally rendered */}
+                {showModelGallery && (
+                  <div className="w-full">
+                    <CarModelGallery />
+                  </div>
+                )}
+
                 {/* Form Fields */}
-                <div className="flex flex-col gap-5 mt-4">
+                <div className="flex flex-col gap-5">
                   {/* Name Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
+                  <div className="flex flex-col md:flex-row md:items-center gap-5">
                     <FormLabel text="Nombre completo" />
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 w-full md:flex-1">
+                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                       <TextField
                         placeholder="Nombre"
                         name="firstName"
@@ -240,11 +220,11 @@ export default function Promociones() {
                   </div>
 
                   {/* Contact Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
+                  <div className="flex flex-col md:flex-row md:items-center gap-5">
                     <FormLabel text="Contacto" />
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 w-full md:flex-1">
+                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                       <FormDropdown
-                        placeholder="Preferencia de contacto"
+                        placeholder="Teléfono"
                         name="contactPreference"
                         value={formData.contactPreference}
                         onChange={handleFormChange}
@@ -266,9 +246,9 @@ export default function Promociones() {
                   </div>
 
                   {/* Birthdate Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
+                  <div className="flex flex-col md:flex-row md:items-center gap-5">
                     <FormLabel text="Fecha de nacimiento" />
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 w-full md:flex-1">
+                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                       <FormDropdown
                         placeholder="Día"
                         name="birthDay"
@@ -294,9 +274,9 @@ export default function Promociones() {
                   </div>
 
                   {/* Location Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-5">
+                  <div className="flex flex-col md:flex-row md:items-center gap-5">
                     <FormLabel text="Ubicación" />
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-5 w-full md:flex-1">
+                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                       <FormDropdown
                         placeholder="Provincia"
                         name="province"
@@ -309,33 +289,36 @@ export default function Promociones() {
                         name="dealer"
                         value={formData.dealer}
                         onChange={handleFormChange}
-                        disabled={!formData.province}
+                        options={availableDealers}
+                        disabled={
+                          !formData.province || availableDealers.length === 0
+                        }
                       />
                     </div>
                   </div>
 
                   <div className="text-red-600 font-normal font-kia">
-                    <h6>*Campo obligatorio</h6>
+                    <h5 className="font-normal">*Campo obligatorio</h5>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom border */}
-            <div className="self-stretch h-0 outline outline-[1.5px] outline-neutral-300" />
+            <div className="self-stretch h-[1.5px] bg-[#CDD0D2]" />
           </div>
         </div>
 
         {/* Terms and conditions checkbox */}
         <div className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            id="terms"
-            className="w-4 h-4 outline outline-1 outline-neutral-300 checked:bg-gray-900"
+          <Checkbox
             checked={acceptedTerms}
             onChange={() => setAcceptedTerms(!acceptedTerms)}
           />
-          <label htmlFor="terms" className="text-gray-900 font-normal font-kia">
+          <label
+            htmlFor="terms"
+            className="text-[#05141F] font-normal font-kia cursor-pointer"
+            onClick={() => setAcceptedTerms(!acceptedTerms)}>
             <h6>
               He leído y acepto el{" "}
               <a href="#" className="underline">
@@ -346,11 +329,14 @@ export default function Promociones() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col md:flex-row justify-end gap-2.5">
-          <FormButton type="secondary" disabled={!isFormValid()}>
+        <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
+          <FormButton type="secondary" disabled={!acceptedTerms}>
             Cancelar
           </FormButton>
-          <FormButton type="primary" disabled={!isFormValid()}>
+          <FormButton
+            type="primary"
+            disabled={!acceptedTerms}
+            onClick={submitForm}>
             Enviar
           </FormButton>
         </div>

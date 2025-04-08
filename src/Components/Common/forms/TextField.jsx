@@ -16,7 +16,7 @@ const TextField = ({
       value={value}
       name={name}
       onChange={onChange}
-      className="self-stretch h-7 px-2.5 w-full outline outline-1 outline-offset-[-1px] outline-neutral-300 focus:outline-gray-700"
+      className="placeholder:text-[#697279] self-stretch h-7 px-2.5 py-1.5 w-full outline outline-1 outline-offset-[-1px] outline-[#CDD0D2] focus:outline-[#CDD0D2] border"
     />
   </div>
 );

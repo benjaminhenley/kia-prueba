@@ -3,11 +3,11 @@ const Button = ({ type = "primary", disabled = false, children }) => {
 
   const typeClasses = {
     primary: disabled
-      ? "bg-zinc-400 text-white"
-      : "bg-gray-900 text-white hover:bg-gray-800 active:bg-black",
+      ? "bg-[#9BA1A5] text-white"
+      : "bg-[#05141F] text-white hover:bg-[#05141F] active:bg-[#05141F]",
     secondary: disabled
-      ? "outline outline-1 outline-offset-[-1px] outline-zinc-400 text-zinc-400"
-      : "outline outline-1 outline-offset-[-1px] outline-gray-900 text-gray-900 hover:bg-gray-100 active:bg-gray-200",
+      ? "border border-[#05141F] text-[#05141F]"
+      : "border border-[#05141F] text-gray-900 hover:bg-gray-100 active:bg-gray-200",
   };
 
   return (
@@ -16,7 +16,7 @@ const Button = ({ type = "primary", disabled = false, children }) => {
         disabled ? "cursor-not-allowed" : "cursor-pointer"
       }`}
       disabled={disabled}>
-      {children}
+      <h6 className="font-bold">{children}</h6>
     </button>
   );
 };
