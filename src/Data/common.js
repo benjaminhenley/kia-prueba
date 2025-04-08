@@ -59,7 +59,8 @@ export const autos = [
           $25.000USD <span className="font-regular text-kia-gray">EX*</span>
         </p>
         <p className="text-sm font-bold py-0.5">
-          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
+          $28.500USD{" "}
+          <span className="font-regular text-kia-gray">GT-Line*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
@@ -75,7 +76,8 @@ export const autos = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $34.000USD <span className="font-regular text-kia-gray">SX 2.0 AT*</span>
+          $34.000USD{" "}
+          <span className="font-regular text-kia-gray">SX 2.0 AT*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
         <p className="text-sm font-bold py-0.5"></p>
@@ -98,11 +100,11 @@ export const camionetasSuv = [
           $25.000USD <span className="font-regular text-kia-gray">EX*</span>
         </p>
         <p className="text-sm font-bold py-0.5">
-          $28.500USD <span className="font-regular text-kia-gray">GT-Line*</span>
+          $28.500USD{" "}
+          <span className="font-regular text-kia-gray">GT-Line*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
-
     ),
   },
   {
@@ -115,7 +117,8 @@ export const camionetasSuv = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $36.000USD <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
+          $36.000USD{" "}
+          <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
         <p className="text-sm font-bold py-0.5"></p>
@@ -132,10 +135,12 @@ export const camionetasSuv = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $48.000USD <span className="font-regular text-kia-gray">EX 1.6T 4X2 DCT*</span>
+          $48.000USD{" "}
+          <span className="font-regular text-kia-gray">EX 1.6T 4X2 DCT*</span>
         </p>
         <p className="text-sm font-bold py-0.5">
-          $56.000USD <span className="font-regular text-kia-gray">1.6T AWD DCT*</span>
+          $56.000USD{" "}
+          <span className="font-regular text-kia-gray">1.6T AWD DCT*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
@@ -151,10 +156,12 @@ export const camionetasSuv = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $65.000USD <span className="font-regular text-kia-gray">EX 2.2R A/T*</span>
+          $65.000USD{" "}
+          <span className="font-regular text-kia-gray">EX 2.2R A/T*</span>
         </p>
         <p className="text-sm font-bold py-0.5">
-          $75.000USD <span className="font-regular text-kia-gray">SX 2.2R A/T*</span>
+          $75.000USD{" "}
+          <span className="font-regular text-kia-gray">SX 2.2R A/T*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
@@ -173,7 +180,8 @@ export const utilitarios = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $33.000USD <span className="font-regular text-kia-gray">CS 2.5T MT*</span>
+          $33.000USD{" "}
+          <span className="font-regular text-kia-gray">CS 2.5T MT*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
         <p className="text-sm font-bold py-0.5"></p>
@@ -246,9 +254,9 @@ export const postVentaFooter = [
 export const blackbarLeft = [
   {
     nombre: <p>PROMOCIONES</p>,
-    href: "https://www.kia.com.ar/promociones",
+    href: "/promociones",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
   {
     nombre: <span className="cursor-default">|</span>,
@@ -279,9 +287,9 @@ export const blackbarRight = [
   },
   {
     nombre: <p>POLÍTICA DE PRIVACIDAD</p>,
-    href: "https://www.kia.com.ar/cookies",
+    href: "/cookies",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
 
@@ -327,17 +335,17 @@ export const transparentbarRight = [
 // Opciones del dropdown de concesionarios
 export const concesionariosDropdownOpciones = [
   {
-    id: 'venta',
-    nombre: 'Venta',
-    href: 'https://www.kia.com.ar/red-venta',
+    id: "venta",
+    nombre: "Venta",
+    href: "https://www.kia.com.ar/red-venta",
     target: "",
     esExterna: true,
   },
   {
-    id: 'postVenta',
-    nombre: 'Post Venta',
-    href: 'https://www.kia.com.ar/red-postventa',
+    id: "postVenta",
+    nombre: "Post Venta",
+    href: "https://www.kia.com.ar/red-postventa",
     target: "",
-    esExterna: true
+    esExterna: true,
   },
 ];

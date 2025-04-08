@@ -66,6 +66,7 @@ const Modelos = () => {
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
         <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
           <a
+            target="_blank"
             href="https://reservak3.kia.com.ar/es"
             className="flex items-center xs:justify-between justify-between  bg-[#05141F] text-white px-1 pl-5 py-1 rounded-full shadow-md  transition duration-300 gap-[15px] w-full xs:w-fit">
             <h4 className="font-bold">Quiero mi All-new K3</h4>
