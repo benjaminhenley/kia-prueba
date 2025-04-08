@@ -20,14 +20,14 @@ export const router = createBrowserRouter([
         path: ":modelID",
         element: <Modelos />,
       },
-      {
-        path: "/promociones",
-        element: <Promociones />,
-      },
-      {
-        path: "/cookies",
-        element: <Cookies />,
-      },
+      // {
+      //   path: "/promociones",
+      //   element: <Promociones />,
+      // },
+      // {
+      //   path: "/cookies",
+      //   element: <Cookies />,
+      // },
     ],
   },
 ]);
