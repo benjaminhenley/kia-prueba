@@ -64,10 +64,10 @@ const Modelos = () => {
 
       {/* Sticky Button */}
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-end md:mr-20 md:mb-5 p-4">
+        <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
           <a
             href="https://reservak3.kia.com.ar/es"
-            className="flex items-center md:justify-between justify-between  bg-[#05141F] text-white px-1 pl-5 py-1 rounded-full shadow-md  transition duration-300 gap-[15px] w-full md:w-fit">
+            className="flex items-center xs:justify-between justify-between  bg-[#05141F] text-white px-1 pl-5 py-1 rounded-full shadow-md  transition duration-300 gap-[15px] w-full xs:w-fit">
             <h4 className="font-bold">Quiero mi All-new K3</h4>
             <div className="bg-white rounded-full p-1 w-8 h-8 flex items-center justify-center ml-2">
               <svg
