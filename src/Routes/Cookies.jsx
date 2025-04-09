@@ -76,8 +76,8 @@ function Cookies() {
                 onClick={() => toggleSection(section.id)}
                 className="flex items-center justify-start w-full p-4 md:py-[22px] md:px-[25px]  text-left focus:outline-none gap-[15px]">
                 <Arrow
-                  className={`transition-transform h-[25px] w-[25px] ${
-                    activeSection === section.id ? "" : "-rotate-90"
+                  className={` ${
+                    activeSection === section.id ? "rotate-90" : ""
                   }`}
                 />
                 <h4 className="text-gray-900 font-semibold flex flex-row">

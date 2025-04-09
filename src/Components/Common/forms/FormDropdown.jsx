@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import Arrow from "../../Icons/Arrow";
 
 const FormDropdown = ({
   options = [],
@@ -47,26 +48,53 @@ const FormDropdown = ({
         <span className={`font-normal font-kia text-[#05141F] truncate`}>
           {getSelectedLabel() || placeholder}
         </span>
-        <svg
-          width="11"
-          height="6"
-          viewBox="0 0 11 6"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={`transition-transform ${
-            isOpen ? "rotate-180" : ""
-          } flex-shrink-0 ml-1`}>
-          <path
-            d="M1.66675 1L5.43101 4.89886C5.56121 5.03371 5.77228 5.03371 5.90248 4.89886L9.66675 1"
-            stroke="#05141F"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
+        <Arrow className="rotate-90" />
       </div>
 
       {isOpen && !disabled && (
-        <div className="absolute top-full left-0 w-full z-50 bg-white border border-neutral-300 mt-0.5 max-h-40 shadow-md">
+        <div className="absolute top-full left-0 w-full z-50 bg-white border border-[#37434C] max-h-40 shadow-md">
+          <style jsx>{`
+            div::-webkit-scrollbar {
+              width: 14px;
+            }
+            div::-webkit-scrollbar-track {
+              background: #f8f8f8;
+              border: 1px solid #cdd0d2;
+              border-bottom: none;
+              border-top: none;
+            }
+            div::-webkit-scrollbar-thumb {
+              background-color: #cdd0d2;
+              border-radius: 0;
+              border: 3px solid #f8f8f8;
+            }
+            div::-webkit-scrollbar-button {
+              display: block;
+              height: 14px;
+              background-color: #f8f8f8;
+            }
+            div::-webkit-scrollbar-button:vertical:start:decrement {
+              background-color: #f8f8f8;
+              background-image: url("data:image/svg+xml,%3Csvg width='9' height='4' viewBox='0 0 9 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.84961 4H0.849609L4.84961 0L8.84961 4Z' fill='%239BA1A5'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: center;
+              border: 1px solid #cdd0d2;
+              border-bottom: none;
+            }
+            div::-webkit-scrollbar-button:vertical:end:increment {
+              background-color: #f8f8f8;
+              background-image: url("data:image/svg+xml,%3Csvg width='9' height='4' viewBox='0 0 9 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.84961 0H0.849609L4.84961 4L8.84961 0Z' fill='%23697279'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: center;
+              border: 1px solid #cdd0d2;
+              border-top: none;
+            }
+            div::-webkit-scrollbar-button:horizontal,
+            div::-webkit-scrollbar-button:vertical:start:increment,
+            div::-webkit-scrollbar-button:vertical:end:decrement {
+              display: none;
+            }
+          `}</style>
           <div className="max-h-40 overflow-y-auto">
             {options.map((option) => (
               <div

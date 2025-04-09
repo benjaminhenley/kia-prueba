@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-    safelist: [
+  safelist: [
     {
       pattern: /^win:/, // Esto protege TODAS las clases que comienzan con "win:"
     },
@@ -9,14 +9,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '480px',
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-        '3xl': '1920px',
-        'win': { raw: '(min-width: 1280px) and (max-height: 700px)' },
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        "3xl": "1920px",
+        win: { raw: "(min-width: 1280px) and (max-height: 700px)" },
       },
       colors: {
         "midnight-black": "#05141F",
@@ -45,7 +45,23 @@ module.exports = {
     },
   },
   plugins: [
-    function ({ addBase, theme }) {
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".scrollbar-thumb-rounded": {
+          "&::-webkit-scrollbar": {
+            width: "8px",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#f8f8f8",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "red",
+          },
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+    function ({ addBase }) {
       addBase({
         // H1 Headline (36px/38px on desktop, 18px/20px on mobile)
         h1: {

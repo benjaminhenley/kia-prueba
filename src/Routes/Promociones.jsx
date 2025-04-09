@@ -11,7 +11,6 @@ import CarModelGallery from "../Components/gallery/CarModelGallery";
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
   { value: "phone", label: "Teléfono" },
-  { value: "whatsapp", label: "WhatsApp" },
 ];
 
 const MONTHS = [
@@ -66,9 +65,9 @@ const generateDaysOptions = () => {
 
 // Helper function to generate years options
 const generateYearsOptions = () => {
-  return Array.from({ length: 100 }, (_, i) => ({
-    value: String(new Date().getFullYear() - i),
-    label: String(new Date().getFullYear() - i),
+  return Array.from({ length: 80 }, (_, i) => ({
+    value: String(new Date().getFullYear() - i - 18),
+    label: String(new Date().getFullYear() - i - 18),
   }));
 };
 
@@ -179,24 +178,14 @@ export default function Promociones() {
               <div className="flex flex-col gap-5">
                 {/* Model selection header - clickable */}
                 <div
-                  className="flex flex-row items-center gap-2 cursor-pointer"
+                  className="flex flex-row items-center gap-[15px]"
                   onClick={toggleModelGallery}>
-                  <Arrow
-                    className={`transition-transform h-[25px] w-[25px] ml-[-7px] ${
-                      showModelGallery ? "" : "-rotate-90"
-                    }`}
-                  />
+                  <Arrow width={6} height={12} />
                   <h4 className="text-[#05141F] font-bold font-kia">
                     Seleccione un modelo de interés
                   </h4>
                 </div>
-
-                {/* Simple car model selection with navigation - conditionally rendered */}
-                {showModelGallery && (
-                  <div className="w-full">
-                    <CarModelGallery />
-                  </div>
-                )}
+                <CarModelGallery />
 
                 {/* Form Fields */}
                 <div className="flex flex-col gap-5">
@@ -224,7 +213,7 @@ export default function Promociones() {
                     <FormLabel text="Contacto" />
                     <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                       <FormDropdown
-                        placeholder="Teléfono"
+                        placeholder="Preferencia de contacto"
                         name="contactPreference"
                         value={formData.contactPreference}
                         onChange={handleFormChange}
@@ -237,8 +226,9 @@ export default function Promociones() {
                         onChange={handleFormChange}
                       />
                       <TextField
-                        placeholder="Teléfono"
+                        placeholder="Preferencia de contacto"
                         name="phone"
+                        type="tel"
                         value={formData.phone}
                         onChange={handleFormChange}
                       />

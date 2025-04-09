@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, use } from "react";
 import sedanImg from "../../assets/img/common/modelos/AllNewK3Sedan.webp";
 import ceratoImg from "../../assets/img/common/modelos/Cerato.webp";
 import crossImg from "../../assets/img/common/modelos/AllNewK3Cross.webp";
@@ -48,44 +48,13 @@ const CAR_MODELS = [
 const CarModelGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const sliderRef = useRef(null);
 
-  // Handle window resize to detect mobile/desktop
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex < CAR_MODELS.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  // Click handler for car selection
   const handleCarClick = (index) => {
     setCurrentIndex(index);
   };
 
-  // Calculate slider position differently for mobile vs desktop
-  const calculateSliderPosition = () => {
-    if (isMobile) {
-      // For mobile (full width slides), prevent going past the end
-      return Math.min(currentIndex * (100 / (CAR_MODELS.length - 1)), 87.5);
-    } else {
-      // For desktop, use 96.1% as requested
-      return (currentIndex / (CAR_MODELS.length - 1)) * 96.1;
-    }
-  };
+  const handleSliderDrag = (sliderRef) => {};
 
   useEffect(() => {
     if (scrollContainerRef.current) {
@@ -109,7 +78,9 @@ const CarModelGallery = () => {
             <div
               key={model.id || `model-${index}`}
               className={`w-fit  flex-shrink-0 flex flex-col items-center p-4 ${
-                currentIndex === index ? "border-2 border-[#05141F]" : ""
+                currentIndex === index
+                  ? "border-2 border-[#05141F] bg-[#F8F8F8]"
+                  : ""
               } cursor-pointer`}
               onClick={() => handleCarClick(index)}>
               <img
@@ -117,7 +88,7 @@ const CarModelGallery = () => {
                 alt={model.name}
                 className="w-[172px] md:w-[256px] h-[88px] object-contain mb-3"
               />
-              <h5 className="text-center font-normal">{model.name}</h5>
+              <h5 className="text-center font-bold">{model.name}</h5>
             </div>
           ))}
         </div>
@@ -127,14 +98,10 @@ const CarModelGallery = () => {
       <div className="flex items-center justify-center mt-5 overflow-hidden">
         <div className="flex-1 h-[1px] bg-gray-300 relative my-3">
           <div
-            className="absolute top-[-12px] w-20 h-1 flex"
-            style={{
-              left: `${calculateSliderPosition()}%`,
-              transform: "translateX(-0%)",
-            }}>
-            <button
-              onClick={handlePrev}
-              className="w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50">
+            ref={sliderRef}
+            onMouseEnter={() => handleSliderDrag(sliderRef.current)}
+            className="absolute top-[-12px] w-fit h-fit flex cursor-grab">
+            <div className="w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -145,10 +112,8 @@ const CarModelGallery = () => {
                   transform="rotate(180 13 12)"
                 />
               </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-6 h-6 flex items-center justify-center rounded-r-full bg-[#05141F] disabled:opacity-50">
+            </div>
+            <div className="w-6 h-6 flex items-center justify-center rounded-r-full bg-[#05141F] disabled:opacity-50">
               <svg
                 className="rotate-180"
                 viewBox="0 0 24 24"
@@ -160,7 +125,7 @@ const CarModelGallery = () => {
                   transform="rotate(180 13 12)"
                 />
               </svg>
-            </button>
+            </div>
           </div>
         </div>
       </div>

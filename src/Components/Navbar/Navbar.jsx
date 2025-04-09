@@ -6,14 +6,17 @@ import ModelosDropdown from "./ModelosDropdown";
 import ConcesionariosDropdown from "./ConcesionariosDropdown";
 import HamburgerButton from "./Mobile/HamburgerButton";
 import MobileMenu from "./Mobile/MobileMenu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   // Estados para los dropdowns
   const [showModelosDropdown, setShowModelosDropdown] = useState(false);
   const [showConcesionariosDropdown, setShowConcesionariosDropdown] =
     useState(false);
-
+  const { pathname } = useLocation();
+  console.log(pathname);
+  const isNotTransparent =
+    pathname === "/promociones" || pathname === "/cookies";
   // Estados para los filtros y opciones activas
   const [activeFilter, setActiveFilter] = useState("todos");
   const [activeConcesionariosOption, setActiveConcesionariosOption] =
@@ -191,12 +194,14 @@ const Navbar = () => {
 
       {/* Navbar con transparencia y hover */}
       <div
-        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
+        className={` px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
         transition-all duration-200 ease-in-out relative
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
-            : "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
+            : !isNotTransparent
+            ? "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
+            : "bg-white text-midnight-black"
         }`}
         onMouseEnter={() => setIsNavbarHovered(true)}
         onMouseLeave={() => setIsNavbarHovered(false)}>
@@ -273,7 +278,7 @@ const Navbar = () => {
               alt="Kia"
               className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
               ${
-                shouldInvertLogo || mobileMenuOpen
+                shouldInvertLogo || mobileMenuOpen || isNotTransparent
                   ? "filter brightness-0"
                   : "filter brightness-100"
               }`}
