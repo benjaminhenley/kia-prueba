@@ -2,6 +2,18 @@ import React, { useState, useEffect } from "react";
 import { homeSlider } from "../../Data/inicio";
 import { Link } from "react-router-dom";
 
+// Función para el evento de clic en el banner hero
+const eventoDL_hero = (e, b, l) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: e,
+    comp_page: {
+      name_banner: b,
+      link: l
+    }
+  });
+};
+
 const HomeSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [fade, setFade] = useState(true); // Estado para controlar la opacidad
@@ -19,6 +31,20 @@ const HomeSlider = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // DataLayer para registrar la visualización del banner actual cuando cambia el slide
+  useEffect(() => {
+    const slide = homeSlider[currentSlide];
+    // Envía el evento de visualización con los datos del slide actual
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'hero_banner_view',
+      comp_page: {
+        name_banner: slide.titulo || 'kia slide',
+        link: slide.linkBoton || '#'
+      }
+    });
+  }, [currentSlide]); // Se ejecuta cada vez que currentSlide cambia
+
   // Función para cambiar manualmente la diapositiva
   const goToSlide = (slideIndex) => {
     setFade(false); // Inicia el fade out
@@ -29,6 +55,30 @@ const HomeSlider = () => {
   };
 
   const slide = homeSlider[currentSlide];
+
+  // Función para manejar el clic en el botón externo con dataLayer
+  const handleExternalLinkClick = (e, slide) => {
+    // Prevenimos la navegación predeterminada para asegurar que el dataLayer se registre
+    e.preventDefault();
+    
+    // Registramos el evento de clic en el dataLayer con información del slide actual
+    eventoDL_hero('hero_banner_click', slide.titulo || 'kia slide', slide.linkBoton || '#');
+    
+    // Redirigimos después de un pequeño retraso para asegurar que el dataLayer se registre
+    setTimeout(() => {
+      if (slide.target === "_blank") {
+        window.open(slide.linkBoton, slide.target);
+      } else {
+        window.location.href = slide.linkBoton;
+      }
+    }, 100);
+  };
+
+  // Función para manejar el clic en enlaces internos
+  const handleInternalLinkClick = (slide) => {
+    // Solo registramos el evento en el dataLayer
+    eventoDL_hero('hero_banner_click', slide.titulo || 'kia slide', slide.linkBoton || '#');
+  };
 
   return (
     <div className="relative w-full h-[calc(100dvh-1rem)] overflow-hidden">
@@ -50,7 +100,7 @@ const HomeSlider = () => {
         {/* Contenido - Ahora absolutamente posicionado tanto en móvil como en desktop */}
         <div className="absolute px-1 pb-3 inset-0 flex flex-col items-center justify-end text-white z-10">
           <h1
-            className="text-[2rem] xl:text-[2.25rem] 2xl:text-[4rem] win:text-[2rem] font-bold  animate-fade-in"
+            className="text-[2rem] xl:text-[2.25rem] 2xl:text-[4rem] win:text-[2rem] font-bold animate-fade-in"
             style={{ animation: "fadeIn 1s ease-in" }}>
             {slide.titulo}
           </h1>
@@ -58,7 +108,7 @@ const HomeSlider = () => {
           {slide.esExterna ? (
             <a
               href={slide.linkBoton}
-              target={slide.target}
+              onClick={(e) => handleExternalLinkClick(e, slide)}
               rel="noopener noreferrer"
               className="group mt-5 mb-10 lg:mt-3 lg:mb-6 xl:mt-5 xl:mb-10 win:mt-3 win:mb-5 inline-block">
               <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
@@ -71,6 +121,7 @@ const HomeSlider = () => {
           ) : (
             <Link
               to={slide.linkBoton}
+              onClick={() => handleInternalLinkClick(slide)}
               className="group mt-5 mb-10 lg:mt-3 lg:mb-6 xl:mt-5 xl:mb-10 win:mt-3 win:mb-5 inline-block">
               <div className="relative bg-white font-bold text-[0.875rem] text-midnight-black py-5 px-10 hover:bg-[#37434C] hover:text-white transition">
                 <span className="relative block">

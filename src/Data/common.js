@@ -266,9 +266,9 @@ export const blackbarLeft = [
   },
   {
     nombre: <p>CONTÁCTENOS</p>,
-    href: "https://www.kia.com.ar/contacto",
+    href: "/contactenos",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
 
@@ -289,7 +289,7 @@ export const blackbarRight = [
     nombre: <p>POLÍTICA DE COOKIES</p>,
     href: "/cookies",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
 
