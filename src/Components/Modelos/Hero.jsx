@@ -211,7 +211,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
             {/* Hero Icons - Has dark overlay on both mobile and desktop */}
             {heroInfo && (
-              <div className="  bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit ">
+              <div className="  bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit md:pr-20">
                 <div className="flex flex-wrap md:flex-nowrap md:justify-center w-fit m-auto p-4 md:p-0">
                   {/* Top row - first 3 items */}
                   <div className="w-full flex justify-between md:justify-start">

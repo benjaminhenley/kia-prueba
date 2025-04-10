@@ -104,6 +104,12 @@ export default function Promociones() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [showModelGallery, setShowModelGallery] = useState(true);
   const [availableDealers, setAvailableDealers] = useState([]);
+  const [isValid, setIsValid] = useState(false);
+
+  // Add useEffect to validate form on every change
+  useEffect(() => {
+    validateForm();
+  }, [formData, acceptedTerms, selectedModel]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -124,17 +130,45 @@ export default function Promociones() {
     }
   };
 
-  const isFormValid = () => {
+  // Update the form validation function
+  const validateForm = () => {
     // Basic validation - check if required fields are filled
-    const { firstName, lastName, contactPreference, province } = formData;
-    return (
+    const {
+      firstName,
+      lastName,
+      contactPreference,
+      province,
+      email,
+      phone,
+      birthDay,
+      birthMonth,
+      birthYear,
+    } = formData;
+
+    // Check if the proper contact info is provided based on contact preference
+    const isContactInfoValid =
+      (contactPreference === "email" && email !== "") ||
+      (contactPreference === "phone" && phone !== "") ||
+      (contactPreference !== "" && email !== "" && phone !== "");
+
+    const valid =
       acceptedTerms &&
       selectedModel &&
-      firstName &&
-      lastName &&
-      contactPreference &&
-      province
-    );
+      firstName !== "" &&
+      lastName !== "" &&
+      contactPreference !== "" &&
+      isContactInfoValid &&
+      birthDay !== "" &&
+      birthMonth !== "" &&
+      birthYear !== "" &&
+      province !== "";
+
+    setIsValid(valid);
+    return valid;
+  };
+
+  const isFormValid = () => {
+    return isValid;
   };
 
   // Toggle model gallery visibility
@@ -147,7 +181,7 @@ export default function Promociones() {
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto bg-white pt-[55px] md:pt-[80px]">
+    <div className="w-full mx-auto bg-white pt-[55px] md:pt-[80px]">
       {/* Main Content Container */}
       <div className="px-4 md:px-20 py-10 flex flex-col gap-5 md:gap-10">
         {/* Header Section */}
@@ -226,7 +260,7 @@ export default function Promociones() {
                         onChange={handleFormChange}
                       />
                       <TextField
-                        placeholder="Preferencia de contacto"
+                        placeholder="Teléfono"
                         name="phone"
                         type="tel"
                         value={formData.phone}
@@ -311,7 +345,10 @@ export default function Promociones() {
             onClick={() => setAcceptedTerms(!acceptedTerms)}>
             <h6>
               He leído y acepto el{" "}
-              <a href="#" className="underline">
+              <a
+                target="_blank"
+                href="https://www.kia.com.ar/img/consentimiento_gral.pdf"
+                className="underline">
                 Consentimiento Informado sobre Uso y Procesamiento de Datos
               </a>
             </h6>
@@ -320,13 +357,8 @@ export default function Promociones() {
 
         {/* Action Buttons */}
         <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-          <FormButton type="secondary" disabled={!acceptedTerms}>
-            Cancelar
-          </FormButton>
-          <FormButton
-            type="primary"
-            disabled={!acceptedTerms}
-            onClick={submitForm}>
+          <FormButton type="secondary">Cancelar</FormButton>
+          <FormButton type="primary" disabled={!isValid} onClick={submitForm}>
             Enviar
           </FormButton>
         </div>

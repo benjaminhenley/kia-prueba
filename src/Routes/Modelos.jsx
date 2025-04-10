@@ -33,7 +33,7 @@ const Modelos = () => {
   };
 
   return (
-    <div className="w-full relative pb-20">
+    <div className="w-full relative ">
       {/* Hero Section with Video/Image */}
       <Hero
         title={model.name}

@@ -16,7 +16,9 @@ const Navbar = () => {
   const { pathname } = useLocation();
   console.log(pathname);
   const isNotTransparent =
-    pathname === "/promociones" || pathname === "/cookies";
+    pathname === "/promociones" ||
+    pathname === "/cookies" ||
+    pathname === "/contactenos";
   // Estados para los filtros y opciones activas
   const [activeFilter, setActiveFilter] = useState("todos");
   const [activeConcesionariosOption, setActiveConcesionariosOption] =

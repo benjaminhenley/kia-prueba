@@ -286,10 +286,10 @@ export const blackbarRight = [
     esExterna: null,
   },
   {
-    nombre: <p>POLÍTICA DE PRIVACIDAD</p>,
+    nombre: <p>POLÍTICA DE COOKIES</p>,
     href: "/cookies",
     target: "",
-    esExterna: false,
+    esExterna: true,
   },
 ];
 

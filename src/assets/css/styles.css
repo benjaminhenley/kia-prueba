@@ -48,3 +48,7 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+body {
+  text-color: #05141f;
+}

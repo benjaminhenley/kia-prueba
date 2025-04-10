@@ -1,4 +1,5 @@
 const TextField = ({
+  className = "",
   disabled = false,
   placeholder = "",
   value = "",
@@ -34,7 +35,7 @@ const TextField = ({
     <div
       className={`flex-1 h-7 inline-flex flex-col justify-start items-start overflow-hidden ${
         disabled ? "opacity-50" : ""
-      }`}>
+      } ${className}`}>
       <input
         type={type}
         placeholder={placeholder}

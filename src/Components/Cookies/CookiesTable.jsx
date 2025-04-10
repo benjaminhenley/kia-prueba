@@ -1,8 +1,8 @@
 // Reusable table component
 const CookiesTable = ({ data, title, spanish, className = "mt-5" }) => (
   <div className={className}>
-    <h4 className="text-gray-900 font-semibold mb-2">{title}</h4>
-    <div className="h-[1px] w-16 bg-gray-900 mb-3"></div>
+    <h4 className="text-[#05141F] font-semibold mb-2">{title}</h4>
+    <div className="h-[1px] w-16 bg-[#05141F] mb-3"></div>
     <div className="overflow-x-auto">
       <table className="w-full table-fixed border-collapse">
         <colgroup>
@@ -15,23 +15,23 @@ const CookiesTable = ({ data, title, spanish, className = "mt-5" }) => (
           <col className="w-[150px]" />
         </colgroup>
         <thead>
-          <tr className="bg-gray-900 text-white">
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+          <tr className="bg-[#05141F] text-white">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">Nombre</h5>
             </th>
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">{spanish ? "Huésped" : "Host"}</h5>
             </th>
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">Duración</h5>
             </th>
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">Tipo de Servicio</h5>
             </th>
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">Categoría</h5>
             </th>
-            <th className="py-2 px-4 text-left border-r border-gray-700">
+            <th className="py-2 px-4 text-left border-r border-none">
               <h5 className="font-bold">Descripción</h5>
             </th>
             <th className="py-2 px-4 text-left">
@@ -43,26 +43,28 @@ const CookiesTable = ({ data, title, spanish, className = "mt-5" }) => (
           {data.map((cookie, index) => (
             <tr
               key={index}
-              className={index % 2 === 0 ? "bg-gray-200" : "bg-white"}>
-              <td className="py-2 px-4 border border-gray-300">
+              className={`text-[#05141F] ${
+                index % 2 === 0 ? "bg-[#E1E3E4]" : "bg-[#F5F6F6]"
+              }`}>
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.name}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.host}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.duration}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.serviceType}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.category}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6 className="break-words">{cookie.description}</h6>
               </td>
-              <td className="py-2 px-4 border border-gray-300">
+              <td className="py-2 px-4 border border-[#CDD0D2]">
                 <h6>{cookie.transfers}</h6>
               </td>
             </tr>

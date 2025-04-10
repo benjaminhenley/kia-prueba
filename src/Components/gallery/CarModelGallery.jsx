@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, use } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import sedanImg from "../../assets/img/common/modelos/AllNewK3Sedan.webp";
 import ceratoImg from "../../assets/img/common/modelos/Cerato.webp";
 import crossImg from "../../assets/img/common/modelos/AllNewK3Cross.webp";
@@ -6,6 +6,7 @@ import SeltosImg from "../../assets/img/common/modelos/Seltos.webp";
 import SportageImg from "../../assets/img/common/modelos/Sportage.webp";
 import carnivalImg from "../../assets/img/common/modelos/Carnival.webp";
 import k2500Img from "../../assets/img/common/modelos/K2500.webp";
+import Arrow from "../Icons/Arrow";
 
 const CAR_MODELS = [
   {
@@ -45,27 +46,83 @@ const CAR_MODELS = [
   },
 ];
 
-const CarModelGallery = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const CarModelGallery = ({ onSelect }) => {
+  // Keep two separate states - one for selection and one for slider position
+  const [selectedIndex, setSelectedIndex] = useState(0); // The actual selection state (only changes on click)
+  const [viewIndex, setViewIndex] = useState(0); // The visual position (changes with slider)
+  const [sliderValue, setSliderValue] = useState(0); // Raw slider value (0-100)
+
   const scrollContainerRef = useRef(null);
   const sliderRef = useRef(null);
+  const thumbRef = useRef(null);
 
+  // Handle when car is clicked - this is the ONLY way to select a car
   const handleCarClick = (index) => {
-    setCurrentIndex(index);
+    setSelectedIndex(index);
+    setViewIndex(index); // Also update view to match selection
+
+    // Notify parent of selection
+    if (onSelect && index >= 0 && index < CAR_MODELS.length) {
+      onSelect(CAR_MODELS[index]);
+    }
   };
 
-  const handleSliderDrag = (sliderRef) => {};
+  // Handle slider input change - only updates the view, not selection
+  const handleSliderChange = (e) => {
+    const value = parseInt(e.target.value);
+    setSliderValue(value);
 
+    // Calculate visual index from slider value (non-rounded, for smooth scrolling)
+    const newViewIndex = (value / 100) * (CAR_MODELS.length - 1);
+    setViewIndex(newViewIndex);
+
+    // Does NOT update selectedIndex or call onSelect
+  };
+
+  // Update thumb position based on slider value
+  useEffect(() => {
+    if (thumbRef.current && sliderRef.current) {
+      // Position thumb based on slider value
+      const trackWidth = sliderRef.current.offsetWidth;
+      const leftPos = (sliderValue / 100) * (trackWidth - 48);
+      thumbRef.current.style.left = `${leftPos}px`;
+    }
+  }, [sliderValue]);
+
+  // Scroll the container when view index changes
   useEffect(() => {
     if (scrollContainerRef.current) {
       const scrollAmount =
-        currentIndex * scrollContainerRef.current.children[0].offsetWidth;
+        viewIndex * scrollContainerRef.current.children[0].offsetWidth;
       scrollContainerRef.current.scrollTo({
         left: scrollAmount,
-        behavior: "smooth",
+        behavior: "instant",
       });
     }
-  }, [currentIndex]);
+  }, [viewIndex]);
+
+  // Update slider value when selected index changes (for initialization and direct clicks)
+  useEffect(() => {
+    // When selection changes, update the view position to match
+    const value = (selectedIndex / (CAR_MODELS.length - 1)) * 100;
+    setSliderValue(value);
+    setViewIndex(selectedIndex);
+  }, [selectedIndex]);
+
+  // Handle navigation with arrow buttons - these DO select cars
+  const handlePrev = () => {
+    if (selectedIndex > 0) {
+      setSelectedIndex(selectedIndex - 1);
+      // onSelect is called via the selectedIndex useEffect
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedIndex < CAR_MODELS.length - 1) {
+      setSelectedIndex(selectedIndex + 1);
+      // onSelect is called via the selectedIndex useEffect
+    }
+  };
 
   return (
     <div className="w-full">
@@ -77,10 +134,10 @@ const CarModelGallery = () => {
           {CAR_MODELS.map((model, index) => (
             <div
               key={model.id || `model-${index}`}
-              className={`w-fit  flex-shrink-0 flex flex-col items-center p-4 ${
-                currentIndex === index
-                  ? "border-2 border-[#05141F] bg-[#F8F8F8]"
-                  : ""
+              className={`w-fit flex-shrink-0 flex flex-col items-center p-4 border-2 ${
+                selectedIndex === index
+                  ? "border-[#05141F] bg-[#F8F8F8]"
+                  : "border-transparent"
               } cursor-pointer`}
               onClick={() => handleCarClick(index)}>
               <img
@@ -94,37 +151,36 @@ const CarModelGallery = () => {
         </div>
       </div>
 
-      {/* Navigation Dots & Arrows */}
+      {/* Navigation Controls with Range Slider */}
       <div className="flex items-center justify-center mt-5 overflow-hidden">
-        <div className="flex-1 h-[1px] bg-gray-300 relative my-3">
-          <div
+        <div className="relative flex-1 h-[1px] bg-gray-300 my-3">
+          {/* Hidden range input that's still interactive */}
+          <input
             ref={sliderRef}
-            onMouseEnter={() => handleSliderDrag(sliderRef.current)}
-            className="absolute top-[-12px] w-fit h-fit flex cursor-grab">
-            <div className="w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M15.9303 12.212C15.9739 12.1571 16 12.0832 16 12C16 11.9168 15.9739 11.8429 15.9303 11.788L11.3451 6H10.0012L14.7545 12L10 18H11.3438L15.9303 12.212Z"
-                  fill="white"
-                  transform="rotate(180 13 12)"
-                />
-              </svg>
+            type="range"
+            min="0"
+            max="100"
+            step="any"
+            value={sliderValue}
+            onChange={handleSliderChange}
+            className="absolute top-[-12px] w-full h-6 opacity-0 cursor-grab z-10"
+          />
+
+          {/* Custom thumb element */}
+          <div
+            ref={thumbRef}
+            className="absolute top-[-12px] flex flex-row border-none"
+            style={{ left: "0px" }} // Initial position, will be updated by useEffect
+          >
+            <div
+              onClick={handlePrev}
+              className="border-none w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50 cursor-pointer">
+              <Arrow fill="#fff" className="rotate-180" />
             </div>
-            <div className="w-6 h-6 flex items-center justify-center rounded-r-full bg-[#05141F] disabled:opacity-50">
-              <svg
-                className="rotate-180"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M15.9303 12.212C15.9739 12.1571 16 12.0832 16 12C16 11.9168 15.9739 11.8429 15.9303 11.788L11.3451 6H10.0012L14.7545 12L10 18H11.3438L15.9303 12.212Z"
-                  fill="white"
-                  transform="rotate(180 13 12)"
-                />
-              </svg>
+            <div
+              onClick={handleNext}
+              className="border-none w-6 h-6 flex items-center justify-center rounded-r-full bg-[#05141F] disabled:opacity-50 cursor-pointer">
+              <Arrow fill="#fff" />
             </div>
           </div>
         </div>

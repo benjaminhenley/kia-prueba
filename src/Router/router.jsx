@@ -5,7 +5,7 @@ import Inicio from "../Routes/Inicio";
 import Modelos from "../Routes/Modelos";
 import Promociones from "../Routes/Promociones";
 import Cookies from "../Routes/Cookies";
-
+import Contactenos from "../Routes/Contactenos";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -27,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/cookies",
         element: <Cookies />,
+      },
+      {
+        path: "/contactenos",
+        element: <Contactenos />,
       },
     ],
   },
