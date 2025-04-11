@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ColorPicker = ({ colorPickerData }) => {
   // const [activeFinish, setActiveFinish] = useState("glossy");
-  const [activeColor, setActiveColor] = useState("blue");
+  const [activeColor, setActiveColor] = useState(colorPickerData[0].id);
 
   // const finishOptions = [
   //   { id: "glossy", label: "Glossy" },
@@ -95,40 +95,22 @@ const ColorPicker = ({ colorPickerData }) => {
                   isActive ? "scale-[1.3] z-10" : ""
                 }`}
                 aria-label={color.name}>
-                {/* Main Circle with Shadow Effect */}
+                {/* Main color circle */}
                 <div
-                  className={`
-                    w-8 h-8 rounded-full overflow-hidden relative
-                    ${isActive ? "border-2" : ""} 
-                    
-                  `}
+                  className="w-8 h-8 rounded-full"
                   style={{
-                    borderColor: color.border,
-                  }}>
-                  {/* Background Color */}
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{ backgroundColor: color.color }}
-                  />
-
-                  {/* Shadow/Gradient Effect - Rotated to the left */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-tr"
-                    style={{
-                      backgroundColor: color.outline,
-                      clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0% 100%)",
-                      transform: "rotate(-45deg)",
-                    }}
-                  />
-                </div>
-
-                {/* Selection Ring for Active Color */}
-                <div
-                  style={{ borderColor: color.border }}
-                  className={`absolute ${
-                    isActive ? "hidden" : "-inset-[3px]"
-                  } rounded-full border`}
+                    background: `linear-gradient(135deg, ${color.color} 50%, ${color.outline} 50%)`,
+                    border: isActive ? `2px solid ${color.border}` : "none",
+                  }}
                 />
+
+                {/* Inactive state border */}
+                {!isActive && (
+                  <div
+                    className="absolute -inset-[3px] rounded-full border"
+                    style={{ borderColor: color.border }}
+                  />
+                )}
               </button>
             );
           })}

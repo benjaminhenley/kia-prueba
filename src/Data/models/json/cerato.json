@@ -1,0 +1,313 @@
+{
+  "id": "cerato",
+  "name": "Cerato",
+  "tagline": "Inspirate con un viaje a las montañas",
+  "heroImage": "/images/placeholder-cerato-hero.jpg",
+  "heroVideo": "imageMapRef:cross.heroVideo",
+  "menu": {
+    "etiqueta": { "id": "brochures", "link": "imageMapRef:cross.etiqueta" },
+    "fichas": { "id": "technical-sheet", "link": "imageMapRef:cross.fichas" }
+  },
+  "heroInfo": [
+    {
+      "iconId": "radio",
+      "title": "Stars",
+      "description": "Central <br/> multimedia <br/> de 8”",
+      "description_mobile": "Central multimedia <br/> de 8”"
+    },
+    {
+      "iconId": "airbag",
+      "title": "Airbag",
+      "description": "6 <br/> Airbags",
+      "description_mobile": "6 Airbags"
+    },
+    {
+      "iconId": "breaks",
+      "title": "Breaks",
+      "description": "Frenos ABS <br/> con EBD",
+      "description_mobile": "Frenos ABS <br/> con EBD"
+    },
+    {
+      "iconId": "stabilizer",
+      "title": "Stabilizer",
+      "description": "Control de <br/> estabilidad <br/> (ESC)",
+      "description_mobile": "Control de <br/> estabilidad (ESC)"
+    },
+    {
+      "iconId": "assistant",
+      "title": "Assistant",
+      "description": "Asistente de <br/> arranque en <br/> pendiente (HAC)",
+      "description_mobile": "Asistente de arranque <br/> en pendiente (HAC)"
+    },
+    {
+      "iconId": "anchor",
+      "title": "Anchor",
+      "description": "Anclajes <br/> ISOFIX",
+      "description_mobile": "Anclajes <br/> ISOFIX"
+    }
+  ],
+  "sections": {
+    "characteristics": {
+      "features": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "2.0 MPI | 1,999cc"
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "value": "150hp | 192Nm"
+        },
+        {
+          "id": "warranty",
+          "title": "Garantía",
+          "value": "5 años o 100.000km"
+        }
+      ],
+      "colorPicker": [
+        {
+          "id": "red",
+          "name": "Runway Red",
+          "border": "#740000",
+          "color": "#C20000",
+          "outline": "#A50000",
+          "thumbnail": "imageMapRef:sportage.colors.red"
+        },
+        {
+          "id": "mineral-blue",
+          "name": "Mineral Blue",
+          "border": "#03070F",
+          "color": "#0E254B",
+          "outline": "#0B1C38",
+          "thumbnail": "imageMapRef:sportage.colors.dark-blue"
+        },
+        {
+          "id": "gravity-blue",
+          "name": "Gravity Blue",
+          "border": "#0B293B",
+          "color": "#124463",
+          "outline": "#0F3A54",
+          "thumbnail": "imageMapRef:sportage.colors.blue"
+        },
+        {
+          "id": "horizon-blue",
+          "name": "Horizon Blue",
+          "border": "#1D4159",
+          "color": "#306D94",
+          "outline": "#2B6285",
+          "thumbnail": "imageMapRef:sportage.colors.blue"
+        },
+        {
+          "id": "black",
+          "name": "Aurora Black Pearl",
+          "border": "#05141F",
+          "color": "#1B171B",
+          "outline": "#05141F",
+          "thumbnail": "imageMapRef:sportage.colors.black"
+        },
+        {
+          "id": "gravity-gray",
+          "name": "Gravity Gray",
+          "border": "#242323",
+          "color": "#474646",
+          "outline": "#393838",
+          "thumbnail": "imageMapRef:sportage.colors.gravity-gray"
+        },
+        {
+          "id": "gray",
+          "name": "Steel Gray",
+          "border": "#4C4C4C",
+          "color": "#7E7E7E",
+          "outline": "#6B6B6B",
+          "thumbnail": "imageMapRef:sportage.colors.steel-gray"
+        },
+        {
+          "id": "silver",
+          "name": "Silky Silver",
+          "border": "#817F7F",
+          "color": "#B8B6B6",
+          "outline": "#A6A4A4",
+          "thumbnail": "imageMapRef:sportage.colors.silver"
+        },
+        {
+          "id": "white",
+          "name": "Snow White Pearl",
+          "border": "#D6D6D6",
+          "color": "#F6F6F6",
+          "outline": "#EFEFEF",
+          "thumbnail": "imageMapRef:sportage.colors.white"
+        }
+      ],
+      "atributes": {
+        "category": "Atributos",
+        "subtitle": "Aventura y estilo en cada recorrido",
+        "image": "imageMapRef:cross.attributes",
+        "bulletPoints": [
+          "**Diseño aerodinámico y elegante:** El Cerato presenta un estilo deportivo con líneas limpias, faros LED y una parrilla frontal que expresa la identidad moderna de Kia.",
+          "**Conectividad y tecnología:** Equipado con una central multimedia de 8” compatible con Android Auto™ y Apple CarPlay™, sumado a acceso sin llave, encendido por botón y puertos USB. Todo pensado para mantenerte cómodo y conectado en cada viaje.",
+          "**Tecnología para un viaje conectado:** Con 6 airbags, frenos ABS con EBD, control de estabilidad (ESC), asistente de arranque en pendiente (HAC) y anclajes ISOFIX, el Cerato garantiza protección integral para vos y tus acompañantes."
+        ],
+        "description": "El atractivo del Cerato va mucho más allá del estilo y la comodidad. Desde la facilidad para entrar y salir del vehículo, hasta los controles ergonómicos al alcance de tu mano, el Cerato te ayuda a disfrutar la vida al máximo."
+      },
+      "exterior": {
+        "category": "Exterior",
+        "title": "Reinicia la magia con cada viaje",
+        "description": "Tomá el volante del nuevo y elegante Kia Cerato y empezá tu día sintiéndote renovado, relajado y capaz de cualquier cosa. La vida se acaba de volver más interesante.",
+        "images": [
+          {
+            "id": "exterior-front",
+            "src": "imageMapRef:cross.exterior.grille",
+            "alt": "Faros",
+            "title": "Diseñado para abrir nuevos horizontes",
+            "description": "Sus contornos deportivos y detalles refinados transmiten una fuerza y compostura que inspiran personalidad y confianza en cada trayecto."
+          },
+          {
+            "id": "exterior-front",
+            "src": "imageMapRef:cross.exterior.front",
+            "alt": "Parabrisa",
+            "title": "Faros delanteros LED c/ Corneling light",
+            "description": "Uno de los elementos más llamativos de su diseño frontal es su conjunto lumínico delantero con faros LED, luces diurnas LED de estilo Star-Map en formato vertical y función Cornering Light."
+          },
+          {
+            "id": "exterior-rear",
+            "src": "imageMapRef:cross.exterior.rear",
+            "alt": "Rear light",
+            "title": "Llantas de aleación diamantadas de 17'",
+            "description": "El diseño definitivo que añade una dosis de actitud y deportividad al diseño del All-new K3."
+          },
+          {
+            "id": "exterior-grille",
+            "src": "imageMapRef:cross.exterior.wheel",
+            "alt": "Faros",
+            "title": "El All-new K3 Cross va más allá de lo conocido",
+            "description": "Con el All-new K3 Cross la diversión está garantizada, ofrece una experiencia de manejo entretenida, eficiente y dinámica que te dará la mejor experiencia al conducir."
+          },
+          {
+            "id": "exterior-espejo",
+            "src": "imageMapRef:cross.exterior.mirror",
+            "alt": "Espejo",
+            "title": "Faros traseros LED con barra horizontal",
+            "description": "Detalles que lo hacen único. Luces con estilo futurista, no sólo complementan el equipamiento, se fusiona con el diseño para hacerlo sobresalir."
+          }
+        ]
+      },
+      "interior": {
+        "category": "Interior",
+        "title": "Confort y tecnología en cada detalle",
+        "description": "El atractivo del nuevo KIA Cerato es evidente. Cada detalle del interior también está diseñado para crear una mejor experiencia de manejo.",
+        "images": [
+          {
+            "id": "interior-seats",
+            "src": "imageMapRef:cross.interior.seats",
+            "alt": "Asientos tapizados",
+            "title": "Modelo a seguir en espacio",
+            "description": "El All-new K3 reinterpreta la forma de conectarse con el interior, con elementos de diseño ergonómicos y que priorizan la funcionalidad, logra un espacio interior amplio, innovador y confortable."
+          },
+          {
+            "id": "interior-seats",
+            "src": "imageMapRef:cross.interior.panel",
+            "alt": "Baul 455",
+            "title": "Infotainment full LCD 10,25'",
+            "description": "El nuevo Kia K3 va un paso adelante en tecnología y conectividad con su sistema de entretenimiento con pantalla táctil de alta resolución con conectividad inalámbrica Android Auto™ y Apple CarPlay™."
+          },
+          {
+            "id": "interior-keys",
+            "src": "imageMapRef:cross.interior.box",
+            "alt": "Interior keys",
+            "title": "Apertura con llave inteligente y botón de arranque",
+            "description": "Abrí, cerrá y encendé el auto sin tener que buscar las llaves en tu bolsillo gracias a la llave inteligente \"Keyless\"."
+          },
+          {
+            "id": "interior-air-conditioner",
+            "src": "imageMapRef:cross.interior.airConditioner",
+            "alt": "Interior air conditioner",
+            "title": "Climatizador automático Bi-Zona",
+            "description": "No importa si conducís o acompañás, podés personalizar de forma independiente tu temperatura ideal, asegurando el máximo confort en cada viaje."
+          },
+          {
+            "id": "interior-panel",
+            "src": "imageMapRef:cross.interior.keys",
+            "alt": "Interior keys",
+            "title": "Carga fácil, energía que no frena",
+            "description": "Ya no necesitás cables para mantener la carga de tu smartphone* al 100%. Sólo colocalo en la base de carga y seguí la aventura. <br/> *Disponible para dispositivos compatibles con esta tecnología."
+          }
+        ]
+      }
+    },
+    "specifications": {
+      "carouselImages": [
+        {
+          "id": 1,
+          "src": {
+            "mobile": "imageMapRef:cross.carousel.front.mobile",
+            "desktop": "imageMapRef:cross.carousel.front.desktop"
+          },
+          "alt": "Cross Front"
+        },
+        {
+          "id": 2,
+          "src": {
+            "mobile": "imageMapRef:cross.carousel.back.mobile",
+            "desktop": "imageMapRef:cross.carousel.back.desktop"
+          },
+          "alt": "Cross Interior"
+        },
+        {
+          "id": 3,
+          "src": {
+            "mobile": "imageMapRef:cross.carousel.side.mobile",
+            "desktop": "imageMapRef:cross.carousel.side.desktop"
+          },
+          "alt": "Cross Side"
+        }
+      ],
+      "features": [
+        {
+          "id": "frontlights",
+          "title": "Faros delanteros LED",
+          "value": "Faros LED + delanteros <br/> con Cornering Light"
+        },
+        {
+          "id": "smartkey",
+          "title": "Smart Key",
+          "value": "Smart Key + <br/> Botón de arranque"
+        },
+        {
+          "id": "wheels",
+          "title": "Aleación",
+          "value": "Llantas de 17\""
+        },
+        {
+          "id": "battery",
+          "title": "Batería",
+          "value": "Cargador <br/> inalámbrico"
+        },
+        {
+          "id": "upholstery",
+          "title": "Tapizado",
+          "value": "Tapizados Bi-Tono <br/> GT-Line"
+        }
+      ],
+      "dimensions": {
+        "title": "Dimensiones (mm)",
+        "details": [
+          {
+            "name": "EXTERIOR largo / ancho / alto",
+            "value": "4.545 / 1.765 / 1.475"
+          },
+          { "name": "Distancia entre ejes", "value": "2.670" },
+          { "name": "Distancia del suelo", "value": "165" },
+          {
+            "name": "Capacidad de baúl (2ª Fila/ 1ª Fila)",
+            "value": "455 VDA Lts"
+          },
+          { "name": "Peso Neto", "value": "1.215 Kg" },
+          { "name": "Plazas", "value": "5" },
+          { "name": "Medida de neumáticos", "value": "205 / 50R17" },
+          { "name": "Auxilio", "value": "Acero" }
+        ]
+      }
+    }
+  }
+}

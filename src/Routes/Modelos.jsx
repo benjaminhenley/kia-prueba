@@ -4,7 +4,7 @@ import Hero from "../Components/Modelos/Hero.jsx";
 import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
 import Characteristics from "../Components/Modelos/tabs/characteristics/index.jsx";
-import { getSafeModelData } from "../Data/modelMapper.js";
+import { getSafeModelData } from "../Data/models/modelMapper.js";
 
 const Modelos = () => {
   const { modelID } = useParams();

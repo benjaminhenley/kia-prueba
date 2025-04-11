@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  AirbagsIcon,
-  RoofIcon,
-  RadioIcon,
-  AdasIcon,
-  StarsIcon,
-} from "../Icons/HeroIcons";
-
+import { PlayIcon } from "../Icons/PlayButton";
+import heroIcons from "../Icons/HeroIcons";
 const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -60,16 +54,15 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const renderIcon = (icon, className) => {
-    const icons = {
-      stars: <StarsIcon className={className} />,
-      airbag: <AirbagsIcon className={className} />,
-      adas: <AdasIcon className={className} />,
-      radio: <RadioIcon className={className} />,
-      roof: <RoofIcon className={className} />,
-    };
-
-    return icons[icon] || <span className={className}>🔧</span>;
+  const renderIcon = (item, className) => {
+    if (item && item.iconId) {
+      const IconComponent = heroIcons[item.iconId];
+      return IconComponent ? (
+        <IconComponent className={className} fill="#ffffff" />
+      ) : (
+        <span className={className}>🔧</span>
+      );
+    }
   };
 
   const handlePlayClick = () => {
@@ -154,75 +147,62 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
         {/* Play button overlay - only shown if video is available and on mobile */}
         {!hasVideoError && showPlayButton && (
           <div className="absolute inset-0 flex items-center justify-center z-20 md:hidden">
-            <button
+            <PlayIcon
               onClick={handlePlayClick}
-              className="w-20 h-20 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-              aria-label={isPlaying ? "Pause video" : "Play video"}>
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center">
-                {isPlaying ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-8 h-8 text-gray-900">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 5.25v13.5m-7.5-13.5v13.5"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-8 h-8 text-gray-900 ml-1">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
-                    />
-                  </svg>
-                )}
-              </div>
-            </button>
+              className="w-[106px] h-[106px]"
+            />
           </div>
         )}
       </div>
 
       {/* Text Overlay - No dark background on mobile */}
       <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
-        <div className="max-w-screen-2xl mx-auto w-full md:py-[30px]">
+        <div className=" mx-auto w-full md:py-[30px]">
           <div className="relative flex flex-col lg:flex-row justify-between h-full pointer-events-auto">
             {/* Title section - No overlay on mobile */}
             <div className="flex flex-col relative mt-5 md:mt-0 pl-4 md:pl-20 flex-shrink-0">
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500  mx-4 md:mx-16"></div>
 
-              <h2 className="font-normal mb-1">All-new</h2>
+              {/* <h2 className="font-normal mb-1">All-new</h2> */}
               <h1 className="font-bold mb-1">{title}</h1>
               <h3 className=" font-normal">{tagline}</h3>
               <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>
             </div>
 
-            {/* Hero Icons - Has dark overlay on both mobile and desktop */}
             {heroInfo && (
               <div className="  bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit md:pr-20">
                 <div className="flex flex-wrap md:flex-nowrap md:justify-center w-fit m-auto p-4 md:p-0">
                   {/* Top row - first 3 items */}
                   <div className="w-full flex justify-between md:justify-start">
-                    {Object.entries(heroInfo)
-                      .slice(0, 3)
-                      .map(([key, item]) => (
+                    {heroInfo.slice(0, 3).map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex flex-col items-center text-center  w-fit p-2 xl:p-4">
+                        <div className="flex justify-center items-end h-8 w-full md:h-10">
+                          {renderIcon(item, "w-6 h-6 md:h-8 md:w-8")}
+                        </div>
+                        <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
+                          {(
+                            item.description_mobile || item.description
+                          ).replace(/<br\/>/g, "\n")}
+                        </h6>
+                        <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
+                          {item.description.replace(/<br\/>/g, "\n")}
+                        </h6>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom row - remaining items */}
+                  {heroInfo.length > 3 && (
+                    <div className="flex justify-between md:justify-start md:mx-auto w-full md:w-fit">
+                      {heroInfo.slice(3).map((item) => (
                         <div
-                          key={key}
-                          className="flex flex-col items-center text-center  w-fit p-2 xl:p-4">
+                          key={item.id}
+                          className="flex flex-col flex-grow items-center text-center w-auto md:w-auto p-2 xl:p-4">
                           <div className="flex justify-center items-end h-8 w-full md:h-10">
-                            {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
+                            {renderIcon(item, "w-6 h-6 md:h-8 md:w-8")}
                           </div>
                           <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
                             {(
@@ -234,30 +214,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                           </h6>
                         </div>
                       ))}
-                  </div>
-
-                  {/* Bottom row - remaining items */}
-                  {Object.entries(heroInfo).length > 3 && (
-                    <div className="flex justify-between md:justify-start md:mx-auto w-full md:w-fit">
-                      {Object.entries(heroInfo)
-                        .slice(3)
-                        .map(([key, item]) => (
-                          <div
-                            key={key}
-                            className="flex flex-col flex-grow items-center text-center w-auto md:w-auto p-2 xl:p-4">
-                            <div className="flex justify-center items-end h-8 w-full md:h-10">
-                              {renderIcon(key, "w-6 h-6 md:h-8 md:w-8")}
-                            </div>
-                            <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
-                              {(
-                                item.description_mobile || item.description
-                              ).replace(/<br\/>/g, "\n")}
-                            </h6>
-                            <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
-                              {item.description.replace(/<br\/>/g, "\n")}
-                            </h6>
-                          </div>
-                        ))}
                     </div>
                   )}
                 </div>
