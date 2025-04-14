@@ -31,21 +31,21 @@ import sedanInteriorTrunkMobile from "../assets/img/models/sedan/interior/sedan-
 import sedanInteriorSeatsMobile from "../assets/img/models/sedan/interior/sedan-interior-1-mobile.webp";
 import sedanInteriorGearsMobile from "../assets/img/models/sedan/interior/sedan-interior-5-mobile.webp";
 // Sedan Atributes
-import sedanAtributesDesktop from "../assets/img/models/sedan/atributes/sedan-atributes.webp";
+import sedanAtributesDesktop from "../assets/img/models/sedan/atributes/sedan-atributes-desktop.webp";
 import sedanAtributesMobile from "../assets/img/models/sedan/atributes/sedan-atributes-mobile.webp";
 // Sedan Etiqueta
-import sedanEtiqueta from "../assets/etiquetas/etiqueta-sedan.pdf";
+import sedanEtiqueta from "../assets/etiquetas/sedan-etiqueta.pdf";
 // Sedan Fichas
-import sedanFichas from "../assets/fichas/ficha-sedan.pdf";
+import sedanFichas from "../assets/fichas/sedan-ficha.pdf";
 
 // CROSS
 // Cross carousel images
-import crossBackDesktop from "../assets/img/models/cross/carousel/desktop-cross-back.webp";
-import crossBackMobile from "../assets/img/models/cross/carousel/mobile-cross-back.webp";
-import crossFrontDesktop from "../assets/img/models/cross/carousel/desktop-cross-front.webp";
-import crossFrontMobile from "../assets/img/models/cross/carousel/mobile-cross-front.webp";
-import crossSideDesktop from "../assets/img/models/cross/carousel/desktop-cross-side.webp";
-import crossSideMobile from "../assets/img/models/cross/carousel/mobile-cross-side.webp";
+import crossBackDesktop from "../assets/img/models/cross/carousel/cross-back-desktop.webp";
+import crossBackMobile from "../assets/img/models/cross/carousel/cross-back-mobile.webp";
+import crossFrontDesktop from "../assets/img/models/cross/carousel/cross-front-desktop.webp";
+import crossFrontMobile from "../assets/img/models/cross/carousel/cross-front-mobile.webp";
+import crossSideDesktop from "../assets/img/models/cross/carousel/cross-side-desktop.webp";
+import crossSideMobile from "../assets/img/models/cross/carousel/cross-side-mobile.webp";
 // Cross exterior images
 import crossExteriorFront from "../assets/img/models/cross/exterior/cross-exterior-1.webp";
 import crossExteriorRear from "../assets/img/models/cross/exterior/cross-exterior-2.webp";
@@ -65,53 +65,58 @@ import crossInteriorBox from "../assets/img/models/cross/interior/cross-interior
 import crossInteriorAirConditioner from "../assets/img/models/cross/interior/cross-interior-3.webp";
 import crossInteriorKeys from "../assets/img/models/cross/interior/cross-interior-4.webp";
 // Cross Atributes
-import crossAtributesDesktop from "../assets/img/models/cross/atributes/cross-atributes.webp";
-import crossAtributesMobile from "../assets/img/models/cross/atributes/cross-atributes.webp";
-// Cross images
-import crossBack from "../assets/img/models/cross/cross-back.webp";
-import crossFront from "../assets/img/models/cross/cross-front.webp";
-import crossSide from "../assets/img/models/cross/cross-side.webp";
+import crossAtributesDesktop from "../assets/img/models/cross/atributes/cross-atributes-desktop.webp";
+import crossAtributesMobile from "../assets/img/models/cross/atributes/cross-atributes-mobile.webp";
 // Hero Videos
 import heroVideoSedanDesktop from "../assets/videos/sedan-hero-desktop.mp4";
 import heroVideoSedanMobile from "../assets/videos/sedan-hero-mobile.mp4";
 import heroVideoCrossDesktop from "../assets/videos/cross-hero-desktop.mp4";
 import heroVideoCrossMobile from "../assets/videos/cross-hero-mobile.mp4";
 // Cross Etiqueta
-import crossEtiqueta from "../assets/etiquetas/etiqueta-cross.pdf";
+import crossEtiqueta from "../assets/etiquetas/cross-etiqueta.pdf";
 // Cross Fichas
-import crossFichas from "../assets/fichas/ficha-cross.pdf";
+import crossFichas from "../assets/fichas/cross-ficha.pdf";
 
 // CERATO
-// // Cerato carousel images
-// import ceratoFrontDesktop from "../assets/img/models/cerato/carousel/desktop-cerato-front.webp";
-// import ceratoFrontMobile from "../assets/img/models/cerato/carousel/mobile-cerato-front.webp";
-// import ceratoBackDesktop from "../assets/img/models/cerato/carousel/desktop-cerato-back.webp";
-// import ceratoBackMobile from "../assets/img/models/cerato/carousel/mobile-cerato-back.webp";
-// // Cerato exterior images
-// import ceratoExteriorFront from "../assets/img/models/cerato/exterior/cerato-exterior-1.webp";
-// import ceratoExteriorRear from "../assets/img/models/cerato/exterior/cerato-exterior-2.webp";
-// import ceratoExteriorWheel from "../assets/img/models/cerato/exterior/cerato-exterior-3.webp";
-// import ceratoExteriorMirror from "../assets/img/models/cerato/exterior/cerato-exterior-4.webp";
-// import ceratoExteriorGrille from "../assets/img/models/cerato/exterior/cerato-exterior-5.webp";
-// // Cerato interior images
-// import ceratoInteriorSeats from "../assets/img/models/cerato/interior/cerato-interior-1.webp";
-// import ceratoInteriorPanel from "../assets/img/models/cerato/interior/cerato-interior-2.webp";
-// import ceratoInteriorKeys from "../assets/img/models/cerato/interior/cerato-interior-3.webp";
-// import ceratoInteriorAirConditioner from "../assets/img/models/cerato/interior/cerato-interior-4.webp";
-// import ceratoInteriorTrunk from "../assets/img/models/cerato/interior/cerato-interior-5.webp";
-// import ceratoInteriorGears from "../assets/img/models/cerato/interior/cerato-interior-6.webp";
-// // Cerato Atributes
-// import ceratoAtributesDesktop from "../assets/img/models/cerato/atributes/cerato-atributes.webp";
-// import ceratoAtributesMobile from "../assets/img/models/cerato/atributes/cerato-atributes-mobile.webp";
-// // Cerato Etiqueta
-// import ceratoEtiqueta from "../assets/etiquetas/etiqueta-cerato.pdf";
-// // Cerato Fichas
-// import ceratoFichas from "../assets/fichas/ficha-cerato.pdf";
+// Cerato carousel images
+import ceratoFrontDesktop from "../assets/img/models/cerato/carousel/cerato-front-desktop.webp";
+import ceratoFrontMobile from "../assets/img/models/cerato/carousel/cerato-front-mobile.webp";
+import ceratoBackDesktop from "../assets/img/models/cerato/carousel/cerato-back-desktop.webp";
+import ceratoBackMobile from "../assets/img/models/cerato/carousel/cerato-back-mobile.webp";
+import ceratoSideDesktop from "../assets/img/models/cerato/carousel/cerato-side-desktop.webp";
+import ceratoSideMobile from "../assets/img/models/cerato/carousel/cerato-side-mobile.webp";
+// Cerato exterior images
+import ceratoExteriorFront from "../assets/img/models/cerato/exterior/cerato-exterior-1.webp";
+import ceratoExteriorRear from "../assets/img/models/cerato/exterior/cerato-exterior-2.webp";
+import ceratoExteriorWheel from "../assets/img/models/cerato/exterior/cerato-exterior-3.webp";
+import ceratoExteriorMirror from "../assets/img/models/cerato/exterior/cerato-exterior-4.webp";
+import ceratoExteriorGrille from "../assets/img/models/cerato/exterior/cerato-exterior-5.webp";
+// Cerato interior images
+import ceratoSteeringWheel from "../assets/img/models/cerato/interior/cerato-interior-1.webp";
+import ceratoInteriorAirConditioner from "../assets/img/models/cerato/interior/cerato-interior-2.webp";
+import ceratoInteriorPanel from "../assets/img/models/cerato/interior/cerato-interior-3.webp";
+import ceratoInteriorGearbox from "../assets/img/models/cerato/interior/cerato-interior-4.webp";
+import ceratoInteriorRooftop from "../assets/img/models/cerato/interior/cerato-interior-5.webp";
+// Cerato colors images
+import ceratoRunwayRed from "../assets/img/models/cerato/colors/cerato-runway-red.webp";
+import ceratoMineralBlue from "../assets/img/models/cerato/colors/cerato-mineral-blue.webp";
+import ceratoGravityBlue from "../assets/img/models/cerato/colors/cerato-gravity-blue.webp";
+import ceratoHorizonBlue from "../assets/img/models/cerato/colors/cerato-horizon-blue.webp";
+import ceratoAuroraBlack from "../assets/img/models/cerato/colors/cerato-aurora-black.webp";
+import ceratoPlatinumGraphite from "../assets/img/models/cerato/colors/cerato-platinum-graphite.webp";
+import ceratoSteelGray from "../assets/img/models/cerato/colors/cerato-steel-gray.webp";
+import ceratoSilkySilver from "../assets/img/models/cerato/colors/cerato-silky-silver.webp";
+import ceratoSnowWhite from "../assets/img/models/cerato/colors/cerato-snow-white.webp";
+import ceratoClearPearl from "../assets/img/models/cerato/colors/cerato-clear-pearl.webp";
 
-/**
- * Centralized image mapping for all car models
- * Organized by model (sedan/cross) and category
- */
+// Cerato Atributes
+import ceratoAtributesDesktop from "../assets/img/models/cerato/atributes/cerato-atributes-desktop.webp";
+import ceratoAtributesMobile from "../assets/img/models/cerato/atributes/cerato-atributes-mobile.webp";
+// Cerato Etiqueta
+import ceratoEtiqueta from "../assets/etiquetas/cerato-etiqueta.pdf";
+// Cerato Fichas
+import ceratoFichas from "../assets/fichas/cerato-ficha.pdf";
+
 export const imageMap = {
   sedan: {
     carousel: {
@@ -261,49 +266,87 @@ export const imageMap = {
       desktop: heroVideoCrossDesktop,
       mobile: heroVideoCrossMobile,
     },
-    general: {
-      front: crossFront,
-      back: crossBack,
-      side: crossSide,
-    },
     etiqueta: crossEtiqueta,
     fichas: crossFichas,
   },
-  // cerato: {
-  //   carousel: {
-  //     front: {
-  //       desktop: ceratoFrontDesktop,
-  //       mobile: ceratoFrontMobile,
-  //     },
-  //     back: {
-  //       desktop: ceratoBackDesktop,
-  //       mobile: ceratoBackMobile,
-  //     },
-  //   },
-  //   exterior: {
-  //     front: {
-  //       desktop: ceratoExteriorFront,
-  //       mobile: ceratoExteriorFront,
-  //     },
-  //     rear: {
-  //       desktop: ceratoExteriorRear,
-  //       mobile: ceratoExteriorRear,
-  //     },
-  //     wheel: {
-  //       desktop: ceratoExteriorWheel,
-  //       mobile: ceratoExteriorWheel,
-  //     },
-  //     mirror: {
-  //       desktop: ceratoExteriorMirror,
-  //       mobile: ceratoExteriorMirror,
-  //     },
-  //     grille: {
-  //       desktop: ceratoExteriorGrille,
-  //       mobile: ceratoExteriorGrille,
-  //     },
-  //   },
-  //   interior: {},
-  // },
+  cerato: {
+    carousel: {
+      front: {
+        desktop: ceratoFrontDesktop,
+        mobile: ceratoFrontMobile,
+      },
+      back: {
+        desktop: ceratoBackDesktop,
+        mobile: ceratoBackMobile,
+      },
+      side: {
+        desktop: ceratoSideDesktop,
+        mobile: ceratoSideMobile,
+      },
+    },
+    exterior: {
+      front: {
+        desktop: ceratoExteriorFront,
+        mobile: ceratoExteriorFront,
+      },
+      rear: {
+        desktop: ceratoExteriorRear,
+        mobile: ceratoExteriorRear,
+      },
+      wheel: {
+        desktop: ceratoExteriorWheel,
+        mobile: ceratoExteriorWheel,
+      },
+      mirror: {
+        desktop: ceratoExteriorMirror,
+        mobile: ceratoExteriorMirror,
+      },
+      grille: {
+        desktop: ceratoExteriorGrille,
+        mobile: ceratoExteriorGrille,
+      },
+    },
+    interior: {
+      steeringWheel: {
+        desktop: ceratoSteeringWheel,
+        mobile: ceratoSteeringWheel,
+      },
+      airConditioner: {
+        desktop: ceratoInteriorAirConditioner,
+        mobile: ceratoInteriorAirConditioner,
+      },
+      panel: {
+        desktop: ceratoInteriorPanel,
+        mobile: ceratoInteriorPanel,
+      },
+      gearbox: {
+        desktop: ceratoInteriorGearbox,
+        mobile: ceratoInteriorGearbox,
+      },
+      rooftop: {
+        desktop: ceratoInteriorRooftop,
+        mobile: ceratoInteriorRooftop,
+      },
+    },
+    colors: {
+      runwayRed: ceratoRunwayRed,
+      mineralBlue: ceratoMineralBlue,
+      gravityBlue: ceratoGravityBlue,
+      horizonBlue: ceratoHorizonBlue,
+      auroraBlack: ceratoAuroraBlack,
+      platinumGraphite: ceratoPlatinumGraphite,
+      steelGray: ceratoSteelGray,
+      silkySilver: ceratoSilkySilver,
+      snowWhite: ceratoSnowWhite,
+      clearPearl: ceratoClearPearl,
+    },
+    attributes: {
+      desktop: ceratoAtributesDesktop,
+      mobile: ceratoAtributesMobile,
+    },
+    etiqueta: ceratoEtiqueta,
+    fichas: ceratoFichas,
+  },
 };
 
 /**

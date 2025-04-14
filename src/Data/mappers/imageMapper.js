@@ -1,4 +1,4 @@
-import { imageMap } from "../models/imageMap";
+import { imageMap } from "../imageMap";
 
 /**
  * Resolves an image reference string to its actual path

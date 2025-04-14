@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayIcon } from "../Icons/PlayButton";
-import heroIcons from "../Icons/HeroIcons";
+import { getHeroIcon } from "../Icons/HeroIcons";
+
 const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -53,17 +54,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const renderIcon = (item, className) => {
-    if (item && item.iconId) {
-      const IconComponent = heroIcons[item.iconId];
-      return IconComponent ? (
-        <IconComponent className={className} fill="#ffffff" />
-      ) : (
-        <span className={className}>🔧</span>
-      );
-    }
-  };
 
   const handlePlayClick = () => {
     if (videoRef.current && !hasVideoError) {
@@ -158,11 +148,11 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
       {/* Text Overlay - No dark background on mobile */}
       <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
         <div className=" mx-auto w-full md:py-[30px]">
-          <div className="relative flex flex-col lg:flex-row justify-between h-full pointer-events-auto">
+          <div className="relative flex flex-col justify-between md:flex-wrap xl:flex-row h-full pointer-events-auto md:px-16">
             {/* Title section - No overlay on mobile */}
-            <div className="flex flex-col relative mt-5 md:mt-0 pl-4 md:pl-20 flex-shrink-0">
+            <div className="flex flex-col relative mt-5 md:mt-0 pl-4 flex-shrink-0">
               {/* Decorative border line */}
-              <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500  mx-4 md:mx-16"></div>
+              <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500"></div>
 
               {/* <h2 className="font-normal mb-1">All-new</h2> */}
               <h1 className="font-bold mb-1">{title}</h1>
@@ -171,16 +161,16 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
             </div>
 
             {heroInfo && (
-              <div className="  bg-black bg-opacity-50 md:bg-transparent w-full lg:w-fit md:pr-20">
-                <div className="flex flex-wrap md:flex-nowrap md:justify-center w-fit m-auto p-4 md:p-0">
+              <div className=" bg-black bg-opacity-50 md:bg-transparent w-full mx-auto 2xl:mx-0 h-fit xl:w-fit md:pr-20 xl:px-0">
+                <div className="flex flex-wrap md:flex-nowrap xl:justify-center w-fit m-auto p-4 md:p-0">
                   {/* Top row - first 3 items */}
-                  <div className="w-full flex justify-between md:justify-start">
+                  <div className="w-full flex justify-between xl:justify-start ">
                     {heroInfo.slice(0, 3).map((item) => (
                       <div
                         key={item.id}
-                        className="flex flex-col items-center text-center  w-fit p-2 xl:p-4">
+                        className="flex flex-col items-center text-center  w-auto flex-shrink py-2 xl:p-4">
                         <div className="flex justify-center items-end h-8 w-full md:h-10">
-                          {renderIcon(item, "w-6 h-6 md:h-8 md:w-8")}
+                          {getHeroIcon(item.iconId, "w-6 h-6 md:h-8 md:w-8")}
                         </div>
                         <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
                           {(
@@ -196,13 +186,13 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
 
                   {/* Bottom row - remaining items */}
                   {heroInfo.length > 3 && (
-                    <div className="flex justify-between md:justify-start md:mx-auto w-full md:w-fit">
+                    <div className="flex justify-between xl:justify-start md:mx-auto w-full md:w-fit">
                       {heroInfo.slice(3).map((item) => (
                         <div
                           key={item.id}
-                          className="flex flex-col flex-grow items-center text-center w-auto md:w-auto p-2 xl:p-4">
+                          className="flex flex-col flex-grow items-center text-center w-auto md:w-auto py-2 xl:p-4">
                           <div className="flex justify-center items-end h-8 w-full md:h-10">
-                            {renderIcon(item, "w-6 h-6 md:h-8 md:w-8")}
+                            {getHeroIcon(item.iconId, "w-6 h-6 md:h-8 md:w-8")}
                           </div>
                           <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
                             {(

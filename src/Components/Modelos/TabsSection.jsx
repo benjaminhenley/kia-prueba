@@ -55,8 +55,8 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
     : [];
 
   return (
-    <div className="bg-[#05141f] text-white">
-      <div className="flex flex-row justify-between items-center container mx-auto py-3 sm:py-4 md:px-20 px-4">
+    <div className="bg-[#05141f] text-white w-full">
+      <div className="flex flex-row justify-between items-center w-full py-3 sm:py-4 md:px-20 px-4">
         <div className="flex gap-2 xs:gap-4 sm:gap-8">
           <div className="relative">
             <button

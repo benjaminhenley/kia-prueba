@@ -7,7 +7,7 @@ const Specifications = ({ content }) => {
   return (
     <>
       {/* Specification Cards Section */}
-      <FeatureSummary features={content.features} />
+      <FeatureSummary features={content.features} mode="specifications" />
 
       {/* Car Carousel Section */}
       <section className="relative">
@@ -27,7 +27,7 @@ const Specifications = ({ content }) => {
 
       {/* Dimensions Section */}
       <section className="py-12">
-        <div className="max-w-screen-2xl w-full mx-auto px-4">
+        <div className=" w-full mx-auto px-4">
           {content.dimensions && (
             <ModelDimensions dimensions={content.dimensions} />
           )}

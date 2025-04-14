@@ -28,7 +28,7 @@ const Characteristics = ({ content, modelID }) => {
 
   return (
     <div className="bg-white">
-      <FeatureSummary features={content.features} />
+      <FeatureSummary features={content.features} mode="characteristics" />
 
       {/* <Visualizer360 /> */}
       {content.vr && <Vr href={content.vr} />}
@@ -41,14 +41,14 @@ const Characteristics = ({ content, modelID }) => {
 
       {/* Model Exterior section */}
       <section className={`py-10 md:py-20  bg-[#05141F] text-white`}>
-        <div className=" mx-auto px-4 sm:px-6">
+        <div className=" mx-auto px-4 lg:px-20">
           <CrossGallery content={content.exterior} onImageClick={openModal} />
         </div>
       </section>
 
       {/* Model Interior section */}
       <section className={`py-10 md:py-20 `}>
-        <div className=" mx-auto px-4 sm:px-6">
+        <div className=" mx-auto px-4 lg:px-20">
           {content.interior.layout === "sedan" ? (
             <SedanGallery content={content.interior} onImageClick={openModal} />
           ) : (

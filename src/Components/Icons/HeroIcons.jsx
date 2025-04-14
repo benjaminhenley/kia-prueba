@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Airbags = ({ className, fill = "#05141F" }) => (
+export const Airbags = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -19,7 +19,7 @@ export const Airbags = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Roof = ({ className, fill = "#05141F" }) => (
+export const Roof = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -39,7 +39,7 @@ export const Roof = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Radio = ({ className, fill = "#05141F" }) => (
+export const Radio = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -63,7 +63,7 @@ export const Radio = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Adas = ({ className, fill = "#05141F" }) => (
+export const Adas = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -80,7 +80,7 @@ export const Adas = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Stars = ({ className, fill = "#05141F" }) => (
+export const Stars = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -111,7 +111,7 @@ export const Stars = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Assistant = ({ className, fill = "#05141F" }) => (
+export const Assistant = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -126,7 +126,7 @@ export const Assistant = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Stabilizer = ({ className, fill = "#05141F" }) => (
+export const Stabilizer = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -141,7 +141,7 @@ export const Stabilizer = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Breaks = ({ className, fill = "#05141F" }) => (
+export const Breaks = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -156,7 +156,7 @@ export const Breaks = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Anchor = ({ className, fill = "#05141F" }) => (
+export const Anchor = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -175,7 +175,7 @@ export const Anchor = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Camera = ({ className, fill = "#05141F" }) => (
+export const Camera = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -190,7 +190,7 @@ export const Camera = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const AntiTheft = ({ className, fill = "#05141F" }) => (
+export const AntiTheft = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -205,7 +205,7 @@ export const AntiTheft = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-export const Audio = ({ className, fill = "#05141F" }) => (
+export const Audio = ({ className, fill = "#ffffff" }) => (
   <svg
     className={className}
     width="32"
@@ -220,19 +220,23 @@ export const Audio = ({ className, fill = "#05141F" }) => (
   </svg>
 );
 
-const heroIcons = {
-  stars: Stars,
-  airbag: Airbags,
-  adas: Adas,
-  radio: Radio,
-  roof: Roof,
-  breaks: Breaks,
-  assistant: Assistant,
-  anchor: Anchor,
-  stabilizer: Stabilizer,
-  camera: Camera,
-  antitheft: AntiTheft,
-  audio: Audio,
+export const getHeroIcon = (icon, className) => {
+  const icons = {
+    stars: <Stars className={className} />,
+    airbag: <Airbags className={className} />,
+    adas: <Adas className={className} />,
+    radio: <Radio className={className} />,
+    roof: <Roof className={className} />,
+    breaks: <Breaks className={className} />,
+    assistant: <Assistant className={className} />,
+    anchor: <Anchor className={className} />,
+    stabilizer: <Stabilizer className={className} />,
+    camera: <Camera className={className} />,
+    antitheft: <AntiTheft className={className} />,
+    audio: <Audio className={className} />,
+  };
+
+  return icons[icon];
 };
 
-export default heroIcons;
+export default getHeroIcon;

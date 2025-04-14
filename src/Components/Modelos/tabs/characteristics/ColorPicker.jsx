@@ -16,7 +16,7 @@ const ColorPicker = ({ colorPickerData }) => {
     <section className="py-12 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="bg-[#05141F] text-white w-12 h-[2px] mx-auto mb-4" />
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center ">
           Colores disponibles
         </h2>
 
@@ -83,7 +83,7 @@ const ColorPicker = ({ colorPickerData }) => {
         <h4 className=" font-normal text-center mb-8">{activeColorName}</h4>
 
         {/* Color Options */}
-        <div className="flex justify-center items-center space-x-4 sm:space-x-6">
+        <div className="grid grid-cols-5 md:flex gap-4 md:gap-5 justify-center items-center justify-items-center w-fit mx-auto px-4">
           {colorPickerData.map((color) => {
             const isActive = activeColor === color.id;
 
@@ -91,9 +91,9 @@ const ColorPicker = ({ colorPickerData }) => {
               <button
                 key={color.id}
                 onClick={() => setActiveColor(color.id)}
-                className={`relative group transition-transform duration-200 ${
+                className={`relative w-fit group transition-transform duration-200 ${
                   isActive ? "scale-[1.3] z-10" : ""
-                }`}
+                } `}
                 aria-label={color.name}>
                 {/* Main color circle */}
                 <div

@@ -1,33 +1,13 @@
 import React from "react";
-import {
-  UpholsteryIcon,
-  BatteryIcon,
-  WheelsIcon,
-  SmartKeyIcon,
-  FrontLightsIcon,
-  MotorIcon,
-  PerformanceIcon,
-  ConsumptionIcon,
-  WarrantyIcon,
-} from "../Icons/FeatureIcons";
+import { getFeatureIcon } from "../Icons/FeatureIcons";
 
 const renderIcon = (icon, className) => {
-  const icons = {
-    upholstery: <UpholsteryIcon className={className} />,
-    battery: <BatteryIcon className={className} />,
-    wheels: <WheelsIcon className={className} />,
-    smartkey: <SmartKeyIcon className={className} />,
-    frontlights: <FrontLightsIcon className={className} />,
-    motor: <MotorIcon className={className} />,
-    performance: <PerformanceIcon className={className} />,
-    consumption: <ConsumptionIcon className={className} />,
-    warranty: <WarrantyIcon className={className} />,
-  };
-
-  return icons[icon] || <span className={className}>🔧</span>;
+  return (
+    getFeatureIcon(icon, className) || <span className={className}>🔧</span>
+  );
 };
 
-const FeatureSummary = ({ features }) => {
+const FeatureSummary = ({ features, mode }) => {
   // Function to render text with line breaks
   const renderWithLineBreaks = (text) => {
     if (!text) return null;
@@ -46,12 +26,18 @@ const FeatureSummary = ({ features }) => {
     return text.replace(/<br\/>/g, " ");
   };
 
-  const isFourItems = features && features.length === 4;
+  const totalFeatures = features?.length || 0;
+
+  // Calculate how many empty spaces to add before features to center them
+  const emptySpacesToAdd = Math.floor((5 - totalFeatures) / 2);
+
+  // Create array of empty spaces for centering
+  const emptySpaces = Array(emptySpacesToAdd).fill(null);
 
   return (
-    <section className="w-full bg-white px-4 py-5 lg:py-0 md:px-0 ">
+    <section className="w-full bg-white px-4 py-5 md:py-0 md:px-0">
       {/* Mobile View - Stacked List */}
-      <div className="lg:hidden">
+      <div className="md:hidden">
         {features &&
           features.map((item, index) => (
             <div
@@ -64,7 +50,7 @@ const FeatureSummary = ({ features }) => {
                   {renderIcon(item.id, "text-gray-500 w-full h-full")}
                 </div>
                 <div className="ml-1 sm:ml-4">
-                  {isFourItems && (
+                  {mode === "characteristics" && (
                     <h4 className="mb-1 font-semibold text-[#37434C]">
                       {item.title}
                     </h4>
@@ -78,38 +64,44 @@ const FeatureSummary = ({ features }) => {
           ))}
       </div>
 
-      {/* Desktop View with conditional layout */}
-      <div className="hidden lg:block w-full border-b border-gray-200">
+      {/* Desktop View with exact 5-column grid */}
+      <div className="hidden md:block w-full border-b border-gray-200">
         <div className="w-full mx-auto">
-          {/* Container with conditional classes */}
-          <div className={isFourItems ? "flex justify-center" : ""}>
-            <div
-              className={`grid ${
-                isFourItems ? "w-4/5 grid-cols-4" : "grid-cols-5"
-              }`}>
-              {features &&
-                features.map((item, key) => (
-                  <div
-                    key={item.id}
-                    className={`${
-                      key === 0 && "lg:border-l"
-                    } bg-white py-8 md:py-10 lg:py-16 text-center border-r border-gray-200 shadow-sm transition-shadow`}>
-                    <div className="">
-                      <div className="w-14 h-14 md:w-12 md:h-12 mx-auto grid place-items-center">
+          <div className="flex items-stretch justify-center gap-0 w-full">
+            {features &&
+              features.map((item, key) => (
+                <div
+                  key={item.id}
+                  className={`w-full lg:w-1/5 md:py-16 bg-white flex flex-col border-r ${
+                    key === 0 && "border-l"
+                  } `}>
+                  <div className="flex flex-col h-full justify-start">
+                    {/* Icon container */}
+                    <div className="flex items-center justify-center">
+                      <div className="h-10 w-10 md:w-12 md:h-12 grid place-items-center">
                         {renderIcon(item.id, "w-full h-full")}
                       </div>
                     </div>
-                    {isFourItems && (
-                      <h3 className="text-lg md:text-xl font-bold mb-2">
-                        {item.title}
-                      </h3>
+
+                    {/* Spacing of exactly 8px */}
+                    <div className="h-2"></div>
+
+                    {/* Title */}
+                    {mode === "characteristics" && (
+                      <div className="flex items-center justify-center">
+                        <h3 className="text-lg font-bold">{item.title}</h3>
+                      </div>
                     )}
-                    <h5 className="text-[#37434C]">
-                      {renderWithLineBreaks(item.value)}
-                    </h5>
+
+                    {/* Value with centered text */}
+                    <div className="flex items-start justify-center text-center px-4">
+                      <h5 className="text-[#37434C]">
+                        {renderWithLineBreaks(item.value)}
+                      </h5>
+                    </div>
                   </div>
-                ))}
-            </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
