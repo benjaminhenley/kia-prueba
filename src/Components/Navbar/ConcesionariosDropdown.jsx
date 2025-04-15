@@ -52,7 +52,6 @@ const ConcesionariosDropdown = ({ activeOption, onOptionClick, onLinkClick }) =>
               </a>
             ) : (
               <Link 
-                key={opcion.nombre}
                 to={opcion.href}
                 onClick={(e) => {
                   onLinkClick(e);

@@ -81,11 +81,19 @@ const MobileMenu = ({
               {concesionarios.map((opcion, index) => (
                 <div key={index} className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
                   {opcion.esExterna ? (
-                    <a href={opcion.href} target='' rel='noreferrer'>
+                    <a 
+                      href={opcion.href} 
+                      target='' 
+                      rel='noreferrer'
+                      onClick={(e) => onLinkClick(e)}
+                    >
                       {opcion.nombre}
                     </a>
                   ) : (
-                    <Link to={opcion.href}>
+                    <Link 
+                      to={opcion.href}
+                      onClick={(e) => onLinkClick(e)}
+                    >
                       {opcion.nombre}
                     </Link>
                   )}
