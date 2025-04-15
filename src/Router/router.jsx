@@ -6,6 +6,8 @@ import Modelos from "../Routes/Modelos";
 import Promociones from "../Routes/Promociones";
 import Cookies from "../Routes/Cookies";
 import Contactenos from "../Routes/Contactenos";
+import ConcesionariosVenta from "../Routes/ConcesionariosVenta";
+import ConcesionariosPostVenta from "../Routes/ConcesionariosPostVenta";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
         path: "/contactenos",
         element: <Contactenos />,
       },
+      {
+        path: "/concesionarios/venta",
+        element: <ConcesionariosVenta />
+      },
+      {
+        path: "/concesionarios/post-venta",
+        element: <ConcesionariosPostVenta />
+      }
     ],
   },
 ]);

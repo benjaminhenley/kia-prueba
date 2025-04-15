@@ -14,11 +14,12 @@ const Navbar = () => {
   const [showConcesionariosDropdown, setShowConcesionariosDropdown] =
     useState(false);
   const { pathname } = useLocation();
-  console.log(pathname);
   const isNotTransparent =
     pathname === "/promociones" ||
     pathname === "/cookies" ||
-    pathname === "/contactenos";
+    pathname === "/contactenos" ||
+    pathname === "/concesionarios/venta" ||
+    pathname === "/concesionarios/post-venta";
   // Estados para los filtros y opciones activas
   const [activeFilter, setActiveFilter] = useState("todos");
   const [activeConcesionariosOption, setActiveConcesionariosOption] =
@@ -196,7 +197,7 @@ const Navbar = () => {
 
       {/* Navbar con transparencia y hover */}
       <div
-        className={` px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
+        className={`px-5 py-3 flex justify-between items-center gap-2 text-[0.65rem] font-semibold text-base md:py-5 md:px-10 lg:px-20
         transition-all duration-200 ease-in-out relative
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen

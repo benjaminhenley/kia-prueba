@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { concesionariosDropdownOpciones } from '../../Data/common';
+import { concesionarios } from '../../Data/common';
 
 const ConcesionariosDropdown = ({ activeOption, onOptionClick, onLinkClick }) => {
   return (
     <div className='absolute top-0 left-0 bg-white text-base text-midnight-black shadow-md z-40 min-w-[250px]'>
       <div className='flex flex-col'>
-        {concesionariosDropdownOpciones.map((opcion) => (
+        {concesionarios.map((opcion) => (
           <div 
             key={opcion.nombre} 
             className='border-t border-[#CDD0D2] static'

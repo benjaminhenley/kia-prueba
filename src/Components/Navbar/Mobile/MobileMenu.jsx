@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MobileMenuSection from './MobileMenuSection';
 import FiltroVehiculos from '../FiltroVehiculos';
 import VehiculoCard from '../VehiculoCard';
 import MobileLinksAdicionales from './MobileLinksAdicionales';
+import { concesionarios } from '../../../Data/common.js'; // Asegúrate de que la ruta sea correcta
 
 const MobileMenu = ({ 
   isOpen, 
@@ -76,16 +78,19 @@ const MobileMenu = ({
             onClick={() => toggleSubMenu('concesionarios')}
           >
             <div className="bg-[#F8F8F8]">
-                <div className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
-                  <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer'>
-                    Venta
-                  </a>
+              {concesionarios.map((opcion, index) => (
+                <div key={index} className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
+                  {opcion.esExterna ? (
+                    <a href={opcion.href} target='' rel='noreferrer'>
+                      {opcion.nombre}
+                    </a>
+                  ) : (
+                    <Link to={opcion.href}>
+                      {opcion.nombre}
+                    </Link>
+                  )}
                 </div>
-                <div className="block py-2 px2 pl-7  hover:font-bold border-b border-[#CDD0D2]">
-                  <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer'>
-                    Post Venta
-                  </a>  
-                </div>
+              ))}
             </div>
           </MobileMenuSection>
           

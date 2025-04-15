@@ -65,13 +65,15 @@ const Breadcrumbs = () => {
             <Fragment key={routeTo}>
               <SeparatorIcon />
               {isLast ? (
-                <span className="pt-1 font-semibold capitalize">{segment}</span>
+                <span className="pt-1 font-semibold capitalize">{segment.replace(/-/g, ' ')}</span>
               ) : (
                 <Link
                   to={routeTo}
-                  className="pt-1 font-semibold capitalize hover:underline"
                 >
-                  {segment}
+                    <p className="pt-1 capitalize cursor-pointer relative group font-semibold text-kia-polar-white">
+                        {segment.replace(/-/g, ' ')}
+                        <span className="absolute left-0 bottom-[1px] h-[1px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </p>
                 </Link>
               )}
             </Fragment>

@@ -192,16 +192,19 @@ export const utilitarios = [
 
 export const concesionarios = [
   {
+    id: "venta",
     nombre: "Venta",
-    href: "https://www.kia.com.ar/red-venta",
+    //href: "https://www.kia.com.ar/red-venta",
+    href: "/concesionarios/venta",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
   {
+    id: "postVenta",
     nombre: "Post Venta",
-    href: "https://www.kia.com.ar/red-postventa",
+    href: "/concesionarios/post-venta",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
 
@@ -337,15 +340,16 @@ export const concesionariosDropdownOpciones = [
   {
     id: "venta",
     nombre: "Venta",
-    href: "https://www.kia.com.ar/red-venta",
+    //href: "https://www.kia.com.ar/red-venta",
+    href: "/concesionarios/venta",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
   {
     id: "postVenta",
     nombre: "Post Venta",
-    href: "https://www.kia.com.ar/red-postventa",
+    href: "/concesionarios/post-venta",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
