@@ -78,6 +78,7 @@
         "description": "El All-new K3 Sedán combina diseño sofisticado, tecnología intuitiva y un alto nivel de seguridad. Su interior premium y sus asistencias avanzadas elevan cada experiencia al volante."
       },
       "exterior": {
+        "galleryType": "1",
         "category": "Exterior",
         "layout": "sedan",
         "title": "Un diseño que redefine la elegancia",
@@ -121,6 +122,7 @@
         ]
       },
       "interior": {
+        "galleryType": "2",
         "category": "Interior",
         "layout": "sedan",
         "title": "Confort, tecnología y seguridad en su interior",

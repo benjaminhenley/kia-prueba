@@ -119,6 +119,7 @@
         "description": "El All-new K3 Cross combina diseño dinámico con un interior refinado y la mejor tecnología en su segmento. Un Crossover versátil, seguro y equipado para acompañarte en cada aventura."
       },
       "exterior": {
+        "galleryType": "1",
         "category": "Exterior",
         "title": "Presencia imponente y diseño innovador",
         "description": "Con un diseño audaz y líneas deportivas, el All-new K3 Cross combina elegancia y funcionalidad en cada detalle.",
@@ -161,6 +162,7 @@
         ]
       },
       "interior": {
+        "galleryType": "1",
         "category": "Interior",
         "title": "Confort y tecnología en cada detalle",
         "description": "Cada viaje se disfruta con el máximo confort, conectividad y asistencia a la conducción para una experiencia más segura y entretenida, respaldada por la calificación de 5 estrellas en Latin NCAP.",

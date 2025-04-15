@@ -8,8 +8,8 @@ import ImageModal from "./ImageModal";
 import Disclaimer from "./Disclaimer";
 import FeatureSummary from "../../FeatureSummary";
 import ColorPicker from "./ColorPicker";
-import SedanGallery from "./GalleryTwo";
-import CrossGallery from "./GalleryOne";
+import GalleryLayoutOne from "./GalleryOne";
+import GalleryLayoutTwo from "./GalleryTwo";
 
 const Characteristics = ({ content, modelID }) => {
   const [showModal, setShowModal] = useState(false);
@@ -42,17 +42,33 @@ const Characteristics = ({ content, modelID }) => {
       {/* Model Exterior section */}
       <section className={`py-10 md:py-20  bg-[#05141F] text-white`}>
         <div className=" mx-auto px-4 lg:px-20">
-          <CrossGallery content={content.exterior} onImageClick={openModal} />
+          {content.exterior.galleryType === "1" ? (
+            <GalleryLayoutOne
+              content={content.exterior}
+              onImageClick={openModal}
+            />
+          ) : (
+            <GalleryLayoutTwo
+              content={content.exterior}
+              onImageClick={openModal}
+            />
+          )}
         </div>
       </section>
 
       {/* Model Interior section */}
       <section className={`py-10 md:py-20 `}>
         <div className=" mx-auto px-4 lg:px-20">
-          {content.interior.layout === "sedan" ? (
-            <SedanGallery content={content.interior} onImageClick={openModal} />
+          {content.interior.galleryType === "1" ? (
+            <GalleryLayoutOne
+              content={content.interior}
+              onImageClick={openModal}
+            />
           ) : (
-            <CrossGallery content={content.interior} onImageClick={openModal} />
+            <GalleryLayoutTwo
+              content={content.interior}
+              onImageClick={openModal}
+            />
           )}
         </div>
       </section>

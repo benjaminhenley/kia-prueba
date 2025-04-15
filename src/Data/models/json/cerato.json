@@ -159,6 +159,7 @@
         "description": "El atractivo del Cerato va mucho más allá del estilo y la comodidad. Desde la facilidad para entrar y salir del vehículo, hasta los controles ergonómicos al alcance de tu mano, el Cerato te ayuda a disfrutar la vida al máximo."
       },
       "exterior": {
+        "galleryType": "1",
         "category": "Exterior",
         "title": "Reinicia la magia con cada viaje",
         "description": "Tomá el volante del nuevo y elegante Kia Cerato y empezá tu día sintiéndote renovado, relajado y capaz de cualquier cosa. La vida se acaba de volver más interesante.",
@@ -201,6 +202,7 @@
         ]
       },
       "interior": {
+        "galleryType": "1",
         "category": "Interior",
         "title": "Confort y tecnología en cada detalle",
         "description": "El atractivo del nuevo KIA Cerato es evidente. Cada detalle del interior también está diseñado para crear una mejor experiencia de manejo.",

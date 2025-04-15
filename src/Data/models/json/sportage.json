@@ -1,19 +1,20 @@
 {
   "id": "sportage ",
   "name": "Sportage",
-  "tagline": "Inspirate con un viaje a las montañas",
+  "tagline": "Inspiración sin límites",
   "heroImage": "/images/placeholder-sportage-hero.jpg",
   "heroVideo": "imageMapRef:sportage.heroVideo",
+
   "menu": {
     "etiqueta": { "id": "brochures", "link": "imageMapRef:sportage.etiqueta" },
     "fichas": { "id": "technical-sheet", "link": "imageMapRef:sportage.fichas" }
   },
   "heroInfo": [
     {
-      "iconId": "radio",
-      "title": "Stars",
-      "description": "Central <br/> multimedia <br/> de 8\"",
-      "description_mobile": "Central multimedia <br/> de 8\""
+      "iconId": "drivewise",
+      "title": "Drive Wise",
+      "description": "Drive Wise <br/> Asistencia a <br/> la Conducción",
+      "description_mobile": "Drive Wise <br/> Asistencia a <br/> la Conducción"
     },
     {
       "iconId": "airbag",
@@ -22,42 +23,31 @@
       "description_mobile": "6 Airbags"
     },
     {
-      "iconId": "breaks",
-      "title": "Breaks",
-      "description": "Frenos ABS <br/> con EBD",
-      "description_mobile": "Frenos ABS <br/> con EBD"
+      "iconId": "radio",
+      "title": "Radio",
+      "description": "Pantalla dual <br/> panorámica <br/> de 12.3\"",
+      "description_mobile": "Pantalla dual <br/> panorámica <br/> de 12.3\""
     },
     {
-      "iconId": "stabilizer",
-      "title": "Stabilizer",
-      "description": "Control de <br/> estabilidad <br/> (ESC)",
-      "description_mobile": "Control de <br/> estabilidad (ESC)"
-    },
-    {
-      "iconId": "assistant",
-      "title": "Assistant",
-      "description": "Asistente de <br/> arranque en <br/> pendiente (HAC)",
-      "description_mobile": "Asistente de arranque <br/> en pendiente (HAC)"
-    },
-    {
-      "iconId": "anchor",
-      "title": "Anchor",
-      "description": "Anclajes <br/> ISOFIX",
-      "description_mobile": "Anclajes <br/> ISOFIX"
+      "iconId": "roof",
+      "title": "Rooftop",
+      "description": "Techo panorámico <br/> con apertura <br/> eléctrica",
+      "description_mobile": "Techo panorámico <br/> con apertura <br/> eléctrica"
     }
   ],
   "sections": {
     "characteristics": {
+      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/sportage/lhd/index.html#/sportage/exterior",
       "features": [
         {
           "id": "motor",
           "title": "Motor",
-          "value": "2.0 MPI | 1,999cc"
+          "value": "1.6 T-GDI | 1,598cc"
         },
         {
           "id": "performance",
           "title": "Performance",
-          "value": "150hp | 192Nm"
+          "value": "178hp | 265Nm"
         },
         {
           "id": "warranty",
@@ -65,180 +55,100 @@
           "value": "5 años o 100.000km"
         }
       ],
-      "colorPicker": [
-        {
-          "id": "runway-red",
-          "name": "Runway Red",
-          "border": "#740000",
-          "color": "#C20000",
-          "outline": "#A50000",
-          "thumbnail": "imageMapRef:sportage.colors.runwayRed"
-        },
-        {
-          "id": "mineral-blue",
-          "name": "Mineral Blue",
-          "border": "#03070F",
-          "color": "#0E254B",
-          "outline": "#0B1C38",
-          "thumbnail": "imageMapRef:sportage.colors.mineralBlue"
-        },
-        {
-          "id": "gravity-blue",
-          "name": "Gravity Blue",
-          "border": "#0B293B",
-          "color": "#124463",
-          "outline": "#0F3A54",
-          "thumbnail": "imageMapRef:sportage.colors.gravityBlue"
-        },
-        {
-          "id": "horizon-blue",
-          "name": "Horizon Blue",
-          "border": "#1D4159",
-          "color": "#306D94",
-          "outline": "#2B6285",
-          "thumbnail": "imageMapRef:sportage.colors.horizonBlue"
-        },
-        {
-          "id": "black",
-          "name": "Aurora Black Pearl",
-          "border": "#05141F",
-          "color": "#1B171B",
-          "outline": "#05141F",
-          "thumbnail": "imageMapRef:sportage.colors.auroraBlack"
-        },
-        {
-          "id": "platinum-graphite",
-          "name": "Platinum Graphite",
-          "border": "#242323",
-          "color": "#474646",
-          "outline": "#393838",
-          "thumbnail": "imageMapRef:sportage.colors.platinumGraphite"
-        },
-        {
-          "id": "gray",
-          "name": "Steel Gray",
-          "border": "#4C4C4C",
-          "color": "#7E7E7E",
-          "outline": "#6B6B6B",
-          "thumbnail": "imageMapRef:sportage.colors.steelGray"
-        },
-        {
-          "id": "silver",
-          "name": "Silky Silver",
-          "border": "#817F7F",
-          "color": "#B8B6B6",
-          "outline": "#A6A4A4",
-          "thumbnail": "imageMapRef:sportage.colors.silkySilver"
-        },
-        {
-          "id": "snow-white",
-          "name": "Snow White Pearl",
-          "border": "#D6D6D6",
-          "color": "#F6F6F6",
-          "outline": "#EFEFEF",
-          "thumbnail": "imageMapRef:sportage.colors.snowWhite"
-        },
-        {
-          "id": "pearl",
-          "name": "Clear Pearl",
-          "border": "#D6D6D6",
-          "color": "#F6F6F6",
-          "outline": "#EFEFEF",
-          "thumbnail": "imageMapRef:sportage.colors.clearPearl"
-        }
-      ],
       "atributes": {
         "category": "Atributos",
-        "subtitle": "Aventura y estilo en cada recorrido",
+        "subtitle": "La inspiración se presenta de muchas maneras",
         "image": "imageMapRef:sportage.attributes",
         "bulletPoints": [
-          "**Diseño aerodinámico y elegante:** El sportage presenta un estilo deportivo con líneas limpias, faros LED y una parrilla frontal que expresa la identidad moderna de Kia.",
-          "**Conectividad y tecnología:** Equipado con una central multimedia de 8\" compatible con Android Auto™ y Apple CarPlay™, sumado a acceso sin llave, encendido por botón y puertos USB. Todo pensado para mantenerte cómodo y conectado en cada viaje.",
-          "**Tecnología para un viaje conectado:** Con 6 airbags, frenos ABS con EBD, control de estabilidad (ESC), asistente de arranque en pendiente (HAC) y anclajes ISOFIX, el sportage garantiza protección integral para vos y tus acompañantes."
+          "**Diseño que inspira movimiento:** Cada curva del Sportage fue trazada con una visión: transmitir dinamismo y sofisticación. Su silueta moderna y robusta lo convierte en un ícono en cualquier camino.",
+          "**Tecnología que te conecta:** Conectividad inteligente, asistencia al conductor y pantallas envolventes hacen que cada trayecto sea más intuitivo, seguro y conectado con lo que realmente importa: vos.",
+          "**Confort que trasciende el viaje:** Materiales premium, climatización personalizada y una arquitectura interior envolvente convierten cada viaje en un espacio pensado para disfrutar el presente."
         ],
-        "description": "El atractivo del sportage va mucho más allá del estilo y la comodidad. Desde la facilidad para entrar y salir del vehículo, hasta los controles ergonómicos al alcance de tu mano, el sportage te ayuda a disfrutar la vida al máximo."
+        "description": "El Kia Sportage fusiona diseño de vanguardia, tecnología intuitiva y confort premium para transformar cada viaje en una fuente de inspiración. Un SUV que no solo te lleva, te eleva."
       },
       "exterior": {
+        "galleryType": "1",
         "category": "Exterior",
-        "title": "Reinicia la magia con cada viaje",
-        "description": "Tomá el volante del nuevo y elegante Kia sportage y empezá tu día sintiéndote renovado, relajado y capaz de cualquier cosa. La vida se acaba de volver más interesante.",
+        "title": "La inspiración se presenta de muchas maneras",
+        "description": "El Sportage fue diseñado para destacar. Con una silueta poderosa, detalles refinados y proporciones audaces, redefine la estética de los SUV modernos.",
         "images": [
           {
-            "id": "exterior-front",
-            "src": "imageMapRef:sportage.exterior.front",
-            "alt": "Frente",
-            "title": "Hecho para el movimiento, imponente hasta en reposo",
-            "description": "El sportage tiene lo mejor de ambos mundos: un carácter deportivo basado en una suspensión ágil y un tren motriz receptivo, junto con el encanto de un interior espacioso y acogedor."
+            "id": "sportage-exterior-lights",
+            "src": "imageMapRef:sportage.exterior.lights",
+            "alt": "Luces",
+            "title": "Luz que marca el camino",
+            "description": "Los faros LED delanteros con firma lumínica dinámica no solo mejoran la visibilidad, también proyectan una personalidad fuerte, moderna y segura desde el primer vistazo."
           },
           {
-            "id": "exterior-rear",
-            "src": "imageMapRef:sportage.exterior.rear",
-            "alt": "Faros traseros",
-            "title": "Diseñados para destacar, incluso cuando dejás todo atrás",
-            "description": "Los faros traseros LED del sportage combinan funcionalidad y estilo con una iluminación firme y clásica, aportando una firma visual reconocible que acompaña cada movimiento con confianza."
+            "id": "sportage-exterior-rooftop",
+            "src": "imageMapRef:sportage.exterior.rooftop",
+            "alt": "Techo",
+            "title": "Detalles que elevan tu camino",
+            "description": "Las barras de techo integradas combinan funcionalidad y diseño, acentuando el perfil aventurero y elevando su impronta SUV."
           },
           {
-            "id": "exterior-wheel",
+            "id": "sportage-exterior-wheel",
             "src": "imageMapRef:sportage.exterior.wheel",
             "alt": "Llantas",
-            "title": "Estilo que pisa fuerte",
-            "description": "Las llantas de aleación de 17” del sportage aportan una presencia imponente y deportiva. Su diseño equilibra rendimiento y elegancia, completando una silueta que no pasa desapercibida."
+            "title": "Cada giro deja su huella",
+            "description": "Las llantas de aleación de 18\" combinan diseño deportivo con solidez, reforzando su carácter versátil para la ciudad o la aventura."
           },
           {
-            "id": "exterior-espejo",
-            "src": "imageMapRef:sportage.exterior.mirror",
-            "alt": "Espejo",
-            "title": "Reflejo de diseño funcional",
-            "description": "Con ajuste eléctrico y luces direccionales integradas, los espejos del sportage combinan diseño elegante con practicidad, mejorando la visibilidad y reforzando su carácter moderno."
+            "id": "sportage-exterior-backlights",
+            "src": "imageMapRef:sportage.exterior.backlights",
+            "alt": "Luces traseras",
+            "title": "Elegancia que se ve incluso al partir",
+            "description": "Las luces traseras LED, con diseño envolvente, completan su silueta con una firma luminosa que acentúa su estilo moderno y seguro."
           },
           {
-            "id": "exterior-grille",
+            "id": "sportage-exterior-grille",
             "src": "imageMapRef:sportage.exterior.grille",
             "alt": "Grille",
-            "title": "Claridad con carácter",
-            "description": "Los faros LED bifuncionales del sportage brindan una iluminación segura y confiable, fusionando estética y funcionalidad en cada trayecto, sin perder el sello distintivo del diseño Kia."
+            "title": "Personalidad que se nota",
+            "description": "La parrilla frontal de diseño audaz, inspirada en formas naturales, transmite movimiento y fuerza desde el primer vistazo."
           }
         ]
       },
       "interior": {
+        "galleryType": "1",
         "category": "Interior",
-        "title": "Confort y tecnología en cada detalle",
-        "description": "El atractivo del nuevo KIA sportage es evidente. Cada detalle del interior también está diseñado para crear una mejor experiencia de manejo.",
+        "title": "Un lugar al que siempre querés volver",
+        "description": "El interior del Sportage es mucho más que un espacio de tránsito. Es un entorno cuidado, intuitivo y preparado para inspirarte en cada viaje.",
         "images": [
           {
-            "id": "interior-steering-wheel",
+            "id": "sportage-interior-steering-wheel",
             "src": "imageMapRef:sportage.interior.steeringWheel",
-            "alt": "Asientos tapizados",
-            "title": "Un espacio diseñado para acompañarte, sin importar el destino",
-            "description": "Cada detalle del interior del sportage está pensado para ofrecer confort, estilo y tecnología en perfecta armonía. Desde sus materiales refinados hasta la ergonomía del puesto de conducción, todo en su cabina invita a disfrutar del camino."
+            "alt": "Steering Wheel",
+            "title": "Un espacio que se vive",
+            "description": "Elegante, funcional y conectado con tu estilo. Así es el interior del Sportage: un espacio diseñado para inspirarte en cada trayecto."
           },
           {
-            "id": "interior-air-conditioner",
-            "src": "imageMapRef:sportage.interior.airConditioner",
-            "alt": "Interior keys",
-            "title": "Un ambiente que se adapta a vos",
-            "description": "El climatizador automático Bi-Zona del sportage permite regular la temperatura ideal con precisión, creando un ambiente perfecto para cada viaje, sin distracciones y con total elegancia."
+            "id": "sportage-interior-trunk",
+            "src": "imageMapRef:sportage.interior.trunk",
+            "alt": "Baúl",
+            "title": "Llevá con vos todo lo que necesitás",
+            "description": "El baúl del Sportage ofrece hasta 543 litros de capacidad, ideales para lo cotidiano o una escapada de fin de semana. Si necesitás más, sus asientos rebatibles permiten expandirlo hasta los 1.829 litros, con apertura eléctrica y función manos libres."
           },
           {
-            "id": "interior-panel",
-            "src": "imageMapRef:sportage.interior.panel",
-            "alt": "Interior panel",
-            "title": "Refrescantemente fácil de leer y operar",
-            "description": "La pantalla táctil LCD a color de 8” controla el sistema de audio, mientras le brinda acceso a una amplia gama de información del vehículo. También esté vinculado a la cámara retrovisora y cuenta con pautas dinámicas para facilitar el estacionamiento en reversa."
-          },
-          {
-            "id": "interior-gearbox",
+            "id": "sportage-interior-gearbox",
             "src": "imageMapRef:sportage.interior.gearbox",
-            "alt": "Interior gearbox",
-            "title": "Suavidad en cada cambio",
-            "description": "La transmisión automática del sportage ofrece una conducción fluida, eficiente y sin interrupciones. Ideal para quienes buscan confort y precisión en cada trayecto."
+            "alt": "Caja de cambios",
+            "title": "El cielo ya no es el límite",
+            "description": "El techo panorámico amplía la percepción de espacio e ilumina el interior, generando una sensación de libertad y conexión con el exterior."
           },
           {
-            "id": "interior-rooftop",
+            "id": "sportage-interior-rooftop",
             "src": "imageMapRef:sportage.interior.rooftop",
-            "alt": "Interior roof",
-            "title": "Diseñado para mirar bien alto",
-            "description": "Experimentá la sensación refrescante de conducir con la parte superior abierta gracias a la inclinación y el deslizamiento del techo corredizo a un solo toque. Se abre y se cierra totalmente con la simple presión del dedo."
+            "alt": "Techo",
+            "title": "Precisión que se siente en cada cambio",
+            "description": "Gracias a su transmisión automática de doble embrague (DCT) de 7 velocidades, el Sportage entrega una conducción más fluida, ágil y eficiente."
+          },
+          {
+            "id": "sportage-interior-panel",
+            "src": "imageMapRef:sportage.interior.panel",
+            "alt": "Panel",
+            "title": "Tecnología que te envuelve",
+            "description": "La pantalla curva doble de 12.3” integra funciones clave en una interfaz envolvente, con gráficos avanzados y respuesta inmediata."
           }
         ]
       }
@@ -273,8 +183,8 @@
       "features": [
         {
           "id": "frontlights",
-          "title": "Faros delanteros LED",
-          "value": "Faros LED + delanteros <br/> con Cornering Light"
+          "title": "Faros Antiniebla LED",
+          "value": "Faros Antiniebla LED <br/> (delanteros LED MFR)"
         },
         {
           "id": "smartkey",
@@ -283,31 +193,36 @@
         },
         {
           "id": "wheels",
-          "title": "Aleación",
-          "value": "Llantas de 17\""
+          "title": "Llantas",
+          "value": "Llantas de <br/> aleación 18\""
+        },
+        {
+          "id": "battery",
+          "title": "Cargador",
+          "value": "Cargador <br/> inalámbrico"
         },
         {
           "id": "heatedseat",
           "title": "Butacas",
-          "value": "Butacas delanteras<br/> calefaccionadas"
+          "value": "Butacas delanteras <br/> calefaccionadas"
         }
       ],
       "dimensions": {
         "title": "Dimensiones (mm)",
         "details": [
           {
-            "name": "EXTERIOR largo / ancho / alto",
-            "value": "4.640 / 1.800 / 1.450"
+            "name": "EXTERIOR largo/ancho/alto",
+            "value": "4.660 / 1.865 / 1.665"
           },
-          { "name": "Distancia entre ejes", "value": "2.700" },
-          { "name": "Distancia del suelo", "value": "150" },
+          { "name": "Distancia entre ejes", "value": "2.755" },
+          { "name": "Distancia del suelo", "value": "181" },
           {
-            "name": "Capacidad de baúl (2ª Fila/ 1ª Fila)",
-            "value": "502 VDA Lts"
+            "name": "Capacidad de baúl (2° Fila/ 1° Fila)",
+            "value": "543 VDA Lts"
           },
-          { "name": "Peso Neto", "value": "1.340 Kg" },
+          { "name": "Peso Neto", "value": "1.517 Kg" },
           { "name": "Plazas", "value": "5" },
-          { "name": "Medida de neumáticos", "value": "225 / 45R17" },
+          { "name": "Medida de neumáticos", "value": "235 / 60R18" },
           { "name": "Auxilio", "value": "Homogéneo" }
         ]
       }

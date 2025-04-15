@@ -4,32 +4,34 @@ import { resolveAllImageRefs } from "../mappers/imageMapper";
 import k3SedanJson from "./json/k3-sedan.json";
 import k3CrossJson from "./json/k3-cross.json";
 import ceratoJson from "./json/cerato.json";
+import sportageJson from "./json/sportage.json";
 
 // Export the processed models
 const k3Sedan = resolveAllImageRefs(k3SedanJson);
 const k3Cross = resolveAllImageRefs(k3CrossJson);
 const cerato = resolveAllImageRefs(ceratoJson);
+const sportage = resolveAllImageRefs(sportageJson);
 
 export const carModelsData = {
   "k3-sedan": k3Sedan,
   "k3-cross": k3Cross,
-  // sportage: jsonSportage,
   cerato: cerato,
+  sportage: sportage,
 };
 
 // Model ID constants
 export const MODEL_IDS = {
   SEDAN: "k3-sedan",
   CROSS: "k3-cross",
-  // SPORTAGE: "sportage",
   CERATO: "cerato",
+  SPORTAGE: "sportage",
 };
 
 // Available models for UI components
 export const availableModels = [
   { id: MODEL_IDS.SEDAN, name: "K3 Sedán" },
   { id: MODEL_IDS.CROSS, name: "K3 Cross" },
-  // { id: MODEL_IDS.SPORTAGE, name: "Sportage" },
+  { id: MODEL_IDS.SPORTAGE, name: "Sportage" },
   { id: MODEL_IDS.CERATO, name: "Cerato" },
 ];
 
