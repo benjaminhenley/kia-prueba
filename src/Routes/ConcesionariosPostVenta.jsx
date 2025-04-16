@@ -234,72 +234,75 @@ const ConcesionariosPostVenta = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[7rem]">
-      {/* Header Section */}
-      <div className="mb-7 md:mb-8">
-        <h2 className="text-lg md:text-2xl text-midnight-black mb-0 md:mb-5">Concesionarios</h2>
-        <div className="relative">
-          <h1 className="text-2xl md:text-4xl font-bold text-midnight-black">PostVenta</h1>
-          <div className="relative top-7px] md:top-2 left-0 w-6 md:w-12 h-[2px] bg-midnight-black"></div>
-        </div>
-      </div>
-
-      {/* Search Section */}
-      <div className="flex flex-col gap-6 items-start md:gap-0 md:flex-row md:flex-row-reverse justify-between md:items-center mb-8">
-        <ViewModeToggle viewMode={viewMode} setViewMode={setViewMode} />
-        <div className="flex gap-4 w-full md:w-auto">
-          <div className='w-full md:w-[450px]'>
-            <FormDropdown 
-              placeholder="Seleccionar provincia"
-              name="provincia"
-              value={selectedProvince}
-              onChange={(e) => {
-                const province = e.target.value;
-                setSelectedProvince(province);
-                // Solo en mobile, disparar búsqueda al seleccionar
-                if (window.innerWidth < 768) { // 768px es el breakpoint para md
-                  handleSearch(province);
-                }
-              }}
-              options={PROVINCES}
-            />
-          </div>  
-          {/* Botón de búsqueda solo visible en pantallas md y más grandes */}
-          <div className="hidden md:block">
-            <KiaButton
-              onClick={() => handleSearch(selectedProvince)} // Usar el estado actual al hacer clic
-              titulo='Buscar'
-            />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col item-start gap-3 md:gap-0 md:flex-row md:justify-between md:items-center">
-        <div>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-900">Concesionarios de post venta</h3>
-          <div className="relative top-[0px] md:top-1 md:top-2 left-0 w-10 md:w-14 h-[1px] bg-midnight-black"></div>
-        </div>
-        {filteredDealers && (
-          <p className="text-midnight-black text-xs md:text-sm">
-            Resultados: <br/><span className='font-medium'>{filteredDealers.length} Concesionarios encontrados</span>
-          </p>
-        )}
-      </div>   
-
-      {/* Content Section */}
-      {filteredDealers.length > 0 ?
-            <>
-                {viewMode === 'list' && (
-                    <DealersTable dealers={filteredDealers} showResultsCount={false} />
-                )}
-                {viewMode === 'map' && (
-                    <MapView dealers={filteredDealers} showResultsCount={false}/>
-                )}
-            </>
-            : <div className="bg-gray-100 p-6 text-center mt-4 md:mt-[4rem]">
-                <p className="text-midnight-black">No hay concesionarios para mostrar.</p>
+    // Padding General
+    <div className='px-4 md:px-20'>
+        <div className="w-full mx-auto py-10 py-[7rem]">
+        {/* Header Section */}
+        <div className="mb-7 md:mb-8">
+            <h2 className="text-lg md:text-2xl text-midnight-black mb-0 md:mb-5">Concesionarios</h2>
+            <div className="relative">
+            <h1 className="text-2xl md:text-4xl font-bold text-midnight-black">PostVenta</h1>
+            <div className="relative top-7px] md:top-2 left-0 w-6 md:w-12 h-[2px] bg-midnight-black"></div>
             </div>
-        }
-    </div>
+        </div>
+
+        {/* Search Section */}
+        <div className="flex flex-col gap-6 items-start md:gap-0 md:flex-row md:flex-row-reverse justify-between md:items-center mb-8">
+            <ViewModeToggle viewMode={viewMode} setViewMode={setViewMode} />
+            <div className="flex gap-4 w-full md:w-auto">
+            <div className='w-full md:w-[450px]'>
+                <FormDropdown 
+                placeholder="Seleccionar provincia"
+                name="provincia"
+                value={selectedProvince}
+                onChange={(e) => {
+                    const province = e.target.value;
+                    setSelectedProvince(province);
+                    // Solo en mobile, disparar búsqueda al seleccionar
+                    if (window.innerWidth < 768) { // 768px es el breakpoint para md
+                    handleSearch(province);
+                    }
+                }}
+                options={PROVINCES}
+                />
+            </div>  
+            {/* Botón de búsqueda solo visible en pantallas md y más grandes */}
+            <div className="hidden md:block">
+                <KiaButton
+                onClick={() => handleSearch(selectedProvince)} // Usar el estado actual al hacer clic
+                titulo='Buscar'
+                />
+            </div>
+            </div>
+        </div>
+        <div className="flex flex-col item-start gap-3 md:gap-0 md:flex-row md:justify-between md:items-center">
+            <div>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900">Concesionarios de post venta</h3>
+            <div className="relative top-[0px] md:top-1 md:top-2 left-0 w-10 md:w-14 h-[1px] bg-midnight-black"></div>
+            </div>
+            {filteredDealers && (
+            <p className="text-midnight-black text-xs md:text-sm">
+                Resultados: <br/><span className='font-medium'>{filteredDealers.length} Concesionarios encontrados</span>
+            </p>
+            )}
+        </div>   
+
+        {/* Content Section */}
+        {filteredDealers.length > 0 ?
+                <>
+                    {viewMode === 'list' && (
+                        <DealersTable dealers={filteredDealers} showResultsCount={false} />
+                    )}
+                    {viewMode === 'map' && (
+                        <MapView dealers={filteredDealers} showResultsCount={false}/>
+                    )}
+                </>
+                : <div className="bg-gray-100 p-6 text-center mt-4 md:mt-[4rem]">
+                    <p className="text-midnight-black">No hay concesionarios para mostrar.</p>
+                </div>
+            }
+        </div>
+    </div>    
   );
 }
 

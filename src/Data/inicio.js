@@ -66,9 +66,9 @@ export const homeSlider = [
     titulo: "Sportage",
     subtitulo: "Inspiración sin límites",
     textoBoton: "Conocer más",
-    linkBoton: "https://www.kia.com.ar/all-new-sportage",
+    linkBoton: "/sportage",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
   {
     imagen: Seltos,

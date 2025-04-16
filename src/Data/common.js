@@ -48,7 +48,7 @@ export const redes = [
 export const autos = [
   {
     nombre: "All-new K3 Sedán",
-    href: "k3-sedan",
+    href: "/k3-sedan",
     target: "",
     esExterna: false,
     esNuevo: Nuevo,
@@ -68,9 +68,9 @@ export const autos = [
   },
   {
     nombre: "Cerato",
-    href: "https://www.kia.com.ar/cerato",
+    href: "/cerato",
     target: "",
-    esExterna: true,
+    esExterna: false,
     esNuevo: null,
     foto: Cerato,
     precio: (
@@ -89,7 +89,7 @@ export const autos = [
 export const camionetasSuv = [
   {
     nombre: "All-new K3 Cross",
-    href: "k3-cross",
+    href: "/k3-cross",
     target: "",
     esExterna: false,
     esNuevo: Nuevo,
@@ -127,9 +127,9 @@ export const camionetasSuv = [
   },
   {
     nombre: "Sportage",
-    href: "https://www.kia.com.ar/all-new-sportage",
+    href: "/sportage",
     target: "",
-    esExterna: true,
+    esExterna: false,
     esNuevo: null,
     foto: Sportage,
     precio: (

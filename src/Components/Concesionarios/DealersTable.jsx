@@ -10,7 +10,7 @@ export default function DealersTable({ dealers = [], showResultsCount = true }) 
   );
 
   return (
-    <div className="w-full max-w-7xl mx-auto mt-4 md:mt-[4rem]">
+    <div className="w-full mx-auto mt-4 md:mt-[4rem]">
         <>
           {/* Table view for medium screens and above */}
           <div className="overflow-hidden border">
