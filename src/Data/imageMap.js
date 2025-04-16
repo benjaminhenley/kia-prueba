@@ -86,17 +86,17 @@ import ceratoBackMobile from "../assets/img/models/cerato/carousel/cerato-back-m
 import ceratoSideDesktop from "../assets/img/models/cerato/carousel/cerato-side-desktop.webp";
 import ceratoSideMobile from "../assets/img/models/cerato/carousel/cerato-side-mobile.webp";
 // Cerato exterior images
-import ceratoExteriorFront from "../assets/img/models/cerato/exterior/cerato-exterior-1.webp";
-import ceratoExteriorRear from "../assets/img/models/cerato/exterior/cerato-exterior-2.webp";
-import ceratoExteriorWheel from "../assets/img/models/cerato/exterior/cerato-exterior-3.webp";
-import ceratoExteriorMirror from "../assets/img/models/cerato/exterior/cerato-exterior-4.webp";
-import ceratoExteriorGrille from "../assets/img/models/cerato/exterior/cerato-exterior-5.webp";
+import ceratoExteriorFront from "../assets/img/models/cerato/exterior/cerato-exterior-front.webp";
+import ceratoExteriorRear from "../assets/img/models/cerato/exterior/cerato-exterior-rear.webp";
+import ceratoExteriorWheel from "../assets/img/models/cerato/exterior/cerato-exterior-wheel.webp";
+import ceratoExteriorMirror from "../assets/img/models/cerato/exterior/cerato-exterior-mirror.webp";
+import ceratoExteriorGrille from "../assets/img/models/cerato/exterior/cerato-exterior-grille.webp";
 // Cerato interior images
-import ceratoSteeringWheel from "../assets/img/models/cerato/interior/cerato-interior-1.webp";
-import ceratoInteriorAirConditioner from "../assets/img/models/cerato/interior/cerato-interior-2.webp";
-import ceratoInteriorPanel from "../assets/img/models/cerato/interior/cerato-interior-3.webp";
-import ceratoInteriorGearbox from "../assets/img/models/cerato/interior/cerato-interior-4.webp";
-import ceratoInteriorRooftop from "../assets/img/models/cerato/interior/cerato-interior-5.webp";
+import ceratoInteriorWheel from "../assets/img/models/cerato/interior/cerato-interior-wheel.webp";
+import ceratoInteriorRadio from "../assets/img/models/cerato/interior/cerato-interior-radio.webp";
+import ceratoInteriorPanel from "../assets/img/models/cerato/interior/cerato-interior-panel.webp";
+import ceratoInteriorGearbox from "../assets/img/models/cerato/interior/cerato-interior-gearbox.webp";
+import ceratoInteriorRooftop from "../assets/img/models/cerato/interior/cerato-interior-rooftop.webp";
 // Cerato colors images
 import ceratoRunwayRed from "../assets/img/models/cerato/colors/cerato-runway-red.webp";
 import ceratoMineralBlue from "../assets/img/models/cerato/colors/cerato-mineral-blue.webp";
@@ -334,13 +334,13 @@ export const imageMap = {
       },
     },
     interior: {
-      steeringWheel: {
-        desktop: ceratoSteeringWheel,
-        mobile: ceratoSteeringWheel,
+      wheel: {
+        desktop: ceratoInteriorWheel,
+        mobile: ceratoInteriorWheel,
       },
-      airConditioner: {
-        desktop: ceratoInteriorAirConditioner,
-        mobile: ceratoInteriorAirConditioner,
+      radio: {
+        desktop: ceratoInteriorRadio,
+        mobile: ceratoInteriorRadio,
       },
       panel: {
         desktop: ceratoInteriorPanel,

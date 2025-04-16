@@ -209,14 +209,14 @@
         "images": [
           {
             "id": "interior-steering-wheel",
-            "src": "imageMapRef:cerato.interior.steeringWheel",
+            "src": "imageMapRef:cerato.interior.wheel",
             "alt": "Asientos tapizados",
             "title": "Un espacio diseñado para acompañarte, sin importar el destino",
             "description": "Cada detalle del interior del Cerato está pensado para ofrecer confort, estilo y tecnología en perfecta armonía. Desde sus materiales refinados hasta la ergonomía del puesto de conducción, todo en su cabina invita a disfrutar del camino."
           },
           {
-            "id": "interior-air-conditioner",
-            "src": "imageMapRef:cerato.interior.airConditioner",
+            "id": "interior-radio",
+            "src": "imageMapRef:cerato.interior.radio",
             "alt": "Interior keys",
             "title": "Un ambiente que se adapta a vos",
             "description": "El climatizador automático Bi-Zona del Cerato permite regular la temperatura ideal con precisión, creando un ambiente perfecto para cada viaje, sin distracciones y con total elegancia."
