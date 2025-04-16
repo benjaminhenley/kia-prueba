@@ -150,7 +150,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
         <div className=" mx-auto w-full md:py-[30px]">
           <div className="relative flex flex-col justify-between items-center flex-wrap md:flex-row h-full pointer-events-auto md:px-16">
             {/* Title section - No overlay on mobile */}
-            <div className="flex flex-col relative mt-5 md:mt-0 pl-4 flex-shrink-0 w-fit">
+            <div className="flex flex-col relative mt-5 md:mt-0 pl-4 flex-shrink-0 w-full md:w-fit">
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500"></div>
 
@@ -161,7 +161,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
             </div>
 
             <div className="bg-black bg-opacity-50 md:bg-transparent w-full xl:w-fit justify-center">
-              <div className=" justify-center flex flex-wrap mx-auto lg:mx-0 p-4">
+              <div className="justify-evenly flex flex-wrap mx-auto lg:mx-0 p-4">
                 {heroInfo.map((item) => (
                   <div
                     key={item.id}

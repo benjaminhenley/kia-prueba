@@ -8,8 +8,6 @@ import { getSafeModelData } from "../Data/models/modelMapper.js";
 
 const Modelos = () => {
   const { modelID } = useParams();
-  const navigate = useNavigate();
-
   const [activeTab, setActiveTab] = useState("characteristics");
   const model = getSafeModelData(modelID);
 
