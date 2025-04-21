@@ -29,9 +29,9 @@ const DEALERS = [
       provincia: "misiones",
       direccion: "Av Uruguay 6132, Posadas, Misiones",
       telefono: "(0376) 445 0900", 
-      horario: "Lunes a Viernes 8:00hs a 12:30hs / 16:00hs a 20:30hs",
+      horario: "Lunes a Viernes de 8:00hs a 12:30hs / 16:00hs a 20:30hs",
       email: "armandoautomotores@arnetbiz.com.ar",
-      coordinadas: [-55.9144324999999, -27.4031935]
+      coordinadas: [-55.9144325, -27.4031935]
     },
     {
       id: 3,
@@ -39,157 +39,219 @@ const DEALERS = [
       provincia: "buenosaires",
       direccion: "Av Córdoba 3886, CABA, Buenos Aires",
       telefono: "(011) 3220 3333", 
-      horario: "Lunes a Vienes 8:00 hs a 13:00 hs / 14:00hs a 18:00hs",
-      email: "serviciokia@autodrive.com.ar",
+      horario: "Lunes a Viernes de 10:00hs a 18:00hs",
+      email: "ventaskia@autodrive.com.ar",
+      coordinadas: [-58.4231858, -34.5980271]
     },
     {
       id: 4,
       nombre: "Autopremium (Olivos)",
       provincia: "buenosaires",
       direccion: "Av. Libertador 2230, Vicente López, Buenos Aires",
-      telefono: "(011) 3959 1667",
-      horario: "Lunes a Viernes 8:00hs a 13:00hs / de 14hs a 17:30hs",
-      email: "repuestos@kiaolivos.com.ar",
+      telefono: "(011) 4799 6698",
+      horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sabados de 10:00hs a 14:00hs",
+      email: "ventas@kiaolivos.com.ar",
+      coordinadas: [-58.478294, -34.5109242]
     },
     {
       id: 5,
       nombre: "Autopremium (Pilar)",
       provincia: "buenosaires",
       direccion: "Panamericana Km 52.300, Pilar, Buenos Aires",
-      horario: "Lunes a Viernes de 09:00hs a 18:30hs y Sábados de 10:00hs a 14:00hs"
+      telefono: "(0230) 466 3500",
+      horario: "Lunes a Viernes 9:00hs a 18:30hs. Sábados de 10:00hs a 14:00hs",
+      email: "ventas@kia-pilar.com.ar",
+      coordinadas: [-58.892075, -34.446289]
     },
     {
       id: 6,
       nombre: "Autovisiones",
       provincia: "buenosaires",
       direccion: "Av. Libertador 5750, CABA, Buenos Aires",
-      horario: "Lunes a Viernes de 09:00hs a 19:00hs y Sábados de 09:00hs a 13:00hs"
+      telefono: "(011) 5254-7333",
+      horario: "Lunes a Viernes de 9:00hs a 19:00hs. Sábados de 9:00hs a 13:00hs",
+      email: "ventas@autovisioneskia.com.ar",
+      coordinadas: [-58.445786, -34.558711]
     },
     {
       id: 7,
       nombre: "Car Bureau",
       provincia: "buenosaires",
       direccion: "Av. San Martín 4641, CABA, Buenos Aires",
-      horario: "Lunes a Viernes de 09:00hs a 19:00hs y Sábados de 09:00hs a 14:00hs"
+      telefono: "(011) 4504 0972 / 0474 / 8437",
+      horario: "Lunes a Viernes de 9:00hs a 18:00hs",
+      email: "ventas@carbureau.com.ar",
+      coordinadas: [-58.484328, -34.597263]
     },
     {
       id: 8,
       nombre: "Chahín Automotores",
       provincia: "cordoba",
       direccion: "Av. Fuerza Aérea Argentina 810, Córdoba",
-      horario: "Lunes a Viernes de 09:00hs a 13:00hs / 15:30hs a 19:30hs"
+      telefono: "(0351) 465 7536",
+      horario: "Lunes a Viernes de 9:00hs a 13:00hs / 15:30hs a 19:30hs",
+      email: "secretariachahin@automotoreschahin.com.ar",
+      coordinadas: [-64.2146915, -31.4305145]
     },
     {
       id: 9,
       nombre: "CP Motors",
       provincia: "tucuman",
       direccion: "Ruta 9 Km 1301, Yerba Buena, Tucumán",
-      horario: "Lunes a Viernes de 08:30hs a 17:00hs"
+      telefono: "(0381) 453 3819 / 690 0960",
+      horario: "Lunes a Viernes de 8:30hs a 17:00hs",
+      email: "administracion@cpmotors.com.ar",
+      coordinadas: [-65.276842, -26.815713]
     },
     {
       id: 10,
       nombre: "Del Norte",
       provincia: "chaco",
       direccion: "Av. 25 de Mayo 1934, Resistencia, Chaco",
-      horario: "Lunes a Viernes de 08:00hs a 12:30hs / 16:30hs a 20:30hs y Sábados de 08:00hs a 12:00hs"
+      telefono: "(0362) 518 2996",
+      horario: "Lunes a Viernes de 8:00hs a 12:30hs / 16:30hs a 20:30hs. Sábados de 8:00hs a 12:00hs",
+      email: "ventas2@kiadelnorte.com.ar",
+      coordinadas: [-58.982534, -27.447252]
     },
     {
       id: 11,
       nombre: "Dietrich",
       provincia: "buenosaires",
       direccion: "Jorge Newbery 25, Bahía Blanca, Buenos Aires",
-      horario: "Lunes a Viernes de 09:00hs a 18:00hs"
+      telefono: "(0291) 405 8348",
+      horario: "Lunes a Viernes de 09:00hs a 18:00hs",
+      email: "online@kiadietrich.com",
+      coordinadas: [-62.220894, -38,68113]
     },
     {
       id: 12,
       nombre: "Giuvi",
       provincia: "buenosaires",
-      direccion: "Av. 44 (n°)1835, La Plata, Buenos Aires",
-      horario: "Lunes a Viernes de 08:00hs a 19:00hs y Sábados de 09:00hs a 14:00hs"
+      direccion: "Av. 44 n° 1.835 (entre 131 y 132), La Plata, Buenos Aires",
+      telefono: "(0221) 470 0707",
+      horario: "Lunes a Viernes de 08:00hs a 19:00hs. Sábados de 09:00hs a 14:00hs",
+      email: "ventas@giuvisa.com.ar",
+      coordinadas: [-57.981087, -34.9343144]
     },
     {
       id: 13,
       nombre: "Hiperplatinum",
       provincia: "cordoba",
       direccion: "Av. Fuerza Aérea 3742, Córdoba",
-      horario: "Lunes a Viernes de 09:00hs a 18:30hs y Sábados de 09:30hs a 13:00hs"
+      telefono: "(0351) 485 8830",
+      horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sábados dehs 9:30 a 13:00hs",
+      email: "afrencia@grupoantun.com.ar / info@gamotsa.com.ar",
+      coordinadas: [-64.2374038, -31.432092]
     },
     {
       id: 14,
       nombre: "Kijack",
       provincia: "buenosaires",
       direccion: "Av. Hipólito Yrigoyen 18, Quilmes, Buenos Aires",
-      horario: "Lunes a Viernes de 08:00hs a 13:00hs / 14:00hs a 18:00hs"
+      telefono: "(011) 5236 4708 / 4709",
+      horario: "Lunes a Viernes de 8:00hs a 13:00hs / 14:00hs a 18:00hs",
+      email: "info@kijack.com.ar",
+      coordinadas: [-58.267668, -34.713562]
     },
     {
       id: 15,
       nombre: "Kinor Motors",
       provincia: "buenosaires",
       direccion: "Av. Santa Fe 1007, Martínez, Buenos Aires",
-      horario: "Lunes a Sábados de 09:00hs a 20:00hs"
+      telefono: "(011) 4793 5400",
+      horario: "Lunes a Sábados de 09:00hs a 20:00hs",
+      email: "ventas@kinormotors.com.ar",
+      coordinadas: [-58.505864, -34.481783]
     },
     {
       id: 16,
-      nombre: "Neostar Rosario",
+      nombre: "Neostar",
       provincia: "santafe",
-      direccion: "Av. Mendoza 4631, Rosario, Santa Fe",
-      horario: "Lunes a Viernes de 09:00hs a 19:00hs y Sábados de 09:00hs a 13:00hs"
+      direccion: "Pasaje Colidge 1211, Rosario, Santa Fe",
+      telefono: "(0341) 421 8999", 
+      horario: "Lunes a Viernes de 8:00hs a 17:30hs",
+      email: "lcaceres@neostar.com.ar",
+      coordinadas: [-60.687964, -32.943021]
     },
     {
       id: 17,
-      nombre: "Neostar Santa fe",
+      nombre: "Neostar Rosario",
       provincia: "santafe",
-      direccion: "Av. Alem y Sarmiento (Puerto), Sta. Fe, Santa Fe",
-      horario: "Lunes a Viernes de 09:00hs a 17:00hs y Sábados de 09:00hs a 13:00hs"
+      direccion: "Av Mendoza 4631, Rosario, Santa Fe",
+      telefono: "(0341) 421 8999", 
+      horario: "Lunes a Viernes de 9:00hs a 19:00hs. Sábados de 9:00 a 13:00hs",
+      email: "info@neostar.com.ar",
+      coordinadas: [-60.687842, -32.942768]
     },
     {
       id: 18,
-      nombre: "Novo Automotores (Ushuaia)",
-      provincia: "tierradelfuego",
-      direccion: "Perito F. Moreno 1917, Ushuaia, Tierra del Fuego",
-      horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs y Sábados de 10:00hs a 13:00hs"
+      nombre: "Neostar Santa fe",
+      provincia: "santafe",
+      direccion: "Av. Alem y Sarmiento (Puerto), Santa Fe, Santa Fe",
+      telefono: "(0342) 453 2211",
+      horario: "Lunes a Viernes de 9:00hs a 17:00hs. Sabados de 9:00 a 13:00hs",
+      email: "info@neostar.com.ar / dgiauque@neostar.com.ar",
+      coordinadas: [-60.695514, -31.644879]
     },
     {
       id: 19,
       nombre: "Novo Automotores (Ushuaia)",
       provincia: "tierradelfuego",
-      direccion: "Perito F. Moreno 2597, Ushuaia, Tierra del Fuego",
-      horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs y Sábados de 10:00hs a 13:00hs"
+      direccion: "Av. Perito Moreno 1917, Ushuaia, Tirra del Fuego",
+      telefono: "(02901) 494793",
+      horario: "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
+      email: "infonovo@ushuaiaautomotores.com.ar",
+      coordinadas: [-68.304872, -54.802612]
     },
     {
       id: 20,
       nombre: "Novo Automotores (Río Grande)",
       provincia: "tierradelfuego",
       direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
-      horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs y Sábados de 10:00hs a 13:00hs"
+      telefono: "(0296) 4418959",
+      horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
+      email: "daniel.szarapo@ushuaiaautomotores.com.ar",
+      coordinadas: [-67.72622, -53.77318]
     },
     {
       id: 21,
       nombre: "One Saw",
       provincia: "buenosaires",
       direccion: "Av. Rivadavia 9130, CABA, Bs.As.",
-      horario: "Lunes a Viernes de 10:00hs a 19:00hs"
+      telefono: "(011) 4674-6644 / 6643 / 5485",
+      horario: "Lunes a Viernes de 10:00hs a 19:00hs",
+      email: "ventas@kiaonesaw.com.ar",
+      coordinadas: [-58.4921132, -34.6363241]
     },
     {
       id: 22,
       nombre: "Sebastian Bronstein e Hijo",
       provincia: "cordoba",
       direccion: "Fray L. Beltrán 2584, Córdoba",
-      horario: "Lunes a Viernes de 09:00hs a 12:00hs / 15:00hs a 19:00hs"
+      telefono: "(0351) 5081208",
+      horario: "Lunes a Viernes de 09:00hs a 12:00hs / 15:00hs a 19:00hs",
+      email: "repuestos@serviciobronstein.com.ar",
+      coordinadas: [-67.205738, -31.367044]
     },
     {
       id: 23,
       nombre: "Sevek Automotores",
       provincia: "entrerios",
       direccion: "Mendiburu 91, Concordia, Entre Ríos",
-      horario: "Lunes a Viernes de 08:30hs a 13:00hs / 16:00hs a 20:00hs"
+      telefono: "(0345) 421 4675",
+      horario: "Lunes a Viernes de 08:30hs a 13:00hs / 16:00hs a 20:00hs",
+      email: "sevekautos@gmail.com",
+      coordinadas: [-58.016649, -31.3833671]
     },
     {
       id: 24,
       nombre: "Surkai",
       provincia: "mendoza",
       direccion: "Av. San Martín 598, Godoy Cruz, Mendoza",
-      horario: "Lunes a Viernes 08:30hs a 13:00hs / 16:30hs a 20:30hs"
+      telefono: "(0261) 476 9060",
+      horario: "Lunes a Viernes 08:30hs a 13:00hs / 16:30hs a 20:30hs",
+      email: "kia@surkai.com.ar",
+      coordinadas: [-68.84966913, -32,93054299]
     }
   ];
 
