@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
-import FormButton from "../Components/Common/forms/FormButton";
+import FormButton from "../Components/Common/ui/SquareButton";
 import Arrow from "../Components/Icons/Arrow";
 import Checkbox from "../Components/Icons/Checkbox";
 import CarModelGallery from "../Components/gallery/CarModelGallery";
-// Dropdown data collections
+import PROVINCES from "../Data/provinces";
+import CAR_DEALERS from "../Data/carDealers";
+import kiaApiCall from "../utils/apiCall";
+
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
   { value: "phone", label: "Teléfono" },
@@ -28,33 +31,6 @@ const MONTHS = [
   { value: "12", label: "Diciembre" },
 ];
 
-const PROVINCES = [
-  { value: "buenosaires", label: "Buenos Aires" },
-  { value: "caba", label: "Ciudad Autónoma de Buenos Aires" },
-  { value: "catamarca", label: "Catamarca" },
-  { value: "chaco", label: "Chaco" },
-  { value: "chubut", label: "Chubut" },
-  { value: "cordoba", label: "Córdoba" },
-  { value: "corrientes", label: "Corrientes" },
-  { value: "entrerios", label: "Entre Ríos" },
-  { value: "formosa", label: "Formosa" },
-  { value: "jujuy", label: "Jujuy" },
-  { value: "lapampa", label: "La Pampa" },
-  { value: "larioja", label: "La Rioja" },
-  { value: "mendoza", label: "Mendoza" },
-  { value: "misiones", label: "Misiones" },
-  { value: "neuquen", label: "Neuquén" },
-  { value: "rionegro", label: "Río Negro" },
-  { value: "salta", label: "Salta" },
-  { value: "sanjuan", label: "San Juan" },
-  { value: "sanluis", label: "San Luis" },
-  { value: "santacruz", label: "Santa Cruz" },
-  { value: "santafe", label: "Santa Fe" },
-  { value: "santiagodelestero", label: "Santiago del Estero" },
-  { value: "tierradelfuego", label: "Tierra del Fuego" },
-  { value: "tucuman", label: "Tucumán" },
-];
-
 // Helper function to generate days options
 const generateDaysOptions = () => {
   return Array.from({ length: 31 }, (_, i) => ({
@@ -71,25 +47,9 @@ const generateYearsOptions = () => {
   }));
 };
 
-// Add a new constant for dealers by province
-const DEALERS_BY_PROVINCE = {
-  caba: [
-    { value: "alpina-motors", label: "Alpina Motors" },
-    { value: "autodrive", label: "Autodrive" },
-    { value: "autovisiones", label: "Autovisiones" },
-    { value: "car-bureau", label: "Car Bureau" },
-    { value: "one-saw", label: "One Saw" },
-  ],
-  buenosaires: [
-    { value: "del-plata", label: "KIA Del Plata" },
-    { value: "del-oeste", label: "KIA Del Oeste" },
-    { value: "del-sur", label: "KIA Del Sur" },
-  ],
-};
-
 export default function Promociones() {
-  const [selectedModel, setSelectedModel] = useState("Cerato");
   const [formData, setFormData] = useState({
+    selectedModel: "",
     firstName: "",
     lastName: "",
     contactPreference: "",
@@ -108,26 +68,18 @@ export default function Promociones() {
 
   // Add useEffect to validate form on every change
   useEffect(() => {
+    console.log("Form changed", formData);
+
     validateForm();
-  }, [formData, acceptedTerms, selectedModel]);
+  }, [formData, acceptedTerms]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
 
-    // If province changes, update available dealers and reset dealer selection
-    if (name === "province") {
-      setAvailableDealers(DEALERS_BY_PROVINCE[value] || []);
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-        dealer: "", // Reset dealer when province changes
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   // Update the form validation function
@@ -135,6 +87,7 @@ export default function Promociones() {
     // Basic validation - check if required fields are filled
     const {
       firstName,
+      selectedModel,
       lastName,
       contactPreference,
       province,
@@ -153,7 +106,7 @@ export default function Promociones() {
 
     const valid =
       acceptedTerms &&
-      selectedModel &&
+      selectedModel !== "" &&
       firstName !== "" &&
       lastName !== "" &&
       contactPreference !== "" &&
@@ -176,8 +129,9 @@ export default function Promociones() {
     setShowModelGallery(!showModelGallery);
   };
 
-  const submitForm = () => {
-    console.log("Form submitted", formData);
+  const submitForm = async () => {
+    const response = await kiaApiCall(formData);
+    console.log("Response", response);
   };
 
   return (
@@ -219,7 +173,11 @@ export default function Promociones() {
                     Seleccione un modelo de interés
                   </h4>
                 </div>
-                <CarModelGallery />
+                <CarModelGallery
+                  onModelSelect={(model) =>
+                    setFormData((prev) => ({ ...prev, selectedModel: model }))
+                  }
+                />
 
                 {/* Form Fields */}
                 <div className="flex flex-col gap-5">
@@ -313,10 +271,8 @@ export default function Promociones() {
                         name="dealer"
                         value={formData.dealer}
                         onChange={handleFormChange}
-                        options={availableDealers}
-                        disabled={
-                          !formData.province || availableDealers.length === 0
-                        }
+                        options={CAR_DEALERS}
+                        disabled={!formData.province}
                       />
                     </div>
                   </div>

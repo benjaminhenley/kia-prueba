@@ -57,7 +57,7 @@ const RadioButton = ({ checked, onChange, id, label, name }) => {
       </div>
       {label && (
         <label htmlFor={id} className="cursor-pointer" onClick={onChange}>
-          <h6 className="font-bold text-[#05141F]">{label}</h6>
+          <h6 className="font-normal text-[#05141F]">{label}</h6>
         </label>
       )}
     </div>

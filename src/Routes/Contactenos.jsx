@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
-import FormButton from "../Components/Common/forms/FormButton";
+import SquareButton from "../Components/Common/ui/SquareButton";
 import Checkbox from "../Components/Icons/Checkbox";
-import RadioButton from "../Components/Icons/RadioButton";
+import RadioButton from "../Components/Common/ui/RadioButton";
 
 // Dropdown data collections
 const DOCUMENT_TYPES = [
@@ -390,12 +390,11 @@ function Contactenos() {
                 <div className="flex flex-col md:flex-row md:items-center md:gap-5">
                   <div className="md:w-52"></div>
                   <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <FormDropdown
+                    <TextField
                       placeholder="Provincia"
                       name="province"
                       value={formData.province}
                       onChange={handleFormChange}
-                      options={PROVINCES}
                     />
                     <TextField
                       placeholder="Localidad"
@@ -565,10 +564,10 @@ function Contactenos() {
 
         {/* Action Buttons */}
         <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-          <FormButton type="secondary">Cancelar</FormButton>
-          <FormButton type="primary" disabled={!isValid} onClick={submitForm}>
+          <SquareButton type="secondary">Cancelar</SquareButton>
+          <SquareButton type="primary" disabled={!isValid} onClick={submitForm}>
             Enviar
-          </FormButton>
+          </SquareButton>
         </div>
       </div>
     </div>
