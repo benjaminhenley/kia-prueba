@@ -39,14 +39,52 @@ const allVehicles = [
   })),
 ];
 
+// Define rutas específicas que deberían tener un comportamiento personalizado
+const specialRoutes = {
+  // Rutas donde el primer segmento no es clickeable
+  nonClickableFirstSegment: ["concesionarios"],
+  
+  // Rutas que son completamente no clickeables (si necesitas este comportamiento)
+  nonClickableRoutes: [],
+  
+  // Rutas que tienen un título personalizado
+  customTitles: {
+    "concesionarios": "Concesionarios",
+    "ventas": "Ventas",
+    // Agrega más según sea necesario
+  }
+};
+
 const Breadcrumbs = () => {
   const location = useLocation();
   const paths = location.pathname.split("/").filter((p) => p !== "");
   const currentPath = paths[0] || "";
   
-  // Ahora sólo miramos slug
+  // Verificar si es una página de vehículo
   const vehicle = allVehicles.find((v) => v.slug === currentPath);
   const isVehiclePage = Boolean(vehicle);
+
+  // Función para verificar si un segmento debe ser clickeable
+  const isSegmentClickable = (segment, index) => {
+    // Si es el primer segmento y está en la lista de no clickeables
+    if (index === 0 && specialRoutes.nonClickableFirstSegment.includes(segment)) {
+      return false;
+    }
+    
+    // Si la ruta completa hasta este segmento está en la lista de no clickeables
+    const routeToCheck = paths.slice(0, index + 1).join("/");
+    if (specialRoutes.nonClickableRoutes.includes(routeToCheck)) {
+      return false;
+    }
+    
+    // Por defecto, todos los segmentos intermedios son clickeables
+    return index < paths.length - 1;
+  };
+
+  // Función para obtener el título personalizado de un segmento
+  const getSegmentTitle = (segment) => {
+    return specialRoutes.customTitles[segment] || segment.replace(/-/g, ' ');
+  };
 
   return (
     <nav className="flex gap-2 items-center text-sm text-white font-medium flex-wrap">
@@ -66,7 +104,7 @@ const Breadcrumbs = () => {
             fill="white"
           />
         </svg>
-        <div className="pt-1 cursor-pointer capitalize relative font-semibold group-hover:text-[#CDD0D2] transition-all duration-300">
+        <div className="pt-1 cursor-pointer group capitalize relative font-semibold group-hover:text-[#CDD0D2] transition-all duration-300">
           Home
           <span className="absolute left-0 bottom-[1px] h-[1px] bg-transparent group-hover:bg-[#CDD0D2] w-full transition-all duration-300 group-hover:w-full"></span>
         </div>
@@ -87,16 +125,18 @@ const Breadcrumbs = () => {
         paths.map((segment, index) => {
           const routeTo = "/" + paths.slice(0, index + 1).join("/");
           const isLast = index === paths.length - 1;
+          const shouldBeClickable = isSegmentClickable(segment, index);
+          const segmentTitle = getSegmentTitle(segment);
 
           return (
             <Fragment key={routeTo}>
               <SeparatorIcon />
-              {isLast ? (
-                <span className="pt-1 font-semibold capitalize">{segment.replace(/-/g, ' ')}</span>
+              {isLast || !shouldBeClickable ? (
+                <span className="pt-1 font-semibold capitalize">{segmentTitle}</span>
               ) : (
                 <Link to={routeTo}>
                   <div className="pt-1 cursor-pointer capitalize relative group font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-all duration-300">
-                    {segment.replace(/-/g, ' ')}
+                    {segmentTitle}
                     <span className="absolute left-0 bottom-[1px] h-[1px] bg-transparent group-hover:bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                   </div>
                 </Link>
