@@ -121,7 +121,7 @@ const MobileMenu = ({
           </div>
           
           {/* Enlaces adicionales */}
-          <MobileLinksAdicionales />
+          <MobileLinksAdicionales onLinkClick={onLinkClick}/>
       </div>
     </div>
   );

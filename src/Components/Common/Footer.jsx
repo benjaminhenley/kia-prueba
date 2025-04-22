@@ -151,7 +151,7 @@ const Footer = () => {
               } md:block`}>
               {concesionarios.map((item) => (
                 <h6
-                  className="font-semibold text-kia-gray py-1 md:py-3"
+                  className="font-semibold text-kia-gray py-1 md:py-3 md:pb-9"
                   key={item.nombre}>
                   <a 
                     href={item.href} 
@@ -179,7 +179,7 @@ const Footer = () => {
               className={`pt-3 ${openPostVenta ? "block" : "hidden"} md:block`}>
               {postVentaFooter.map((item) => (
                 <h6
-                  className="font-semibold text-kia-gray py-1 md:py-3"
+                  className="text-kia-gray py-1 md:py-3 md:pb-9"
                   key={item.nombre}>
                   <a 
                     href={item.href} 
@@ -214,7 +214,7 @@ const Footer = () => {
           <hr className="border-t border-[0.5px] border-kia-gray w-full my-5 md:border-none md:hidden" />
         </div>
       </div>
-      <div className="flex flex-col gap-2 md:flex-row justify-between pt-7 text-[0.75rem]"> 
+      <div className="flex flex-col gap-2 md:flex-row justify-between pt-7 pb-[50px] text-[0.75rem]"> 
         <Breadcrumbs/>
         <div className="md:w-1/2">
           <p className="pt-1 font-semibold text-kia-polar-white md:text-end">

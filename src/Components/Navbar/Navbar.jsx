@@ -41,7 +41,7 @@ const Navbar = () => {
 
   const isNotTransparent =
     pathname === "/promociones" ||
-    pathname === "/cookies" ||
+    pathname === "/politica-de-cookies" ||
     pathname === "/contactenos" ||
     pathname === "/concesionarios/venta" ||
     pathname === "/concesionarios/post-venta";
