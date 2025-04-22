@@ -51,6 +51,7 @@ const specialRoutes = {
   customTitles: {
     "concesionarios": "Concesionarios",
     "ventas": "Ventas",
+    "politica-de-cookies": "Política de Cookies"
     // Agrega más según sea necesario
   }
 };
