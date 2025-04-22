@@ -290,7 +290,7 @@ export const blackbarRight = [
   },
   {
     nombre: <p>POLÍTICA DE COOKIES</p>,
-    href: "/cookies",
+    href: "/politica-de-cookies",
     target: "",
     esExterna: false,
   },
@@ -335,7 +335,7 @@ export const transparentbarRight = [
   },
 ];
 
-// Opciones del dropdown de concesionarios
+/* // Opciones del dropdown de concesionarios
 export const concesionariosDropdownOpciones = [
   {
     id: "venta",
@@ -352,4 +352,4 @@ export const concesionariosDropdownOpciones = [
     target: "",
     esExterna: false,
   },
-];
+]; */

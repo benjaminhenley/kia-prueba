@@ -66,7 +66,7 @@ const Modelos = () => {
 
       {/* Sticky Button */}
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
-        <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
+        <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-3 ">
           <RoundedButton
             type="secondary"
             title="Quiero mi All-new K3"
