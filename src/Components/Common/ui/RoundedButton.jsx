@@ -8,10 +8,10 @@ const RoundedButton = ({ title, onClick, type = "primary" }) => {
         className={`w-full max-w-[380px] rounded-full py-[3px] px-[3px] pl-2.5 md:pl-5 gap-[15px] flex items-center justify-between ${
           isPrimary
             ? "border border-[#05141F] text-[#05141F]"
-            : "bg-[#05141F] text-white hover:bg-[#1a2a36] active:bg-[#05141F]"
+            : "bg-[#05141F] text-white hover:bg-[#1a2a36]"
         }`}>
-        <h6 className="font-bold md:hidden">{title}</h6>
-        <h4 className="font-bold hidden md:block">{title}</h4>
+        <h6 className="font-bold md:hidden group-hover:underline underline-offset-4">{title}</h6>
+        <h4 className="font-bold hidden md:block group-hover:underline underline-offset-4">{title}</h4>
         <svg
           className="md:w-8 md:h-8 w-6 h-6"
           // width="32"

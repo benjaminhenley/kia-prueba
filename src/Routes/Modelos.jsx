@@ -12,6 +12,8 @@ const Modelos = () => {
   const [activeTab, setActiveTab] = useState("characteristics");
   const model = getSafeModelData(modelID);
 
+  const isK3 = model.id.startsWith("k3")
+
   // Update document title when model changes
   useEffect(() => {
     if (!model) return;
@@ -35,6 +37,7 @@ const Modelos = () => {
     <div className="w-full relative ">
       {/* Hero Section with Video/Image */}
       <Hero
+        allNew={isK3}
         title={model.name}
         tagline={model.tagline}
         videoSrc={model.heroVideo}
