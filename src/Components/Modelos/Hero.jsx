@@ -178,7 +178,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
                         "\n"
                       )}
                     </h6>
-                    <h6 className="hidden md:block mt-1 font-normal text-center w-[140px] text-pretty">
+                    <h6 className="hidden md:block mt-1 font-normal text-center min-w-[80px] text-pretty">
                       
                       {renderWithLineBreaks(item.description)}
                     </h6>

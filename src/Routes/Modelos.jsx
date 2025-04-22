@@ -12,8 +12,6 @@ const Modelos = () => {
   const [activeTab, setActiveTab] = useState("characteristics");
   const model = getSafeModelData(modelID);
 
-  const isK3 = model.id.startsWith("k3")
-
   // Update document title when model changes
   useEffect(() => {
     if (!model) return;
@@ -28,6 +26,9 @@ const Modelos = () => {
   if (!model) {
     return <Navigate to="/" replace />;
   }
+
+  const isK3 = model.id.startsWith("k3")
+
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
