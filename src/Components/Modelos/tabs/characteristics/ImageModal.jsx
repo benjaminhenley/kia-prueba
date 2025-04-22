@@ -1,22 +1,20 @@
 import React from "react";
-import { FiX } from "react-icons/fi";
 import { formatTextWithBold } from "../../../../utils/textFormatter";
+import CloseIcon from "../../../Icons/Cross";
 
 const ImageModal = ({ image, onClose }) => {
   if (!image) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-hidden flex justify-center items-center"
-      onClick={onClose}>
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-hidden flex justify-center items-center">
       <div
         className="relative mx-auto flex flex-col bg-white overflow-hidden max-w-[min(60vh,700px)] max-h-[98vh]"
         onClick={(e) => e.stopPropagation()}>
         <button
-          className="absolute top-0 right-0 p-2 z-10 text-white hover:bg-gray-800 bg-[#05141F]"
+          className="w-[50px] h-[50px] absolute top-0 right-0 p-2 z-10 text-white hover:bg-gray-800 bg-[#05141F]"
           onClick={onClose}
           aria-label="Close modal">
-          <FiX size={24} />
+          <CloseIcon />
         </button>
 
         <div className="relative flex flex-col overflow-hidden">

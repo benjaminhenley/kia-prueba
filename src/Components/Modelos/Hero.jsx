@@ -161,23 +161,23 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
             </div>
 
             <div className="bg-black bg-opacity-50 md:bg-transparent w-full xl:w-fit justify-center">
-              <div className="justify-evenly flex flex-wrap mx-auto lg:mx-0 p-4">
+              <div className="justify-between flex flex-wrap mx-auto lg:mx-0 p-4">
                 {heroInfo.map((item) => (
                   <div
                     key={item.id}
                     className={`${
-                      heroInfo.length === 4 ? "w-1/4" : "w-1/3"
+                      heroInfo.length === 4 ? "w-fit" : "w-fit min-w-[70px]"
                     } md:w-fit flex flex-col items-center text-center py-2 xl:p-2`}>
                     <div className="flex justify-center items-end h-8 w-full md:h-10">
                       {getHeroIcon(item.iconId, "w-6 h-6 md:h-8 md:w-8")}
                     </div>
-                    <h6 className="md:hidden mt-1 whitespace-pre-line font-normal">
+                    <h6 className="md:hidden mt-1 whitespace-pre-line font-normal text-nowrap">
                       {(item.description_mobile || item.description).replace(
                         /<br\/>/g,
                         "\n"
                       )}
                     </h6>
-                    <h6 className="hidden md:block mt-1 font-normal text-center whitespace-pre-line w-[120px] line-clamp-3">
+                    <h6 className="hidden md:block mt-1 font-normal text-center w-[140px] text-pretty">
                       {item.description.replace(/<br\/>/g, "\n")}
                     </h6>
                   </div>

@@ -10,43 +10,43 @@ import Arrow from "../Icons/Arrow";
 
 const CAR_MODELS = [
   {
-    id: "k3-sedan",
+    id: 24,
     name: "All-new K3 Sedán",
     image: sedanImg,
   },
   {
-    id: "cerato",
+    id: 3,
     name: "Cerato",
     image: ceratoImg,
   },
   {
-    id: "k3-cross",
+    id: 24,
     name: "All-new K3 Cross",
     image: crossImg,
   },
   {
-    id: "seltos",
+    id: 23,
     name: "Seltos",
     image: SeltosImg,
   },
   {
-    id: "sportage",
+    id: 1,
     name: "Sportage",
     image: SportageImg,
   },
   {
-    id: "carnival",
+    id: 7,
     name: "Carnival",
     image: carnivalImg,
   },
   {
-    id: "k2500",
+    id: 8,
     name: "K2500",
     image: k2500Img,
   },
 ];
 
-const CarModelGallery = ({ onSelect }) => {
+const CarModelGallery = ({ onModelSelect }) => {
   // Keep two separate states - one for selection and one for slider position
   const [selectedIndex, setSelectedIndex] = useState(0); // The actual selection state (only changes on click)
   const [viewIndex, setViewIndex] = useState(0); // The visual position (changes with slider)
@@ -56,30 +56,24 @@ const CarModelGallery = ({ onSelect }) => {
   const sliderRef = useRef(null);
   const thumbRef = useRef(null);
 
-  // Handle when car is clicked - this is the ONLY way to select a car
   const handleCarClick = (index) => {
     setSelectedIndex(index);
-    setViewIndex(index); // Also update view to match selection
+    setViewIndex(index);
 
     // Notify parent of selection
-    if (onSelect && index >= 0 && index < CAR_MODELS.length) {
-      onSelect(CAR_MODELS[index]);
+    if (onModelSelect && index >= 0 && index < CAR_MODELS.length) {
+      onModelSelect(CAR_MODELS[index]);
     }
   };
 
-  // Handle slider input change - only updates the view, not selection
   const handleSliderChange = (e) => {
     const value = parseInt(e.target.value);
     setSliderValue(value);
 
-    // Calculate visual index from slider value (non-rounded, for smooth scrolling)
     const newViewIndex = (value / 100) * (CAR_MODELS.length - 1);
     setViewIndex(newViewIndex);
-
-    // Does NOT update selectedIndex or call onSelect
   };
 
-  // Update thumb position based on slider value
   useEffect(() => {
     if (thumbRef.current && sliderRef.current) {
       // Position thumb based on slider value
@@ -89,7 +83,6 @@ const CarModelGallery = ({ onSelect }) => {
     }
   }, [sliderValue]);
 
-  // Scroll the container when view index changes
   useEffect(() => {
     if (scrollContainerRef.current) {
       const scrollAmount =

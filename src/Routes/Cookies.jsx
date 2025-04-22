@@ -2,7 +2,7 @@ import { useState } from "react";
 import Arrow from "../Components/Icons/Arrow";
 import sections from "../Data/cookieSections";
 import CookieModal from "../Components/Cookies/CookieModal";
-
+import RoundedButton from "../Components/Common/ui/RoundedButton";
 function Cookies() {
   const [activeSection, setActiveSection] = useState(null);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -96,38 +96,10 @@ function Cookies() {
           ))}
         </div>
 
-        {/* Configuration button */}
-        <div className="mt-8 md:mt-10 flex justify-center sm:justify-start">
-          <button
-            onClick={handleShowCookieModal}
-            className="w-full max-w-[380px] border border-[#05141F] rounded-full py-[1px] px-[1px] pl-2.5 md:pl-5 gap-[15px] text-[#05141F] flex items-center justify-between">
-            <h6 className="font-bold md:hidden">
-              Cambiar configuración de Cookies
-            </h6>
-            <h4 className="font-bold hidden md:block">
-              Cambiar configuración de Cookies
-            </h4>
-            <svg
-              className="md:w-8 md:h-8 w-6 h-6"
-              // width="32"
-              // height="33"
-              viewBox="0 0 32 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect
-                y="0.47583"
-                width="32"
-                height="32.0484"
-                rx="16"
-                fill="#05141F"
-              />
-              <path
-                d="M19.9071 16.217C19.9652 16.2904 20 16.389 20 16.5001C20 16.6113 19.9652 16.7099 19.9071 16.7833L13.7934 24.5122H12.0017L18.3393 16.5001L12 8.48804H13.7918L19.9071 16.217Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-        </div>
+        <RoundedButton
+          title="Cambiar configuración de Cookies"
+          onClick={handleShowCookieModal}
+        />
       </div>
 
       {/* Cookie Modal */}

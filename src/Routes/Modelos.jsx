@@ -5,6 +5,7 @@ import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
 import Characteristics from "../Components/Modelos/tabs/characteristics/index.jsx";
 import { getSafeModelData } from "../Data/models/modelMapper.js";
+import RoundedButton from "../Components/Common/ui/RoundedButton";
 
 const Modelos = () => {
   const { modelID } = useParams();
@@ -62,28 +63,14 @@ const Modelos = () => {
 
       {/* Sticky Button */}
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
-        <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
-          <a
-            target="_blank"
-            href="https://reservak3.kia.com.ar/es"
-            className="flex items-center xs:justify-between justify-between  bg-[#05141F] text-white px-1 pl-5 py-1 rounded-full shadow-md  transition duration-300 gap-[15px] w-full xs:w-fit">
-            <h4 className="font-bold">Quiero mi All-new K3</h4>
-            <div className="bg-white rounded-full p-1 w-8 h-8 flex items-center justify-center ml-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className=" text-[#05141F]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-          </a>
+        <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
+          <RoundedButton
+            type="secondary"
+            title="Quiero mi All-new K3"
+            onClick={() => {
+              window.open("https://reservak3.kia.com.ar/es", "_blank");
+            }}
+          />
         </div>
       ) : (
         ""
