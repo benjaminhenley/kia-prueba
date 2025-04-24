@@ -1,54 +1,20 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
 import SquareButton from "../Components/Common/ui/SquareButton";
 import Checkbox from "../Components/Icons/Checkbox";
 import RadioButton from "../Components/Common/ui/RadioButton";
+import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import kiaApiCall from "../utils/apiCall";
+import PROVINCES from "../Data/provinces";
+import CAR_MODELS from "../Data/models";
 
 // Dropdown data collections
 const DOCUMENT_TYPES = [
   { value: "dni", label: "DNI" },
   { value: "pasaporte", label: "Pasaporte" },
-];
-
-const PROVINCES = [
-  { value: "buenosaires", label: "Buenos Aires" },
-  { value: "caba", label: "Ciudad Autónoma de Buenos Aires" },
-  { value: "catamarca", label: "Catamarca" },
-  { value: "chaco", label: "Chaco" },
-  { value: "chubut", label: "Chubut" },
-  { value: "cordoba", label: "Córdoba" },
-  { value: "corrientes", label: "Corrientes" },
-  { value: "entrerios", label: "Entre Ríos" },
-  { value: "formosa", label: "Formosa" },
-  { value: "jujuy", label: "Jujuy" },
-  { value: "lapampa", label: "La Pampa" },
-  { value: "larioja", label: "La Rioja" },
-  { value: "mendoza", label: "Mendoza" },
-  { value: "misiones", label: "Misiones" },
-  { value: "neuquen", label: "Neuquén" },
-  { value: "rionegro", label: "Río Negro" },
-  { value: "salta", label: "Salta" },
-  { value: "sanjuan", label: "San Juan" },
-  { value: "sanluis", label: "San Luis" },
-  { value: "santacruz", label: "Santa Cruz" },
-  { value: "santafe", label: "Santa Fe" },
-  { value: "santiagodelestero", label: "Santiago del Estero" },
-  { value: "tierradelfuego", label: "Tierra del Fuego" },
-  { value: "tucuman", label: "Tucumán" },
-];
-
-const MODELS = [
-  { value: "k3-cross", label: "All-new K3 Cross" },
-  { value: "k3-sedan", label: "All-new K3 Sedán" },
-  { value: "carnival", label: "Carnival" },
-  { value: "cerato", label: "Cerato" },
-  { value: "k2500", label: "K2500" },
-  { value: "seltos", label: "Seltos" },
-  { value: "sportage", label: "Sportage" },
 ];
 
 const CONSULTATION_TYPES = [
@@ -160,7 +126,13 @@ function Contactenos() {
     }
   }, [formData, acceptedTerms, contactedDealer, isSubmitted]);
 
-  const source = window.location.href;
+  useEffect(() => {
+    const source = window.location.href;
+    setFormData((prev) => ({
+      ...prev,
+      source,
+    }));
+  }, []);
 
   const executeRecaptcha = () => {
     if (typeof window.grecaptcha !== "undefined") {
@@ -182,9 +154,57 @@ function Contactenos() {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
+    let newValue = value;
+
+    // Apply input filtering based on field type without showing errors
+    switch (name) {
+      case "documentNumber":
+        // Only allow numbers to be entered
+        newValue = value.replace(/[^\d]/g, "");
+        break;
+
+      case "firstName":
+      case "lastName":
+        // Only allow letters, spaces, and special characters for names
+        newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
+        break;
+
+      case "street":
+        // Only allow letters, spaces, and special characters for street name (no numbers)
+        newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
+        break;
+
+      case "streetNumber":
+        // Only allow numbers for street number
+        newValue = value.replace(/[^\d]/g, "");
+        break;
+
+      case "phone":
+        // Only allow numbers for phone
+        newValue = value.replace(/[^\d]/g, "");
+        break;
+
+      case "mileage":
+        // Only allow numbers for mileage
+        newValue = value.replace(/[^\d]/g, "");
+        break;
+
+      case "email":
+        // Let email pass through - form validation will check it later
+        break;
+
+      case "vinNumber":
+        // Let VIN pass through - form validation will check it later
+        break;
+
+      default:
+        // No special filtering for other fields
+        break;
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
@@ -193,13 +213,13 @@ function Contactenos() {
   };
 
   const handleSubmit = async () => {
-    console.log("Form data:", { ...formData, source });
+    const name = `${formData.firstName} ${formData.lastName}`;
+    console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
-        { ...formData, source },
+        { ...formData, name },
         "kiaweb:contactenos"
       );
-      console.log("Response:", response);
       setIsSubmitted(true);
     } catch (error) {
       console.log("Error:", error);
@@ -210,7 +230,7 @@ function Contactenos() {
     executeRecaptcha();
   };
 
-  // Update the form validation function
+  // Update the form validation function to include email and VIN validation
   const validateForm = () => {
     // Check all required fields
     const {
@@ -230,7 +250,19 @@ function Contactenos() {
       phone,
       model,
       consultationType,
+      vinNumber,
     } = formData;
+
+    // Basic email validation with @ - silent validation
+    const isEmailValid = email.includes("@") && /\S+@\S+\.\S+/.test(email);
+
+    // Check VIN length - silent validation
+    const isVinValid = !vinNumber || vinNumber.length >= 17;
+
+    // If the contactedDealer field is null, the question hasn't been shown yet
+    // and we shouldn't require an answer. If it has a value (true/false),
+    // we need that value to validate the form.
+    const isContactedDealerValid = contactedDealer !== null;
 
     // All fields must be filled and terms must be accepted
     // Note: additionalMessage is not required
@@ -248,10 +280,12 @@ function Contactenos() {
       city !== "" &&
       country !== "" &&
       email !== "" &&
+      isEmailValid &&
       phone !== "" &&
       model !== "" &&
       consultationType !== "" &&
-      contactedDealer !== null &&
+      isVinValid &&
+      isContactedDealerValid &&
       acceptedTerms;
 
     setIsValid(valid);
@@ -309,24 +343,11 @@ function Contactenos() {
         </div>
 
         {isSubmitted ? (
-          <div className="px-6 flex flex-col items-center justify-center text-center gap-6 md:gap-[31px] py-8 md:py-12 bg-[#F8F8F8] border border-[#CDD0D2]">
-            <h2 className="font-bold text-[#05141F]">
-              ¡Hola, {formData.firstName}!
-            </h2>
-            <h5 className="text-[#05141F]">
-              Muchas gracias por estar interesado en nuestra ayuda. <br />
-              Le enviaremos un correo electrónico con la respuesta a tu
-              consulta.
-            </h5>
-            <div className="flex flex-col xs:flex-row gap-4 w-full md:w-auto">
-              <SquareButton type="secondary" onClick={resetForm}>
-                Deseo agregar otro contacto
-              </SquareButton>
-              <SquareButton type="primary" onClick={goHome}>
-                Volver al Inicio
-              </SquareButton>
-            </div>
-          </div>
+          <SuccessMessage
+            firstName={formData.firstName}
+            onReset={resetForm}
+            onHome={goHome}
+          />
         ) : (
           <>
             {/* Form Section */}
@@ -499,7 +520,10 @@ function Contactenos() {
                           name="model"
                           value={formData.model}
                           onChange={handleFormChange}
-                          options={MODELS}
+                          options={CAR_MODELS.map((model) => ({
+                            value: model.id,
+                            label: model.name,
+                          }))}
                         />
                         <FormDropdown
                           placeholder="Tipo de consulta"

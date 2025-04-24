@@ -1,56 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import sedanImg from "../../assets/img/common/modelos/AllNewK3Sedan.webp";
-import ceratoImg from "../../assets/img/common/modelos/Cerato.webp";
-import crossImg from "../../assets/img/common/modelos/AllNewK3Cross.webp";
-import SeltosImg from "../../assets/img/common/modelos/Seltos.webp";
-import SportageImg from "../../assets/img/common/modelos/Sportage.webp";
-import carnivalImg from "../../assets/img/common/modelos/Carnival.webp";
-import k2500Img from "../../assets/img/common/modelos/K2500.webp";
+import CAR_MODELS from "../../Data/models";
 import Arrow from "../Icons/Arrow";
 
-const CAR_MODELS = [
-  {
-    id: 24,
-    name: "All-new K3 Sedán",
-    image: sedanImg,
-  },
-  {
-    id: 3,
-    name: "Cerato",
-    image: ceratoImg,
-  },
-  {
-    id: 24,
-    name: "All-new K3 Cross",
-    image: crossImg,
-  },
-  {
-    id: 23,
-    name: "Seltos",
-    image: SeltosImg,
-  },
-  {
-    id: 1,
-    name: "Sportage",
-    image: SportageImg,
-  },
-  {
-    id: 7,
-    name: "Carnival",
-    image: carnivalImg,
-  },
-  {
-    id: 8,
-    name: "K2500",
-    image: k2500Img,
-  },
-];
-
 const CarModelGallery = ({ onModelSelect }) => {
-  // Keep two separate states - one for selection and one for slider position
-  const [selectedIndex, setSelectedIndex] = useState(0); // The actual selection state (only changes on click)
-  const [viewIndex, setViewIndex] = useState(0); // The visual position (changes with slider)
-  const [sliderValue, setSliderValue] = useState(0); // Raw slider value (0-100)
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [viewIndex, setViewIndex] = useState(0);
+  const [sliderValue, setSliderValue] = useState(0);
 
   const scrollContainerRef = useRef(null);
   const sliderRef = useRef(null);

@@ -12,7 +12,6 @@ const kiaApiCall = async (data, campaign = "") => {
 
     return response.json();
   } catch (error) {
-    console.error("API call failed:", error);
     throw error;
   }
 };

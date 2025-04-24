@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
@@ -7,6 +7,7 @@ import FormButton from "../Components/Common/ui/SquareButton";
 import Arrow from "../Components/Icons/Arrow";
 import Checkbox from "../Components/Icons/Checkbox";
 import CarModelGallery from "../Components/gallery/CarModelGallery";
+import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import PROVINCES from "../Data/provinces";
 import CAR_DEALERS from "../Data/carDealers";
 import kiaApiCall from "../utils/apiCall";
@@ -65,6 +66,8 @@ export default function Promociones() {
   const [showModelGallery, setShowModelGallery] = useState(true);
   const [availableDealers, setAvailableDealers] = useState([]);
   const [isValid, setIsValid] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   // Add useEffect to validate form on every change
   useEffect(() => {
@@ -163,9 +166,43 @@ export default function Promociones() {
     setShowModelGallery(!showModelGallery);
   };
 
-  const submitForm = async () => {
-    const response = await kiaApiCall(formData);
-    console.log("Response", response);
+  const handleSubmit = async () => {
+    const name = `${formData.firstName} ${formData.lastName}`;
+    console.log("Form data", { ...formData, name });
+    try {
+      const response = await kiaApiCall(
+        { ...formData, name },
+        "kiaweb:promociones"
+      );
+      console.log("Response", response);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
+
+  // Function to reset the form
+  const resetForm = () => {
+    setFormData({
+      selectedModel: "",
+      firstName: "",
+      lastName: "",
+      contactPreference: "",
+      email: "",
+      phone: "",
+      birthDay: "",
+      birthMonth: "",
+      birthYear: "",
+      province: "",
+      dealer: "",
+    });
+    setAcceptedTerms(false);
+    setIsSubmitted(false);
+  };
+
+  // Function to navigate home
+  const goHome = () => {
+    navigate("/");
   };
 
   return (
@@ -188,172 +225,189 @@ export default function Promociones() {
           </div>
         </div>
 
-        {/* Form Section */}
-        <div className="flex flex-col">
-          <div className="w-full flex flex-col">
-            {/* Top Border */}
-            <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
+        {isSubmitted ? (
+          <SuccessMessage
+            firstName={formData.firstName}
+            onReset={resetForm}
+            onHome={goHome}
+          />
+        ) : (
+          <>
+            {/* Form Section */}
+            <div className="flex flex-col">
+              <div className="w-full flex flex-col">
+                {/* Top Border */}
+                <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
 
-            {/* Form Content */}
-            <div className="self-stretch md:px-6 py-5 md:p-6 flex flex-col gap-5">
-              {/* Model Selection Section */}
-              <div className="flex flex-col gap-5">
-                {/* Model selection header - clickable */}
-                <div
-                  className="flex flex-row items-center gap-[15px]"
-                  onClick={toggleModelGallery}>
-                  <Arrow width={6} height={12} />
-                  <h4 className="text-[#05141F] font-bold font-kia">
-                    Seleccione un modelo de interés
-                  </h4>
+                {/* Form Content */}
+                <div className="self-stretch md:px-6 py-5 md:p-6 flex flex-col gap-5">
+                  {/* Model Selection Section */}
+                  <div className="flex flex-col gap-5">
+                    {/* Model selection header - clickable */}
+                    <div
+                      className="flex flex-row items-center gap-[15px]"
+                      onClick={toggleModelGallery}>
+                      <Arrow width={6} height={12} />
+                      <h4 className="text-[#05141F] font-bold font-kia">
+                        Seleccione un modelo de interés
+                      </h4>
+                    </div>
+                    <CarModelGallery
+                      onModelSelect={(model) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          selectedModel: model.id,
+                        }))
+                      }
+                    />
+
+                    {/* Form Fields */}
+                    <div className="flex flex-col gap-5">
+                      {/* Name Field */}
+                      <div className="flex flex-col md:flex-row md:items-center gap-5">
+                        <FormLabel text="Nombre completo" />
+                        <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <TextField
+                            placeholder="Nombre"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleFormChange}
+                          />
+                          <TextField
+                            placeholder="Apellido"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleFormChange}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Contact Field */}
+                      <div className="flex flex-col md:flex-row md:items-center gap-5">
+                        <FormLabel text="Contacto" />
+                        <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <FormDropdown
+                            placeholder="Preferencia de contacto"
+                            name="contactPreference"
+                            value={formData.contactPreference}
+                            onChange={handleFormChange}
+                            options={CONTACT_PREFERENCES}
+                          />
+                          <TextField
+                            placeholder="Email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleFormChange}
+                          />
+                          <TextField
+                            placeholder="Teléfono"
+                            name="phone"
+                            type="tel"
+                            value={formData.phone}
+                            onChange={handleFormChange}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Birthdate Field */}
+                      <div className="flex flex-col md:flex-row md:items-center gap-5">
+                        <FormLabel text="Fecha de nacimiento" />
+                        <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <FormDropdown
+                            placeholder="Día"
+                            name="birthDay"
+                            value={formData.birthDay}
+                            onChange={handleFormChange}
+                            options={generateDaysOptions()}
+                          />
+                          <FormDropdown
+                            placeholder="Mes"
+                            name="birthMonth"
+                            value={formData.birthMonth}
+                            onChange={handleFormChange}
+                            options={MONTHS}
+                          />
+                          <FormDropdown
+                            placeholder="Año"
+                            name="birthYear"
+                            value={formData.birthYear}
+                            onChange={handleFormChange}
+                            options={generateYearsOptions()}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Location Field */}
+                      <div className="flex flex-col md:flex-row md:items-center gap-5">
+                        <FormLabel text="Ubicación" />
+                        <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <FormDropdown
+                            placeholder="Provincia"
+                            name="province"
+                            value={formData.province}
+                            onChange={handleFormChange}
+                            options={PROVINCES}
+                          />
+                          <FormDropdown
+                            placeholder="Concesionario"
+                            name="dealer"
+                            value={formData.dealer}
+                            onChange={handleFormChange}
+                            options={availableDealers}
+                            disabled={
+                              !formData.province ||
+                              availableDealers.length === 0
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="text-red-600 font-normal font-kia">
+                        <h5 className="font-normal">*Campo obligatorio</h5>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <CarModelGallery
-                  onModelSelect={(model) =>
-                    setFormData((prev) => ({ ...prev, selectedModel: model }))
-                  }
-                />
 
-                {/* Form Fields */}
-                <div className="flex flex-col gap-5">
-                  {/* Name Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-5">
-                    <FormLabel text="Nombre completo" />
-                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                      <TextField
-                        placeholder="Nombre"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleFormChange}
-                      />
-                      <TextField
-                        placeholder="Apellido"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleFormChange}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Contact Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-5">
-                    <FormLabel text="Contacto" />
-                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                      <FormDropdown
-                        placeholder="Preferencia de contacto"
-                        name="contactPreference"
-                        value={formData.contactPreference}
-                        onChange={handleFormChange}
-                        options={CONTACT_PREFERENCES}
-                      />
-                      <TextField
-                        placeholder="Email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleFormChange}
-                      />
-                      <TextField
-                        placeholder="Teléfono"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleFormChange}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Birthdate Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-5">
-                    <FormLabel text="Fecha de nacimiento" />
-                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                      <FormDropdown
-                        placeholder="Día"
-                        name="birthDay"
-                        value={formData.birthDay}
-                        onChange={handleFormChange}
-                        options={generateDaysOptions()}
-                      />
-                      <FormDropdown
-                        placeholder="Mes"
-                        name="birthMonth"
-                        value={formData.birthMonth}
-                        onChange={handleFormChange}
-                        options={MONTHS}
-                      />
-                      <FormDropdown
-                        placeholder="Año"
-                        name="birthYear"
-                        value={formData.birthYear}
-                        onChange={handleFormChange}
-                        options={generateYearsOptions()}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Location Field */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-5">
-                    <FormLabel text="Ubicación" />
-                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                      <FormDropdown
-                        placeholder="Provincia"
-                        name="province"
-                        value={formData.province}
-                        onChange={handleFormChange}
-                        options={PROVINCES}
-                      />
-                      <FormDropdown
-                        placeholder="Concesionario"
-                        name="dealer"
-                        value={formData.dealer}
-                        onChange={handleFormChange}
-                        options={availableDealers}
-                        disabled={
-                          !formData.province || availableDealers.length === 0
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="text-red-600 font-normal font-kia">
-                    <h5 className="font-normal">*Campo obligatorio</h5>
-                  </div>
-                </div>
+                {/* Bottom border */}
+                <div className="self-stretch h-[1.5px] bg-[#CDD0D2]" />
               </div>
             </div>
 
-            {/* Bottom border */}
-            <div className="self-stretch h-[1.5px] bg-[#CDD0D2]" />
-          </div>
-        </div>
+            {/* Terms and conditions checkbox */}
+            <div className="flex items-center gap-2">
+              <Checkbox
+                checked={acceptedTerms}
+                onChange={() => setAcceptedTerms(!acceptedTerms)}
+              />
+              <label
+                htmlFor="terms"
+                className="text-[#05141F] font-normal font-kia cursor-pointer"
+                onClick={() => setAcceptedTerms(!acceptedTerms)}>
+                <h6>
+                  He leído y acepto el{" "}
+                  <a
+                    target="_blank"
+                    href="https://www.kia.com.ar/img/consentimiento_gral.pdf"
+                    className="underline">
+                    Consentimiento Informado sobre Uso y Procesamiento de Datos
+                  </a>
+                </h6>
+              </label>
+            </div>
 
-        {/* Terms and conditions checkbox */}
-        <div className="flex items-center gap-2">
-          <Checkbox
-            checked={acceptedTerms}
-            onChange={() => setAcceptedTerms(!acceptedTerms)}
-          />
-          <label
-            htmlFor="terms"
-            className="text-[#05141F] font-normal font-kia cursor-pointer"
-            onClick={() => setAcceptedTerms(!acceptedTerms)}>
-            <h6>
-              He leído y acepto el{" "}
-              <a
-                target="_blank"
-                href="https://www.kia.com.ar/img/consentimiento_gral.pdf"
-                className="underline">
-                Consentimiento Informado sobre Uso y Procesamiento de Datos
-              </a>
-            </h6>
-          </label>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-          <FormButton type="secondary">Cancelar</FormButton>
-          <FormButton type="primary" disabled={!isValid} onClick={submitForm}>
-            Enviar
-          </FormButton>
-        </div>
+            {/* Action Buttons */}
+            <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
+              <FormButton type="secondary">Cancelar</FormButton>
+              <FormButton
+                type="primary"
+                disabled={!isValid}
+                onClick={handleSubmit}>
+                Enviar
+              </FormButton>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
