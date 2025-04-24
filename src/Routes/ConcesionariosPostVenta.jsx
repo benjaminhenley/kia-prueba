@@ -26,7 +26,7 @@ const DEALERS = [
   {
     id: 2,
     nombre: "Autodrive",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av Córdoba 3886, CABA, Buenos Aires",
     telefono: "(011) 3220 3333",
     horario: "Lunes a Viernes de 8:00hs a 13:00hs / 14:00hs a 18:00hs",
@@ -56,7 +56,7 @@ const DEALERS = [
   {
     id: 5,
     nombre: "Car Bureau",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av. San Martín 4641, CABA, Buenos Aires",
     telefono: "(011) 4504 0743",
     horario: "Lunes a Viernes de 9:00hs a 18:00hs",
@@ -200,7 +200,7 @@ const DEALERS = [
   {
     id: 17,
     nombre: "One Saw",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av. Rivadavia 9130, CABA, Bs.As.",
     telefono: "(011) 4641 6272",
     horario: "Lunes a Viernes de 8:30hs a 12:30hs / 14:00hs a 18:00hs",

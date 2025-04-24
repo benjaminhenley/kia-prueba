@@ -16,7 +16,7 @@ const DEALERS = [
   {
     id: 1,
     nombre: "Alpina Motors",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av. Libertador 2814, CABA, Buenos Aires",
     telefono: "1124770008",
     horario: "Lunes a Viernes de 10:00hs a 18:00hs",
@@ -36,7 +36,7 @@ const DEALERS = [
   {
     id: 3,
     nombre: "Autodrive",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av Córdoba 3886, CABA, Buenos Aires",
     telefono: "(011) 3220 3333",
     horario: "Lunes a Viernes de 10:00hs a 18:00hs",
@@ -67,7 +67,7 @@ const DEALERS = [
   {
     id: 6,
     nombre: "Autovisiones",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av. Libertador 5750, CABA, Buenos Aires",
     telefono: "(011) 5254-7333",
     horario: "Lunes a Viernes de 9:00hs a 19:00hs. Sábados de 9:00hs a 13:00hs",
@@ -77,7 +77,7 @@ const DEALERS = [
   {
     id: 7,
     nombre: "Car Bureau",
-    provincia: "buenosaires",
+    provincia: "caba",
     direccion: "Av. San Martín 4641, CABA, Buenos Aires",
     telefono: "(011) 4504 0972 / 0474 / 8437",
     horario: "Lunes a Viernes de 9:00hs a 18:00hs",
