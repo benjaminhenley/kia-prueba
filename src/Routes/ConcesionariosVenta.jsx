@@ -49,8 +49,7 @@ const DEALERS = [
     provincia: "buenosaires",
     direccion: "Av. Libertador 2230, Vicente López, Buenos Aires",
     telefono: "(011) 4799 6698",
-    horario:
-      "Lunes a Viernes de 9:00hs a 18:30hs. Sabados de 10:00hs a 14:00hs",
+    horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sabados de 10:00hs a 14:00hs",
     email: "ventas@kiaolivos.com.ar",
     coordinadas: [-58.478294, -34.5109242],
   },
@@ -110,8 +109,7 @@ const DEALERS = [
     provincia: "chaco",
     direccion: "Av. 25 de Mayo 1934, Resistencia, Chaco",
     telefono: "(0362) 518 2996",
-    horario:
-      "Lunes a Viernes de 8:00hs a 12:30hs / 16:30hs a 20:30hs. Sábados de 8:00hs a 12:00hs",
+    horario: "Lunes a Viernes de 8:00hs a 12:30hs / 16:30hs a 20:30hs. Sábados de 8:00hs a 12:00hs",
     email: "ventas2@kiadelnorte.com.ar",
     coordinadas: [-58.982534, -27.447252],
   },
@@ -123,7 +121,7 @@ const DEALERS = [
     telefono: "(0291) 405 8348",
     horario: "Lunes a Viernes de 09:00hs a 18:00hs",
     email: "online@kiadietrich.com",
-    coordinadas: [-62.220894, -38, 68113],
+    coordinadas: [-62.220894, -38.68113],
   },
   {
     id: 12,
@@ -131,8 +129,7 @@ const DEALERS = [
     provincia: "buenosaires",
     direccion: "Av. 44 n° 1.835 (entre 131 y 132), La Plata, Buenos Aires",
     telefono: "(0221) 470 0707",
-    horario:
-      "Lunes a Viernes de 08:00hs a 19:00hs. Sábados de 09:00hs a 14:00hs",
+    horario: "Lunes a Viernes de 08:00hs a 19:00hs. Sábados de 09:00hs a 14:00hs",
     email: "ventas@giuvisa.com.ar",
     coordinadas: [-57.981087, -34.9343144],
   },
@@ -202,8 +199,7 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. Perito Moreno 1917, Ushuaia, Tirra del Fuego",
     telefono: "(02901) 494793",
-    horario:
-      "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
+    horario: "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
     email: "infonovo@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
   },
@@ -213,16 +209,15 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
     telefono: "(0296) 4418959",
-    horario:
-      "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
+    horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
   },
   {
     id: 21,
     nombre: "One Saw",
-    provincia: "buenosaires",
-    direccion: "Av. Rivadavia 9130, CABA, Bs.As.",
+    provincia: "caba",
+    direccion: "Av. Rivadavia 9130, CABA, Buenos Aires",
     telefono: "(011) 4674-6644 / 6643 / 5485",
     horario: "Lunes a Viernes de 10:00hs a 19:00hs",
     email: "ventas@kiaonesaw.com.ar",
@@ -256,7 +251,7 @@ const DEALERS = [
     telefono: "(0261) 476 9060",
     horario: "Lunes a Viernes 08:30hs a 13:00hs / 16:30hs a 20:30hs",
     email: "kia@surkai.com.ar",
-    coordinadas: [-68.84966913, -32, 93054299],
+    coordinadas: [-68.84966913, -32.93054299],
   },
 ];
 

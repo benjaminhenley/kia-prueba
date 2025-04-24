@@ -41,7 +41,7 @@ const DEALERS = [
     telefono: "(011) 3959 1667",
     horario: "Lunes a Viernes de 8:00hs a 13:00hs / 14:00hs a 17:30hs",
     email: "repuestos@kiaolivos.com.ar",
-    coordinadas: [-58.4803066, -34, 5109477],
+    coordinadas: [-58.4803066, -34.5109477],
   },
   {
     id: 4,
@@ -69,8 +69,7 @@ const DEALERS = [
     provincia: "cordoba",
     direccion: "Sol de Mayo 1700, Córdoba",
     telefono: "(0351) 465 7536",
-    horario:
-      "Lunes a Viernes de 9:00hs a 13:00hs / 15:00hs a 19:00hs. Sábados de 09:00hs a 13:00hs",
+    horario: "Lunes a Viernes de 9:00hs a 13:00hs / 15:00hs a 19:00hs. Sábados de 09:00hs a 13:00hs",
     email: "secretariachahin@automotoreschahin.com.ar",
     coordinadas: [-64.214019, -31.430295],
   },
@@ -80,8 +79,7 @@ const DEALERS = [
     provincia: "tucuman",
     direccion: "Ruta 9 Km 1301, Yerba Buena, Tucumán",
     telefono: "(0381) 453 3819 / 15 6664008",
-    horario:
-      "Lunes a Viernes 9:00hs a 13:00hs / 15:00hs a 19:00hs Sábados de 09:00hs a 13:00hs",
+    horario: "Lunes a Viernes 9:00hs a 13:00hs / 15:00hs a 19:00hs Sábados de 09:00hs a 13:00hs",
     email: "odupuy@cpmotors.com.ar",
     coordinadas: [-65.276982, -26.81578],
   },
@@ -103,7 +101,7 @@ const DEALERS = [
     telefono: "(0291) 405 8348",
     horario: "Lunes a Viernes de 09:00hs a 18:00hs",
     email: "online@kiadietrich.com",
-    coordinadas: [-62.220894, -38, 68113],
+    coordinadas: [-62.220894, -38.68113],
   },
   {
     id: 10,
@@ -126,7 +124,7 @@ const DEALERS = [
     coordinadas: [-64.2374038, -31.432092],
   },
   {
-    id: 11,
+    id: 12,
     nombre: "Javimar Neuquén",
     provincia: "neuquen",
     direccion: "Av Arturo Illia 510, Neuquén",
@@ -136,7 +134,7 @@ const DEALERS = [
     coordinadas: [-68.045393, -38.949548],
   },
   {
-    id: 12,
+    id: 13,
     nombre: "Kijack",
     provincia: "buenosaires",
     direccion: "Av. Hipólito Yrigoyen 18, Quilmes, Buenos Aires",
@@ -146,7 +144,7 @@ const DEALERS = [
     coordinadas: [-58.267473, -34.713797],
   },
   {
-    id: 13,
+    id: 14,
     nombre: "Kinor Motors",
     provincia: "buenosaires",
     direccion: "Av. Santa Fe 1581, Martínez, Buenos Aires",
@@ -156,7 +154,7 @@ const DEALERS = [
     coordinadas: [-58.503151, -34.485193],
   },
   {
-    id: 14,
+    id: 15,
     nombre: "Kipercar",
     provincia: "buenosaires",
     direccion: "San Luis 895, Pergamino, Buenos Aires",
@@ -166,7 +164,7 @@ const DEALERS = [
     coordinadas: [-60.556988, -33.897137],
   },
   {
-    id: 14,
+    id: 16,
     nombre: "Neostar",
     provincia: "santafe",
     direccion: "San Lorenzo 3440, Santa Fe",
@@ -176,39 +174,37 @@ const DEALERS = [
     coordinadas: [-60.713864, -31.634085],
   },
   {
-    id: 15,
+    id: 17,
     nombre: "Novo Automotores (Ushuaia)",
     provincia: "tierradelfuego",
     direccion: "Perito Moreno 2597, Ushuaia, Tirra del Fuego",
     telefono: "(02901) 477489",
-    horario:
-      "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
+    horario: "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
     email: "postventa@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
   },
   {
-    id: 16,
+    id: 18,
     nombre: "Novo Automotores",
     provincia: "tierradelfuego",
     direccion: "Perito Francisco Moreno 1917, Ushuaia, Tierra del Fuego",
     telefono: "02901 49-4793",
-    horario:
-      "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
+    horario: "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
   },
   {
-    id: 17,
+    id: 19,
     nombre: "One Saw",
     provincia: "caba",
-    direccion: "Av. Rivadavia 9130, CABA, Bs.As.",
+    direccion: "Av. Rivadavia 9130, CABA, Buenos Aires.",
     telefono: "(011) 4641 6272",
     horario: "Lunes a Viernes de 8:30hs a 12:30hs / 14:00hs a 18:00hs",
     email: "servicio@kiaonesaw.com.ar",
     coordinadas: [-58.4921132, -34.6363241],
   },
   {
-    id: 18,
+    id: 20,
     nombre: "Sebastian Bronstein",
     provincia: "cordoba",
     direccion: "Fray L. Beltrán 2550, Córdoba",
@@ -218,7 +214,7 @@ const DEALERS = [
     coordinadas: [-64.206224, -31.367069],
   },
   {
-    id: 19,
+    id: 21,
     nombre: "Sevek Automotores",
     provincia: "entrerios",
     direccion: "Tala 1943, Concordia, Entre Ríos",
@@ -228,14 +224,14 @@ const DEALERS = [
     coordinadas: [-58.031943, -31.371032],
   },
   {
-    id: 24,
+    id: 22,
     nombre: "Surkai",
     provincia: "mendoza",
     direccion: "Av. San Martín 598, Godoy Cruz, Mendoza",
     telefono: "(0261) 476 9060",
     horario: "Lunes a Viernes 08:30hs a 13:00hs / 16:30hs a 20:30hs",
     email: "kia@surkai.com.ar",
-    coordinadas: [-68.84966913, -32, 93054299],
+    coordinadas: [-68.84966913, -32.93054299],
   },
 ];
 
