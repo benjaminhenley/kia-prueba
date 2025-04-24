@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { blackbarLeft, blackbarRight } from "../../../Data/common";
 
-const MobileLinksAdicionales = () => {
-  const links = [
-    { text: "Promociones", url: "/promociones" },
-    { text: "Contáctenos", url: "/contactenos" },
-    { text: "Worldwide", url: "https://worldwide.kia.com/int" },
-    { text: "Política de Cookies", url: "/cookies" },
-  ];
+const MobileLinksAdicionales = ({ onLinkClick }) => {
+  const links = [...blackbarLeft, ...blackbarRight]
+    .filter(item => item.href)
+    .map(item => ({
+      text: React.isValidElement(item.nombre)
+        ? item.nombre.props.children
+        : item.nombre,
+      url:  item.href,
+      esExterna: item.esExterna,
+    }));
 
   return (
     <div className="bg-[#F8F8F8] border-[0.5px] border-[#CDD0D2]">
@@ -14,9 +19,13 @@ const MobileLinksAdicionales = () => {
         {links.map((link, index) => (
           <div
             key={index}
-            className={`p-1 flex items-center ${
-              index < 2 || index === 2 ? "border-b-[0.5px] " : ""
-            }${index % 2 === 0 ? "border-r-[0.5px] " : ""}border-[#CDD0D2]`}>
+            className={`
+              p-1 flex items-center 
+              ${index < 2 ? "border-b-[0.5px]" : ""} 
+              ${index % 2 === 0 ? "border-r-[0.5px]" : ""} 
+              border-[#CDD0D2]
+            `}
+          >
             <svg
               width="32"
               height="32"
@@ -28,11 +37,24 @@ const MobileLinksAdicionales = () => {
                 fill="#05141F"
               />
             </svg>
-            <a
-              href={link.url}
-              className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2">
-              {link.text}
-            </a>
+            {link.esExterna ? (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2"
+              >
+                {link.text}
+              </a>
+            ) : (
+              <Link
+                to={link.url}
+                onClick={(e) => onLinkClick(e)}
+                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2"
+              >
+                {link.text}
+              </Link>
+            )}
           </div>
         ))}
       </div>

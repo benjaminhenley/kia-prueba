@@ -9,10 +9,10 @@ const SquareButton = ({
   const typeClasses = {
     primary: disabled
       ? "bg-[#9BA1A5] text-white"
-      : "bg-[#05141F] text-white hover:bg-[#37434C] hover:underline underline-offset-4 active:bg-[#05141F]",
+      : "bg-[#05141F] text-white hover:bg-[#37434C] hover:underline underline-offset-4",
     secondary: disabled
       ? "border border-[#9BA1A5] text-[#9BA1A5]"
-      : "border border-[#05141F] text-[#05141F] underline-offset-4 hover:underline ",
+      : "border border-[#05141F] text-[#05141F] underline-offset-4 hover:underline",
   };
 
   return (

@@ -65,14 +65,7 @@
         }
       ],
       "colorPicker": [
-        {
-          "id": "blue",
-          "name": "Azure Blue",
-          "border": "#0B293B",
-          "color": "#124463",
-          "outline": "#0F3A54",
-          "thumbnail": "imageMapRef:cross.colors.blue"
-        },
+        
         {
           "id": "black",
           "name": "Aurora Black Pearl",

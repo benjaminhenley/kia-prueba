@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         element: <Promociones />,
       },
       {
-        path: "/cookies",
+        path: "/politica-de-cookies",
         element: <Cookies />,
       },
       {

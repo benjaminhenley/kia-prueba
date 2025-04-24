@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayIcon } from "../Icons/PlayButton";
 import { getHeroIcon } from "../Icons/HeroIcons";
+import renderWithLineBreaks from "../../Data/mappers/renderWithLineBreaks";
 
-const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
+const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
@@ -154,7 +155,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500"></div>
 
-              {/* <h2 className="font-normal mb-1">All-new</h2> */}
+              {allNew && <h2 className="font-normal mb-1">All-new</h2> }
               <h1 className="font-bold mb-1">{title}</h1>
               <h3 className=" font-normal">{tagline}</h3>
               <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>
@@ -177,8 +178,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo }) => {
                         "\n"
                       )}
                     </h6>
-                    <h6 className="hidden md:block mt-1 font-normal text-center w-[140px] text-pretty">
-                      {item.description.replace(/<br\/>/g, "\n")}
+                    <h6 className="hidden md:block mt-1 font-normal text-center min-w-[80px] text-pretty">
+                      
+                      {renderWithLineBreaks(item.description)}
                     </h6>
                   </div>
                 ))}

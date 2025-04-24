@@ -27,6 +27,9 @@ const Modelos = () => {
     return <Navigate to="/" replace />;
   }
 
+  const isK3 = model.id.startsWith("k3")
+
+
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -35,6 +38,7 @@ const Modelos = () => {
     <div className="w-full relative ">
       {/* Hero Section with Video/Image */}
       <Hero
+        allNew={isK3}
         title={model.name}
         tagline={model.tagline}
         videoSrc={model.heroVideo}
@@ -63,7 +67,7 @@ const Modelos = () => {
 
       {/* Sticky Button */}
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
-        <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-5 p-4">
+        <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-3 ">
           <RoundedButton
             type="secondary"
             title="Quiero mi All-new K3"

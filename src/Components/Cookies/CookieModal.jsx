@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SquareButton from "../Common/ui/SquareButton";
 
 const CookieModal = ({ isOpen, onClose, onAcceptAll, onRejectAll }) => {
   if (!isOpen) return null;
@@ -54,21 +55,15 @@ const CookieModal = ({ isOpen, onClose, onAcceptAll, onRejectAll }) => {
         </div>
 
         <div className="flex flex-col gap-[15px] px-[72px] pb-10 bg-[#D9DCDD] w-full pt-5 md:px-[240px] md:flex-row">
-          <button className=" border-gray-300 text-black font-medium rounded-none md:order-3 w-fit py-[22px]">
+          <button className=" border-gray-300 text-[#05141F] hover:underline underline-offset-4 font-medium rounded-none md:order-3 w-fit py-[22px]">
             <h6 className="font-bold"> Configurar cookies</h6>
           </button>
 
-          <button
-            onClick={onAcceptAll}
-            className="w-fit px-10 bg-[#05141F] py-[22px] text-white font-medium rounded-none md:order-1">
-            <h6 className="text-white font-bold">Aceptar todas</h6>
-          </button>
+          <SquareButton type="primary">Aceptar todas</SquareButton>
+          <SquareButton type="secondary" onClick={onRejectAll}>Rechazar todas</SquareButton>
 
-          <button
-            onClick={onRejectAll}
-            className="w-fit px-10 py-[22px] border-2 border-[#05141F] text-[#05141F] font-medium rounded-none md:order-2">
-            <h6 className="text-[#05141F] font-bold">Rechazar todas</h6>
-          </button>
+
+         
         </div>
       </div>
     </div>

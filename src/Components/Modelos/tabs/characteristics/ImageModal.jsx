@@ -24,9 +24,9 @@ const ImageModal = ({ image, onClose }) => {
             className="object-contain h-full w-full"
           />
           <div className="bg-white px-4 sm:px-8 py-4 sm:py-6 h-auto w-auto flex-shrink-0">
-            <div className="w-10 h-[2px] bg-gray-800 mb-3"></div>
-            <h3 className="font-medium text-gray-900 mb-5">{image.title}</h3>
-            <h6 className="text-gray-700">
+            <div className="w-10 h-[2px] bg-[#05141F] mb-3"></div>
+            <h3 className="font-medium text-[#05141F] mb-2.5 md:mb-5">{image.title}</h3>
+            <h6 className="text-[#05141F]">
               {formatTextWithBold(image.description)}
             </h6>
           </div>
