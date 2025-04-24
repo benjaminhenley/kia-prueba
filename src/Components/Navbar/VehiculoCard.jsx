@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import KiaButtonSecondary from "../Common/KiaButtonSecondary";
 
 const VehiculoCard = ({ vehiculo, onClick }) => {
   const { nombre, esNuevo, foto, precio, href, target, esExterna } = vehiculo;
@@ -32,7 +33,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
         target=""
         rel="noreferrer"
         onClick={handleClick}>
-        <button
+{/*         <button
           className="border border-midnight-black text-xs font-bold p-1 pl-3 rounded-full flex flex-col items-center justify-center gap-2 mx-auto 
           hover:border-[#37434C] hover:text-[#37434C] 
           transition-all duration-300 group relative">
@@ -43,13 +44,12 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
             </span>
             <svg
               width="18"
-              height="19"
-              viewBox="0 0 18 19"
+              height="18"
+              viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="group">
               <rect
-                y="0.5"
                 width="18"
                 height="18"
                 rx="9"
@@ -63,7 +63,10 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
               />
             </svg>
           </div>
-        </button>
+        </button> */}
+        <KiaButtonSecondary
+          titulo="Consultar precios"
+        />
       </a>
     </>
   );

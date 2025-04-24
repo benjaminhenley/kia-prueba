@@ -14,10 +14,10 @@ const KiaButton = (props) => {
           className="border border-midnight-black bg-midnight-black hover:bg-[#37434C] text-sm text-white font-bold rounded-full flex items-center mx-auto 
           hover:border-[#37434C] 
           transition-all duration-300 group relative">
-          <div className="flex items-center py-[0.046875rem] pl-3 pr-[0.046875rem]">
+          <div className="flex items-center py-[1px] pl-3 pr-[0.046875rem]">
             <span className="relative inline-block mr-3">
               {titulo}
-              <span className="absolute left-0 bottom-0 h-[0.5px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 bottom-0 h-[1px] group-hover:bg-white transition-all duration-300 group-hover:w-full"></span>
             </span>
             <div className="flex items-center justify-center w-[24px] h-[24px]">
               <svg
