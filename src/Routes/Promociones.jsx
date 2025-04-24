@@ -69,17 +69,51 @@ export default function Promociones() {
   // Add useEffect to validate form on every change
   useEffect(() => {
     console.log("Form changed", formData);
-
     validateForm();
   }, [formData, acceptedTerms]);
+
+  // Add useEffect to filter dealers when province changes
+  useEffect(() => {
+    if (formData.province) {
+      // Find the label of the selected province using its value
+      const selectedProvinceLabel = PROVINCES.find(
+        (p) => p.value === parseInt(formData.province)
+      )?.label;
+
+      if (selectedProvinceLabel) {
+        // Filter dealers whose province matches the selected province label
+        const dealers = CAR_DEALERS.filter(
+          (dealer) => dealer.province === selectedProvinceLabel
+        );
+        setAvailableDealers(dealers);
+      } else {
+        // If province label not found (shouldn't happen with valid data), clear dealers
+        setAvailableDealers([]);
+      }
+    } else {
+      // If no province is selected, clear available dealers
+      setAvailableDealers([]);
+    }
+    // Reset dealer selection when province changes or clears
+    // This is handled in handleFormChange now
+  }, [formData.province]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    // If province changes, reset dealer selection
+    if (name === "province") {
+      setFormData((prev) => ({
+        ...prev,
+        province: value,
+        dealer: "", // Reset dealer when province changes
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   // Update the form validation function
@@ -271,8 +305,10 @@ export default function Promociones() {
                         name="dealer"
                         value={formData.dealer}
                         onChange={handleFormChange}
-                        options={CAR_DEALERS}
-                        disabled={!formData.province}
+                        options={availableDealers}
+                        disabled={
+                          !formData.province || availableDealers.length === 0
+                        }
                       />
                     </div>
                   </div>

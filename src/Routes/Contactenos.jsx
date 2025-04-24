@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
 import SquareButton from "../Components/Common/ui/SquareButton";
 import Checkbox from "../Components/Icons/Checkbox";
 import RadioButton from "../Components/Common/ui/RadioButton";
+import kiaApiCall from "../utils/apiCall";
 
 // Dropdown data collections
 const DOCUMENT_TYPES = [
@@ -79,6 +81,32 @@ const MONTHS = [
   { value: "12", label: "Diciembre" },
 ];
 
+const initialFormData = {
+  documentType: "",
+  documentNumber: "",
+  firstName: "",
+  lastName: "",
+  birthDay: "",
+  birthMonth: "",
+  birthYear: "",
+  street: "",
+  streetNumber: "",
+  province: "",
+  city: "",
+  country: "",
+  email: "",
+  phone: "",
+  model: "",
+  consultationType: "",
+  domain: "",
+  mileage: "",
+  vinNumber: "",
+  contactedDealer: "",
+  additionalMessage: "",
+  campaign: "",
+  source: "",
+};
+
 // Helper function to generate years options
 const generateYearsOptions = () => {
   return Array.from({ length: 80 }, (_, i) => ({
@@ -88,33 +116,13 @@ const generateYearsOptions = () => {
 };
 
 function Contactenos() {
-  const [formData, setFormData] = useState({
-    documentType: "",
-    documentNumber: "",
-    firstName: "",
-    lastName: "",
-    birthDay: "",
-    birthMonth: "",
-    birthYear: "",
-    street: "",
-    streetNumber: "",
-    province: "",
-    city: "",
-    country: "",
-    email: "",
-    phone: "",
-    model: "",
-    consultationType: "",
-    domain: "",
-    mileage: "",
-    vinNumber: "",
-    contactedDealer: "",
-    additionalMessage: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [contactedDealer, setContactedDealer] = useState(null);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isValid, setIsValid] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   // Add reCAPTCHA script to the page
   useEffect(() => {
@@ -147,8 +155,12 @@ function Contactenos() {
 
   // Add useEffect to validate form on every change
   useEffect(() => {
-    validateForm();
-  }, [formData, acceptedTerms, contactedDealer]);
+    if (!isSubmitted) {
+      validateForm();
+    }
+  }, [formData, acceptedTerms, contactedDealer, isSubmitted]);
+
+  const source = window.location.href;
 
   const executeRecaptcha = () => {
     if (typeof window.grecaptcha !== "undefined") {
@@ -160,7 +172,7 @@ function Contactenos() {
           .then(function (token) {
             console.log("reCAPTCHA token:", token);
             setRecaptchaToken(token);
-            handleSubmitWithToken(token);
+            handleSubmit(token);
           });
       });
     } else {
@@ -180,10 +192,18 @@ function Contactenos() {
     setContactedDealer(value);
   };
 
-  const handleSubmitWithToken = (token) => {
-    console.log("Form submitted with token:", token);
-    console.log("Form data:", formData);
-    // Here you would send the form data along with the token to your server
+  const handleSubmit = async () => {
+    console.log("Form data:", { ...formData, source });
+    try {
+      const response = await kiaApiCall(
+        { ...formData, source },
+        "kiaweb:contactenos"
+      );
+      console.log("Response:", response);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   const submitForm = () => {
@@ -242,6 +262,22 @@ function Contactenos() {
     return isValid;
   };
 
+  // Function to reset the form
+  const resetForm = () => {
+    console.log("Resetting form");
+    setFormData(initialFormData);
+    setAcceptedTerms(false);
+    setContactedDealer(null);
+    setRecaptchaToken(null);
+    setIsValid(false);
+    setIsSubmitted(false);
+  };
+
+  // Function to navigate home
+  const goHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="w-full  mx-auto bg-white pt-[55px] md:pt-[80px]">
       {/* Main Content Container */}
@@ -272,303 +308,330 @@ function Contactenos() {
           </div>
         </div>
 
-        {/* Form Section */}
-        <div className="flex flex-col">
-          <div className="w-full flex flex-col">
-            {/* Top Border */}
-            <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
+        {isSubmitted ? (
+          <div className="px-6 flex flex-col items-center justify-center text-center gap-6 md:gap-[31px] py-8 md:py-12 bg-[#F8F8F8] border border-[#CDD0D2]">
+            <h2 className="font-bold text-[#05141F]">
+              ¡Hola, {formData.firstName}!
+            </h2>
+            <h5 className="text-[#05141F]">
+              Muchas gracias por estar interesado en nuestra ayuda. <br />
+              Le enviaremos un correo electrónico con la respuesta a tu
+              consulta.
+            </h5>
+            <div className="flex flex-col xs:flex-row gap-4 w-full md:w-auto">
+              <SquareButton type="secondary" onClick={resetForm}>
+                Deseo agregar otro contacto
+              </SquareButton>
+              <SquareButton type="primary" onClick={goHome}>
+                Volver al Inicio
+              </SquareButton>
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Form Section */}
+            <div className="flex flex-col">
+              <div className="w-full flex flex-col">
+                {/* Top Border */}
+                <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
 
-            {/* Form Content */}
-            <div className="self-stretch md:px-6 py-5 md:p-6 flex flex-col gap-5">
-              {/* Collapsible Form Section Header */}
-              <div className="flex flex-row items-center gap-[15px]">
-                <svg
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transform rotate-90">
-                  <path
-                    d="M5.00008 0L0 5.08425L0.823318 5.91667L5.00008 1.66483L9.17684 5.91667L10.0002 5.08425L5.00008 0Z"
-                    fill="#05141F"
-                  />
-                </svg>
-                <h4 className="text-[#05141F] font-bold font-kia">
-                  Ingrese sus datos en el formulario
-                </h4>
-              </div>
-
-              {/* Form Fields */}
-              <div className="flex flex-col gap-5">
-                {/* Document Field */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Documento de identidad" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <FormDropdown
-                      placeholder="Tipo de documento"
-                      name="documentType"
-                      value={formData.documentType}
-                      onChange={handleFormChange}
-                      options={DOCUMENT_TYPES}
-                    />
-                    <TextField
-                      placeholder="Número de documento"
-                      name="documentNumber"
-                      value={formData.documentNumber}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                {/* Name Field */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Nombre completo" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <TextField
-                      placeholder="Nombre"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleFormChange}
-                    />
-                    <TextField
-                      placeholder="Apellido"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                {/* Birthdate Field */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Fecha de nacimiento" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <FormDropdown
-                      placeholder="Día"
-                      name="birthDay"
-                      value={formData.birthDay}
-                      onChange={handleFormChange}
-                      options={generateDaysOptions()}
-                    />
-                    <FormDropdown
-                      placeholder="Mes"
-                      name="birthMonth"
-                      value={formData.birthMonth}
-                      onChange={handleFormChange}
-                      options={MONTHS}
-                    />
-                    <FormDropdown
-                      placeholder="Año"
-                      name="birthYear"
-                      value={formData.birthYear}
-                      onChange={handleFormChange}
-                      options={generateYearsOptions()}
-                    />
-                  </div>
-                </div>
-
-                {/* Direction Fields */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Dirección" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <TextField
-                      placeholder="Calle"
-                      name="street"
-                      value={formData.street}
-                      onChange={handleFormChange}
-                    />
-                    <TextField
-                      placeholder="Número"
-                      name="streetNumber"
-                      value={formData.streetNumber}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:items-center md:gap-5">
-                  <div className="md:w-52"></div>
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <TextField
-                      placeholder="Provincia"
-                      name="province"
-                      value={formData.province}
-                      onChange={handleFormChange}
-                    />
-                    <TextField
-                      placeholder="Localidad"
-                      name="city"
-                      value={formData.city}
-                      onChange={handleFormChange}
-                    />
-                    <FormDropdown
-                      placeholder="País"
-                      name="country"
-                      value={formData.country}
-                      onChange={handleFormChange}
-                      options={[{ value: "argentina", label: "Argentina" }]}
-                    />
-                  </div>
-                </div>
-
-                {/* Contact Field */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Contacto" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <TextField
-                      placeholder="Email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleFormChange}
-                    />
-                    <TextField
-                      placeholder="Teléfono"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                {/* Vehicle Field */}
-                <div className="flex flex-col md:flex-row md:items-center gap-5">
-                  <FormLabel text="Vehículo" />
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <FormDropdown
-                      placeholder="Modelo"
-                      name="model"
-                      value={formData.model}
-                      onChange={handleFormChange}
-                      options={MODELS}
-                    />
-                    <FormDropdown
-                      placeholder="Tipo de consulta"
-                      name="consultationType"
-                      value={formData.consultationType}
-                      onChange={handleFormChange}
-                      options={CONSULTATION_TYPES}
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:items-center  md:gap-5">
-                  <div className="md:w-52"></div>
-                  <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                    <TextField
-                      placeholder="Dominio"
-                      name="domain"
-                      value={formData.domain}
-                      onChange={handleFormChange}
-                    />
-                    <TextField
-                      placeholder="Kilometraje"
-                      name="mileage"
-                      value={formData.mileage}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col md:flex-row md:items-center md:gap-5">
-                  <div className="md:w-52"></div>
-                  <div className="flex flex-col md:flex-1 ">
-                    <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                      <TextField
-                        placeholder="N° de chasis/VIN"
-                        name="vinNumber"
-                        value={formData.vinNumber}
-                        onChange={handleFormChange}
+                {/* Form Content */}
+                <div className="self-stretch md:px-6 py-5 md:p-6 flex flex-col gap-5">
+                  {/* Collapsible Form Section Header */}
+                  <div className="flex flex-row items-center gap-[15px]">
+                    <svg
+                      width="10"
+                      height="6"
+                      viewBox="0 0 10 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="transform rotate-90">
+                      <path
+                        d="M5.00008 0L0 5.08425L0.823318 5.91667L5.00008 1.66483L9.17684 5.91667L10.0002 5.08425L5.00008 0Z"
+                        fill="#05141F"
                       />
-                      <h5 className="text-[#697279] md:w-[50%] md:hidden">
-                        VIN del vehículo. Ingrese los 17 dígitos de su vehículo.
-                        Esta información podrá verla en la documentación de su
-                        unidad.
-                      </h5>
+                    </svg>
+                    <h4 className="text-[#05141F] font-bold font-kia">
+                      Ingrese sus datos en el formulario
+                    </h4>
+                  </div>
 
-                      <div className="flex flex-row gap-5 md:items-center md:mt-2 w-full md:flex-1">
-                        <h6 className="text-[12px] font-bold text-[#05141F]">
-                          ¿Contactó a algún concesionario?
-                        </h6>
-                        <div className="flex gap-5">
-                          <RadioButton
-                            id="dealer-yes"
-                            name="contactedDealer"
-                            checked={contactedDealer === true}
-                            onChange={() => handleDealerChange(true)}
-                            label="Sí"
-                          />
-                          <RadioButton
-                            id="dealer-no"
-                            name="contactedDealer"
-                            checked={contactedDealer === false}
-                            onChange={() => handleDealerChange(false)}
-                            label="No"
-                          />
-                        </div>
+                  {/* Form Fields */}
+                  <div className="flex flex-col gap-5">
+                    {/* Document Field */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Documento de identidad" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <FormDropdown
+                          placeholder="Tipo de documento"
+                          name="documentType"
+                          value={formData.documentType}
+                          onChange={handleFormChange}
+                          options={DOCUMENT_TYPES}
+                        />
+                        <TextField
+                          placeholder="Número de documento"
+                          name="documentNumber"
+                          value={formData.documentNumber}
+                          onChange={handleFormChange}
+                        />
                       </div>
                     </div>
-                    <h5 className="text-[#697279] mt-5 md:w-[50%] hidden md:block">
-                      VIN del vehículo. Ingrese los 17 dígitos de su vehículo.
-                      Esta información podrá verla en la documentación de su
-                      unidad.
-                    </h5>
+
+                    {/* Name Field */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Nombre completo" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <TextField
+                          placeholder="Nombre"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleFormChange}
+                        />
+                        <TextField
+                          placeholder="Apellido"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleFormChange}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Birthdate Field */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Fecha de nacimiento" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <FormDropdown
+                          placeholder="Día"
+                          name="birthDay"
+                          value={formData.birthDay}
+                          onChange={handleFormChange}
+                          options={generateDaysOptions()}
+                        />
+                        <FormDropdown
+                          placeholder="Mes"
+                          name="birthMonth"
+                          value={formData.birthMonth}
+                          onChange={handleFormChange}
+                          options={MONTHS}
+                        />
+                        <FormDropdown
+                          placeholder="Año"
+                          name="birthYear"
+                          value={formData.birthYear}
+                          onChange={handleFormChange}
+                          options={generateYearsOptions()}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Direction Fields */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Dirección" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <TextField
+                          placeholder="Calle"
+                          name="street"
+                          value={formData.street}
+                          onChange={handleFormChange}
+                        />
+                        <TextField
+                          placeholder="Número"
+                          name="streetNumber"
+                          value={formData.streetNumber}
+                          onChange={handleFormChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row md:items-center md:gap-5">
+                      <div className="md:w-52"></div>
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <FormDropdown
+                          placeholder="Provincia"
+                          name="province"
+                          value={formData.province}
+                          onChange={handleFormChange}
+                          options={PROVINCES}
+                        />
+                        <TextField
+                          placeholder="Localidad"
+                          name="city"
+                          value={formData.city}
+                          onChange={handleFormChange}
+                        />
+                        <FormDropdown
+                          placeholder="País"
+                          name="country"
+                          value={formData.country}
+                          onChange={handleFormChange}
+                          options={[{ value: "argentina", label: "Argentina" }]}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Contact Field */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Contacto" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <TextField
+                          placeholder="Email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleFormChange}
+                        />
+                        <TextField
+                          placeholder="Teléfono"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleFormChange}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Vehicle Field */}
+                    <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      <FormLabel text="Vehículo" />
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <FormDropdown
+                          placeholder="Modelo"
+                          name="model"
+                          value={formData.model}
+                          onChange={handleFormChange}
+                          options={MODELS}
+                        />
+                        <FormDropdown
+                          placeholder="Tipo de consulta"
+                          name="consultationType"
+                          value={formData.consultationType}
+                          onChange={handleFormChange}
+                          options={CONSULTATION_TYPES}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row md:items-center  md:gap-5">
+                      <div className="md:w-52"></div>
+                      <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                        <TextField
+                          placeholder="Dominio"
+                          name="domain"
+                          value={formData.domain}
+                          onChange={handleFormChange}
+                        />
+                        <TextField
+                          placeholder="Kilometraje"
+                          name="mileage"
+                          value={formData.mileage}
+                          onChange={handleFormChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row md:items-center md:gap-5">
+                      <div className="md:w-52"></div>
+                      <div className="flex flex-col md:flex-1 ">
+                        <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <TextField
+                            placeholder="N° de chasis/VIN"
+                            name="vinNumber"
+                            value={formData.vinNumber}
+                            onChange={handleFormChange}
+                          />
+                          <h5 className="text-[#697279] md:w-[50%] md:hidden">
+                            VIN del vehículo. Ingrese los 17 dígitos de su
+                            vehículo. Esta información podrá verla en la
+                            documentación de su unidad.
+                          </h5>
+
+                          <div className="flex flex-row gap-5 md:items-center md:mt-2 w-full md:flex-1">
+                            <h6 className="text-[12px] font-bold text-[#05141F]">
+                              ¿Contactó a algún concesionario?
+                            </h6>
+                            <div className="flex gap-5">
+                              <RadioButton
+                                id="dealer-yes"
+                                name="contactedDealer"
+                                checked={contactedDealer === true}
+                                onChange={() => handleDealerChange(true)}
+                                label="Sí"
+                              />
+                              <RadioButton
+                                id="dealer-no"
+                                name="contactedDealer"
+                                checked={contactedDealer === false}
+                                onChange={() => handleDealerChange(false)}
+                                label="No"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <h5 className="text-[#697279] mt-5 md:w-[50%] hidden md:block">
+                          VIN del vehículo. Ingrese los 17 dígitos de su
+                          vehículo. Esta información podrá verla en la
+                          documentación de su unidad.
+                        </h5>
+                      </div>
+                    </div>
+
+                    {/* Additional Message */}
+                    <div className="flex flex-col md:flex-row md:items-start gap-5">
+                      <div className="w-full md:flex-1">
+                        <textarea
+                          className="w-full border border-[#CDD0D2] p-2.5 h-[150px] font-normal text-[#05141F] resize-none outline-none focus:outline-[#05141F] focus:outline-1 placeholder:text-[#697279]"
+                          placeholder="Mensaje adicional"
+                          name="additionalMessage"
+                          value={formData.additionalMessage}
+                          onChange={handleFormChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="text-[#EA0029] font-normal font-kia">
+                      <h5 className="font-normal text-[16px]">
+                        *Campo obligatorio
+                      </h5>
+                    </div>
                   </div>
                 </div>
 
-                {/* Additional Message */}
-                <div className="flex flex-col md:flex-row md:items-start gap-5">
-                  <div className="w-full md:flex-1">
-                    <textarea
-                      className="w-full border border-[#CDD0D2] p-2.5 h-[150px] font-normal text-[#05141F] resize-none outline-none focus:outline-[#05141F] focus:outline-1 placeholder:text-[#697279]"
-                      placeholder="Mensaje adicional"
-                      name="additionalMessage"
-                      value={formData.additionalMessage}
-                      onChange={handleFormChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="text-[#EA0029] font-normal font-kia">
-                  <h5 className="font-normal text-[16px]">
-                    *Campo obligatorio
-                  </h5>
-                </div>
+                {/* Bottom border */}
+                <div className="self-stretch h-[1.5px] bg-[#CDD0D2]" />
               </div>
             </div>
 
-            {/* Bottom border */}
-            <div className="self-stretch h-[1.5px] bg-[#CDD0D2]" />
-          </div>
-        </div>
+            {/* Terms and conditions checkbox */}
+            <div className="flex items-center gap-2">
+              <Checkbox
+                checked={acceptedTerms}
+                onChange={() => setAcceptedTerms(!acceptedTerms)}
+              />
+              <label
+                htmlFor="terms"
+                className="text-[#05141F] font-normal font-kia cursor-pointer"
+                onClick={() => setAcceptedTerms(!acceptedTerms)}>
+                <h6>
+                  He leído y acepto el{" "}
+                  <a href="#" className="underline">
+                    Consentimiento Informado sobre Uso y Procesamiento de Datos
+                  </a>
+                </h6>
+              </label>
+            </div>
 
-        {/* Terms and conditions checkbox */}
-        <div className="flex items-center gap-2">
-          <Checkbox
-            checked={acceptedTerms}
-            onChange={() => setAcceptedTerms(!acceptedTerms)}
-          />
-          <label
-            htmlFor="terms"
-            className="text-[#05141F] font-normal font-kia cursor-pointer"
-            onClick={() => setAcceptedTerms(!acceptedTerms)}>
-            <h6>
-              He leído y acepto el{" "}
-              <a href="#" className="underline">
-                Consentimiento Informado sobre Uso y Procesamiento de Datos
-              </a>
-            </h6>
-          </label>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-          <SquareButton type="secondary">Cancelar</SquareButton>
-          <SquareButton type="primary" disabled={!isValid} onClick={submitForm}>
-            Enviar
-          </SquareButton>
-        </div>
+            {/* Action Buttons */}
+            <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
+              <SquareButton type="secondary">Cancelar</SquareButton>
+              <SquareButton
+                type="primary"
+                disabled={!isValid}
+                onClick={submitForm}>
+                Enviar
+              </SquareButton>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

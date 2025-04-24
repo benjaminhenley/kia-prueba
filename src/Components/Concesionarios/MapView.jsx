@@ -1,44 +1,87 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import ConcesionarioCard from './ConcesionarioCard';
+import React, { useEffect, useRef, useState } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import ConcesionarioCard from "./ConcesionarioCard";
+import Arrow from "../Icons/Arrow"; // Import Arrow for the slider buttons
 
 // Token de Mapbox
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ldGFtYm9yIiwiYSI6ImNtOWczNHk3MTFzMHkybG9xZzdxYzYzejUifQ.rOyZbMUPMFct3ht7ULUYrQ';
+mapboxgl.accessToken =
+  "pk.eyJ1Ijoiam9ldGFtYm9yIiwiYSI6ImNtOWczNHk3MTFzMHkybG9xZzdxYzYzejUifQ.rOyZbMUPMFct3ht7ULUYrQ";
 
 const MapView = ({ dealers }) => {
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const scrollContainerRef = useRef(null); // Ref for the scrollable container
+  const sliderRef = useRef(null); // Ref for the slider input
+  const thumbRef = useRef(null); // Ref for the custom thumb
   const [selectedDealerId, setSelectedDealerId] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
   const [routeSelected, setRouteSelected] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [sliderValue, setSliderValue] = useState(0); // State for slider position (0-100)
+  const [isDragging, setIsDragging] = useState(false); // Track if user is dragging the slider
+  const [mouseOverSlider, setMouseOverSlider] = useState(false); // Track if mouse is over the slider area
 
   // Detectar si es dispositivo móvil
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     // Verificar tamaño inicial
     checkIfMobile();
-    
+
     // Añadir listener para cambios de tamaño
-    window.addEventListener('resize', checkIfMobile);
-    
+    window.addEventListener("resize", checkIfMobile);
+
     // Limpiar listener
-    return () => window.removeEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
+
+  // Handle slider input changes (only this should move the thumb directly)
+  const handleSliderChange = (e) => {
+    const value = parseInt(e.target.value);
+    setSliderValue(value);
+    setIsDragging(true);
+
+    // Calculate and apply scroll position
+    if (scrollContainerRef.current) {
+      const scrollHeight = scrollContainerRef.current.scrollHeight;
+      const containerHeight = scrollContainerRef.current.clientHeight;
+      const maxScroll = scrollHeight - containerHeight;
+      const scrollPosition = (value / 100) * maxScroll;
+
+      scrollContainerRef.current.scrollTop = scrollPosition; // Use direct assignment for smoother dragging
+    }
+  };
+
+  // When slider drag ends
+  const handleSliderDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  // Position thumb based on slider value (only when dragging or button clicks)
+  useEffect(() => {
+    if (thumbRef.current && sliderRef.current) {
+      const trackHeight = sliderRef.current.clientHeight;
+      const thumbHeight = 48; // Height of the thumb (two buttons)
+      const topPos = (sliderValue / 100) * (trackHeight - thumbHeight);
+      thumbRef.current.style.top = `${topPos}px`;
+    }
+  }, [sliderValue]);
 
   // Función para obtener la ubicación del usuario
   const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setUserLocation([position.coords.longitude, position.coords.latitude]);
+          setUserLocation([
+            position.coords.longitude,
+            position.coords.latitude,
+          ]);
         },
         (error) => {
-          console.error('Error getting user location:', error);
+          console.error("Error getting user location:", error);
         }
       );
     }
@@ -47,7 +90,7 @@ const MapView = ({ dealers }) => {
   // Función para calcular y mostrar la ruta
   const showRoute = async (dealerCoordinates) => {
     if (!userLocation) {
-      alert('Necesitamos tu ubicación para trazar la ruta');
+      alert("Necesitamos tu ubicación para trazar la ruta");
       getUserLocation();
       return;
     }
@@ -57,64 +100,63 @@ const MapView = ({ dealers }) => {
         `https://api.mapbox.com/directions/v5/mapbox/driving/${userLocation[0]},${userLocation[1]};${dealerCoordinates[0]},${dealerCoordinates[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`
       );
       const json = await query.json();
-      
+
       const data = json.routes[0];
       const route = data.geometry.coordinates;
 
       const geojson = {
-        type: 'Feature',
+        type: "Feature",
         properties: {},
         geometry: {
-          type: 'LineString',
-          coordinates: route
-        }
+          type: "LineString",
+          coordinates: route,
+        },
       };
 
       // Si ya existe la ruta, la removemos
-      if (map.current.getSource('route')) {
-        map.current.removeLayer('route');
-        map.current.removeSource('route');
+      if (map.current.getSource("route")) {
+        map.current.removeLayer("route");
+        map.current.removeSource("route");
       }
 
       // Agregamos la nueva ruta
       map.current.addLayer({
-        id: 'route',
-        type: 'line',
+        id: "route",
+        type: "line",
         source: {
-          type: 'geojson',
-          data: geojson
+          type: "geojson",
+          data: geojson,
         },
         layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
+          "line-join": "round",
+          "line-cap": "round",
         },
         paint: {
-          'line-color': '#05141F',
-          'line-width': 5,
-          'line-opacity': 0.75
-        }
+          "line-color": "#05141F",
+          "line-width": 5,
+          "line-opacity": 0.75,
+        },
       });
 
       // Ajustamos el mapa para mostrar la ruta completa, teniendo en cuenta el offset en desktop
       const bounds = new mapboxgl.LngLatBounds();
-      route.forEach(point => bounds.extend(point));
-      
+      route.forEach((point) => bounds.extend(point));
+
       // En desktop, aplicamos un offset para mostrar la ruta más hacia la derecha
       if (!isMobile) {
         const offsetOptions = {
-          padding: { top: 50, bottom: 50, left: 550, right: 50 }
+          padding: { top: 50, bottom: 50, left: 550, right: 50 },
         };
         map.current.fitBounds(bounds, offsetOptions);
       } else {
         map.current.fitBounds(bounds, {
-          padding: 50
+          padding: 50,
         });
       }
 
       setRouteSelected(true);
-
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -125,50 +167,48 @@ const MapView = ({ dealers }) => {
 
   useEffect(() => {
     if (!mapContainer.current) return;
-    
+
     if (!map.current) {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-64.1810, -35.4135],
-        zoom: 4
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-64.181, -35.4135],
+        zoom: 4,
       });
 
-      map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+      map.current.addControl(new mapboxgl.NavigationControl(), "top-right");
     }
 
     // Limpiar marcadores existentes
-    const markers = document.getElementsByClassName('mapboxgl-marker');
-    while(markers[0]) {
+    const markers = document.getElementsByClassName("mapboxgl-marker");
+    while (markers[0]) {
       markers[0].parentNode.removeChild(markers[0]);
     }
 
     // Agregar marcador de ubicación del usuario si está disponible
     if (userLocation) {
-      const el = document.createElement('div');
-      el.className = 'user-location-marker';
-      el.style.width = '20px';
-      el.style.height = '20px';
-      el.style.borderRadius = '50%';
-      el.style.backgroundColor = '#05141F';
-      el.style.border = '3px solid white';
+      const el = document.createElement("div");
+      el.className = "user-location-marker";
+      el.style.width = "20px";
+      el.style.height = "20px";
+      el.style.borderRadius = "50%";
+      el.style.backgroundColor = "#05141F";
+      el.style.border = "3px solid white";
 
-      new mapboxgl.Marker(el)
-        .setLngLat(userLocation)
-        .addTo(map.current);
+      new mapboxgl.Marker(el).setLngLat(userLocation).addTo(map.current);
     }
 
     // Agregar marcadores para los concesionarios
     if (dealers.length > 0) {
       const bounds = new mapboxgl.LngLatBounds();
-      
-      dealers.forEach(dealer => {
+
+      dealers.forEach((dealer) => {
         if (dealer.coordinadas) {
           // Crear el marcador por defecto de Mapbox en color rojo
-          new mapboxgl.Marker({ color: '#EA0029' })
+          new mapboxgl.Marker({ color: "#EA0029" })
             .setLngLat(dealer.coordinadas)
             .setPopup(
-              new mapboxgl.Popup({ offset: 35, className: 'custom-popup' })
+              new mapboxgl.Popup({ offset: 35, className: "custom-popup" })
                 .setHTML(`
                   <div class="text-center p-4">
                     <h3 class="font-bold text-lg mb-4 text-midnight-black">${dealer.nombre}</h3>
@@ -205,12 +245,12 @@ const MapView = ({ dealers }) => {
         if (!isMobile) {
           map.current.fitBounds(bounds, {
             padding: { top: 50, bottom: 50, left: 550, right: 50 },
-            maxZoom: 15
+            maxZoom: 15,
           });
         } else {
           map.current.fitBounds(bounds, {
             padding: 50,
-            maxZoom: 15
+            maxZoom: 15,
           });
         }
       }
@@ -227,29 +267,29 @@ const MapView = ({ dealers }) => {
   // Función para centrar el mapa en un concesionario con offset en desktop
   const centerMapOnDealer = (coordinates) => {
     if (!map.current) return;
-    
+
     if (isMobile) {
       // En móvil, centrar normalmente
       map.current.flyTo({
         center: coordinates,
-        zoom: 15
+        zoom: 15,
       });
     } else {
       // En desktop, aplicar offset hacia la derecha
       // Calculamos un nuevo centro desplazado para dar espacio al panel de concesionarios
       const currentZoom = map.current.getZoom();
       const offsetInPixels = 250; // Mitad aproximada del ancho del panel (500px)
-      
+
       // Convertir el offset de píxeles a coordenadas de longitud
       const scale = Math.pow(2, currentZoom);
       const offsetLng = (offsetInPixels / scale) * 0.0003; // Factor de ajuste basado en pruebas
-      
+
       // Aplicar el offset a las coordenadas
       const offsetCenter = [coordinates[0] + offsetLng, coordinates[1]];
-      
+
       map.current.flyTo({
         center: offsetCenter,
-        zoom: 15
+        zoom: 15,
       });
     }
   };
@@ -257,52 +297,86 @@ const MapView = ({ dealers }) => {
   return (
     <div className="relative w-full mt-[4rem]">
       {/* Contenedor de mapa con altura ajustable según dispositivo */}
-      <div className={`w-full ${isMobile ? 'h-[300px]' : 'h-[500px]'}`}>
+      <div className={`w-full ${isMobile ? "h-[300px]" : "h-[500px]"}`}>
         <div ref={mapContainer} className="w-full h-full" />
       </div>
-      
+
       {/* Lista de concesionarios - posicionamiento condicional */}
-      <div 
+      <div
         className={`
-          ${isMobile 
-            ? 'relative w-full mt-6 ' 
-            : 'absolute top-1/2 -translate-y-1/2 left-0 w-[500px] ml-8'}
-        `}
-      >
-        <div className={`
-          grid grid-cols-1 gap-4 
-          ${isMobile 
-            ? 'max-h-full overflow-visible bg-transparent shadow-none' 
-            : 'overflow-y-auto max-h-[380px] bg-white shadow-[0px_4px_16px_rgba(0,0,0,0.1)]'}
+          ${
+            isMobile
+              ? "relative w-full mt-6"
+              : "absolute top-1/2 -translate-y-1/2 left-0 w-[500px] ml-8"
+          }
         `}>
-          {dealers.map((dealer) => (
-            <div 
-              key={dealer.id}
-              className="bg-white cursor-pointer"
-            >
-              <ConcesionarioCard
-                onClick={() => {
-                  if (map.current && dealer.coordinadas) {
-                    // Usar nuestra nueva función para centrar con offset
-                    centerMapOnDealer(dealer.coordinadas);
-                    setSelectedDealerId(dealer.id);
-                    showRoute(dealer.coordinadas);
-                    
-                    // En móvil, hacer scroll hacia arriba para ver el mapa
-                    if (isMobile) {
-                      mapContainer.current.scrollIntoView({ behavior: 'smooth' });
+        {/* Contenedor flex para tener concesionarios y slider lado a lado */}
+        <div className="relative flex flex-row  bg-white">
+          {/* Scrollable container */}
+          <div
+            ref={scrollContainerRef}
+            className={`
+              grid grid-cols-1 gap-4 flex-grow
+              ${
+                isMobile
+                  ? "max-h-full overflow-visible bg-transparent shadow-none"
+                  : "overflow-y-auto max-h-[380px] bg-white shadow-[0px_4px_16px_rgba(0,0,0,0.1)] scrollbar-hide"
+              }
+            `}>
+            {dealers.map((dealer) => (
+              <div key={dealer.id} className="bg-white cursor-pointer">
+                <ConcesionarioCard
+                  onClick={() => {
+                    if (map.current && dealer.coordinadas) {
+                      // Usar nuestra nueva función para centrar con offset
+                      centerMapOnDealer(dealer.coordinadas);
+                      setSelectedDealerId(dealer.id);
+                      showRoute(dealer.coordinadas);
+
+                      // En móvil, hacer scroll hacia arriba para ver el mapa
+                      if (isMobile) {
+                        mapContainer.current.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }
                     }
-                  }
-                }}
-                isSelected={selectedDealerId === dealer.id}
-                nombre={dealer.nombre}
-                direccion={dealer.direccion}
-                telefono={dealer.telefono}
-                horario={dealer.horario}
-                email={dealer.email}
+                  }}
+                  isSelected={selectedDealerId === dealer.id}
+                  nombre={dealer.nombre}
+                  direccion={dealer.direccion}
+                  telefono={dealer.telefono}
+                  horario={dealer.horario}
+                  email={dealer.email}
+                />
+              </div>
+            ))}
+            {/* Custom Vertical Slider (only shown in desktop) */}
+          </div>
+          {!isMobile && (
+            <div className="relative w-10 py-3 flex flex-col overflow-">
+              <input
+                ref={sliderRef}
+                type="range"
+                min={0}
+                max={100}
+                step={1}
+                value={sliderValue}
+                onChange={handleSliderChange}
+                className="absolute left-[-168px] top-[180px] right-0 z-10 bg-white rotate-90 w-[360px]"
               />
+
+              <div
+                ref={thumbRef}
+                className="absolute top-0 flex flex-row border-none rotate-90">
+                <div className="border-none w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50 cursor-pointer">
+                  <Arrow fill="#fff" className="rotate-180" />
+                </div>
+                <div className="border-none w-6 h-6 flex items-center justify-center rounded-r-full bg-[#05141F] disabled:opacity-50 cursor-pointer">
+                  <Arrow fill="#fff" />
+                </div>
+              </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
 
@@ -318,12 +392,13 @@ const MapView = ({ dealers }) => {
         }
         .custom-popup .mapboxgl-popup-content {
           padding: 0;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         .custom-popup .mapboxgl-popup-close-button {
           right: 8px;
           top: 8px;
-          color: #05141F;
+          color: #05141f;
           font-size: 16px;
         }
         .custom-popup .mapboxgl-popup-close-button:hover {
@@ -338,6 +413,15 @@ const MapView = ({ dealers }) => {
         }
         .custom-popup .group:hover .group-hover\\:fill-white {
           fill: #ffffff;
+        }
+
+        /* Hide default scrollbar */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
         }
       `}</style>
     </div>

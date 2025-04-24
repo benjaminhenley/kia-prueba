@@ -89,7 +89,7 @@ const CarModelGallery = ({ onModelSelect }) => {
         viewIndex * scrollContainerRef.current.children[0].offsetWidth;
       scrollContainerRef.current.scrollTo({
         left: scrollAmount,
-        behavior: "instant",
+        behavior: "smooth",
       });
     }
   }, [viewIndex]);
@@ -123,14 +123,14 @@ const CarModelGallery = ({ onModelSelect }) => {
       <div className="relative overflow-hidden">
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-scroll scroll-smooth no-scrollbar">
+          className="flex overflow-x-scroll scroll-smooth no-scrollbar gap-4">
           {CAR_MODELS.map((model, index) => (
             <div
               key={model.id || `model-${index}`}
-              className={`w-fit flex-shrink-0 flex flex-col items-center p-4 border-2 ${
+              className={`w-fit bg-[#F8F8F8] flex-shrink-0 flex flex-col items-center p-4 border ${
                 selectedIndex === index
                   ? "border-[#05141F] bg-[#F8F8F8]"
-                  : "border-transparent"
+                  : "border-[#CDD0D2]"
               } cursor-pointer`}
               onClick={() => handleCarClick(index)}>
               <img
