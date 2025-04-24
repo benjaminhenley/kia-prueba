@@ -11,6 +11,7 @@ import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import PROVINCES from "../Data/provinces";
 import CAR_DEALERS from "../Data/carDealers";
 import kiaApiCall from "../utils/apiCall";
+import CAR_MODELS from "../Data/models";
 
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
@@ -50,7 +51,7 @@ const generateYearsOptions = () => {
 
 export default function Promociones() {
   const [formData, setFormData] = useState({
-    selectedModel: "",
+    selectedModel: CAR_MODELS[0].id,
     firstName: "",
     lastName: "",
     contactPreference: "",
