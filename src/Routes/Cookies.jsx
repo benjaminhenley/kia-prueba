@@ -96,19 +96,19 @@ function Cookies() {
           ))}
         </div>
 
-        <RoundedButton
+{/*         <RoundedButton
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
-        />
+        /> */}
       </div>
 
       {/* Cookie Modal */}
-      <CookieModal
+{/*       <CookieModal
         isOpen={showCookieModal}
         onClose={handleCloseCookieModal}
         onAcceptAll={handleAcceptAll}
         onRejectAll={handleRejectAll}
-      />
+      /> */}
     </div>
   );
 }
