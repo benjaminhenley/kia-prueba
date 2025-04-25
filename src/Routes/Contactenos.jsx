@@ -67,7 +67,7 @@ const initialFormData = {
   domain: "",
   mileage: "",
   vinNumber: "",
-  contactedDealer: "",
+  contactedDealer: "",    
   additionalMessage: "",
   campaign: "",
   source: "",
@@ -96,7 +96,7 @@ function Contactenos() {
     if (!document.querySelector('script[src*="recaptcha"]')) {
       const script = document.createElement("script");
       script.src =
-        "https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+        "https://www.google.com/recaptcha/api.js?render=6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP";
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);

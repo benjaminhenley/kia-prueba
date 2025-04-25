@@ -72,7 +72,6 @@ export default function Promociones() {
 
   // Add useEffect to validate form on every change
   useEffect(() => {
-    console.log("Form changed", formData);
     validateForm();
   }, [formData, acceptedTerms]);
 

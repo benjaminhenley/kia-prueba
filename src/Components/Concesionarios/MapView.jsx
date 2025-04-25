@@ -20,7 +20,6 @@ const MapView = ({ dealers }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [sliderValue, setSliderValue] = useState(0); // State for slider position (0-100)
   const [isDragging, setIsDragging] = useState(false); // Track if user is dragging the slider
-  const [mouseOverSlider, setMouseOverSlider] = useState(false); // Track if mouse is over the slider area
 
   // Detectar si es dispositivo móvil
   useEffect(() => {
@@ -42,7 +41,6 @@ const MapView = ({ dealers }) => {
   const handleSliderChange = (e) => {
     const value = parseInt(e.target.value);
     setSliderValue(value);
-    setIsDragging(true);
 
     // Calculate and apply scroll position
     if (scrollContainerRef.current) {
@@ -55,17 +53,18 @@ const MapView = ({ dealers }) => {
     }
   };
 
-  // When slider drag ends
-  const handleSliderDragEnd = () => {
-    setIsDragging(false);
-  };
+  const handleScroll = (e) => {
+    console.log("autoScroll")
+  }
+
 
   // Position thumb based on slider value (only when dragging or button clicks)
   useEffect(() => {
     if (thumbRef.current && sliderRef.current) {
-      const trackHeight = sliderRef.current.clientHeight;
-      const thumbHeight = 48; // Height of the thumb (two buttons)
-      const topPos = (sliderValue / 100) * (trackHeight - thumbHeight);
+      const trackHeight = scrollContainerRef.current.clientHeight;
+      console.log(trackHeight);
+      const thumbHeight = thumbRef.current.clientHeight; // Height of the thumb (two buttons)
+      const topPos = (((trackHeight - thumbHeight - 20) / 100) * sliderValue) + 10;
       thumbRef.current.style.top = `${topPos}px`;
     }
   }, [sliderValue]);
@@ -303,6 +302,7 @@ const MapView = ({ dealers }) => {
 
       {/* Lista de concesionarios - posicionamiento condicional */}
       <div
+        onScroll={handleScroll}
         className={`
           ${
             isMobile
@@ -311,20 +311,20 @@ const MapView = ({ dealers }) => {
           }
         `}>
         {/* Contenedor flex para tener concesionarios y slider lado a lado */}
-        <div className="relative flex flex-row  bg-white">
+        <div className="relative flex flex-row  bg-white p-6 gap-4">
           {/* Scrollable container */}
           <div
             ref={scrollContainerRef}
             className={`
-              grid grid-cols-1 gap-4 flex-grow overflow-auto
+              grid grid-cols-1 gap-4 flex-grow overflow-auto no-scrollbar
               ${
                 isMobile
                   ? "max-h-full overflow-visible bg-transparent shadow-none"
-                  : "overflow-y-auto max-h-[380px] bg-white shadow-[0px_4px_16px_rgba(0,0,0,0.1)] "
+                  : "overflow-y-auto max-h-[380px] bg-white "
               }
             `}>
             {dealers.map((dealer) => (
-              <div key={dealer.id} className="bg-white cursor-pointer">
+              <div key={dealer.id} className="bg-white cursor-pointer ">
                 <ConcesionarioCard
                   onClick={() => {
                     if (map.current && dealer.coordinadas) {
@@ -352,8 +352,8 @@ const MapView = ({ dealers }) => {
             ))}
             {/* Custom Vertical Slider (only shown in desktop) */}
           </div>
-          {/* {!isMobile && (
-            <div className="relative w-10 py-3 flex flex-col overflow-">
+          {!isMobile && (
+            <div className="relative w-10 flex flex-col bg-white">
               <input
                 ref={sliderRef}
                 type="range"
@@ -362,12 +362,13 @@ const MapView = ({ dealers }) => {
                 step={1}
                 value={sliderValue}
                 onChange={handleSliderChange}
-                className="absolute left-[-168px] top-[180px] right-0 z-10 bg-white rotate-90 w-[360px]"
+                className="absolute left-[-168px] top-[180px] right-0 z-10 bg-white rotate-90 w-[360px] opacity-0"
               />
+              <div className="border-l h-full ml-[9px]"/>
 
               <div
                 ref={thumbRef}
-                className="absolute top-0 flex flex-row border-none rotate-90">
+                className="absolute left-[-14px] flex flex-row border-none rotate-90">
                 <div className="border-none w-6 h-6 flex items-center justify-center rounded-l-full bg-[#05141F] disabled:opacity-50 cursor-pointer">
                   <Arrow fill="#fff" className="rotate-180" />
                 </div>
@@ -376,7 +377,7 @@ const MapView = ({ dealers }) => {
                 </div>
               </div>
             </div>
-          )} */}
+          )}
         </div>
       </div>
 
