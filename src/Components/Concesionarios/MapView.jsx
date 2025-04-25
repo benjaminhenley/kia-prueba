@@ -316,7 +316,7 @@ const MapView = ({ dealers }) => {
           <div
             ref={scrollContainerRef}
             className={`
-              grid grid-cols-1 gap-4 flex-grow overflow-auto no-scrollbar
+              grid grid-cols-1 gap-4 flex-grow overflow-auto
               ${
                 isMobile
                   ? "max-h-full overflow-visible bg-transparent shadow-none"
@@ -352,7 +352,7 @@ const MapView = ({ dealers }) => {
             ))}
             {/* Custom Vertical Slider (only shown in desktop) */}
           </div>
-          {!isMobile && (
+          {/* {!isMobile && (
             <div className="relative w-10 flex flex-col bg-white">
               <input
                 ref={sliderRef}
@@ -377,7 +377,7 @@ const MapView = ({ dealers }) => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
