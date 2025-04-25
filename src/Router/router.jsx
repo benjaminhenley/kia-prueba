@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
         element: <Cookies />,
       },
       {
-        path: "/contactenos",
+        path: "/contacto",
         element: <Contactenos />,
       },
       {

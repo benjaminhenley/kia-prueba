@@ -52,7 +52,8 @@ const specialRoutes = {
     "concesionarios": "Concesionarios",
     "red-venta": "Venta",
     "red-postventa": "Post Venta",
-    "politica-de-cookies": "Política de Cookies"
+    "politica-de-cookies": "Política de Cookies",
+    "contacto": "Contáctenos"
     // Agrega más según sea necesario
   },
   

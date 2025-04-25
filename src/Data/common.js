@@ -269,7 +269,7 @@ export const blackbarLeft = [
   },
   {
     nombre: <p>CONTÁCTENOS</p>,
-    href: "/contactenos",
+    href: "/contacto",
     target: "",
     esExterna: false,
   },
