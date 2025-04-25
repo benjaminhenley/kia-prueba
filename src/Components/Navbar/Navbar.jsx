@@ -43,8 +43,8 @@ const Navbar = () => {
     pathname === "/promociones" ||
     pathname === "/politica-de-cookies" ||
     pathname === "/contactenos" ||
-    pathname === "/concesionarios/venta" ||
-    pathname === "/concesionarios/post-venta";
+    pathname === "/red-venta" ||
+    pathname === "/red-postventa";
 
   // Efecto para detectar el scroll
   useEffect(() => {

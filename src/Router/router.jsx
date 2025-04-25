@@ -35,11 +35,11 @@ export const router = createBrowserRouter([
         element: <Contactenos />,
       },
       {
-        path: "/concesionarios/venta",
+        path: "/red-venta",
         element: <ConcesionariosVenta />
       },
       {
-        path: "/concesionarios/post-venta",
+        path: "/red-postventa",
         element: <ConcesionariosPostVenta />
       }
     ],

@@ -1,33 +1,29 @@
 import { useState } from "react";
 import Arrow from "../Components/Icons/Arrow";
 import sections from "../Data/cookieSections";
-import CookieModal from "../Components/Cookies/CookieModal";
 import RoundedButton from "../Components/Common/ui/RoundedButton";
+
 function Cookies() {
   const [activeSection, setActiveSection] = useState(null);
-  const [showCookieModal, setShowCookieModal] = useState(false);
 
   const toggleSection = (sectionNumber) => {
     setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
   };
 
+
   const handleShowCookieModal = () => {
-    setShowCookieModal(true);
-  };
-
-  const handleCloseCookieModal = () => {
-    setShowCookieModal(false);
-  };
-
-  const handleAcceptAll = () => {
-    // Handle accept all cookies logic here
-    setShowCookieModal(false);
-  };
-
-  const handleRejectAll = () => {
-    // Handle reject all cookies logic here
-    setShowCookieModal(false);
-  };
+    // Accedemos a los objetos de OneTrust que deberían estar disponibles globalmente
+    if (window.OneTrust && typeof window.OneTrust.ToggleInfoDisplay === 'function') {
+      window.OneTrust.ToggleInfoDisplay();
+    } else if (window.Optanon && typeof window.Optanon.ToggleInfoDisplay === 'function') {
+      window.Optanon.ToggleInfoDisplay();
+    } else if (typeof window.ot_showCookieSettings === 'function') {
+      window.ot_showCookieSettings();
+    } else {
+      console.error('No se pudo encontrar la API de OneTrust');
+    }
+  };   
+  
 
   return (
     <div className="w-full mx-auto bg-white text-[#05141F] pt-[56px] md:pt-[75px]">
@@ -96,19 +92,11 @@ function Cookies() {
           ))}
         </div>
 
-{/*         <RoundedButton
+         <RoundedButton
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
-        /> */}
+        /> 
       </div>
-
-      {/* Cookie Modal */}
-{/*       <CookieModal
-        isOpen={showCookieModal}
-        onClose={handleCloseCookieModal}
-        onAcceptAll={handleAcceptAll}
-        onRejectAll={handleRejectAll}
-      /> */}
     </div>
   );
 }

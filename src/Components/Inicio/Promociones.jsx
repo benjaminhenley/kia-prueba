@@ -5,6 +5,7 @@ import concesionarios from '../../assets/img/inicio/promociones/Concesionarios.s
 import turno from '../../assets/img/inicio/promociones/Turno.svg'
 import postVenta from '../../assets/img/inicio/promociones/PostVenta.svg'
 import garantia from '../../assets/img/inicio/promociones/Garantia.svg'
+import { Link } from 'react-router-dom';
 
 const Promociones = () => {
   return (
@@ -32,21 +33,21 @@ const Promociones = () => {
           {/* Contenido específico para mobile y tablet, posicionado absolutamente */}
           <div className="absolute bottom-0 left-0 p-6 text-white z-10 sm:py-14 sm:px-20">
             <h2 className="text-[1rem] font-bold mb-1 sm:text-[1.875rem] sm:mb-4">Promociones</h2>
-            <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer'>
+            <Link to="/promociones">
               <button className="flex items-center text-xs fon-bold md:text-sm">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#fff"/>
                 </svg>
                 Saber más
               </button>
-            </a>
+            </Link>
           </div>
         </div>
         
         {/* Sección para desktop */}
         <div className="relative p-6 md:py-14 md:px-20 text-white z-10 hidden lg:block">
           <h2 className="text-[1.875rem] font-bold mb-4">Promociones</h2>
-          <a href='https://www.kia.com.ar/promociones' target='' rel='noreferrer' className="relative group">
+          <Link to="/promociones" className="relative group">
             <button className="flex items-center text-sm font-bold transition-all duration-300 group-hover:text-[#CDD0D2]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.6866 6H11.3152V18H12.6866V6ZM18 11.3152H6V12.6866H18V11.3152Z" fill="#fff"/>
@@ -56,7 +57,7 @@ const Promociones = () => {
                   <span className="absolute left-0 bottom-[1px] h-[1px] bg-white group-hover:w-full group-hover:bg-[#CDD0D2] transition-all duration-300"></span>
                 </span>
             </button>
-          </a>  
+          </Link>  
         </div>
       </div>
 
@@ -64,7 +65,7 @@ const Promociones = () => {
       <div className="w-full grid grid-cols-2 auto-rows-fr">
         {/* Concesionarios */}
         <div className="bg-[#37434C] flex flex-col items-center justify-center p-4 md:p-8 text-[1rem] text-white min-h-[200px] relative group">
-          <a href='https://www.kia.com.ar/red-venta' target='' rel='noreferrer' className="relative">
+          <Link to="/red-venta" className="relative">
             <div className="mb-2 md:mb-4 flex items-center justify-center h-12">
               <img src={concesionarios} alt='concesionarios' className="max-h-full" />
             </div>
@@ -72,7 +73,7 @@ const Promociones = () => {
               Concesionarios
               <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
-          </a>
+          </Link>
         </div>
 
         {/* Turno Online */}
@@ -90,7 +91,7 @@ const Promociones = () => {
 
         {/* Post Venta */}
         <div className="bg-[#37434C66] flex flex-col items-center justify-center p-4 md:p-8 text-[1rem] text-white min-h-[200px] relative group">
-          <a href='https://www.kia.com.ar/red-postventa' target='' rel='noreferrer' className="relative">
+          <Link to='/red-postventa' className="relative">
             <div className="mb-2 md:mb-4 flex items-center justify-center h-12">
               <img src={postVenta} alt='post venta' className="max-h-full" />
             </div>
@@ -98,12 +99,12 @@ const Promociones = () => {
               Post Venta
               <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
-          </a>  
+          </Link>  
         </div>
 
         {/* Garantía */}
         <div className="bg-[#37434C99] flex flex-col items-center justify-center p-4 md:p-8 text-[1rem] text-white min-h-[200px] relative group">
-          <a href='https://www.kia.com.ar/red-postventa' target='' rel='noreferrer' className="relative">
+          <Link to='/red-postventa' className="relative">
             <div className="mb-2 md:mb-4 flex items-center justify-center h-12">
               <img src={garantia} alt='garantia' className="max-h-full" />
             </div>
@@ -111,7 +112,7 @@ const Promociones = () => {
               Garantía
               <span className="absolute left-0 bottom-[2px] h-[1px] group-hover:bg-white group-hover:w-full transition-all duration-300"></span>
             </h3>
-          </a>  
+          </Link>  
         </div>
       </div>
     </div>

@@ -214,11 +214,10 @@ function Contactenos() {
 
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
-    console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
         { ...formData, name },
-        "kiaweb:contactenos"
+        "kiaweb: Contactenos"
       );
       setIsSubmitted(true);
     } catch (error) {

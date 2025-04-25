@@ -50,10 +50,14 @@ const specialRoutes = {
   // Rutas que tienen un título personalizado
   customTitles: {
     "concesionarios": "Concesionarios",
-    "ventas": "Ventas",
+    "red-venta": "Venta",
+    "red-postventa": "Post Venta",
     "politica-de-cookies": "Política de Cookies"
     // Agrega más según sea necesario
-  }
+  },
+  
+  // Rutas que necesitan un breadcrumb adicional "Concesionarios" antes
+  routesWithConcesionariosPrefix: ["red-venta", "red-postventa"]
 };
 
 const Breadcrumbs = () => {
@@ -64,6 +68,9 @@ const Breadcrumbs = () => {
   // Verificar si es una página de vehículo
   const vehicle = allVehicles.find((v) => v.slug === currentPath);
   const isVehiclePage = Boolean(vehicle);
+
+  // Verificar si la ruta actual necesita mostrar "Concesionarios" como breadcrumb
+  const needsConcesionariosPrefix = specialRoutes.routesWithConcesionariosPrefix.includes(currentPath);
 
   // Función para verificar si un segmento debe ser clickeable
   const isSegmentClickable = (segment, index) => {
@@ -123,28 +130,38 @@ const Breadcrumbs = () => {
         </div>
       ) : (
         // Breadcrumbs estándar para otras páginas
-        paths.map((segment, index) => {
-          const routeTo = "/" + paths.slice(0, index + 1).join("/");
-          const isLast = index === paths.length - 1;
-          const shouldBeClickable = isSegmentClickable(segment, index);
-          const segmentTitle = getSegmentTitle(segment);
-
-          return (
-            <Fragment key={routeTo}>
+        <>
+          {/* Agregar el breadcrumb "Concesionarios" para rutas específicas */}
+          {needsConcesionariosPrefix && (
+            <>
               <SeparatorIcon />
-              {isLast || !shouldBeClickable ? (
-                <span className="pt-1 font-semibold capitalize">{segmentTitle}</span>
-              ) : (
-                <Link to={routeTo}>
-                  <div className="pt-1 cursor-pointer capitalize relative group font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-all duration-300">
-                    {segmentTitle}
-                    <span className="absolute left-0 bottom-[1px] h-[1px] bg-transparent group-hover:bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
-                  </div>
-                </Link>
-              )}
-            </Fragment>
-          );
-        })
+              <span className="pt-1 font-semibold capitalize">Concesionarios</span>
+            </>
+          )}
+          
+          {paths.map((segment, index) => {
+            const routeTo = "/" + paths.slice(0, index + 1).join("/");
+            const isLast = index === paths.length - 1;
+            const shouldBeClickable = isSegmentClickable(segment, index);
+            const segmentTitle = getSegmentTitle(segment);
+
+            return (
+              <Fragment key={routeTo}>
+                <SeparatorIcon />
+                {isLast || !shouldBeClickable ? (
+                  <span className="pt-1 font-semibold capitalize">{segmentTitle}</span>
+                ) : (
+                  <Link to={routeTo}>
+                    <div className="pt-1 cursor-pointer capitalize relative group font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-all duration-300">
+                      {segmentTitle}
+                      <span className="absolute left-0 bottom-[1px] h-[1px] bg-transparent group-hover:bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
+                    </div>
+                  </Link>
+                )}
+              </Fragment>
+            );
+          })}
+        </>
       )}
     </nav>
   );
