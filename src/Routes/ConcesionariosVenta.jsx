@@ -108,9 +108,9 @@ const DEALERS = [
     nombre: "Del Norte",
     provincia: "chaco",
     direccion: "Av. 25 de Mayo 1934, Resistencia, Chaco",
-    telefono: "(0362) 518 2996",
+    telefono: "(0362) 412 9734",
     horario: "Lunes a Viernes de 8:00hs a 12:30hs / 16:00hs a 20:00hs. Sábados de 9:00hs a 12:30hs",
-    email: "ventas2@kiadelnorte.com.ar",
+    email: "venta2@meucci.com.ar",
     coordinadas: [-58.982534, -27.447252],
   },
   {
