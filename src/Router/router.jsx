@@ -8,6 +8,9 @@ import Cookies from "../Routes/Cookies";
 import Contactenos from "../Routes/Contactenos";
 import ConcesionariosVenta from "../Routes/ConcesionariosVenta";
 import ConcesionariosPostVenta from "../Routes/ConcesionariosPostVenta";
+import CotizarService from "../Routes/CotizarService";
+import Cotiza from "../Components/CotizarService/Sections/Cotiza";
+
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -36,12 +39,34 @@ export const router = createBrowserRouter([
       },
       {
         path: "/red-venta",
-        element: <ConcesionariosVenta />
+        element: <ConcesionariosVenta />,
       },
       {
         path: "/red-postventa",
-        element: <ConcesionariosPostVenta />
-      }
+        element: <ConcesionariosPostVenta />,
+      },
+      {
+        path: "/cotizar-service",
+        element: <CotizarService />,
+        children: [
+          {
+            path: "cotiza",
+            element: <Cotiza />,
+          },
+          // {
+          //   path: "promise",
+          //   element: <PromiseToCare />,
+          // },
+          // {
+          //   path: "garantia",
+          //   element: <Garantia />,
+          // },
+          // {
+          //   path: "originales",
+          //   element: <Originales />,
+          // },
+        ],
+      },
     ],
   },
 ]);

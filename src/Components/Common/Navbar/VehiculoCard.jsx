@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import KiaButtonSecondary from "../Common/KiaButtonSecondary";
+import RoundedButton from "../ui/RoundedButton";
 
 const VehiculoCard = ({ vehiculo, onClick }) => {
   const { nombre, esNuevo, foto, precio, href, target, esExterna } = vehiculo;
@@ -10,6 +10,8 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
     window.scrollTo(0, 0);
     if (onClick) onClick(e);
   };
+
+  const handleConsultarPrecios = (e) => {};
 
   const cardContent = (
     <>
@@ -33,7 +35,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
         target=""
         rel="noreferrer"
         onClick={handleClick}>
-{/*         <button
+        {/*         <button
           className="border border-midnight-black text-xs font-bold p-1 pl-3 rounded-full flex flex-col items-center justify-center gap-2 mx-auto 
           hover:border-[#37434C] hover:text-[#37434C] 
           transition-all duration-300 group relative">
@@ -64,9 +66,15 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
             </svg>
           </div>
         </button> */}
-        <KiaButtonSecondary
-          titulo="Consultar precios"
-        />
+
+        <div className="w-full flex justify-center">
+          <RoundedButton
+            onClick={handleConsultarPrecios}
+            title="Consultar precios"
+            type="primary"
+            size="small"
+          />
+        </div>
       </a>
     </>
   );

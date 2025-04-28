@@ -4,7 +4,7 @@ import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
 import SquareButton from "../Components/Common/ui/SquareButton";
-import Checkbox from "../Components/Icons/Checkbox";
+import Checkbox from "../Components/Common/Icons/Checkbox";
 import RadioButton from "../Components/Common/ui/RadioButton";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import kiaApiCall from "../utils/apiCall";
@@ -67,7 +67,7 @@ const initialFormData = {
   domain: "",
   mileage: "",
   vinNumber: "",
-  contactedDealer: "",    
+  contactedDealer: "",
   additionalMessage: "",
   campaign: "",
   source: "",

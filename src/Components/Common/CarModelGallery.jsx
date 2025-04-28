@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import CAR_MODELS from "../../Data/models";
-import Arrow from "../Icons/Arrow";
+import Arrow from "./Icons/Arrow";
 
 const CarModelGallery = ({ onModelSelect }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);

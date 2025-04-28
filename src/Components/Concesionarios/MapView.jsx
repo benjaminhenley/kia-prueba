@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import ConcesionarioCard from "./ConcesionarioCard";
-import Arrow from "../Icons/Arrow"; // Import Arrow for the slider buttons
+import Arrow from "../Common/Icons/Arrow"; // Import Arrow for the slider buttons
 
 // Token de Mapbox
 mapboxgl.accessToken =
@@ -54,9 +54,8 @@ const MapView = ({ dealers }) => {
   };
 
   const handleScroll = (e) => {
-    console.log("autoScroll")
-  }
-
+    console.log("autoScroll");
+  };
 
   // Position thumb based on slider value (only when dragging or button clicks)
   useEffect(() => {
@@ -64,7 +63,8 @@ const MapView = ({ dealers }) => {
       const trackHeight = scrollContainerRef.current.clientHeight;
       console.log(trackHeight);
       const thumbHeight = thumbRef.current.clientHeight; // Height of the thumb (two buttons)
-      const topPos = (((trackHeight - thumbHeight - 20) / 100) * sliderValue) + 10;
+      const topPos =
+        ((trackHeight - thumbHeight - 20) / 100) * sliderValue + 10;
       thumbRef.current.style.top = `${topPos}px`;
     }
   }, [sliderValue]);

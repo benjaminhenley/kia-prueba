@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import Kia from "../../assets/img/common/KiaWhite.svg";
+import Kia from "../../../assets/img/common/KiaWhite.svg";
 import Blackbar from "./Blackbar";
-import { autos, camionetasSuv, utilitarios } from "../../Data/common";
+import { autos, camionetasSuv, utilitarios } from "../../../Data/common";
 import ModelosDropdown from "./ModelosDropdown";
 import ConcesionariosDropdown from "./ConcesionariosDropdown";
 import HamburgerButton from "./Mobile/HamburgerButton";
@@ -39,13 +39,7 @@ const Navbar = () => {
   const modelosButtonRef = useRef(null);
   const concesionariosButtonRef = useRef(null);
 
-  const isNotTransparent =
-    pathname === "/promociones" ||
-    pathname === "/politica-de-cookies" ||
-    pathname === "/contacto" ||
-    pathname === "/red-venta" ||
-    pathname === "/red-postventa";
-
+  const isTransparent = pathname === "/" || pathname === "/" + modelID;
   // Efecto para detectar el scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -193,7 +187,7 @@ const Navbar = () => {
         ${
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
-            : !isNotTransparent
+            : isTransparent
             ? "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
             : "bg-white text-midnight-black"
         }`}
@@ -272,7 +266,7 @@ const Navbar = () => {
               alt="Kia"
               className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
               ${
-                shouldInvertLogo || mobileMenuOpen || isNotTransparent
+                shouldInvertLogo || mobileMenuOpen || !isTransparent
                   ? "filter brightness-0"
                   : "filter brightness-100"
               }`}

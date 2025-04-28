@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { blackbarLeft, blackbarRight } from "../../../Data/common";
+import { blackbarLeft, blackbarRight } from "../../../../Data/common";
 
 const MobileLinksAdicionales = ({ onLinkClick }) => {
   const links = [...blackbarLeft, ...blackbarRight]
-    .filter(item => item.href)
-    .map(item => ({
+    .filter((item) => item.href)
+    .map((item) => ({
       text: React.isValidElement(item.nombre)
         ? item.nombre.props.children
         : item.nombre,
-      url:  item.href,
+      url: item.href,
       esExterna: item.esExterna,
     }));
 
@@ -24,8 +24,7 @@ const MobileLinksAdicionales = ({ onLinkClick }) => {
               ${index < 2 ? "border-b-[0.5px]" : ""} 
               ${index % 2 === 0 ? "border-r-[0.5px]" : ""} 
               border-[#CDD0D2]
-            `}
-          >
+            `}>
             <svg
               width="32"
               height="32"
@@ -42,16 +41,14 @@ const MobileLinksAdicionales = ({ onLinkClick }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2"
-              >
+                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2">
                 {link.text}
               </a>
             ) : (
               <Link
                 to={link.url}
                 onClick={(e) => onLinkClick(e)}
-                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2"
-              >
+                className="tracking-[0.5px] text-[10px] font-semibold text-[#697279] ml-2">
                 {link.text}
               </Link>
             )}

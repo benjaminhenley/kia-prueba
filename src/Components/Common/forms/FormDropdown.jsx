@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Arrow from "../../Icons/Arrow";
+import Arrow from "../Icons/Arrow";
 
 const FormDropdown = ({
   options = [],

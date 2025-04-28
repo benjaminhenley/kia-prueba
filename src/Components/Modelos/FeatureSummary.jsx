@@ -1,5 +1,5 @@
 import React from "react";
-import { getFeatureIcon } from "../Icons/FeatureIcons";
+import { getFeatureIcon } from "../Common/Icons/FeatureIcons";
 
 const renderIcon = (icon, className) => {
   return (

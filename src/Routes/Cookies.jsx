@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Arrow from "../Components/Icons/Arrow";
+import Arrow from "../Components/Common/Icons/Arrow";
 import sections from "../Data/cookieSections";
 import RoundedButton from "../Components/Common/ui/RoundedButton";
 
@@ -10,20 +10,24 @@ function Cookies() {
     setActiveSection(activeSection === sectionNumber ? null : sectionNumber);
   };
 
-
   const handleShowCookieModal = () => {
     // Accedemos a los objetos de OneTrust que deberían estar disponibles globalmente
-    if (window.OneTrust && typeof window.OneTrust.ToggleInfoDisplay === 'function') {
+    if (
+      window.OneTrust &&
+      typeof window.OneTrust.ToggleInfoDisplay === "function"
+    ) {
       window.OneTrust.ToggleInfoDisplay();
-    } else if (window.Optanon && typeof window.Optanon.ToggleInfoDisplay === 'function') {
+    } else if (
+      window.Optanon &&
+      typeof window.Optanon.ToggleInfoDisplay === "function"
+    ) {
       window.Optanon.ToggleInfoDisplay();
-    } else if (typeof window.ot_showCookieSettings === 'function') {
+    } else if (typeof window.ot_showCookieSettings === "function") {
       window.ot_showCookieSettings();
     } else {
-      console.error('No se pudo encontrar la API de OneTrust');
+      console.error("No se pudo encontrar la API de OneTrust");
     }
-  };   
-  
+  };
 
   return (
     <div className="w-full mx-auto bg-white text-[#05141F] pt-[56px] md:pt-[75px]">
@@ -92,10 +96,10 @@ function Cookies() {
           ))}
         </div>
 
-         <RoundedButton
+        <RoundedButton
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
-        /> 
+        />
       </div>
     </div>
   );

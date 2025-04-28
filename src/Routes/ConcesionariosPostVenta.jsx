@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
-import KiaButton from "../Components/Common/KiaButton";
 import DealersTable from "../Components/Concesionarios/DealersTable";
 import ViewModeToggle from "../Components/Common/ViewModeToggle";
 import MapView from "../Components/Concesionarios/MapView";
+import RoundedButton from "../Components/Common/ui/RoundedButton";
 
 // Asegúrate de que este token sea válido
 mapboxgl.accessToken =
@@ -69,7 +69,8 @@ const DEALERS = [
     provincia: "cordoba",
     direccion: "Sol de Mayo 1700, Córdoba",
     telefono: "(0351) 465 7536",
-    horario: "Lunes a Viernes de 9:00hs a 13:00hs / 15:00hs a 19:00hs. Sábados de 09:00hs a 13:00hs",
+    horario:
+      "Lunes a Viernes de 9:00hs a 13:00hs / 15:00hs a 19:00hs. Sábados de 09:00hs a 13:00hs",
     email: "secretariachahin@automotoreschahin.com.ar",
     coordinadas: [-64.214019, -31.430295],
   },
@@ -79,7 +80,8 @@ const DEALERS = [
     provincia: "tucuman",
     direccion: "Ruta 9 Km 1301, Yerba Buena, Tucumán",
     telefono: "(0381) 453 3819 / 15 6664008",
-    horario: "Lunes a Viernes 9:00hs a 13:00hs / 15:00hs a 19:00hs Sábados de 09:00hs a 13:00hs",
+    horario:
+      "Lunes a Viernes 9:00hs a 13:00hs / 15:00hs a 19:00hs Sábados de 09:00hs a 13:00hs",
     email: "odupuy@cpmotors.com.ar",
     coordinadas: [-65.276982, -26.81578],
   },
@@ -179,7 +181,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Perito Moreno 2597, Ushuaia, Tirra del Fuego",
     telefono: "(02901) 477489",
-    horario: "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
+    horario:
+      "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
     email: "postventa@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
   },
@@ -189,7 +192,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Perito Francisco Moreno 1917, Ushuaia, Tierra del Fuego",
     telefono: "02901 49-4793",
-    horario: "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
+    horario:
+      "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
   },
@@ -317,9 +321,11 @@ const ConcesionariosPostVenta = () => {
             </div>
             {/* Botón de búsqueda solo visible en pantallas md y más grandes */}
             <div className="hidden md:block">
-              <KiaButton
+              <RoundedButton
                 onClick={() => handleSearch(selectedProvince)} // Usar el estado actual al hacer clic
-                titulo="Buscar"
+                title="Buscar"
+                type="secondary"
+                size="small"
               />
             </div>
           </div>

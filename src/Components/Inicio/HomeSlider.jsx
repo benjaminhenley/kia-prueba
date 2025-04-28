@@ -9,8 +9,8 @@ const eventoDL_hero = (e, b, l) => {
     event: e,
     comp_page: {
       name_banner: b,
-      link: l
-    }
+      link: l,
+    },
   });
 };
 
@@ -37,11 +37,11 @@ const HomeSlider = () => {
     // Envía el evento de visualización con los datos del slide actual
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'hero_banner_view',
+      event: "hero_banner_view",
       comp_page: {
-        name_banner: slide.titulo || 'kia slide',
-        link: slide.linkBoton || '#'
-      }
+        name_banner: slide.titulo || "kia slide",
+        link: slide.linkBoton || "#",
+      },
     });
   }, [currentSlide]); // Se ejecuta cada vez que currentSlide cambia
 
@@ -60,10 +60,14 @@ const HomeSlider = () => {
   const handleExternalLinkClick = (e, slide) => {
     // Prevenimos la navegación predeterminada para asegurar que el dataLayer se registre
     e.preventDefault();
-    
+
     // Registramos el evento de clic en el dataLayer con información del slide actual
-    eventoDL_hero('hero_banner_click', slide.titulo || 'kia slide', slide.linkBoton || '#');
-    
+    eventoDL_hero(
+      "hero_banner_click",
+      slide.titulo || "kia slide",
+      slide.linkBoton || "#"
+    );
+
     // Redirigimos después de un pequeño retraso para asegurar que el dataLayer se registre
     setTimeout(() => {
       if (slide.target === "_blank") {
@@ -77,7 +81,11 @@ const HomeSlider = () => {
   // Función para manejar el clic en enlaces internos
   const handleInternalLinkClick = (slide) => {
     // Solo registramos el evento en el dataLayer
-    eventoDL_hero('hero_banner_click', slide.titulo || 'kia slide', slide.linkBoton || '#');
+    eventoDL_hero(
+      "hero_banner_click",
+      slide.titulo || "kia slide",
+      slide.linkBoton || "#"
+    );
   };
 
   return (
@@ -88,14 +96,18 @@ const HomeSlider = () => {
         <img
           src={slide.imagenMobile}
           alt={slide.titulo}
-          className={`block lg:hidden relative absolute w-full h-full object-cover transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+          className={`block lg:hidden relative w-full h-full object-cover transition-opacity duration-500 ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
         />
 
         {/* Imagen Desktop */}
         <img
           src={slide.imagen}
           alt={slide.titulo}
-          className={`hidden lg:block w-full h-full object-cover transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+          className={`hidden lg:block w-full h-full object-cover transition-opacity duration-500 ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
         />
         {/* Contenido - Ahora absolutamente posicionado tanto en móvil como en desktop */}
         <div className="absolute px-1 pb-3 inset-0 flex flex-col items-center justify-end text-white z-10">
@@ -104,7 +116,9 @@ const HomeSlider = () => {
             style={{ animation: "fadeIn 1s ease-in" }}>
             {slide.titulo}
           </h1>
-          <p className="text-[1rem] py-1 xl:text-[1.5rem] 2xl:text-[2.5rem] 2xl:py-3 win:text-[1rem] win:py-1">{slide.subtitulo}</p>
+          <p className="text-[1rem] py-1 xl:text-[1.5rem] 2xl:text-[2.5rem] 2xl:py-3 win:text-[1rem] win:py-1">
+            {slide.subtitulo}
+          </p>
           {slide.esExterna ? (
             <a
               href={slide.linkBoton}
