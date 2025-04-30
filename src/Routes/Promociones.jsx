@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import FormLabel from "../Components/Common/forms/FormLabel";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
 import TextField from "../Components/Common/forms/TextField";
-import FormButton from "../Components/Common/ui/SquareButton";
+import SquareButton from "../Components/Common/ui/SquareButton";
 import Arrow from "../Components/Common/Icons/Arrow";
 import Checkbox from "../Components/Common/Icons/Checkbox";
 import CarModelGallery from "../Components/Common/CarModelGallery";
@@ -66,9 +66,39 @@ export default function Promociones() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [showModelGallery, setShowModelGallery] = useState(true);
   const [availableDealers, setAvailableDealers] = useState([]);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
+
+  // Add reCAPTCHA script to the page
+  useEffect(() => {
+    // Check if script already exists
+    if (!document.querySelector('script[src*="recaptcha"]')) {
+      const script = document.createElement("script");
+      script.src =
+        "https://www.google.com/recaptcha/api.js?render=6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP";
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    // Once loaded, initialize
+    window.onload = function () {
+      if (typeof window.grecaptcha !== "undefined") {
+        window.grecaptcha.ready(function () {
+          console.log("reCAPTCHA ready");
+        });
+      }
+    };
+
+    return () => {
+      // Clean up, if needed
+      if (document.querySelector('script[src*="recaptcha"]')) {
+        document.querySelector('script[src*="recaptcha"]').remove();
+      }
+    };
+  }, []);
 
   // Add useEffect to validate form on every change
   useEffect(() => {
@@ -166,19 +196,40 @@ export default function Promociones() {
     setShowModelGallery(!showModelGallery);
   };
 
+  const executeRecaptcha = () => {
+    console.log(window.grecaptcha);
+
+    if (typeof window.grecaptcha !== "undefined") {
+      window.grecaptcha.ready(function () {
+        window.grecaptcha
+          .execute("6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP", {
+            action: "submit",
+          })
+          .then(function (token) {
+            setRecaptchaToken(token);
+            handleSubmit(token);
+          });
+      });
+    } else {
+      console.error("reCAPTCHA not loaded");
+    }
+  };
+
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
-    console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
         { ...formData, name },
         "kiaweb:promociones"
       );
-      console.log("Response", response);
       setIsSubmitted(true);
     } catch (error) {
       console.log("Error:", error);
     }
+  };
+
+  const submitForm = () => {
+    executeRecaptcha();
   };
 
   // Function to reset the form
@@ -398,13 +449,13 @@ export default function Promociones() {
 
             {/* Action Buttons */}
             <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-              <FormButton type="secondary">Cancelar</FormButton>
-              <FormButton
+              <SquareButton type="secondary">Cancelar</SquareButton>
+              <SquareButton
                 type="primary"
                 disabled={!isValid}
-                onClick={handleSubmit}>
+                onClick={submitForm}>
                 Enviar
-              </FormButton>
+              </SquareButton>
             </div>
           </>
         )}

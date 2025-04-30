@@ -138,11 +138,10 @@ function Contactenos() {
     if (typeof window.grecaptcha !== "undefined") {
       window.grecaptcha.ready(function () {
         window.grecaptcha
-          .execute("6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI", {
+          .execute("6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP", {
             action: "submit",
           })
           .then(function (token) {
-            console.log("reCAPTCHA token:", token);
             setRecaptchaToken(token);
             handleSubmit(token);
           });
@@ -214,6 +213,7 @@ function Contactenos() {
 
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
+    console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
         { ...formData, name },
@@ -297,7 +297,6 @@ function Contactenos() {
 
   // Function to reset the form
   const resetForm = () => {
-    console.log("Resetting form");
     setFormData(initialFormData);
     setAcceptedTerms(false);
     setContactedDealer(null);

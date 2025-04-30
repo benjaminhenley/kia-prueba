@@ -8,11 +8,11 @@ const RoundedButton = ({
 
   const sizeStyles = {
     small: {
-      text: "text-[14px] py-[2px] px-[2px] md:pl-3",
+      text: "text-[14px] py-[2px] px-[2px] md:pl-2.5 gap-3",
       icon: "w-6 h-6",
     },
     medium: {
-      text: "text-[18px] py-[3px] px-[4px] pl-5 md:pl-5",
+      text: "text-[18px] py-[2px] px-[2px] pl-2 md:pl-2.5 gap-[15px]",
       icon: "w-6 h-6 md:w-8 md:h-8",
     },
   };
@@ -23,17 +23,19 @@ const RoundedButton = ({
         onClick={onClick}
         className={`${
           sizeStyles[size].text
-        } rounded-full  gap-[15px] flex items-center justify-between ${
+        } rounded-full flex items-center justify-between ${
           isPrimary
             ? "border border-[#05141F] text-[#05141F]"
             : "bg-[#05141F] text-white hover:bg-[#1a2a36]"
         }`}>
-        <h6 className="font-bold md:hidden group-hover:underline underline-offset-4">
+        <span
+          className={`font-bold md:hidden group-hover:underline underline-offset-4`}>
           {title}
-        </h6>
-        <h6 className="font-bold hidden md:block group-hover:underline underline-offset-4">
+        </span>
+        <span
+          className={`font-bold hidden md:block group-hover:underline underline-offset-[5px]`}>
           {title}
-        </h6>
+        </span>
 
         <svg
           className={`${sizeStyles[size].icon}`}

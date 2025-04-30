@@ -1,8 +1,15 @@
 import React from "react";
 
-const RadioButton = ({ checked, onChange, id, label, name }) => {
+const RadioButton = ({
+  checked,
+  onChange,
+  id,
+  label,
+  name,
+  className = "",
+}) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className={`flex items-center gap-2 ${className}`}>
       <div
         className="relative flex items-center cursor-pointer"
         onClick={onChange}

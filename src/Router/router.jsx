@@ -9,7 +9,8 @@ import Contactenos from "../Routes/Contactenos";
 import ConcesionariosVenta from "../Routes/ConcesionariosVenta";
 import ConcesionariosPostVenta from "../Routes/ConcesionariosPostVenta";
 import CotizarService from "../Routes/CotizarService";
-import Cotiza from "../Components/CotizarService/Sections/Cotiza";
+import CotizaTuService from "../Components/CotizarService/Sections/CotizaTuService";
+import PromiseToCare from "../Components/CotizarService/Sections/PromiseToCare";
 
 export const router = createBrowserRouter([
   {
@@ -46,17 +47,17 @@ export const router = createBrowserRouter([
         element: <ConcesionariosPostVenta />,
       },
       {
-        path: "/cotizar-service",
+        path: "/cotizar-service/",
         element: <CotizarService />,
         children: [
           {
-            path: "cotiza",
-            element: <Cotiza />,
+            path: "",
+            element: <CotizaTuService />,
           },
-          // {
-          //   path: "promise",
-          //   element: <PromiseToCare />,
-          // },
+          {
+            path: "promise",
+            element: <PromiseToCare />,
+          },
           // {
           //   path: "garantia",
           //   element: <Garantia />,

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Arrow from "../Components/Common/Icons/Arrow";
 import sections from "../Data/cookieSections";
 import RoundedButton from "../Components/Common/ui/RoundedButton";
+import AccordeonItem from "../Components/Common/ui/AccordeonItem";
 
 function Cookies() {
   const [activeSection, setActiveSection] = useState(null);
@@ -61,42 +61,21 @@ function Cookies() {
         <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
 
         {/* Accordion sections */}
-        <div className="border-t border-[#05141F]">
+        <div className="border-t border-[#05141F] mb-10">
           {sections.map((section) => (
-            <div
+            <AccordeonItem
               key={section.id}
-              className={`border-b ${
-                section.id === 6
-                  ? "border-[#37434C] border-b-[2.5px]"
-                  : "border-gray-300"
-              }`}>
-              <button
-                onClick={() => toggleSection(section.id)}
-                className="flex items-center justify-start w-full p-4 md:py-[22px] md:px-[25px]  text-left focus:outline-none gap-[15px]">
-                <Arrow
-                  fill="#05141F"
-                  className={`text-[#05141F] ${
-                    activeSection === section.id ? "rotate-90" : ""
-                  }`}
-                />
-                <h4 className="text-[18px] font-semibold flex flex-row">
-                  <span className="mr-2 text-[#05141F]">{section.id}.</span>
-                  {section.title}
-                </h4>
-              </button>
-              {activeSection === section.id &&
-                (section.id === 2 ? (
-                  <div className="text-[#37434C]">{section.content}</div>
-                ) : (
-                  <div className={`px-9 py-4 md:px-[50px] md:py-[22px]`}>
-                    {section.content}
-                  </div>
-                ))}
-            </div>
+              sectionID={section.id}
+              toggleSection={toggleSection}
+              activeSection={activeSection}
+              title={section.title}
+              content={section.content}
+            />
           ))}
         </div>
 
         <RoundedButton
+          size="medium"
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
         />

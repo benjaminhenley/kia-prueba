@@ -1,4 +1,4 @@
-const CustomStepper = ({ step, title, description, selected }) => {
+const CustomStepper = ({ step, title, description, selected, onClick }) => {
   const types = {
     primary: "bg-midnight-black text-white",
     secondary: "bg-[#F0F1F2] text-[#9BA1A5]",
@@ -6,9 +6,10 @@ const CustomStepper = ({ step, title, description, selected }) => {
 
   return (
     <div
+      onClick={onClick}
       className={`${
         types[selected ? "primary" : "secondary"]
-      } p-4 md:p-8 flex flex-col md:flex-row items-center mb-4`}>
+      } p-4 md:p-8 flex flex-col md:flex-row items-center w-full`}>
       <h1 className="font-bold text-[48px] h-fit">{step}</h1>
       <div
         className="w-[1px] h-[56px] mx-5"
