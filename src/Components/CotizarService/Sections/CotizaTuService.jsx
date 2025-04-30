@@ -4,7 +4,7 @@ import {
   serviceBenefits,
 } from "../../Common/Icons/CotizaTuService";
 import RadioButton from "../../Common/ui/RadioButton";
-import RoundedButton from "../../Common/ui/RoundedButton";
+import PillButton from "../../Common/ui/PillButton";
 import CustomStepper from "../../Common/ui/CustomStepper";
 import CAR_MODELS from "../../../Data/models";
 import todos from "../../../assets/img/logos/todos.png";
@@ -169,7 +169,7 @@ const CotizaTuService = () => {
           <div className="flex justify-between items-center flex-row">
             <h4 className="text-[#05141F] font-bold">Servicio de nafta</h4>
 
-            <RoundedButton
+            <PillButton
               title="Solicitá tu service"
               type="primary"
               size="small"

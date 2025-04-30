@@ -5,7 +5,7 @@ import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
 import Characteristics from "../Components/Modelos/tabs/characteristics/index.jsx";
 import { getSafeModelData } from "../Data/models/modelMapper.js";
-import RoundedButton from "../Components/Common/ui/RoundedButton";
+import PillButton from "../Components/Common/ui/PillButton.jsx";
 
 const Modelos = () => {
   const { modelID } = useParams();
@@ -27,8 +27,7 @@ const Modelos = () => {
     return <Navigate to="/" replace />;
   }
 
-  const isK3 = model.id.startsWith("k3")
-
+  const isK3 = model.id.startsWith("k3");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -68,7 +67,7 @@ const Modelos = () => {
       {/* Sticky Button */}
       {model.id === "k3-sedan" || model.id === "k3-cross" ? (
         <div className="fixed z-100 bottom-0 left-0 right-0 z-50 flex justify-end lg:mr-20 md:mb-3 ">
-          <RoundedButton
+          <PillButton
             type="secondary"
             title="Quiero mi All-new K3"
             onClick={() => {

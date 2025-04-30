@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import RoundedButton from "../Common/ui/RoundedButton";
+import PillButton from "../Common/ui/PillButton";
 
 const Layout = () => {
   const location = useLocation();
@@ -35,12 +35,12 @@ const Layout = () => {
                 <div className="h-[1px] w-10 bg-[#05141F] mt-2.5"></div>
               </div>
               <div className="flex gap-5">
-                <RoundedButton
+                <PillButton
                   title="Agendá tu cita"
                   type="secondary"
                   size="medium"
                 />
-                <RoundedButton
+                <PillButton
                   title="Contactá a tu asesor"
                   type="secondary"
                   size="medium"

@@ -5,7 +5,7 @@ import FormDropdown from "../Components/Common/forms/FormDropdown";
 import DealersTable from "../Components/Concesionarios/DealersTable";
 import ViewModeToggle from "../Components/Common/ViewModeToggle";
 import MapView from "../Components/Concesionarios/MapView";
-import RoundedButton from "../Components/Common/ui/RoundedButton";
+import PillButton from "../Components/Common/ui/PillButton";
 
 // Asegúrate de que este token sea válido
 mapboxgl.accessToken =
@@ -321,7 +321,7 @@ const ConcesionariosPostVenta = () => {
             </div>
             {/* Botón de búsqueda solo visible en pantallas md y más grandes */}
             <div className="hidden md:block">
-              <RoundedButton
+              <PillButton
                 onClick={() => handleSearch(selectedProvince)} // Usar el estado actual al hacer clic
                 title="Buscar"
                 type="secondary"

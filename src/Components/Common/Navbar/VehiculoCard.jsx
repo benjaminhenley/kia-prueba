@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import RoundedButton from "../ui/RoundedButton";
+import PillButton from "../ui/PillButton";
 
 const VehiculoCard = ({ vehiculo, onClick }) => {
   const { nombre, esNuevo, foto, precio, href, target, esExterna } = vehiculo;
@@ -68,7 +68,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
         </button> */}
 
         <div className="w-full flex justify-center">
-          <RoundedButton
+          <PillButton
             onClick={handleConsultarPrecios}
             title="Consultar precios"
             type="primary"

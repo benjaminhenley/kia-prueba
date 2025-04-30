@@ -1,6 +1,6 @@
 import { useState } from "react";
 import sections from "../Data/cookieSections";
-import RoundedButton from "../Components/Common/ui/RoundedButton";
+import PillButton from "../Components/Common/ui/PillButton";
 import AccordeonItem from "../Components/Common/ui/AccordeonItem";
 
 function Cookies() {
@@ -74,7 +74,7 @@ function Cookies() {
           ))}
         </div>
 
-        <RoundedButton
+        <PillButton
           size="medium"
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
