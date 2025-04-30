@@ -46,28 +46,28 @@ export const router = createBrowserRouter([
         path: "/red-postventa",
         element: <ConcesionariosPostVenta />,
       },
-      {
-        path: "/cotizar-service/",
-        element: <CotizarService />,
-        children: [
-          {
-            path: "",
-            element: <CotizaTuService />,
-          },
-          {
-            path: "promise",
-            element: <PromiseToCare />,
-          },
-          // {
-          //   path: "garantia",
-          //   element: <Garantia />,
-          // },
-          // {
-          //   path: "originales",
-          //   element: <Originales />,
-          // },
-        ],
-      },
+      // {
+      //   path: "/cotizar-service/",
+      //   element: <CotizarService />,
+      //   children: [
+      //     {
+      //       path: "",
+      //       element: <CotizaTuService />,
+      //     },
+      //     {
+      //       path: "promise",
+      //       element: <PromiseToCare />,
+      //     },
+      // {
+      //   path: "garantia",
+      //   element: <Garantia />,
+      // },
+      // {
+      //   path: "originales",
+      //   element: <Originales />,
+      // },
+      //   ],
+      // },
     ],
   },
 ]);
