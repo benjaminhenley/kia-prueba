@@ -12,7 +12,7 @@ const Layout = () => {
     { id: "promise", href: "/promise", name: "Promise to care" },
     { id: "garantia", href: "/garantia", name: "Garantía" },
     { id: "originales", href: "/originales", name: "Originales KIA" },
-    { id: "assistance", href: "/assistance", name: "KIA Assistance" },
+    { id: "asistencia", href: "/asistencia", name: "KIA Assistance" },
   ];
 
   useEffect(() => {

@@ -9,11 +9,11 @@ const PillButton = ({
 
   const sizeStyles = {
     small: {
-      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-3 gap-2.5 group-hover:underline underline-offset-4",
+      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-2.5 gap-3 group-hover:underline underline-offset-4",
       icon: "w-[18px] h-[18px]",
     },
     medium: {
-      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-2.5 gap-[12px] underline-offset-[5px]",
+      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-5 gap-[12px] underline-offset-[5px]",
       icon: "w-6 h-6 md:w-8 md:h-8",
     },
     large: {
