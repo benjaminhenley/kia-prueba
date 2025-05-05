@@ -92,42 +92,42 @@ const faqItems = [
     title: "¿Cuáles son los requisitos para hacer válida la garantía?",
     content: (
       <div className="text-[#37434C]">
-        <ol className="list-decimal pl-6 space-y-2">
+        <ol className="list-decimal" style={{ listStyleType: "none" }}>
           <li>
-            Haber adquirido el vehículo en alguno de los CONCESIONARIOS de la
+            1. Haber adquirido el vehículo en alguno de los CONCESIONARIOS de la
             Red de Kia Argentina.
           </li>
           <li>
-            Conservar el cupón firmado de la ACTIVACIÓN DE LA GARANTÍA dentro
+            2. Conservar el cupón firmado de la ACTIVACIÓN DE LA GARANTÍA dentro
             del MANUAL DE GARANTÍA Y MANTENIMIENTO.
           </li>
           <li>
-            Presentar este MANUAL DE GARANTÍA Y MANTENIMIENTO cuando le sea
+            3. Presentar este MANUAL DE GARANTÍA Y MANTENIMIENTO cuando le sea
             requerido en el CONCESIONARIO KIA.
           </li>
           <li>
-            Usar el CONCESIONARIO de KIA Argentina para los servicios del
+            4. Usar el CONCESIONARIO de KIA Argentina para los servicios del
             Programa de Mantenimiento, reparaciones, instalación de accesorios
             originales y cualquier arreglo de chapa y pintura.
           </li>
           <li>
-            Usar repuestos originales y accesorios distribuidos por Kia
+            5. Usar repuestos originales y accesorios distribuidos por Kia
             Argentina y comercializados por la Red de CONCESIONARIOS KIA a
             Argentina.
           </li>
           <li>
-            Que la falla sea atribuible a un defecto de producto (corroboró el
-            Concesionario de la Red Kia Argentina).
+            6. Que la falla sea atribuible a un defecto de producto (corroboró
+            el Concesionario de la Red Kia Argentina).
           </li>
           <li>
-            No alterar o modificar los números de identificación del vehículo,
-            ni tampoco el sistema cuenta kilómetros (odómetro).
+            7. No alterar o modificar los números de identificación del
+            vehículo, ni tampoco el sistema cuenta kilómetros (odómetro).
           </li>
           <li>
-            Aplicar la garantía únicamente a las partes de origen de fabricación
-            del sistema de frenos, neumático, llantas, tapicería, vidrios y
-            carrocería. Dar un uso normal y adecuado al vehículo para el cual
-            fue diseñado.
+            8. Aplicar la garantía únicamente a las partes de origen de
+            fabricación del sistema de frenos, neumático, llantas, tapicería,
+            vidrios y carrocería. Dar un uso normal y adecuado al vehículo para
+            el cual fue diseñado.
           </li>
         </ol>
       </div>
@@ -162,70 +162,68 @@ export default function Garantia() {
   return (
     <div className="mx-auto px-4 md:px-20 py-10 text-[#05141F] flex flex-col gap-10">
       {/* Header section */}
-      <div className="flex flex-col gap-10">
-        <h3 className="text-3xl font-bold">
-          La confianza que solo te da tu concesionario Kia
-        </h3>
+      <div>
+        <div className="flex flex-col gap-5">
+          <h3 className=" font-bold">
+            La confianza que solo te da tu concesionario Kia
+          </h3>
 
-        <h4 className="font-normal">
-          Debido a la avanzada arquitectura mecánica/electrónica incorporada en
-          los vehículos Kia y a la gran incidencia que tiene el buen
-          funcionamiento de su vehículo, el uso de repuestos provistos por Kia
-          Argentina a través de sus Concesionarios KIA, tanto el servicio de
-          inspección y mantenimiento como otros servicios requieren
-          conocimientos e instrucciones específicas del fabricante cuya
-          aplicación sólo puede ser asegurada si el vehículo es atendido por un
-          concesionario Kia.
-          <br />
-          <br />
-          Esto se debe a que solo el personal de los concesionarios Kia es
-          altamente calificado y periódicamente entrenado en los sistemas
-          mecánicos y electrónicos que su vehículo posee y es el único que
-          dispone de las herramientas y computadores de diagnóstico especiales
-          Kia, necesarios para el correcto servicio de todos los sistemas. Los
-          concesionarios Kia son continuamente supervisados por el Departamento
-          de Asistencia Técnica de Kia Argentina y su personal es sometido a un
-          entrenamiento intensivo y constante para garantizar al usuario un
-          mantenimiento confiable del vehículo en cualquier lugar del país.
-          <br />
-          <br />
-          En Kia argentina, nos sentimos comprometidos a garantizar que usted va
-          a disfrutar de su Kia en los próximos años, y por eso te contamos
-          cinco ventajas con las que cuenta en Kia nuevo:
-        </h4>
-      </div>
+          <h4>
+            Debido a la avanzada arquitectura mecánica/electrónica incorporada
+            en los vehículos Kia y a la gran incidencia que tiene el buen
+            funcionamiento de su vehículo, el uso de repuestos provistos por Kia
+            Argentina a través de sus Concesionarios KIA, tanto el servicio de
+            inspección y mantenimiento como otros servicios requieren
+            conocimientos e instrucciones específicas del fabricante cuya
+            aplicación sólo puede ser asegurada si el vehículo es atendido por
+            un concesionario Kia.
+            <br />
+            Esto se debe a que solo el personal de los concesionarios Kia es
+            altamente calificado y periódicamente entrenado en los sistemas
+            mecánicos y electrónicos que su vehículo posee y es el único que
+            dispone de las herramientas y computadores de diagnóstico especiales
+            Kia, necesarios para el correcto servicio de todos los sistemas. Los
+            concesionarios Kia son continuamente supervisados por el
+            Departamento de Asistencia Técnica de Kia Argentina y su personal es
+            sometido a un entrenamiento intensivo y constante para garantizar al
+            usuario un mantenimiento confiable del vehículo en cualquier lugar
+            del país.
+            <br />
+            En Kia argentina, nos sentimos comprometidos a garantizar que usted
+            va a disfrutar de su Kia en los próximos años, y por eso te contamos{" "}
+            <b>cinco ventajas con las que cuenta en Kia nuevo:</b>
+          </h4>
 
-      {/* Benefits section */}
-      <div className="flex flex-wrap justify-center gap-10">
-        {garantiaBenefits.map((benefit) => (
-          <div
-            key={benefit.id}
-            className="flex flex-col items-center text-center">
-            {benefit.icon}
-            <h4 className="font-semibold">{benefit.title}</h4>
+          {/* Benefits section */}
+          <div className="flex flex-wrap justify-center gap-10">
+            {garantiaBenefits.map((benefit) => (
+              <div
+                key={benefit.id}
+                className="flex flex-col items-center text-center p-6">
+                {benefit.icon}
+                <h4 className="font-bold">{benefit.title}</h4>
+              </div>
+            ))}
           </div>
-        ))}
+
+          {/* Warranty information */}
+          <h4>
+            Para los vehículos de uso particular, nuestra garantía le ofrece
+            cobertura por{" "}
+            <span className="text-kia-red">5 años o 100.000 km</span>, y para
+            los vehículos utilitarios K2500, nuestra garantía le ofrece
+            cobertura por{" "}
+            <span className="text-kia-red">3 años o 100.000 km</span>.
+          </h4>
+        </div>
       </div>
 
-      {/* Warranty information */}
       <div className="flex flex-col gap-10">
-        <h4 className="font-normal">
-          Para los vehículos de uso particular, nuestra garantía le ofrece
-          cobertura por{" "}
-          <span className="text-red-600 font-semibold">
-            5 años o 100.000 km
-          </span>
-          , y para los vehículos utilitarios K2500, nuestra garantía le ofrece
-          cobertura por{" "}
-          <span className="text-red-600 font-semibold">
-            3 años o 100.000 km
-          </span>
-          .
-        </h4>
-
         {/* Download buttons */}
-        <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-          <SquareButton type="primary">Descargar manual de 5 años</SquareButton>
+        <div className="flex flex-wrap gap-5 justify-center md:justify-center">
+          <SquareButton type="secondary">
+            Descargar manual de 5 años
+          </SquareButton>
           <SquareButton type="secondary">
             Descargar manual de 3 años
           </SquareButton>
@@ -233,20 +231,22 @@ export default function Garantia() {
       </div>
 
       {/* FAQ section */}
-      <div className="flex flex-col gap-10">
-        <h3 className="text-2xl font-bold">Preguntas frecuentes</h3>
+      <div className="flex flex-col gap-5">
+        <h3 className="font-bold">Preguntas frecuentes</h3>
 
         <div className="flex flex-col">
-          {faqItems.map((item) => (
+          <div className="w-full h-[2px] bg-[#05141F]"></div>
+          {faqItems.map((item, index) => (
             <AccordeonItem
               key={item.id}
               sectionID={item.id}
               toggleSection={toggleSection}
               activeSection={activeSection}
-              title={item.title}
+              title={`${index + 1}. ${item.title}`}
               content={item.content}
             />
           ))}
+          <div className="w-full h-[2px] bg-[#05141F]"></div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Benefit Icons
-export const serviceIcons = {
+const serviceIcons = {
   seguridad: ({ className = "", width = 48, height = 48 }) => (
     <svg
       width={width}
@@ -154,44 +154,7 @@ export const serviceIcons = {
   ),
 };
 
-const renderIcon = (iconName) => {
+export const renderIcon = (iconName) => {
   const IconComponent = serviceIcons[iconName];
   return IconComponent ? <IconComponent /> : null;
 };
-
-export const serviceBenefits = [
-  {
-    id: "seguridad",
-    title: "Te damos seguridad por contar con profesionales especializados.",
-    icon: renderIcon("seguridad"),
-  },
-  {
-    id: "equipamiento",
-    title: "Tenemos el equipamiento con la tecnología necesaria para tu auto.",
-    icon: renderIcon("equipamiento"),
-  },
-  {
-    id: "mantenimiento",
-    title:
-      "Contamos con un plan de mantenimiento personalizado para tu modelo.",
-    icon: renderIcon("mantenimiento"),
-  },
-  {
-    id: "repuestos",
-    title:
-      "Nuestros repuestos son originales para brindarte la confianza y durabilidad que estás buscando.",
-    icon: renderIcon("repuestos"),
-  },
-  {
-    id: "garantia",
-    title:
-      "Es necesario cumplir con los planes de mantenimiento para mantener la garantía de tu auto.",
-    icon: renderIcon("garantia"),
-  },
-  {
-    id: "asistencia",
-    title:
-      "Contamos con Kia Assistance, un programa de asistencia 24/7 en el país y países limítrofes.",
-    icon: renderIcon("asistencia"),
-  },
-];

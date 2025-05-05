@@ -22,6 +22,7 @@ module.exports = {
         "midnight-black": "#05141F",
         "kia-polar-white": "#FFF",
         "kia-gray": "#697279",
+        "kia-red": "#EA0029",
       },
       backgroundImage: {
         "nav-gradient":

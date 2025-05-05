@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import PillButton from "../Common/ui/PillButton";
 
@@ -14,6 +14,12 @@ const Layout = () => {
     { id: "originales", href: "/originales", name: "Originales KIA" },
     { id: "assistance", href: "/assistance", name: "KIA Assistance" },
   ];
+
+  useEffect(() => {
+    const path = location.pathname.split("/").pop();
+    const section = path === "cotizar-service" ? "cotiza" : path;
+    setSelectedSection(section);
+  }, [location.pathname]);
 
   // Check if a section is active
   const isActive = (id) => {

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  serviceIcons,
-  serviceBenefits,
-} from "../../Common/Icons/CotizaTuService";
+import { renderIcon } from "../../Common/Icons/CotizaTuService";
 import RadioButton from "../../Common/ui/RadioButton";
 import PillButton from "../../Common/ui/PillButton";
 import CustomStepper from "../../Common/ui/CustomStepper";
@@ -14,34 +11,70 @@ import utilitarios from "../../../assets/img/logos/utilitarios.png";
 import { serviceSections } from "../../../Data/serviceSections";
 import AccordeonItem from "../../Common/ui/AccordeonItem";
 
+export const serviceBenefits = [
+  {
+    id: "seguridad",
+    title: "Te damos seguridad por contar con profesionales especializados.",
+    icon: renderIcon("seguridad"),
+  },
+  {
+    id: "equipamiento",
+    title: "Tenemos el equipamiento con la tecnología necesaria para tu auto.",
+    icon: renderIcon("equipamiento"),
+  },
+  {
+    id: "mantenimiento",
+    title:
+      "Contamos con un plan de mantenimiento personalizado para tu modelo.",
+    icon: renderIcon("mantenimiento"),
+  },
+  {
+    id: "repuestos",
+    title:
+      "Nuestros repuestos son originales para brindarte la confianza y durabilidad que estás buscando.",
+    icon: renderIcon("repuestos"),
+  },
+  {
+    id: "garantia",
+    title:
+      "Es necesario cumplir con los planes de mantenimiento para mantener la garantía de tu auto.",
+    icon: renderIcon("garantia"),
+  },
+  {
+    id: "asistencia",
+    title:
+      "Contamos con Kia Assistance, un programa de asistencia 24/7 en el país y países limítrofes.",
+    icon: renderIcon("asistencia"),
+  },
+];
+
+const carVariants = [
+  { name: "K3 Cross EX", baseModel: "All-new K3 Cross" },
+  { name: "K3 Cross GT-Line", baseModel: "All-new K3 Cross" },
+  { name: "K3 Sedán EX", baseModel: "All-new K3 Sedán" },
+  { name: "K3 Sedán GT-Line", baseModel: "All-new K3 Sedán" },
+  { name: "Cerato SX", baseModel: "Cerato" },
+  { name: "Seltos LX", baseModel: "Seltos" },
+  { name: "Sportage EX", baseModel: "Sportage" },
+  { name: "Sportage X-Line", baseModel: "Sportage" },
+  { name: "Carnival EX", baseModel: "Carnival" },
+  { name: "Carnival SX", baseModel: "Carnival" },
+  { name: "K2500 CS", baseModel: "K2500" },
+];
+
+const categories = [
+  { id: "todos", name: "Todos", icon: todos },
+  { id: "autos", name: "Autos", icon: autos },
+  { id: "suv", name: "SUV", icon: suv },
+  { id: "utilitarios", name: "Utilitarios", icon: utilitarios },
+];
+
 const CotizaTuService = () => {
   const [selectedStep, setSelectedStep] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("todos");
   const [activeServiceSection, setActiveServiceSection] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
   const [fuelType, setFuelType] = useState("ambos");
-
-  // Define car variants to display
-  const carVariants = [
-    { name: "K3 Cross EX", baseModel: "All-new K3 Cross" },
-    { name: "K3 Cross GT-Line", baseModel: "All-new K3 Cross" },
-    { name: "K3 Sedán EX", baseModel: "All-new K3 Sedán" },
-    { name: "K3 Sedán GT-Line", baseModel: "All-new K3 Sedán" },
-    { name: "Cerato SX", baseModel: "Cerato" },
-    { name: "Seltos LX", baseModel: "Seltos" },
-    { name: "Sportage EX", baseModel: "Sportage" },
-    { name: "Sportage X-Line", baseModel: "Sportage" },
-    { name: "Carnival EX", baseModel: "Carnival" },
-    { name: "Carnival SX", baseModel: "Carnival" },
-    { name: "K2500 CS", baseModel: "K2500" },
-  ];
-
-  const categories = [
-    { id: "todos", name: "Todos", icon: todos },
-    { id: "autos", name: "Autos", icon: autos },
-    { id: "suv", name: "SUV", icon: suv },
-    { id: "utilitarios", name: "Utilitarios", icon: utilitarios },
-  ];
 
   return (
     <div className=" mx-auto px-4 md:px-20 py-10 text-[#05141F]">

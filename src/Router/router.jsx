@@ -11,7 +11,9 @@ import ConcesionariosPostVenta from "../Routes/ConcesionariosPostVenta";
 import CotizarService from "../Routes/CotizarService";
 import CotizaTuService from "../Components/CotizarService/Sections/CotizaTuService";
 import PromiseToCare from "../Components/CotizarService/Sections/PromiseToCare";
-
+import Garantia from "../Components/CotizarService/Sections/Garantia";
+import Originales from "../Components/CotizarService/Sections/Originales";
+import Asistencia from "../Components/CotizarService/Sections/Asistencia";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -58,14 +60,18 @@ export const router = createBrowserRouter([
             path: "promise",
             element: <PromiseToCare />,
           },
-          // {
-          //   path: "garantia",
-          //   element: <Garantia />,
-          // },
-          // {
-          //   path: "originales",
-          //   element: <Originales />,
-          // },
+          {
+            path: "garantia",
+            element: <Garantia />,
+          },
+          {
+            path: "originales",
+            element: <Originales />,
+          },
+          {
+            path: "asistencia",
+            element: <Asistencia />,
+          },
         ],
       },
     ],

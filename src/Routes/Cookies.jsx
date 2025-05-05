@@ -2,7 +2,7 @@ import { useState } from "react";
 import sections from "../Data/cookieSections";
 import PillButton from "../Components/Common/ui/PillButton";
 import AccordeonItem from "../Components/Common/ui/AccordeonItem";
-
+import Separator from "../Components/Common/ui/Separator";
 function Cookies() {
   const [activeSection, setActiveSection] = useState(null);
 
@@ -58,10 +58,10 @@ function Cookies() {
             configuración de su navegador de acuerdo con sus preferencias.
           </h4>
         </div>
-        <div className="self-stretch h-0 outline outline-[1px] outline-[#05141F]" />
 
         {/* Accordion sections */}
-        <div className="border-t border-[#05141F] mb-10">
+        <div className="mb-10">
+          <Separator />
           {sections.map((section) => (
             <AccordeonItem
               key={section.id}
@@ -72,10 +72,11 @@ function Cookies() {
               content={section.content}
             />
           ))}
+          <Separator />
         </div>
 
         <PillButton
-          size="medium"
+          size="large"
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
         />
