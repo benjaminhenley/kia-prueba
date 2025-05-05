@@ -194,7 +194,6 @@ export const concesionarios = [
   {
     id: "venta",
     nombre: "Venta",
-    //href: "https://www.kia.com.ar/red-venta",
     href: "/red-venta",
     target: "",
     esExterna: false,
@@ -335,21 +334,3 @@ export const transparentbarRight = [
   },
 ];
 
-/* // Opciones del dropdown de concesionarios
-export const concesionariosDropdownOpciones = [
-  {
-    id: "venta",
-    nombre: "Venta",
-    //href: "https://www.kia.com.ar/red-venta",
-    href: "/concesionarios/venta",
-    target: "",
-    esExterna: false,
-  },
-  {
-    id: "postVenta",
-    nombre: "Post Venta",
-    href: "/concesionarios/post-venta",
-    target: "",
-    esExterna: false,
-  },
-]; */
