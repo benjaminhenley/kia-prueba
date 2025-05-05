@@ -304,7 +304,7 @@ const ConcesionariosVenta = () => {
 
   return (
     // Padding General
-    <div className="px-4 md:px-20">
+    <div className="px-5 md:px-10 lg:px-20">
       <div className="mx-auto py-[7rem]">
         {/* Header Section */}
         <div className="mb-7 md:mb-8">
@@ -322,7 +322,7 @@ const ConcesionariosVenta = () => {
         {/* Search Section */}
         <div className="flex flex-col gap-6 items-start md:gap-0 md:flex-row-reverse justify-between md:items-center mb-8">
           <ViewModeToggle viewMode={viewMode} setViewMode={setViewMode} />
-          <div className="flex gap-4 w-full md:w-auto">
+          <div className="flex gap-4 w-full md:w-auto items-center">
             <div className="w-full md:w-[450px]">
               <FormDropdown
                 label="Ver Todos"

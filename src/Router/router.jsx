@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
         path: "/red-postventa",
         element: <ConcesionariosPostVenta />,
       },
-      {
+/*       {
         path: "/cotizar-service/",
         element: <CotizarService />,
         children: [
@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
             element: <Asistencia />,
           },
         ],
-      },
+      }, */
     ],
   },
 ]);
