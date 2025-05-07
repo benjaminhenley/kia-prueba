@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ColorPicker = ({ colorPickerData }) => {
+const ColorPicker = ({ colorPickerData, glossy }) => {
   // const [activeFinish, setActiveFinish] = useState("glossy");
   const [activeColor, setActiveColor] = useState(colorPickerData[0].id);
 
@@ -40,10 +40,11 @@ const ColorPicker = ({ colorPickerData }) => {
               />
             </div>
           </div>
-
-          <button className="flex justify-center w-fit py-2 mx-auto rounded-full mb-10 px-5 text-center bg-[#05141F] min-w-[144px]">
-            <h4 className="font-bold  text-white rounded-full">Glossy</h4>
-          </button>
+          {/* {glossy && (
+            <button className="flex justify-center w-fit py-2 mx-auto rounded-full mb-10 px-5 text-center bg-[#05141F] min-w-[144px]">
+              <h4 className="font-bold  text-white rounded-full">Glossy</h4>
+            </button>
+          )} */}
 
           {/* Color Name Display */}
           <h4 className="font-normal text-center mb-8">{activeColorName}</h4>
