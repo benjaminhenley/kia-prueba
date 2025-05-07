@@ -49,7 +49,7 @@ const initialFormData = {
   domain: "",
   mileage: "",
   vinNumber: "",
-  contactedDealer: "",
+  contactedDealer: null,
   dealerName: "",
   additionalMessage: "",
   campaign: "",
@@ -129,6 +129,7 @@ function Contactenos() {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     let newValue = value;
+    console.log("name", name, "value", newValue);
 
     // Apply input filtering based on field type without showing errors
     switch (name) {
@@ -163,16 +164,7 @@ function Contactenos() {
         newValue = value.replace(/[^\d]/g, "");
         break;
 
-      case "email":
-        // Let email pass through - form validation will check it later
-        break;
-
-      case "vinNumber":
-        // Let VIN pass through - form validation will check it later
-        break;
-
       default:
-        // No special filtering for other fields
         break;
     }
 
@@ -183,6 +175,7 @@ function Contactenos() {
   };
 
   const handleDealerChange = (value) => {
+    handleFormChange({ target: { name: "contactedDealer", value } });
     setContactedDealer(value);
   };
 
@@ -225,6 +218,7 @@ function Contactenos() {
       model,
       consultationType,
       vinNumber,
+      contactedDealer,
       dealerName,
     } = formData;
 
