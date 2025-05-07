@@ -529,20 +529,6 @@ export const imageMap = {
         mobile: k2500InteriorAirConditioner,
       },
     },
-    carrousel: {
-      front: {
-        desktop: k2500FrontDesktop,
-        mobile: k2500FrontMobile,
-      },
-      back: {
-        desktop: k2500BackDesktop,
-        mobile: k2500BackMobile,
-      },
-      side: {
-        desktop: k2500SideDesktop,
-        mobile: k2500SideMobile,
-      },
-    },
     colors: {
       white: k2500White,
     },

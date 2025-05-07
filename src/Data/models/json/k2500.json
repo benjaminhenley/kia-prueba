@@ -83,44 +83,44 @@
         "description": "El exterior del Kia K2500 combina funcionalidad y practicidad para que cada carga, descarga y trayecto sean tareas simples y eficientes. Pensado para ser útil, duradero y fácil de usar.",
         "images": [
           {
-            "id": "exterior-front",
-            "src": "imageMapRef:sedan.exterior.front",
-            "alt": "Exterior front view",
+            "id": "exterior-side",
+            "src": "imageMapRef:k2500.exterior.side",
+            "alt": "Exterior side view",
             "title": "Creado para trabajar duro, diseñado para verse bien",
             "description": "Su diseño robusto no sacrifica estética. Con líneas claras y proporciones sólidas, se impone sin necesidad de llamar la atención."
           },
           {
             "id": "exterior-doors",
-            "src": "imageMapRef:sedan.exterior.doors",
+            "src": "imageMapRef:k2500.exterior.doors",
             "alt": "Rear light",
             "title": "Abrí puertas a tu comodidad",
-            "description": "Detalles que marcan la diferencia. Su iluminación de vanguardia no solo realza el equipamiento, sino que se integra con armonía al diseño, destacando su carácter innovador."
+            "description": "Las puertas laterales rebatibles con manijas ergonómicas hacen que operar la caja sea sencillo. En conjunto con el portón trasero, le dan facilidad de acceso desde cualquier ángulo."
           },
           {
-            "id": "exterior-wheel",
-            "src": "imageMapRef:sedan.exterior.wheel",
-            "alt": "Wheel",
-            "title": "Llantas de aleación diamantadas de 17'",
-            "description": "Con un diseño que impone personalidad y realza su perfil deportivo, el All-new K3 Sedán se destaca por su carácter audaz y contemporáneo."
+            "id": "exterior-headlights",
+            "src": "imageMapRef:k2500.exterior.headlights",
+            "alt": "headlights",
+            "title": "Siempre iluminado, siempre alerta",
+            "description": "El sistema de encendido automático de luces garantiza una visibilidad ideal sin que tengas que preocuparte por encenderlas."
           },
           {
-            "id": "exterior-mirror",
-            "src": "imageMapRef:sedan.exterior.mirror",
-            "alt": "Side mirror",
-            "title": "Faros delanteros LED c/ Corneling light",
-            "description": "Diseño frontal que cautiva a primera vista con su iluminación Star-map, que integra faros LED con función Cornering Light y luces diurnas con formato exclusivo."
+            "id": "exterior-cargo",
+            "src": "imageMapRef:k2500.exterior.cargo",
+            "alt": "Cargo",
+            "title": "Altura ideal para la acción",
+            "description": "El K2500 viene con una caja de 3.110 mm de largo y 1.630 mm de ancho, ofreciendo una capacidad de carga útil de hasta 1.000 kg y un peso máximo permitido de 1.500 kg."
           },
           {
-            "id": "exterior-grille",
-            "src": "imageMapRef:sedan.exterior.grille",
-            "alt": "Front grille",
-            "title": "Elegancia y estilo en movimiento",
-            "description": "Un diseño audaz, tecnología intuitiva y confort superior hacen del All-new K3 Sedán el compañero ideal para quienes buscan estilo y desempeño en cada viaje."
+            "id": "exterior-trunk",
+            "src": "imageMapRef:k2500.exterior.trunk",
+            "alt": "Front trunk",
+            "title": "Altura ideal para la acción",
+            "description": "Su bajo despeje del piso facilita el acceso a la caja, permitiendo una operación de carga y descarga más sencilla, incluso con autoelevador."
           }
         ]
       },
       "interior": {
-        "galleryType": "2",
+        "galleryType": "1",
         "category": "Interior",
         "layout": "sedan",
         "title": "Robusto y trabajador como siempre, equipado como nunca",
@@ -128,40 +128,54 @@
         "images": [
           {
             "id": "interior-steering-wheel",
-            "src": "imageMapRef:sedan.interior.steeringWheel",
+            "src": "imageMapRef:k2500.interior.steeringWheel",
             "alt": "Interior steering wheel",
             "title": "Una cabina que da espacio",
             "description": "Amplia y con excelente visibilidad, la cabina permite una conducción relajada, ideal para jornadas largas."
           },
           {
-            "id": "interior-panel",
-            "src": "imageMapRef:sedan.interior.panel",
-            "alt": "Interior panel",
+            "id": "interior-radio",
+            "src": "imageMapRef:k2500.interior.radio",
+            "alt": "Interior radio",
             "title": "Conectado a lo que importa",
             "description": "La radio AM/FM del K2500 está equipada con entradas USB y AUX, lista para conectar lo que necesites. Ya sea tu música, noticias o tu podcast favorito."
           },
           {
             "id": "interior-seats",
-            "src": "imageMapRef:sedan.interior.seats",
+            "src": "imageMapRef:k2500.interior.seats",
             "alt": "Interior seats",
             "title": "Comodidad que se nota",
             "description": "Los asientos tapizados en cuero ecológico brindan confort y flexibilidad. Porque estar cómodo también suma al rendimiento."
           },
           {
             "id": "interior-gearbox",
-            "src": "imageMapRef:sedan.interior.gearbox",
+            "src": "imageMapRef:k2500.interior.gearbox",
             "alt": "Interior gearbox",
             "title": "Todo a mano",
             "description": "Consola central práctica con porta vasos, diseñada para que tengas lo esencial al alcance sin perder foco en el camino."
           },
           {
             "id": "interior-air-conditioner",
-            "src": "imageMapRef:sedan.interior.airConditioner",
+            "src": "imageMapRef:k2500.interior.airConditioner",
             "alt": "air-conditioner",
             "title": "Cuando el entorno acompaña, vos rendís mejor",
             "description": "Ya sea bajo el sol o en mañanas heladas, el aire acondicionado y la calefacción del K2500 aseguran que la cabina mantenga siempre una temperatura agradable, para que tu jornada empiece y termine con total comodidad."
           }
         ]
+      },
+      "carousel": {
+        "front": {
+          "desktop": "imageMapRef:k2500.carousel.front.desktop",
+          "mobile": "imageMapRef:k2500.carousel.front.mobile"
+        },
+        "back": {
+          "desktop": "imageMapRef:k2500.carousel.back.desktop",
+          "mobile": "imageMapRef:k2500.carousel.back.mobile"
+        },
+        "side": {
+          "desktop": "imageMapRef:k2500.carousel.side.desktop",
+          "mobile": "imageMapRef:k2500.carousel.side.mobile"
+        }
       }
     },
     "specifications": {
