@@ -171,8 +171,6 @@ export default function Promociones() {
   };
 
   const executeRecaptcha = () => {
-    console.log(window.grecaptcha);
-
     if (typeof window.grecaptcha !== "undefined") {
       window.grecaptcha.ready(function () {
         window.grecaptcha

@@ -129,7 +129,6 @@ function Contactenos() {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     let newValue = value;
-    console.log("name", name, "value", newValue);
 
     // Apply input filtering based on field type without showing errors
     switch (name) {
@@ -181,7 +180,7 @@ function Contactenos() {
 
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
-    console.log("Form data", { ...formData, name });
+    // console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
         { ...formData, name },
