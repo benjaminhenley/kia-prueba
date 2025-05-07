@@ -257,7 +257,6 @@ function Contactenos() {
       email !== "" &&
       isEmailValid &&
       phone !== "" &&
-      dealerName !== "" &&
       model !== "" &&
       consultationType !== "" &&
       isVinValid &&
@@ -547,7 +546,7 @@ function Contactenos() {
                           </div>
 
                           <div className="flex flex-col gap-5 md:items-start w-full md:flex-1">
-                            <div className="flex flex-row gap-5 md:items-center w-full h-[28px]">
+                            <div className="flex flex-row gap-5 items-center w-full h-[28px]">
                               <h6 className="text-[12px] font-bold text-[#05141F]">
                                 ¿Contactó a algún concesionario?
                               </h6>
