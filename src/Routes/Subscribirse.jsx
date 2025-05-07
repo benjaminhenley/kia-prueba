@@ -23,7 +23,7 @@ const CONTACT_PREFERENCES = [
   { value: "phone", label: "Teléfono" },
 ];
 
-export default function Promociones() {
+export default function Subscribirse() {
   const [formData, setFormData] = useState({
     selectedModel: CAR_MODELS[0].id,
     firstName: "",
@@ -238,14 +238,13 @@ export default function Promociones() {
         <div className="flex flex-col">
           <div className="relative items-start">
             <h1 className="text-[#05141F] font-semibold font-kia">
-              Promociones
+              Subscribirse
             </h1>
             <div className="mt-2.5 h-[1.5px] md:w-12 md:h-[2px] w-8 bg-[#05141F]"></div>
           </div>
           <div className="text-[#05141F] font-normal font-kia mt-2.5 md:mt-5">
             <h4>
-              Completá el formulario y un concesionario te contactará para
-              brindarte más información.
+              Suscribite para recibir todas las novedades de KIA Argentina.
             </h4>
           </div>
         </div>

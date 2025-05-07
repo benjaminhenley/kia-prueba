@@ -14,6 +14,9 @@ import PromiseToCare from "../Components/CotizarService/Sections/PromiseToCare";
 import Garantia from "../Components/CotizarService/Sections/Garantia";
 import Originales from "../Components/CotizarService/Sections/Originales";
 import Asistencia from "../Components/CotizarService/Sections/Asistencia";
+import Precios from "../Routes/Precios";
+import Subscribirse from "../Routes/Subscribirse";
+
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -48,32 +51,40 @@ export const router = createBrowserRouter([
         path: "/red-postventa",
         element: <ConcesionariosPostVenta />,
       },
-/*       {
-        path: "/cotizar-service/",
-        element: <CotizarService />,
-        children: [
-          {
-            path: "",
-            element: <CotizaTuService />,
-          },
-          {
-            path: "promise",
-            element: <PromiseToCare />,
-          },
-          {
-            path: "garantia",
-            element: <Garantia />,
-          },
-          {
-            path: "originales",
-            element: <Originales />,
-          },
-          {
-            path: "asistencia",
-            element: <Asistencia />,
-          },
-        ],
-      }, */
+      // {
+      //   path: "/precios",
+      //   element: <Precios />,
+      // },
+      // {
+      //   path: "/cotizar-service/",
+      //   element: <CotizarService />,
+      //   children: [
+      //     {
+      //       path: "",
+      //       element: <CotizaTuService />,
+      //     },
+      //     {
+      //       path: "promise",
+      //       element: <PromiseToCare />,
+      //     },
+      //     {
+      //       path: "garantia",
+      //       element: <Garantia />,
+      //     },
+      //     {
+      //       path: "originales",
+      //       element: <Originales />,
+      //     },
+      //     {
+      //       path: "asistencia",
+      //       element: <Asistencia />,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: "/subscribirse",
+      //   element: <Subscribirse />,
+      // },
     ],
   },
 ]);

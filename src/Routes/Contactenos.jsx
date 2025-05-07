@@ -10,6 +10,12 @@ import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import kiaApiCall from "../utils/apiCall";
 import PROVINCES from "../Data/provinces";
 import CAR_MODELS from "../Data/models";
+import CAR_DEALERS from "../Data/carDealers";
+import {
+  MONTHS,
+  generateDaysOptions,
+  generateYearsOptions,
+} from "../Data/months";
 
 // Dropdown data collections
 const DOCUMENT_TYPES = [
@@ -21,30 +27,6 @@ const CONSULTATION_TYPES = [
   { value: "repuestos", label: "Repuestos" },
   { value: "ventas", label: "Ventas" },
   { value: "postventa", label: "Post venta" },
-];
-
-// Helper function to generate days options
-const generateDaysOptions = () => {
-  return Array.from({ length: 31 }, (_, i) => ({
-    value: String(i + 1),
-    label: String(i + 1),
-  }));
-};
-
-// Helper function to generate months options
-const MONTHS = [
-  { value: "1", label: "Enero" },
-  { value: "2", label: "Febrero" },
-  { value: "3", label: "Marzo" },
-  { value: "4", label: "Abril" },
-  { value: "5", label: "Mayo" },
-  { value: "6", label: "Junio" },
-  { value: "7", label: "Julio" },
-  { value: "8", label: "Agosto" },
-  { value: "9", label: "Septiembre" },
-  { value: "10", label: "Octubre" },
-  { value: "11", label: "Noviembre" },
-  { value: "12", label: "Diciembre" },
 ];
 
 const initialFormData = {
@@ -68,17 +50,10 @@ const initialFormData = {
   mileage: "",
   vinNumber: "",
   contactedDealer: "",
+  dealerName: "",
   additionalMessage: "",
   campaign: "",
   source: "",
-};
-
-// Helper function to generate years options
-const generateYearsOptions = () => {
-  return Array.from({ length: 80 }, (_, i) => ({
-    value: String(new Date().getFullYear() - i - 18),
-    label: String(new Date().getFullYear() - i - 18),
-  }));
 };
 
 function Contactenos() {
@@ -250,6 +225,7 @@ function Contactenos() {
       model,
       consultationType,
       vinNumber,
+      dealerName,
     } = formData;
 
     // Basic email validation with @ - silent validation
@@ -281,6 +257,7 @@ function Contactenos() {
       email !== "" &&
       isEmailValid &&
       phone !== "" &&
+      dealerName !== "" &&
       model !== "" &&
       consultationType !== "" &&
       isVinValid &&
@@ -555,46 +532,54 @@ function Contactenos() {
                       <div className="md:w-52"></div>
                       <div className="flex flex-col md:flex-1 ">
                         <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                          <TextField
-                            placeholder="N° de chasis/VIN"
-                            name="vinNumber"
-                            value={formData.vinNumber}
-                            onChange={handleFormChange}
-                          />
-                          <h5 className="text-[#697279] md:w-[50%] md:hidden">
-                            VIN del vehículo. Ingrese los 17 dígitos de su
-                            vehículo. Esta información podrá verla en la
-                            documentación de su unidad.
-                          </h5>
+                          <div className="flex flex-col gap-5 md:items-left w-full md:flex-1">
+                            <TextField
+                              placeholder="N° de chasis/VIN"
+                              name="vinNumber"
+                              value={formData.vinNumber}
+                              onChange={handleFormChange}
+                            />
+                            <h5 className="text-[#697279]">
+                              VIN del vehículo. Ingrese los 17 dígitos de su
+                              vehículo. Esta información podrá verla en la
+                              documentación de su unidad.
+                            </h5>
+                          </div>
 
-                          <div className="flex flex-row gap-5 md:items-center md:mt-2 w-full md:flex-1">
-                            <h6 className="text-[12px] font-bold text-[#05141F]">
-                              ¿Contactó a algún concesionario?
-                            </h6>
-                            <div className="flex gap-5">
-                              <RadioButton
-                                id="dealer-yes"
-                                name="contactedDealer"
-                                checked={contactedDealer === true}
-                                onChange={() => handleDealerChange(true)}
-                                label="Sí"
-                              />
-                              <RadioButton
-                                id="dealer-no"
-                                name="contactedDealer"
-                                checked={contactedDealer === false}
-                                onChange={() => handleDealerChange(false)}
-                                label="No"
+                          <div className="flex flex-col gap-5 md:items-start w-full md:flex-1">
+                            <div className="flex flex-row gap-5 md:items-center w-full h-[28px]">
+                              <h6 className="text-[12px] font-bold text-[#05141F]">
+                                ¿Contactó a algún concesionario?
+                              </h6>
+                              <div className="flex gap-5">
+                                <RadioButton
+                                  id="dealer-yes"
+                                  name="contactedDealer"
+                                  checked={contactedDealer === true}
+                                  onChange={() => handleDealerChange(true)}
+                                  label="Sí"
+                                />
+                                <RadioButton
+                                  id="dealer-no"
+                                  name="contactedDealer"
+                                  checked={contactedDealer === false}
+                                  onChange={() => handleDealerChange(false)}
+                                  label="No"
+                                />
+                              </div>
+                            </div>
+                            <div className="flex flex-col  w-full">
+                              <FormDropdown
+                                disabled={!contactedDealer}
+                                placeholder="Nombre del concesionario"
+                                name="dealerName"
+                                options={CAR_DEALERS}
+                                value={formData.dealerName}
+                                onChange={handleFormChange}
                               />
                             </div>
                           </div>
-                          {/* <div>hola</div> */}
                         </div>
-                        <h5 className="text-[#697279] mt-5 md:w-[50%] hidden md:block">
-                          VIN del vehículo. Ingrese los 17 dígitos de su
-                          vehículo. Esta información podrá verla en la
-                          documentación de su unidad.
-                        </h5>
                       </div>
                     </div>
 

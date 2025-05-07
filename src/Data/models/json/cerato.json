@@ -276,7 +276,7 @@
         {
           "id": "frontlights",
           "title": "Faros delanteros LED",
-          "value": "Faros LED + delanteros <br/> con Cornering Light"
+          "value": "Faros Antiniebla LED <br/> (delanteros LED MFR)"
         },
         {
           "id": "smartkey",
@@ -286,12 +286,12 @@
         {
           "id": "wheels",
           "title": "Aleación",
-          "value": "Llantas de 17\""
+          "value": "Llantas de <br/> aleación 17\""
         },
         {
           "id": "heatedseat",
           "title": "Butacas",
-          "value": "Butacas delanteras<br/> calefaccionadas"
+          "value": "Butacas delanteras <br/> calefaccionadas"
         }
       ],
       "dimensions": {

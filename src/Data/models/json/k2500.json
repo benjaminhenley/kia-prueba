@@ -1,0 +1,231 @@
+{
+  "id": "k2500",
+  "name": "K2500",
+  "tagline": "A la medida de tu negocio",
+  "heroImage": "/images/placeholder-sedan-hero.jpg",
+  "menu": {
+    "etiqueta": { "id": "brochures", "link": "imageMapRef:k2500.etiqueta" },
+    "fichas": { "id": "technical-sheet", "link": "imageMapRef:k2500.fichas" }
+  },
+  "heroVideo": "imageMapRef:k2500.heroVideo",
+  "heroInfo": [
+    {
+      "iconId": "radio",
+      "title": "Radio",
+      "description": "Radio 7\" con <br/> conectividad",
+      "description_mobile": "Radio 7\" con <br/> conectividad"
+    },
+    {
+      "iconId": "antitheft",
+      "title": "Antirobo",
+      "description": "inmobilizador <br/> antirrobo",
+      "description_mobile": "inmobilizador <br/> antirrobo"
+    },
+    {
+      "iconId": "airbag",
+      "title": "Airbag",
+      "description": "Doble Airbag <br/> delantero",
+      "description_mobile": "Doble Airbag <br/> delantero"
+    },
+    {
+      "iconId": "camera",
+      "title": "Cámaras",
+      "description": "Cámara de <br/> retroceso",
+      "description_mobile": "Cámara de <br/> retroceso"
+    }
+  ],
+  "sections": {
+    "characteristics": {
+      "features": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "2.5 L TCI | 2,497cc"
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "value": "130hp | 26.0Kg.m"
+        },
+        {
+          "id": "warranty",
+          "title": "Garantía",
+          "value": "3 años o 100.000km"
+        }
+      ],
+      "colorPicker": [
+        {
+          "id": "white",
+          "name": "White",
+          "border": "#D6D6D6",
+          "color": "#F6F6F6",
+          "outline": "#EFEFEF",
+          "thumbnail": "imageMapRef:k2500.colors.white"
+        }
+      ],
+      "atributes": {
+        "category": "Atributos",
+        "title": "Más que una herramienta de trabajo",
+        "subtitle": "Más que una herramienta de trabajo",
+        "image": "imageMapRef:k2500.attributes",
+        "bulletPoints": [
+          "**Robusto y confiable:** El Kia K2500 fue diseñado para resistir. Su estructura sólida y capacidad de carga de hasta 1.000 kg la convierten en un aliado incansable del trabajo diario.",
+          "**Comodidad que sorprende:** Asientos de cuero ecológico, equipo de audio, aire acondicionado y una cabina amplia hacen que cada trayecto sea mucho más cómodo.",
+          "**Tecnología para tu seguridad:** Equipado con frenos ABS y control electrónico de estabilidad (ESC), el K2500 te ofrece tecnología de seguridad que asegura un manejo más estable y confiable en todo momento."
+        ],
+        "description": "El Kia K2500 es tu compañero de confianza. Robusto, cómodo y seguro, está preparado para afrontar cualquier desafío."
+      },
+      "exterior": {
+        "galleryType": "1",
+        "category": "Exterior",
+        "layout": "sedan",
+        "title": "Diseñado para resistir, pensado para facilitar",
+        "description": "El exterior del Kia K2500 combina funcionalidad y practicidad para que cada carga, descarga y trayecto sean tareas simples y eficientes. Pensado para ser útil, duradero y fácil de usar.",
+        "images": [
+          {
+            "id": "exterior-front",
+            "src": "imageMapRef:sedan.exterior.front",
+            "alt": "Exterior front view",
+            "title": "Creado para trabajar duro, diseñado para verse bien",
+            "description": "Su diseño robusto no sacrifica estética. Con líneas claras y proporciones sólidas, se impone sin necesidad de llamar la atención."
+          },
+          {
+            "id": "exterior-doors",
+            "src": "imageMapRef:sedan.exterior.doors",
+            "alt": "Rear light",
+            "title": "Abrí puertas a tu comodidad",
+            "description": "Detalles que marcan la diferencia. Su iluminación de vanguardia no solo realza el equipamiento, sino que se integra con armonía al diseño, destacando su carácter innovador."
+          },
+          {
+            "id": "exterior-wheel",
+            "src": "imageMapRef:sedan.exterior.wheel",
+            "alt": "Wheel",
+            "title": "Llantas de aleación diamantadas de 17'",
+            "description": "Con un diseño que impone personalidad y realza su perfil deportivo, el All-new K3 Sedán se destaca por su carácter audaz y contemporáneo."
+          },
+          {
+            "id": "exterior-mirror",
+            "src": "imageMapRef:sedan.exterior.mirror",
+            "alt": "Side mirror",
+            "title": "Faros delanteros LED c/ Corneling light",
+            "description": "Diseño frontal que cautiva a primera vista con su iluminación Star-map, que integra faros LED con función Cornering Light y luces diurnas con formato exclusivo."
+          },
+          {
+            "id": "exterior-grille",
+            "src": "imageMapRef:sedan.exterior.grille",
+            "alt": "Front grille",
+            "title": "Elegancia y estilo en movimiento",
+            "description": "Un diseño audaz, tecnología intuitiva y confort superior hacen del All-new K3 Sedán el compañero ideal para quienes buscan estilo y desempeño en cada viaje."
+          }
+        ]
+      },
+      "interior": {
+        "galleryType": "2",
+        "category": "Interior",
+        "layout": "sedan",
+        "title": "Robusto y trabajador como siempre, equipado como nunca",
+        "description": "La cabina del K2500 te ofrece el confort y conectividad justa. Porque hacer bien tu trabajo también significa hacerlo cómodo y conectado.",
+        "images": [
+          {
+            "id": "interior-steering-wheel",
+            "src": "imageMapRef:sedan.interior.steeringWheel",
+            "alt": "Interior steering wheel",
+            "title": "Una cabina que da espacio",
+            "description": "Amplia y con excelente visibilidad, la cabina permite una conducción relajada, ideal para jornadas largas."
+          },
+          {
+            "id": "interior-panel",
+            "src": "imageMapRef:sedan.interior.panel",
+            "alt": "Interior panel",
+            "title": "Conectado a lo que importa",
+            "description": "La radio AM/FM del K2500 está equipada con entradas USB y AUX, lista para conectar lo que necesites. Ya sea tu música, noticias o tu podcast favorito."
+          },
+          {
+            "id": "interior-seats",
+            "src": "imageMapRef:sedan.interior.seats",
+            "alt": "Interior seats",
+            "title": "Comodidad que se nota",
+            "description": "Los asientos tapizados en cuero ecológico brindan confort y flexibilidad. Porque estar cómodo también suma al rendimiento."
+          },
+          {
+            "id": "interior-gearbox",
+            "src": "imageMapRef:sedan.interior.gearbox",
+            "alt": "Interior gearbox",
+            "title": "Todo a mano",
+            "description": "Consola central práctica con porta vasos, diseñada para que tengas lo esencial al alcance sin perder foco en el camino."
+          },
+          {
+            "id": "interior-air-conditioner",
+            "src": "imageMapRef:sedan.interior.airConditioner",
+            "alt": "air-conditioner",
+            "title": "Cuando el entorno acompaña, vos rendís mejor",
+            "description": "Ya sea bajo el sol o en mañanas heladas, el aire acondicionado y la calefacción del K2500 aseguran que la cabina mantenga siempre una temperatura agradable, para que tu jornada empiece y termine con total comodidad."
+          }
+        ]
+      }
+    },
+    "specifications": {
+      "carouselImages": [
+        {
+          "id": 1,
+          "src": {
+            "mobile": "imageMapRef:k2500.carousel.front.mobile",
+            "desktop": "imageMapRef:k2500.carousel.front.desktop"
+          },
+          "alt": "K2500 Front"
+        },
+        {
+          "id": 2,
+          "src": {
+            "mobile": "imageMapRef:k2500.carousel.back.mobile",
+            "desktop": "imageMapRef:k2500.carousel.back.desktop"
+          },
+          "alt": "K2500 Back"
+        },
+        {
+          "id": 3,
+          "src": {
+            "mobile": "imageMapRef:k2500.carousel.side.mobile",
+            "desktop": "imageMapRef:k2500.carousel.side.desktop"
+          },
+          "alt": "K2500 Side"
+        }
+      ],
+      "features": [
+        {
+          "id": "frontlights",
+          "title": "Faros delanteros LED",
+          "value": "Caja de carga con puertas <br/> rebatibles y cubre canto de goma"
+        },
+        {
+          "id": "wheels",
+          "title": "Aleación",
+          "value": "Llantas de <br/> aleación 17\""
+        },
+        {
+          "id": "upholstery",
+          "title": "Tapizado",
+          "value": "Tapizados Bi-Tono <br/> GT-Line"
+        }
+      ],
+      "dimensions": {
+        "title": "Dimensiones (mm)",
+        "details": [
+          {
+            "name": "EXTERIOR largo / ancho / alto",
+            "value": "5.125 / 1.740 / 1.970"
+          },
+          { "name": "Distancia entre ejes", "value": "2.615" },
+          { "name": "TROCHA delantera / trasera", "value": "1.490 / 1.340" },
+          {
+            "name": "CAJA largo / ancho / alto",
+            "value": "3.110 / 1.630 / 355"
+          },
+          { "name": "Capacidad de carga", "value": "1.500 Kg" },
+          { "name": "Capacidad de tanque", "value": "65 / 60 Lts" },
+          { "name": "Radio de giro", "value": "4,93 mts" }
+        ]
+      }
+    }
+  }
+}
