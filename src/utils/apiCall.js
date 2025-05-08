@@ -5,10 +5,11 @@ const kiaApiCall = async (data, campaign = "") => {
     // Create a FormData object
     const formData = new FormData();
 
-    // Add campaign if provided separately (for backward compatibility)
     if (campaign) {
       formData.append("campaign", campaign);
     }
+
+    formData.append("source", window.location.href);
 
     // Add all data fields to the FormData without modifying the structure
     Object.entries(data).forEach(([key, value]) => {

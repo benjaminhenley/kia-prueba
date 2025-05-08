@@ -44,16 +44,14 @@ const initialFormData = {
   country: "",
   email: "",
   phone: "",
-  model: "",
+  car: "",
   consultationType: "",
   domain: "",
   mileage: "",
   vinNumber: "",
   contactedDealer: null,
-  dealerName: "",
-  additionalMessage: "",
-  campaign: "",
-  source: "",
+  dealer: "",
+  comments: "",
 };
 
 function Contactenos() {
@@ -174,13 +172,13 @@ function Contactenos() {
   };
 
   const handleDealerChange = (value) => {
+    let newValue = value === true ? "si" : "no";
     handleFormChange({ target: { name: "contactedDealer", value } });
     setContactedDealer(value);
   };
 
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
-    // console.log("Form data", { ...formData, name });
     try {
       const response = await kiaApiCall(
         { ...formData, name },
@@ -214,11 +212,11 @@ function Contactenos() {
       country,
       email,
       phone,
-      model,
+      car,
       consultationType,
       vinNumber,
       contactedDealer,
-      dealerName,
+      dealer,
     } = formData;
 
     // Basic email validation with @ - silent validation
@@ -233,7 +231,7 @@ function Contactenos() {
     const isContactedDealerValid = contactedDealer !== null;
 
     // All fields must be filled and terms must be accepted
-    // Note: additionalMessage is not required
+    // Note: comments is not required
     const valid =
       documentType !== "" &&
       documentNumber !== "" &&
@@ -250,7 +248,7 @@ function Contactenos() {
       email !== "" &&
       isEmailValid &&
       phone !== "" &&
-      model !== "" &&
+      car !== "" &&
       consultationType !== "" &&
       isVinValid &&
       isContactedDealerValid &&
@@ -258,10 +256,6 @@ function Contactenos() {
 
     setIsValid(valid);
     return valid;
-  };
-
-  const isFormValid = () => {
-    return isValid;
   };
 
   // Function to reset the form
@@ -484,8 +478,8 @@ function Contactenos() {
                       <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                         <FormDropdown
                           placeholder="Modelo"
-                          name="model"
-                          value={formData.model}
+                          name="car"
+                          value={formData.car}
                           onChange={handleFormChange}
                           options={CAR_MODELS.map((model) => ({
                             value: model.id,
@@ -548,14 +542,14 @@ function Contactenos() {
                                   id="dealer-yes"
                                   name="contactedDealer"
                                   checked={contactedDealer === true}
-                                  onChange={() => handleDealerChange("si")}
+                                  onChange={() => handleDealerChange(true)}
                                   label="Sí"
                                 />
                                 <RadioButton
                                   id="dealer-no"
                                   name="contactedDealer"
                                   checked={contactedDealer === false}
-                                  onChange={() => handleDealerChange("no")}
+                                  onChange={() => handleDealerChange(false)}
                                   label="No"
                                 />
                               </div>
@@ -564,9 +558,9 @@ function Contactenos() {
                               <FormDropdown
                                 disabled={!contactedDealer}
                                 placeholder="Nombre del concesionario"
-                                name="dealerName"
+                                name="dealer"
                                 options={CAR_DEALERS}
-                                value={formData.dealerName}
+                                value={formData.dealer}
                                 onChange={handleFormChange}
                               />
                             </div>
@@ -581,8 +575,8 @@ function Contactenos() {
                         <textarea
                           className="w-full border border-[#CDD0D2] p-2.5 h-[150px] font-normal text-[#05141F] resize-none outline-none focus:outline-[#05141F] focus:outline-1 placeholder:text-[#697279]"
                           placeholder="Mensaje adicional"
-                          name="additionalMessage"
-                          value={formData.additionalMessage}
+                          name="comments"
+                          value={formData.comments}
                           onChange={handleFormChange}
                         />
                       </div>

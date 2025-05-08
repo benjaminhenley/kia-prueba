@@ -25,7 +25,7 @@ const CONTACT_PREFERENCES = [
 
 export default function Promociones() {
   const [formData, setFormData] = useState({
-    selectedModel: CAR_MODELS[0].id,
+    car: CAR_MODELS[0].id,
     firstName: "",
     lastName: "",
     contactPreference: "",
@@ -79,6 +79,14 @@ export default function Promociones() {
     validateForm();
   }, [formData, acceptedTerms]);
 
+  useEffect(() => {
+    const source = window.location.href;
+    setFormData((prev) => ({
+      ...prev,
+      source,
+    }));
+  }, []);
+
   // Add useEffect to filter dealers when province changes
   useEffect(() => {
     if (formData.province) {
@@ -128,7 +136,7 @@ export default function Promociones() {
     // Basic validation - check if required fields are filled
     const {
       firstName,
-      selectedModel,
+      car,
       lastName,
       contactPreference,
       province,
@@ -147,7 +155,7 @@ export default function Promociones() {
 
     const valid =
       acceptedTerms &&
-      selectedModel !== "" &&
+      car !== "" &&
       firstName !== "" &&
       lastName !== "" &&
       contactPreference !== "" &&
@@ -192,7 +200,7 @@ export default function Promociones() {
     try {
       const response = await kiaApiCall(
         { ...formData, name },
-        "kiaweb:promociones"
+        "kiaweb: Promociones"
       );
       setIsSubmitted(true);
     } catch (error) {
@@ -207,7 +215,7 @@ export default function Promociones() {
   // Function to reset the form
   const resetForm = () => {
     setFormData({
-      selectedModel: "",
+      car: "",
       firstName: "",
       lastName: "",
       contactPreference: "",
@@ -279,7 +287,7 @@ export default function Promociones() {
                       onModelSelect={(model) =>
                         setFormData((prev) => ({
                           ...prev,
-                          selectedModel: model.id,
+                          car: model.id,
                         }))
                       }
                     />
