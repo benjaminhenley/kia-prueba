@@ -235,15 +235,15 @@
             "value": "4.545 / 1.765 / 1.475"
           },
           { "name": "Distancia entre ejes", "value": "2.670" },
-          { "name": "Distancia del suelo", "value": "165" },
+          { "name": "Distancia del suelo", "value": "160" },
           {
             "name": "Capacidad de baúl (2ª Fila/ 1ª Fila)",
-            "value": "455 VDA Lts"
+            "value": "544 VDA Lts"
           },
           { "name": "Peso Neto", "value": "1.215 Kg" },
           { "name": "Plazas", "value": "5" },
           { "name": "Medida de neumáticos", "value": "205 / 50R17" },
-          { "name": "Auxilio", "value": "Acero" }
+          { "name": "Auxilio", "value": "Acero temporal" }
         ]
       }
     }
