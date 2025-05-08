@@ -1,8 +1,8 @@
-import { imageMap } from "../imageMap";
+import { imageMap } from "../imageMaps";
 
 /**
  * Resolves an image reference string to its actual path
- * @param {string} imageRef - Reference in format "imageMapRef:path.to.image"
+ * @param {string} imageRef - Reference in format "imageMapRef:model.path.to.image"
  * @returns {string} The resolved image path
  */
 export const resolveImageRef = (imageRef) => {

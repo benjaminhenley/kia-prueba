@@ -548,14 +548,14 @@ function Contactenos() {
                                   id="dealer-yes"
                                   name="contactedDealer"
                                   checked={contactedDealer === true}
-                                  onChange={() => handleDealerChange(true)}
+                                  onChange={() => handleDealerChange("si")}
                                   label="Sí"
                                 />
                                 <RadioButton
                                   id="dealer-no"
                                   name="contactedDealer"
                                   checked={contactedDealer === false}
-                                  onChange={() => handleDealerChange(false)}
+                                  onChange={() => handleDealerChange("no")}
                                   label="No"
                                 />
                               </div>
