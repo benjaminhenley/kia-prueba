@@ -4,67 +4,27 @@ import Table from "../Components/Common/Table";
 const Precios = () => {
   const carPriceData = {
     headers: [
-      { key: "model", label: "Modelo (versión)", width: "25%" },
-      { key: "category", label: "Categoría", width: "10%" },
-      { key: "type", label: "Tipo", width: "15%" },
-      { key: "fsc", label: "FSC", width: "15%" },
-      { key: "ocn", label: "OCN", width: "15%" },
-      { key: "price", label: "Precio sugerido al público", width: "20%" },
+      { key: "model", label: "Modelo", width: "33%", bold: true },
+      { key: "version", label: "Versión", width: "33%" },
+      {
+        key: "price",
+        label: "Precio sugerido al público",
+        width: "33%",
+        bold: true,
+      },
     ],
     details: [
-      [
-        "K3 Sedán EX 1.6 A/T",
-        "M1",
-        "PAS 4P",
-        "1CS4D261FK",
-        "K068",
-        "25.000 USD",
-      ],
-      [
-        "K3 Sedán GT-Line 1.6 A/T",
-        "M1",
-        "PAS 4P",
-        "1CS4D261FH",
-        "H181",
-        "28.000 USD",
-      ],
-      [
-        "K3 Cross EX 1.6 A/T",
-        "M1",
-        "PAS 5P",
-        "1CS6D261FF",
-        "F057",
-        "25.000 USD",
-      ],
-      [
-        "K3 Cross GT-Line 1.6 A/T",
-        "M1",
-        "PAS 5P",
-        "1CS6D261FL",
-        "L022",
-        "28.000 USD",
-      ],
-      ["Cerato SX 2.0 AT", "M1", "PAS 4P", "DLS42G61FG", "G326", "34.000 USD"],
-      ["Seltos LX 1.5 A/T", "M1", "SUV", "TJW5D661VG", "G485", "36.000 USD"],
-      [
-        "Sportage EX 1.6T 4x2 DCT",
-        "M1",
-        "SUV",
-        "GYWDD5G1UG",
-        "G0PX",
-        "48.000 USD",
-      ],
-      [
-        "Sportage X-Line 1.6T AWD DCT",
-        "M1",
-        "SUV",
-        "GYWDD5G1XH",
-        "H0J2",
-        "56.000 USD",
-      ],
-      ["Carnival EX 2.2R A/T", "M2", "MPV", "HSB82HC5JG", "G0RL", "65.000 USD"],
-      ["Carnival SX 2.2R A/T", "M2", "MPV", "HSB82HC5JG", "G0SC", "75.000 USD"],
-      ["K2500 CS 2.5T MT", "M2", "MPV", "HDH46B857D", "DPKH", "33.000 USD"],
+      ["K3 Sedán", "EX 1.6 A/T", "25.000 USD"],
+      ["K3 Sedán", "GT-Line 1.6 A/T", "28.000 USD"],
+      ["K3 Cross", "EX 1.6 A/T", "25.000 USD"],
+      ["K3 Cross", "GT-Line 1.6 A/T", "28.000 USD"],
+      ["Cerato", "SX 2.0 AT", "34.000 USD"],
+      ["Seltos", "LX 1.5 A/T", "36.000 USD"],
+      ["Sportage", "EX 1.6T 4x2 DCT", "48.000 USD"],
+      ["Sportage", "X-Line 1.6T AWD DCT", "56.000 USD"],
+      ["Carnival", "EX 2.2R A/T", "65.000 USD"],
+      ["Carnival", "SX 2.2R A/T", "75.000 USD"],
+      ["K2500", "CS 2.5T MT", "33.000 USD"],
     ],
   };
 
@@ -75,12 +35,6 @@ const Precios = () => {
           <h1 className="font-bold">Precios</h1>
           <div className="h-[1.5px] md:w-12 md:h-[2px] w-8 bg-[#05141F]"></div>
         </div>
-
-        <h4 className="text-[#05141F]">
-          Kia Argentina S.A. | Av Sucre 1932 - B1643AQN - San Isidro - Buenos
-          Aires - Argentina | T +54 11 4719-7722 / F +54 11 4719-7316 /
-          www.kia.com.ar
-        </h4>
 
         {/* ICONS */}
         <div className="flex flex-col md:flex-row md:justify-between">

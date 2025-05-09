@@ -1,8 +1,9 @@
 import React from "react";
 
 const Table = ({ data }) => {
+  console.log(data);
   return (
-    <div className="overflow-x-auto border">
+    <div className="overflow-x-auto ">
       <table className="w-full">
         {data.headers && (
           <thead className="bg-[#05141F]">
@@ -10,16 +11,17 @@ const Table = ({ data }) => {
               {data.headers.map((header, index) => (
                 <th
                   key={index}
-                  className={`px-3 text-center sm:px-6 py-3 sm:py-4 uppercase text-white ${
-                    data.headers.length > 1 ? `w-[${header.width}]` : "w-full"
+                  width={header.width ? header.width : "100%"}
+                  className={`px-3 text-left sm:px-6 py-3 sm:py-4  text-white ${
+                    header.bold ? "font-bold" : ""
                   }`}>
-                  <h4 className="font-bold ">{header.label}</h4>
+                  <h4 className="font-bold">{header.label}</h4>
                 </th>
               ))}
             </tr>
           </thead>
         )}
-        <tbody className="bg-white divide-y-2 divide-x-2 divide-gray-200">
+        <tbody className="bg-white divide-y divide-x divide-[#CDD0D2]">
           {data.details.map((row, index) => (
             <tr
               key={index}
@@ -29,9 +31,9 @@ const Table = ({ data }) => {
                   key={cellIndex}
                   className="px-3 text-left sm:px-6 py-3 sm:py-4 text-sm text-[#05141F] border-r">
                   <h6
-                    className={`${
-                      cellIndex === 0 ? "font-bold" : "font-light"
-                    }`}>
+                    className={
+                      data.headers[cellIndex]?.bold ? "font-bold" : "font-light"
+                    }>
                     {cell}
                   </h6>
                 </td>
