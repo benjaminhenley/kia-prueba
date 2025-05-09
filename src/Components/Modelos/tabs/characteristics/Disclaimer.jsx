@@ -20,5 +20,17 @@ const Disclaimer = () => {
     </section>
   );
 };
+export const DisclaimerPrecios = () => {
+  return (
+    <section className="py-10 px-4 md:px-20 bg-[#F8F8F8] text-center ">
+      <h6 className="font-bold text-[#697279] max-w-[1280px] mx-auto">
+        Los precios incluyen IVA, no incluyen ni flete ni patentamiento. Válida
+        para toda Argentina salvo Tierra del Fuego. La presente lista de precios
+        toma vigencia a partir de la fecha arriba indicada. Cualquier variación
+        futura será notificada con 24hs de anticipación.
+      </h6>
+    </section>
+  );
+};
 
 export default Disclaimer;

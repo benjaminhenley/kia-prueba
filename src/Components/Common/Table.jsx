@@ -1,9 +1,8 @@
 import React from "react";
 
-const Table = ({ data }) => {
-  console.log(data);
+const Table = ({ data, className }) => {
   return (
-    <div className="overflow-x-auto ">
+    <div className={`overflow-x-auto ${className}`}>
       <table className="w-full">
         {data.headers && (
           <thead className="bg-[#05141F]">
