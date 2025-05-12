@@ -1,4 +1,4 @@
-const PROVINCES = [
+export const PROVINCES = [
   { value: 1, label: "Buenos Aires" },
   { value: 2, label: "Catamarca" },
   { value: 3, label: "Chaco" },
@@ -24,5 +24,30 @@ const PROVINCES = [
   { value: 23, label: "Tierra del Fuego" },
   { value: 24, label: "Tucumán" },
 ];
-
-export default PROVINCES;
+export const PROVINCES_WITH_ALL = [
+  { value: 0, label: "Todos" },
+  { value: 1, label: "Buenos Aires" },
+  { value: 2, label: "Catamarca" },
+  { value: 3, label: "Chaco" },
+  { value: 4, label: "Chubut" },
+  { value: 5, label: "Ciudad Autónoma de Buenos Aires" },
+  { value: 6, label: "Córdoba" },
+  { value: 7, label: "Corrientes" },
+  { value: 8, label: "Entre Ríos" },
+  { value: 9, label: "Formosa" },
+  { value: 10, label: "Jujuy" },
+  { value: 11, label: "La Pampa" },
+  { value: 12, label: "La Rioja" },
+  { value: 13, label: "Mendoza" },
+  { value: 14, label: "Misiones" },
+  { value: 15, label: "Neuquén" },
+  { value: 16, label: "Río Negro" },
+  { value: 17, label: "Salta" },
+  { value: 18, label: "San Juan" },
+  { value: 19, label: "San Luis" },
+  { value: 20, label: "Santa Cruz" },
+  { value: 21, label: "Santa Fe" },
+  { value: 22, label: "Santiago del Estero" },
+  { value: 23, label: "Tierra del Fuego" },
+  { value: 24, label: "Tucumán" },
+];

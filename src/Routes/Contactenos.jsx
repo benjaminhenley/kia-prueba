@@ -8,9 +8,9 @@ import Checkbox from "../Components/Common/Icons/Checkbox";
 import RadioButton from "../Components/Common/ui/RadioButton";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import kiaApiCall from "../utils/apiCall";
-import PROVINCES from "../Data/provinces";
+import { PROVINCES } from "../Data/provinces";
 import CAR_MODELS from "../Data/models";
-import CAR_DEALERS from "../Data/carDealers";
+import { CAR_DEALERS } from "../Data/carDealers";
 import {
   MONTHS,
   generateDaysOptions,

@@ -8,8 +8,8 @@ import Arrow from "../Components/Common/Icons/Arrow";
 import Checkbox from "../Components/Common/Icons/Checkbox";
 import CarModelGallery from "../Components/Common/CarModelGallery";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
-import PROVINCES from "../Data/provinces";
-import CAR_DEALERS from "../Data/carDealers";
+import { PROVINCES } from "../Data/provinces";
+import { CAR_DEALERS } from "../Data/carDealers";
 import kiaApiCall from "../utils/apiCall";
 import CAR_MODELS from "../Data/models";
 import {

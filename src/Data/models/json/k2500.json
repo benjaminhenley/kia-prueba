@@ -7,7 +7,7 @@
     "etiqueta": { "id": "brochures", "link": "imageMapRef:k2500.etiqueta" },
     "fichas": { "id": "technical-sheet", "link": "imageMapRef:k2500.fichas" }
   },
-  "heroVideo": "imageMapRef:k2500.heroVideo",
+  "heroVideo": "imageMapRef:cross.heroVideo",
   "heroInfo": [
     {
       "iconId": "radio",

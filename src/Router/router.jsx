@@ -16,7 +16,7 @@ import Originales from "../Components/CotizarService/Sections/Originales";
 import Asistencia from "../Components/CotizarService/Sections/Asistencia";
 import Precios from "../Routes/Precios";
 import Subscribirse from "../Routes/Subscribirse";
-
+import TestDrive from "../Routes/TestDrive";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -84,6 +84,10 @@ export const router = createBrowserRouter([
       {
         path: "/subscribirse",
         element: <Subscribirse />,
+      },
+      {
+        path: "/test-drive",
+        element: <TestDrive />,
       },
     ],
   },

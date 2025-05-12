@@ -8,6 +8,7 @@ const FormDropdown = ({
   name = "",
   value = "",
   onChange = () => {},
+  className = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -26,6 +27,7 @@ const FormDropdown = ({
   }, []);
 
   const handleOptionClick = (option) => {
+    console.log({ option });
     onChange({ target: { name, value: option.value } });
     setIsOpen(false);
   };
@@ -38,7 +40,9 @@ const FormDropdown = ({
 
   return (
     <div
-      className={`flex-1 relative ${disabled ? "opacity-50" : ""}`}
+      className={`flex-1 relative ${disabled ? "opacity-50" : ""} ${
+        className ? className : ""
+      }`}
       ref={dropdownRef}>
       <div
         className={`h-7 px-2.5 py-0 flex justify-between items-center cursor-pointer outline outline-1 outline-offset-[-1px] ${
