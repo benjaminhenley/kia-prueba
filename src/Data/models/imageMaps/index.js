@@ -1,10 +1,25 @@
-import { imageMap } from "../imageMaps";
+// src/Data/imageMaps/index.js
+import { sedanImages } from "./sedan";
+import { crossImages } from "./cross";
+import { ceratoImages } from "./cerato";
+import { sportageImages } from "./sportage";
+import { k2500Images } from "./k2500";
+
+// Export all model images in a single object
+export const imageMap = {
+  sedan: sedanImages,
+  cross: crossImages,
+  cerato: ceratoImages,
+  sportage: sportageImages,
+  k2500: k2500Images,
+};
 
 /**
  * Resolves an image reference string to its actual path
  * @param {string} imageRef - Reference in format "imageMapRef:model.path.to.image"
  * @returns {string} The resolved image path
  */
+
 export const resolveImageRef = (imageRef) => {
   if (!imageRef || typeof imageRef !== "string") {
     return imageRef;

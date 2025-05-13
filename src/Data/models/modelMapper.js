@@ -1,13 +1,11 @@
-import { resolveAllImageRefs } from "../mappers/imageMapper";
-
 // Import JSON models
 import k3SedanJson from "./json/k3-sedan.json";
 import k3CrossJson from "./json/k3-cross.json";
 import ceratoJson from "./json/cerato.json";
 import sportageJson from "./json/sportage.json";
 import k2500Json from "./json/k2500.json";
+import { resolveAllImageRefs } from "./imageMaps/index";
 
-// Export the processed models
 const k3Sedan = resolveAllImageRefs(k3SedanJson);
 const k3Cross = resolveAllImageRefs(k3CrossJson);
 const cerato = resolveAllImageRefs(ceratoJson);

@@ -5,7 +5,7 @@ import Inicio from "../Routes/Inicio";
 import Modelos from "../Routes/Modelos";
 import Promociones from "../Routes/Promociones";
 import Cookies from "../Routes/Cookies";
-import Contactenos from "../Routes/Contactenos";
+import Contacto from "../Routes/Contacto";
 import ConcesionariosVenta from "../Routes/ConcesionariosVenta";
 import ConcesionariosPostVenta from "../Routes/ConcesionariosPostVenta";
 import CotizarService from "../Routes/CotizarService";
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contacto",
-        element: <Contactenos />,
+        element: <Contacto />,
       },
       {
         path: "/red-venta",

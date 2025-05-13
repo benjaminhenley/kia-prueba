@@ -27,8 +27,7 @@ const FormDropdown = ({
   }, []);
 
   const handleOptionClick = (option) => {
-    console.log({ option });
-    onChange({ target: { name, value: option.value } });
+    onChange({ target: { name, value: option.value, label: option.label } });
     setIsOpen(false);
   };
 

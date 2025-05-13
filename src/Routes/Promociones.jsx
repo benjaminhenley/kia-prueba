@@ -11,12 +11,13 @@ import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import { PROVINCES } from "../Data/provinces";
 import { CAR_DEALERS } from "../Data/carDealers";
 import kiaApiCall from "../utils/apiCall";
-import CAR_MODELS from "../Data/models";
 import {
   MONTHS,
   generateDaysOptions,
   generateYearsOptions,
 } from "../Data/months";
+import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";
+import { initialFormDataPromociones } from "../Data/initialFormsData";
 
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
@@ -24,19 +25,7 @@ const CONTACT_PREFERENCES = [
 ];
 
 export default function Promociones() {
-  const [formData, setFormData] = useState({
-    car: CAR_MODELS[0].id,
-    firstName: "",
-    lastName: "",
-    contactPreference: "",
-    email: "",
-    phone: "",
-    birthDay: "",
-    birthMonth: "",
-    birthYear: "",
-    province: "",
-    dealer: "",
-  });
+  const [formData, setFormData] = useState(initialFormDataPromociones);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [showModelGallery, setShowModelGallery] = useState(true);
   const [availableDealers, setAvailableDealers] = useState([]);
@@ -45,36 +34,6 @@ export default function Promociones() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
 
-  // Add reCAPTCHA script to the page
-  useEffect(() => {
-    // Check if script already exists
-    if (!document.querySelector('script[src*="recaptcha"]')) {
-      const script = document.createElement("script");
-      script.src =
-        "https://www.google.com/recaptcha/api.js?render=6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP";
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-
-    // Once loaded, initialize
-    window.onload = function () {
-      if (typeof window.grecaptcha !== "undefined") {
-        window.grecaptcha.ready(function () {
-          console.log("reCAPTCHA ready");
-        });
-      }
-    };
-
-    return () => {
-      // Clean up, if needed
-      if (document.querySelector('script[src*="recaptcha"]')) {
-        document.querySelector('script[src*="recaptcha"]').remove();
-      }
-    };
-  }, []);
-
-  // Add useEffect to validate form on every change
   useEffect(() => {
     validateForm();
   }, [formData, acceptedTerms]);
@@ -87,36 +46,28 @@ export default function Promociones() {
     }));
   }, []);
 
-  // Add useEffect to filter dealers when province changes
   useEffect(() => {
     if (formData.province) {
-      // Find the label of the selected province using its value
       const selectedProvinceLabel = PROVINCES.find(
         (p) => p.value === parseInt(formData.province)
       )?.label;
 
       if (selectedProvinceLabel) {
-        // Filter dealers whose province matches the selected province label
         const dealers = CAR_DEALERS.filter(
           (dealer) => dealer.province === selectedProvinceLabel
         );
         setAvailableDealers(dealers);
       } else {
-        // If province label not found (shouldn't happen with valid data), clear dealers
         setAvailableDealers([]);
       }
     } else {
-      // If no province is selected, clear available dealers
       setAvailableDealers([]);
     }
-    // Reset dealer selection when province changes or clears
-    // This is handled in handleFormChange now
   }, [formData.province]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
 
-    // If province changes, reset dealer selection
     if (name === "province") {
       setFormData((prev) => ({
         ...prev,
@@ -169,30 +120,9 @@ export default function Promociones() {
     return valid;
   };
 
-  const isFormValid = () => {
-    return isValid;
-  };
-
   // Toggle model gallery visibility
   const toggleModelGallery = () => {
     setShowModelGallery(!showModelGallery);
-  };
-
-  const executeRecaptcha = () => {
-    if (typeof window.grecaptcha !== "undefined") {
-      window.grecaptcha.ready(function () {
-        window.grecaptcha
-          .execute("6LeMoSMrAAAAAPsksQG06PD87F2gwqI6ALl4JzaP", {
-            action: "submit",
-          })
-          .then(function (token) {
-            setRecaptchaToken(token);
-            handleSubmit(token);
-          });
-      });
-    } else {
-      console.error("reCAPTCHA not loaded");
-    }
   };
 
   const handleSubmit = async () => {
@@ -209,24 +139,18 @@ export default function Promociones() {
   };
 
   const submitForm = () => {
-    executeRecaptcha();
+    try {
+      const token = ExecuteRecaptcha();
+      setRecaptchaToken(token);
+
+      handleSubmit();
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
-  // Function to reset the form
   const resetForm = () => {
-    setFormData({
-      car: "",
-      firstName: "",
-      lastName: "",
-      contactPreference: "",
-      email: "",
-      phone: "",
-      birthDay: "",
-      birthMonth: "",
-      birthYear: "",
-      province: "",
-      dealer: "",
-    });
+    setFormData(initialFormDataPromociones);
     setAcceptedTerms(false);
     setIsSubmitted(false);
   };
@@ -258,6 +182,8 @@ export default function Promociones() {
 
         {isSubmitted ? (
           <SuccessMessage
+            message="Muchas gracias por interesarte en nuestras promociones. Vamos a estar contactándolo a la brevedad."
+            buttonText="Deseo consultar por otras promos"
             firstName={formData.firstName}
             onReset={resetForm}
             onHome={goHome}
