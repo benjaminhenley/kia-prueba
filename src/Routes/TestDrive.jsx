@@ -26,9 +26,9 @@ import { initialFormDataTestDrive } from "../Data/initialFormsData";
 import kiaApiCall from "../utils/apiCall";
 import Arrow from "../Components/Common/Icons/Arrow";
 
-const carVariants = [
-  { id: 24, name: "K3 Cross" },
-  { id: 25, name: "K3 Sedán" },
+const ALL_CAR_MODELS = [
+  { id: 24, name: "K3 Cross", category: "suv" },
+  { id: 25, name: "K3 Sedán", category: "autos" },
 ];
 
 const categories = [
@@ -41,9 +41,7 @@ const categories = [
 const CarCard = ({ car, onClick, selected }) => (
   <div
     id={car.name}
-    className={`bg-gray-100 p-4 text-center cursor-pointer md:max-w-[250px] max-w-[343px] ${
-      selected ? "border" : ""
-    }`}
+    className={`bg-[#F8F8F8] border border-[#CDD0D2] p-4 text-center cursor-pointer md:max-w-[250px] w-full`}
     onClick={onClick}>
     <img
       src={CAR_MODELS.find((model) => model.id === car.id)?.image}
@@ -83,16 +81,18 @@ const TestDrive = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [selectedStep, setSelectedStep] = useState(1);
   const [selectedProvince, setSelectedProvince] = useState(null);
-  const [selectedDealers, setSelectedDealers] = useState(
-    CAR_DEALERS_BY_PROVINCE
-  );
   const [selectedDealer, setSelectedDealer] = useState(null);
   const [selectedModel, setSelectedModel] = useState(false);
   const [carModelElement, setCarModelElement] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [formData, setFormData] = useState(initialFormDataTestDrive);
+  const [selectedDealers, setSelectedDealers] = useState(
+    CAR_DEALERS_BY_PROVINCE
+  );
+  const [carCards, setCarCards] = useState(ALL_CAR_MODELS);
 
   const requiredFields = [
     "firstName",
@@ -143,6 +143,16 @@ const TestDrive = () => {
     setSelectedProvince(province);
   };
 
+  useEffect(() => {
+    if (selectedCategory !== "todos") {
+      setCarCards(
+        ALL_CAR_MODELS.filter((car) => car.category === selectedCategory)
+      );
+    } else {
+      setCarCards(ALL_CAR_MODELS);
+    }
+  }, [selectedCategory]);
+
   const handleCarSelect = (car) => {
     setFormData((prev) => ({
       ...prev,
@@ -167,7 +177,8 @@ const TestDrive = () => {
     try {
       const token = ExecuteRecaptcha();
       setRecaptchaToken(token);
-      kiaApiCall(formData, recaptchaToken);
+
+      kiaApiCall(formData, "kiaweb: Test-drive");
       resetForm();
     } catch (error) {
       console.log("Error:", error);
@@ -227,45 +238,48 @@ const TestDrive = () => {
                 {/* Vehicle Category Selection */}
                 {selectedStep === 1 && (
                   <>
-                    {/* <div className="flex flex-col md:flex-row px-2 py-5 md:p-8">
-                  <h5 className="mb-5">Categoría:</h5>
-                  <div className=" flex md:flex-row flex-wrap  h-full mx-auto justify-center gap-5">
-                    {categories.map((category) => (
-                      <div
-                        key={category.id}
-                        className="flex flex-col w-[144px] h-[96px] p-6 relative">
-                        <RadioButton
-                          className="absolute left-3 top-3"
-                          checked={selectedCategory === category.id}
-                          onChange={() => setSelectedCategory(category.id)}
-                          id={category.id}
-                        />
-                        <img
-                          src={category.icon}
-                          alt={category.name}
-                          className="mb-2"
-                        />
-                        <h6 className="font-normal text-[#05141F] text-center">
-                          {category.name}
-                        </h6>
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
-
-                    {/* Vehicle Grid */}
-                    <div className="my-10">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-fit mx-auto">
-                        {carVariants.map((car) => (
-                          <CarCard
-                            key={car.name}
-                            car={car}
-                            onClick={() => handleCarSelect(car)}
-                            selected={selectedModel === car.name}
-                          />
+                    <div className="flex flex-col md:flex-row px-2 py-5 md:px-8 md:py-6 gap-5">
+                      <h5 className="mb-5">Categoría:</h5>
+                      <div className="grid grid-cols-2 md:flex md:flex-row h-full w-fit justify-start gap-5">
+                        {categories.map((category) => (
+                          <div
+                            key={category.id}
+                            className="flex flex-col w-[144px] h-[96px] p-6 relative">
+                            <RadioButton
+                              className="absolute left-3 top-3"
+                              checked={selectedCategory === category.id}
+                              onChange={() => setSelectedCategory(category.id)}
+                              id={category.id}
+                            />
+                            <img
+                              src={category.icon}
+                              alt={category.name}
+                              className="mb-2"
+                            />
+                            <h6 className="font-normal text-[#05141F] text-center">
+                              {category.name}
+                            </h6>
+                          </div>
                         ))}
                       </div>
                     </div>
+                    <hr className="border-[#CDD0D2]" />
+
+                    {/* Vehicle Grid */}
+                    {carCards.length > 0 && (
+                      <div className="md:my-10 my-5 md:mx-[110px]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full md:w-fit">
+                          {carCards.map((car) => (
+                            <CarCard
+                              key={car.name}
+                              car={car}
+                              onClick={() => handleCarSelect(car)}
+                              selected={selectedModel === car.name}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </>
                 )}
               </div>
@@ -323,7 +337,7 @@ const TestDrive = () => {
                     </div>
 
                     <div className="overflow-x-auto">
-                      <table className="w-full border border-[#CDD0D2] mb-10">
+                      <table className="w-full border border-[#CDD0D2] ">
                         <thead className="bg-[#05141F]">
                           <tr className="">
                             <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
@@ -380,11 +394,11 @@ const TestDrive = () => {
                   title="Completá tus datos"
                   description="Dejanos los siguientes datos para poder contactarte"
                 />
-                <div className="self-stretch md:px-8 py-5 md:p-6 flex flex-col gap-5">
-                  <div className="flex flex-col gap-5 md:px-6">
-                    {selectedStep === 3 && (
-                      <>
-                        <Separator />
+                {selectedStep === 3 && (
+                  <div className="md:px-8 mt-5">
+                    <Separator />
+                    <div className="self-stretch py-5 md:p-6 flex flex-col gap-5">
+                      <div className="flex flex-col gap-5">
                         <div className="flex flex-row items-center gap-[15px]">
                           <Arrow />
                           <h4 className="font-bold">
@@ -494,26 +508,25 @@ const TestDrive = () => {
                             *Campo obligatorio
                           </h5>
                         </div>
-
-                        <hr className="border-[#CDD0D2]" />
-                        {/* Action Buttons */}
-                        <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5">
-                          <SquareButton type="secondary" onClick={() => {}}>
-                            Cancelar
-                          </SquareButton>
-                          <SquareButton
-                            type="primary"
-                            disabled={!isValid}
-                            onClick={() => {
-                              submitForm();
-                            }}>
-                            Enviar
-                          </SquareButton>
-                        </div>
-                      </>
-                    )}
+                      </div>
+                    </div>
+                    <hr className="border-[#CDD0D2]" />
+                    {/* Action Buttons */}
+                    <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5 mt-5">
+                      <SquareButton type="secondary" onClick={() => {}}>
+                        Cancelar
+                      </SquareButton>
+                      <SquareButton
+                        type="primary"
+                        disabled={!isValid}
+                        onClick={() => {
+                          submitForm();
+                        }}>
+                        Enviar
+                      </SquareButton>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           )}
