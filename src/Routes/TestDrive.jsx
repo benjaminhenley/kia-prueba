@@ -273,7 +273,7 @@ const TestDrive = () => {
               {/* STEP #2 */}
               <div className="flex flex-col">
                 <CustomStepper
-                  onClick={() => setSelectedStep(2)}
+                  onClick={selectedModel ? () => setSelectedStep(2) : null}
                   items={
                     selectedDealer ? (
                       <DealerCard dealer={selectedDealer} />
@@ -287,7 +287,7 @@ const TestDrive = () => {
                 />
                 {selectedStep === 2 && (
                   <div className="flex flex-col lg:mx-20 md:mb-20">
-                    <div className="flex flex-col md:flex-row gap-5 py-6 md:py-10 w-full">
+                    <div className="flex flex-col md:flex-row gap-5 md:gap-20 py-6 md:py-10 w-full">
                       <div className="flex flex-col sm:flex-row gap-3 md:gap-5 items-center w-full">
                         <FormDropdown
                           value={selectedProvince ? selectedProvince.label : ""}
@@ -297,7 +297,7 @@ const TestDrive = () => {
                               ? selectedProvince.label
                               : "Seleccionar provincia"
                           }
-                          className="w-full"
+                          className="w-full "
                           onChange={(e) => handleProvinceSelect(e.target)}
                         />
                         <PillButton
@@ -374,7 +374,7 @@ const TestDrive = () => {
               {/* STEP #3 */}
               <div className="flex flex-col">
                 <CustomStepper
-                  onClick={() => setSelectedStep(3)}
+                  onClick={selectedDealer ? () => setSelectedStep(3) : null}
                   selected={selectedStep === 3}
                   step="03"
                   title="Completá tus datos"
