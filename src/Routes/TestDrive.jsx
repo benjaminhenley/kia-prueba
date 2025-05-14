@@ -86,7 +86,7 @@ const TestDrive = () => {
   const [carModelElement, setCarModelElement] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("todos");
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [formData, setFormData] = useState(initialFormDataTestDrive);
   const [selectedDealers, setSelectedDealers] = useState(
@@ -240,7 +240,7 @@ const TestDrive = () => {
                   <>
                     <div className="flex flex-col md:flex-row px-2 py-5 md:px-8 md:py-6 gap-5">
                       <h5 className="mb-5">Categoría:</h5>
-                      <div className="grid grid-cols-2 md:flex md:flex-row h-full w-fit justify-start gap-5">
+                      <div className="grid grid-cols-2 md:flex md:flex-row h-full justify-start gap-5 w-full">
                         {categories.map((category) => (
                           <div
                             key={category.id}
