@@ -56,9 +56,9 @@ export const homeSlider = [
     titulo: "Carnival",
     subtitulo: "Amplia tus horizontes",
     textoBoton: "Conocer más",
-    linkBoton: "https://www.kia.com.ar/carnival",
+    linkBoton: "/carnival",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
   {
     imagen: Sportage,
@@ -96,9 +96,9 @@ export const homeSlider = [
     titulo: "K2500",
     subtitulo: "A la medida de tu negocio",
     textoBoton: "Conocer más",
-    linkBoton: "https://www.kia.com.ar/k2500",
+    linkBoton: "/k2500",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 ];
 

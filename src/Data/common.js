@@ -172,9 +172,9 @@ export const camionetasSuv = [
 export const utilitarios = [
   {
     nombre: "K2500",
-    href: "https://www.kia.com.ar/k2500",
+    href: "/k2500",
     target: "",
-    esExterna: true,
+    esExterna: false,
     esNuevo: null,
     foto: K2500,
     precio: (
