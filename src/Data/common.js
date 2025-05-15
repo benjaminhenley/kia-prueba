@@ -148,9 +148,9 @@ export const camionetasSuv = [
   },
   {
     nombre: "Carnival",
-    href: "https://www.kia.com.ar/carnival",
+    href: "/carnival",
     target: "",
-    esExterna: true,
+    esExterna: false,
     esNuevo: null,
     foto: Carnival,
     precio: (
@@ -333,4 +333,3 @@ export const transparentbarRight = [
     esExterna: true,
   },
 ];
-
