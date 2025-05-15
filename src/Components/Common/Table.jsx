@@ -25,7 +25,10 @@ const Table = ({ data, className }) => {
           {data.details.map((row, index) => (
             <tr
               key={index}
-              className={index % 2 === 0 ? "bg-[#E1E3E4]" : "bg-[#F5F6F6]"}>
+              className={
+                "h-[54px] " +
+                (index % 2 === 0 ? "bg-[#E1E3E4]" : "bg-[#F5F6F6]")
+              }>
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}

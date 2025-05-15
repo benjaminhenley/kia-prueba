@@ -336,50 +336,63 @@ const TestDrive = () => {
                       </div>
                     </div>
 
-                    <div className="overflow-x-auto">
-                      <table className="w-full border border-[#CDD0D2] ">
-                        <thead className="bg-[#05141F]">
-                          <tr className="">
-                            <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
-                              <h4 className="font-bold">Concesionario</h4>
-                            </th>
-                            <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
-                              <h4 className="font-bold">Dirección</h4>
-                            </th>
-                            <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
-                              <h4 className="font-bold">Horario de atención</h4>
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {selectedDealers.map((dealer, index) => (
-                            <tr
-                              key={index}
-                              className={
-                                index % 2 === 0
-                                  ? "bg-[#E1E3E4]"
-                                  : "bg-[#F5F6F6]"
-                              }>
-                              <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
-                                <div className="flex flex-row items-center gap-5">
-                                  <RadioButton
-                                    checked={selectedDealer === dealer}
-                                    onChange={() => handleDealerSelect(dealer)}
-                                    id={dealer.id}
-                                  />
-                                  <h4 className="font-bold">{dealer.label}</h4>
-                                </div>
-                              </td>
-                              <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
-                                <h4>{dealer.direccion}</h4>
-                              </td>
-                              <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
-                                <h4>{dealer.horariosDeAtencion}</h4>
-                              </td>
+                    <div className="w-full overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full border border-[#CDD0D2]">
+                          <thead className="bg-[#05141F]">
+                            <tr className="">
+                              <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px] sticky left-0 z-10 bg-[#05141F]">
+                                <h4 className="font-bold">Concesionario</h4>
+                              </th>
+                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
+                                <h4 className="font-bold">Dirección</h4>
+                              </th>
+                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
+                                <h4 className="font-bold">
+                                  Horario de atención
+                                </h4>
+                              </th>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            {selectedDealers.map((dealer, index) => (
+                              <tr
+                                key={index}
+                                className={
+                                  index % 2 === 0
+                                    ? "bg-[#E1E3E4]"
+                                    : "bg-[#F5F6F6]"
+                                }>
+                                <td
+                                  className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3 sticky left-0 z-10"
+                                  style={{
+                                    backgroundColor:
+                                      index % 2 === 0 ? "#E1E3E4" : "#F5F6F6",
+                                  }}>
+                                  <div className="flex flex-row items-center gap-5">
+                                    <RadioButton
+                                      checked={selectedDealer === dealer}
+                                      onChange={() =>
+                                        handleDealerSelect(dealer)
+                                      }
+                                      id={dealer.id}
+                                    />
+                                    <h4 className="font-bold">
+                                      {dealer.label}
+                                    </h4>
+                                  </div>
+                                </td>
+                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
+                                  <h4>{dealer.direccion}</h4>
+                                </td>
+                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
+                                  <h4>{dealer.horariosDeAtencion}</h4>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 )}
