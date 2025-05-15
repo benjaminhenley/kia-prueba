@@ -344,10 +344,10 @@ const TestDrive = () => {
                               <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[100px] md:w-1/3 min-w-[100px] sticky left-0 z-10 bg-[#05141F]">
                                 <h4 className="font-bold">Concesionario</h4>
                               </th>
-                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
+                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[300px]">
                                 <h4 className="font-bold">Dirección</h4>
                               </th>
-                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
+                              <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[320px]">
                                 <h4 className="font-bold">
                                   Horario de atención
                                 </h4>
@@ -358,11 +358,11 @@ const TestDrive = () => {
                             {selectedDealers.map((dealer, index) => (
                               <tr
                                 key={index}
-                                className={
+                                className={`h-[100px] ${
                                   index % 2 === 0
                                     ? "bg-[#E1E3E4]"
                                     : "bg-[#F5F6F6]"
-                                }>
+                                }`}>
                                 <td
                                   className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[100px] min-w-[100px] md:w-1/3 sticky left-0 z-10"
                                   style={{
@@ -382,10 +382,10 @@ const TestDrive = () => {
                                     </h4>
                                   </div>
                                 </td>
-                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
+                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[300px] md:w-1/3">
                                   <h4>{dealer.direccion}</h4>
                                 </td>
-                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3">
+                                <td className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[320px] md:w-1/3">
                                   <h4>{dealer.horariosDeAtencion}</h4>
                                 </td>
                               </tr>
