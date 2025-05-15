@@ -7,21 +7,27 @@ import carnivalSideDesktop from "../../../assets/img/models/carnival/carousel/ca
 import carnivalSideMobile from "../../../assets/img/models/carnival/carousel/carnival-side-mobile.webp";
 // Carnival exterior images
 import carnivalExteriorBacklights from "../../../assets/img/models/carnival/exterior/carnival-exterior-backlights.webp";
-import carnivalExteriorGrille from "../../../assets/img/models/carnival/exterior/carnival-exterior-grille.webp";
-import carnivalExteriorLights from "../../../assets/img/models/carnival/exterior/carnival-exterior-lights.webp";
 import carnivalExteriorDoors from "../../../assets/img/models/carnival/exterior/carnival-exterior-doors.webp";
+import carnivalExteriorLights from "../../../assets/img/models/carnival/exterior/carnival-exterior-lights.webp";
+import carnivalExteriorTrunk from "../../../assets/img/models/carnival/exterior/carnival-exterior-trunk.webp";
 import carnivalExteriorWheel from "../../../assets/img/models/carnival/exterior/carnival-exterior-wheel.webp";
 // Carnival interior images
-import carnivalInteriorGearbox from "../../../assets/img/models/carnival/interior/carnival-interior-gearbox.webp";
+import carnivalInteriorAirConditioning from "../../../assets/img/models/carnival/interior/carnival-interior-air-conditioning.webp";
 import carnivalInteriorPanel from "../../../assets/img/models/carnival/interior/carnival-interior-panel.webp";
+import carnivalInteriorRooftop from "../../../assets/img/models/carnival/interior/carnival-interior-rooftop.webp";
+import carnivalInteriorWhole from "../../../assets/img/models/carnival/interior/carnival-interior-whole.webp";
 import carnivalInteriorSeats from "../../../assets/img/models/carnival/interior/carnival-interior-seats.webp";
-import carnivalInteriorSteeringWheel from "../../../assets/img/models/carnival/interior/carnival-interior-steering-wheel.webp";
-import carnivalInteriorTrunk from "../../../assets/img/models/carnival/interior/carnival-interior-trunk.webp";
+// Carnival colors images
+import carnivalAstraBlue from "../../../assets/img/models/carnival/colors/carnival-astra-blue.webp";
+import carnivalAuroraBlackPearl from "../../../assets/img/models/carnival/colors/carnival-aurora-black-pearl.webp";
+import carnivalPantheraMetal from "../../../assets/img/models/carnival/colors/carnival-panthera-metal.webp";
+import carnivalCeramicSilver from "../../../assets/img/models/carnival/colors/carnival-ceramic-silver.webp";
+import carnivalSnowWhitePearl from "../../../assets/img/models/carnival/colors/carnival-snow-white-pearl.webp";
 // Carnival Atributes
 import carnivalAtributesDesktop from "../../../assets/img/models/carnival/atributes/carnival-atributes-desktop.webp";
 import carnivalAtributesMobile from "../../../assets/img/models/carnival/atributes/carnival-atributes-mobile.webp";
 // Carnival Etiqueta
-import carnivalEtiqueta from "../../../assets/etiquetas/carnival-etiqueta.pdf";
+// import carnivalEtiqueta from "../../../assets/etiquetas/carnival-etiqueta.pdf";
 // Carnival Fichas
 import carnivalFichas from "../../../assets/fichas/carnival-ficha.pdf";
 
@@ -45,9 +51,9 @@ export const carnivalImages = {
       desktop: carnivalExteriorBacklights,
       mobile: carnivalExteriorBacklights,
     },
-    grille: {
-      desktop: carnivalExteriorGrille,
-      mobile: carnivalExteriorGrille,
+    trunk: {
+      desktop: carnivalExteriorTrunk,
+      mobile: carnivalExteriorTrunk,
     },
     lights: {
       desktop: carnivalExteriorLights,
@@ -63,31 +69,38 @@ export const carnivalImages = {
     },
   },
   interior: {
-    steeringWheel: {
-      desktop: carnivalInteriorSteeringWheel,
-      mobile: carnivalInteriorSteeringWheel,
+    rooftop: {
+      desktop: carnivalInteriorRooftop,
+      mobile: carnivalInteriorRooftop,
     },
-    trunk: {
-      desktop: carnivalInteriorTrunk,
-      mobile: carnivalInteriorTrunk,
+    whole: {
+      desktop: carnivalInteriorWhole,
+      mobile: carnivalInteriorWhole,
     },
     panel: {
       desktop: carnivalInteriorPanel,
       mobile: carnivalInteriorPanel,
     },
-    gearbox: {
-      desktop: carnivalInteriorGearbox,
-      mobile: carnivalInteriorGearbox,
+    airConditioning: {
+      desktop: carnivalInteriorAirConditioning,
+      mobile: carnivalInteriorAirConditioning,
     },
     seats: {
       desktop: carnivalInteriorSeats,
       mobile: carnivalInteriorSeats,
     },
   },
+  colors: {
+    astraBlue: carnivalAstraBlue,
+    auroraBlackPearl: carnivalAuroraBlackPearl,
+    pantheraMetal: carnivalPantheraMetal,
+    ceramicSilver: carnivalCeramicSilver,
+    snowWhitePearl: carnivalSnowWhitePearl,
+  },
   attributes: {
     desktop: carnivalAtributesDesktop,
     mobile: carnivalAtributesMobile,
   },
-  etiqueta: carnivalEtiqueta,
+  etiqueta: carnivalFichas,
   fichas: carnivalFichas,
 };

@@ -1,7 +1,7 @@
 {
   "id": "carnival",
   "name": "Carnival",
-  "tagline": "El lujo de ir más allá",
+  "tagline": "Ampliá tus horizontes",
   "heroImage": "/images/placeholder-carnival-hero.jpg",
   "heroVideo": "imageMapRef:carnival.heroVideo",
 
@@ -11,43 +11,42 @@
   },
   "heroInfo": [
     {
-      "iconId": "drivewise",
-      "title": "Drive Wise",
-      "description": "Drive Wise <br/> Asistencia a <br/> la Conducción",
-      "description_mobile": "Drive Wise <br/> Asistencia a <br/> la Conducción"
-    },
-    {
-      "iconId": "airbag",
-      "title": "Airbag",
-      "description": "6 <br/> Airbags",
-      "description_mobile": "6 <br/> Airbags"
+      "iconId": "adas",
+      "title": "ADAS",
+      "description": "Asistencias <br/> Avanzadas a <br/> la Conducción",
+      "description_mobile": "Asistencias <br/> Avanzadas a <br/> la Conducción"
     },
     {
       "iconId": "radio",
-      "title": "Radio",
-      "description": "Pantalla táctil <br/> de 12.3\"",
-      "description_mobile": "Pantalla táctil <br/> de 12.3\""
+      "title": "Pantalla",
+      "description": "Pantalla <br/> panorámica <br/> digital 25\"",
+      "description_mobile": "Pantalla <br/> panorámica <br/> digital 25\""
     },
     {
-      "iconId": "seats",
-      "title": "Asientos",
-      "description": "7-8 <br/> asientos <br/> configurables",
-      "description_mobile": "7-8 <br/> asientos <br/> configurables"
+      "iconId": "airbag",
+      "title": "Airbags",
+      "description": "8 <br/> Airbags <br/> de serie",
+      "description_mobile": "8 <br/> Airbags <br/> de serie"
+    },
+    {
+      "iconId": "audio",
+      "title": "Audio",
+      "description": "Audio <br/> premium <br/> Bose",
+      "description_mobile": "Audio <br/> premium <br/> Bose"
     }
   ],
   "sections": {
     "characteristics": {
-      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/carnival/lhd/index.html",
       "features": [
         {
           "id": "motor",
           "title": "Motor",
-          "value": "2.2R CRDi | 2,199cc"
+          "value": "R 2.2 CRDI | 2,151cc"
         },
         {
           "id": "performance",
           "title": "Performance",
-          "value": "202hp | 440Nm"
+          "value": "199hp | 440Nm"
         },
         {
           "id": "warranty",
@@ -55,100 +54,142 @@
           "value": "5 años o 100.000km"
         }
       ],
+      "colorPicker": [
+        {
+          "id": "astra-blue",
+          "name": "Astra Blue",
+          "border": "#1A3547",
+          "color": "#2C5976",
+          "outline": "#28506A",
+          "thumbnail": "imageMapRef:carnival.colors.astraBlue"
+        },
+        {
+          "id": "aurora-black-pearl",
+          "name": "Aurora Black Pearl",
+          "border": "#05141F",
+          "color": "#1B171B",
+          "outline": "#05141F",
+          "thumbnail": "imageMapRef:carnival.colors.auroraBlackPearl"
+        },
+        {
+          "id": "panthera-metal",
+          "name": "Panthera Metal",
+          "border": "#242323",
+          "color": "#474646",
+          "outline": "#393838",
+          "thumbnail": "imageMapRef:carnival.colors.pantheraMetal"
+        },
+        {
+          "id": "ceramic-silver",
+          "name": "Ceramic Silver",
+          "border": "#4C4C4C",
+          "color": "#7E7E7E",
+          "outline": "#6B6B6B",
+          "thumbnail": "imageMapRef:carnival.colors.ceramicSilver"
+        },
+        {
+          "id": "snow-white-pearl",
+          "name": "Snow White Pearl",
+          "border": "#D6D6D6",
+          "color": "#F6F6F6",
+          "outline": "#EFEFEF",
+          "thumbnail": "imageMapRef:carnival.colors.snowWhitePearl"
+        }
+      ],
       "atributes": {
         "category": "Atributos",
-        "subtitle": "Redefine el concepto de vehículo familiar",
+        "subtitle": "Un punto brillante en el corazón de la ciudad",
         "image": "imageMapRef:carnival.attributes",
         "bulletPoints": [
-          "**Versatilidad premium:** Capacidad para hasta 8 pasajeros con múltiples configuraciones de asientos que se adaptan a tus necesidades, desde un viaje familiar hasta el transporte de objetos voluminosos.",
-          "**Tecnología intuitiva:** Sistemas avanzados de asistencia a la conducción, conectividad de última generación y pantallas táctiles que hacen que cada viaje sea más seguro y placentero.",
-          "**Confort superior:** Espacio interior expansivo con detalles premium, asientos VIP con función reclinable, climatización tri-zona y puertas laterales deslizantes eléctricas."
+          "**Versatilidad de otro nivel:** La Carnival ofrece espacio para once pasajeros y múltiples configuraciones de asientos, adaptándose a cualquier estilo de vida.",
+          "**Tecnología inteligente y conectada:** Con una doble pantalla de 12.3\", cargador inalámbrico y asistencia avanzada a la conducción, todo está pensado para facilitar cada kilómetro.",
+          "**Confort que trasciende el viaje:** Su silueta aerodinámica, faros Bi-LED y puertas deslizantes eléctricas combinan estilo con funcionalidad. Cada detalle fue pensado para que la Carnival luzca tan bien como se siente."
         ],
-        "description": "El Kia Carnival reinventa el concepto de minivan de lujo al combinar un diseño elegante con un interior versátil y tecnología de vanguardia. Un vehículo pensado para quienes buscan espacio, confort y sofisticación sin compromisos."
+        "description": "La Kia Carnival combina lo mejor de tres mundos: diseño elegante, tecnología intuitiva y una versatilidad que transforma cada viaje en una experiencia premium. Ideal para quienes buscan comodidad, estilo y eficiencia en cada trayecto."
       },
       "exterior": {
         "galleryType": "1",
         "category": "Exterior",
-        "title": "Presencia imponente, elegancia sin esfuerzo",
-        "description": "El Carnival desafía lo convencional con un diseño exterior que combina la funcionalidad de una minivan con la presencia imponente de un SUV premium.",
+        "title": "Diseñada para ser vista",
+        "description": "Cada detalle exterior está pensado para impactar: sus líneas elegantes no solo son estéticas, también mejoran la aerodinámica. La Carnival combina sofisticación con funcionalidad en movimiento.",
         "images": [
           {
             "id": "carnival-exterior-lights",
             "src": "imageMapRef:carnival.exterior.lights",
             "alt": "Luces",
-            "title": "Iluminación distintiva",
-            "description": "Los faros LED delanteros con firma lumínica característica no solo mejoran la visibilidad, sino que aportan un carácter sofisticado que destaca en cualquier camino."
-          },
-          {
-            "id": "carnival-exterior-doors",
-            "src": "imageMapRef:carnival.exterior.doors",
-            "alt": "Puertas",
-            "title": "Acceso inteligente",
-            "description": "Las puertas laterales deslizantes eléctricas con apertura manos libres facilitan el acceso de todos los pasajeros, especialmente en espacios reducidos."
-          },
-          {
-            "id": "carnival-exterior-wheel",
-            "src": "imageMapRef:carnival.exterior.wheel",
-            "alt": "Llantas",
-            "title": "Estilo en movimiento",
-            "description": "Las llantas de aleación de 19\" combinan sofisticación visual con robustez, complementando su imponente presencia en la carretera."
+            "title": "Ilumina tu camino",
+            "description": "Los faros delanteros Full LED ofrecen una iluminación poderosa y precisa, combinando estética y funcionalidad para garantizar la mejor visibilidad en todo momento."
           },
           {
             "id": "carnival-exterior-backlights",
             "src": "imageMapRef:carnival.exterior.backlights",
             "alt": "Luces traseras",
-            "title": "Identidad incluso por detrás",
-            "description": "Las luces traseras LED de ancho completo crean una firma lumínica reconocible que enfatiza su diseño contemporáneo y de alta gama."
+            "title": "Visible desde dónde la mires",
+            "description": "Las luces traseras con tecnología LED avanzada, combinan potencia y distinción que se integra perfectamente con la silueta deportiva del vehículo."
           },
           {
-            "id": "carnival-exterior-grille",
-            "src": "imageMapRef:carnival.exterior.grille",
-            "alt": "Grille",
-            "title": "Carácter frontal distintivo",
-            "description": "La parrilla frontal 'tiger nose' con detalles cromados proyecta un carácter sofisticado y audaz que redefine la categoría."
+            "id": "carnival-exterior-doors",
+            "src": "imageMapRef:carnival.exterior.doors",
+            "alt": "Puertas",
+            "title": "Apertura que piensa en vos",
+            "description": "Las puertas laterales automáticas facilitan cómodamente el acceso y el descenso, facilitando el ingreso de equipaje, compras o lo que necesites trasladar."
+          },
+          {
+            "id": "carnival-exterior-trunk",
+            "src": "imageMapRef:carnival.exterior.trunk",
+            "alt": "Baúl",
+            "title": "Abre y cierra de un solo toque a distancia",
+            "description": "El portón trasero eléctrico con apertura y cierre automático se activa por proximidad o desde el Smart Key, facilitando la carga incluso cuando tenés las manos ocupadas."
+          },
+          {
+            "id": "carnival-exterior-wheel",
+            "src": "imageMapRef:carnival.exterior.wheel",
+            "alt": "Llantas",
+            "title": "Elegancia sobre ruedas",
+            "description": "Las llantas de aleación de 17\" combinan diseño y eficiencia, completando una estética moderna que refleja la potencia y carácter deportivo de Carnival."
           }
         ]
       },
       "interior": {
         "galleryType": "1",
         "category": "Interior",
-        "title": "El lujo del espacio bien pensado",
-        "description": "El interior del Carnival es un santuario de confort, con atención meticulosa a los detalles y tecnologías pensadas para hacer cada viaje más placentero.",
+        "title": "Un espacio pensado para los que viajan con vos",
+        "description": "La experiencia interior de la Carnival está centrada en brindar comodidad, conexión y tecnología a todos los pasajeros. Porque cada trayecto es tan importante como el destino.",
         "images": [
           {
-            "id": "carnival-interior-steering-wheel",
-            "src": "imageMapRef:carnival.interior.steeringWheel",
-            "alt": "Volante",
-            "title": "Control a tu alcance",
-            "description": "El volante multifunción forrado en cuero integra comandos para audio, conectividad y asistentes de conducción, permitiéndote controlar todo sin quitar las manos del volante."
-          },
-          {
-            "id": "carnival-interior-trunk",
-            "src": "imageMapRef:carnival.interior.trunk",
-            "alt": "Baúl",
-            "title": "Espacio para todas tus necesidades",
-            "description": "Con una capacidad de carga flexible de hasta 2,905 litros con los asientos abatidos, el Carnival se adapta a cualquier tarea, desde las compras familiares hasta equipaje para viajes extensos."
-          },
-          {
-            "id": "carnival-interior-gearbox",
-            "src": "imageMapRef:carnival.interior.gearbox",
-            "alt": "Caja de cambios",
-            "title": "Transmisión refinada",
-            "description": "La transmisión automática de 8 velocidades ofrece cambios suaves y precisos, optimizando tanto el rendimiento como la eficiencia de combustible."
+            "id": "carnival-interior-panel",
+            "src": "imageMapRef:carnival.interior.panel",
+            "alt": "Panel",
+            "title": "Tecnología al frente",
+            "description": "El tablero digital de 12,3\" ofrece una visual clara y personalizable de toda la información de manejo. Tus viajes múltiples estarán a la distancia adecuada y como tales."
           },
           {
             "id": "carnival-interior-seats",
             "src": "imageMapRef:carnival.interior.seats",
             "alt": "Asientos",
-            "title": "Confort personalizado",
-            "description": "Los asientos tipo VIP en la segunda fila con función reclinable, soporte para piernas y calefacción crean una experiencia de viaje similar a la clase ejecutiva de un avión."
+            "title": "Asientos pensados para tu bienestar",
+            "description": "Las butacas delanteras cuentan con calefacción y ventilación integradas, adaptándose a cualquier clima para brindar una experiencia de primera en cada trayecto."
           },
           {
-            "id": "carnival-interior-panel",
-            "src": "imageMapRef:carnival.interior.panel",
-            "alt": "Panel",
-            "title": "Centro de comando digital",
-            "description": "El panel de instrumentos digital de 12.3\" y la pantalla táctil central del mismo tamaño forman un cockpit integrado que pone toda la información y entretenimiento a tu disposición."
+            "id": "carnival-interior-rooftop",
+            "src": "imageMapRef:carnival.interior.rooftop",
+            "alt": "Techo",
+            "title": "Luz que abre el interior",
+            "description": "El doble techo solar inunda de luz natural el habitáculo, creando junto a los parasoles con espejo y luz integrada la sensación de amplitud y apertura."
+          },
+          {
+            "id": "carnival-interior-whole",
+            "src": "imageMapRef:carnival.interior.whole",
+            "alt": "Interior",
+            "title": "Espacio para lo que imaginás",
+            "description": "Con capacidad para siete personas y modulación inteligente, la Carnival transforma su interior según tu día, tu plan o tu carga."
+          },
+          {
+            "id": "carnival-interior-air-conditioning",
+            "src": "imageMapRef:carnival.interior.airConditioning",
+            "alt": "Climatizador",
+            "title": "Confort térmico a medida",
+            "description": "El climatizador automático de triple zona, con controles táctiles, permite personalizar la temperatura por secciones. Cada fila elige con su propio microclima."
           }
         ]
       }
@@ -182,9 +223,9 @@
       ],
       "features": [
         {
-          "id": "doors",
-          "title": "Puertas",
-          "value": "Puertas laterales <br/> deslizantes eléctricas"
+          "id": "frontlights",
+          "title": "Faros Antiniebla LED",
+          "value": "Faros Antiniebla LED <br/> (delanteros LED DRL)"
         },
         {
           "id": "smartkey",
@@ -194,17 +235,17 @@
         {
           "id": "wheels",
           "title": "Llantas",
-          "value": "Llantas de <br/> aleación 19\""
+          "value": "Llantas de <br/> aleación 17\""
         },
         {
-          "id": "heating",
-          "title": "Calefacción",
-          "value": "Asientos y <br/> volante calefaccionados"
+          "id": "battery",
+          "title": "Cargador",
+          "value": "Cargador <br/> inalámbrico"
         },
         {
-          "id": "climate",
-          "title": "Climatización",
-          "value": "Climatizador <br/> automático tri-zona"
+          "id": "heatedseat",
+          "title": "Butacas",
+          "value": "Butacas delanteras <br/> calefaccionadas"
         }
       ],
       "dimensions": {
@@ -215,15 +256,15 @@
             "value": "5.155 / 1.995 / 1.775"
           },
           { "name": "Distancia entre ejes", "value": "3.090" },
-          { "name": "Distancia del suelo", "value": "172" },
+          { "name": "Distancia del suelo", "value": "162" },
           {
-            "name": "Capacidad de baúl (3° Fila arriba/3° Fila abajo)",
-            "value": "627 / 2.905 VDA Lts"
+            "name": "Capacidad de baúl (2° Fila/ 1° Fila)",
+            "value": "56 VDA Lts"
           },
-          { "name": "Peso Neto", "value": "2.146 Kg" },
-          { "name": "Plazas", "value": "7-8" },
-          { "name": "Medida de neumáticos", "value": "235/55 R19" },
-          { "name": "Auxilio", "value": "Homogéneo" }
+          { "name": "Peso Neto", "value": "2.255 Kg" },
+          { "name": "Plazas", "value": "11" },
+          { "name": "Medida de neumáticos", "value": "235 / 65R17" },
+          { "name": "Auxilio", "value": "Temporal - Acero" }
         ]
       }
     }
