@@ -1,0 +1,231 @@
+{
+  "id": "carnival",
+  "name": "Carnival",
+  "tagline": "El lujo de ir más allá",
+  "heroImage": "/images/placeholder-carnival-hero.jpg",
+  "heroVideo": "imageMapRef:carnival.heroVideo",
+
+  "menu": {
+    "etiqueta": { "id": "brochures", "link": "imageMapRef:carnival.etiqueta" },
+    "fichas": { "id": "technical-sheet", "link": "imageMapRef:carnival.fichas" }
+  },
+  "heroInfo": [
+    {
+      "iconId": "drivewise",
+      "title": "Drive Wise",
+      "description": "Drive Wise <br/> Asistencia a <br/> la Conducción",
+      "description_mobile": "Drive Wise <br/> Asistencia a <br/> la Conducción"
+    },
+    {
+      "iconId": "airbag",
+      "title": "Airbag",
+      "description": "6 <br/> Airbags",
+      "description_mobile": "6 <br/> Airbags"
+    },
+    {
+      "iconId": "radio",
+      "title": "Radio",
+      "description": "Pantalla táctil <br/> de 12.3\"",
+      "description_mobile": "Pantalla táctil <br/> de 12.3\""
+    },
+    {
+      "iconId": "seats",
+      "title": "Asientos",
+      "description": "7-8 <br/> asientos <br/> configurables",
+      "description_mobile": "7-8 <br/> asientos <br/> configurables"
+    }
+  ],
+  "sections": {
+    "characteristics": {
+      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/carnival/lhd/index.html",
+      "features": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "2.2R CRDi | 2,199cc"
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "value": "202hp | 440Nm"
+        },
+        {
+          "id": "warranty",
+          "title": "Garantía",
+          "value": "5 años o 100.000km"
+        }
+      ],
+      "atributes": {
+        "category": "Atributos",
+        "subtitle": "Redefine el concepto de vehículo familiar",
+        "image": "imageMapRef:carnival.attributes",
+        "bulletPoints": [
+          "**Versatilidad premium:** Capacidad para hasta 8 pasajeros con múltiples configuraciones de asientos que se adaptan a tus necesidades, desde un viaje familiar hasta el transporte de objetos voluminosos.",
+          "**Tecnología intuitiva:** Sistemas avanzados de asistencia a la conducción, conectividad de última generación y pantallas táctiles que hacen que cada viaje sea más seguro y placentero.",
+          "**Confort superior:** Espacio interior expansivo con detalles premium, asientos VIP con función reclinable, climatización tri-zona y puertas laterales deslizantes eléctricas."
+        ],
+        "description": "El Kia Carnival reinventa el concepto de minivan de lujo al combinar un diseño elegante con un interior versátil y tecnología de vanguardia. Un vehículo pensado para quienes buscan espacio, confort y sofisticación sin compromisos."
+      },
+      "exterior": {
+        "galleryType": "1",
+        "category": "Exterior",
+        "title": "Presencia imponente, elegancia sin esfuerzo",
+        "description": "El Carnival desafía lo convencional con un diseño exterior que combina la funcionalidad de una minivan con la presencia imponente de un SUV premium.",
+        "images": [
+          {
+            "id": "carnival-exterior-lights",
+            "src": "imageMapRef:carnival.exterior.lights",
+            "alt": "Luces",
+            "title": "Iluminación distintiva",
+            "description": "Los faros LED delanteros con firma lumínica característica no solo mejoran la visibilidad, sino que aportan un carácter sofisticado que destaca en cualquier camino."
+          },
+          {
+            "id": "carnival-exterior-doors",
+            "src": "imageMapRef:carnival.exterior.doors",
+            "alt": "Puertas",
+            "title": "Acceso inteligente",
+            "description": "Las puertas laterales deslizantes eléctricas con apertura manos libres facilitan el acceso de todos los pasajeros, especialmente en espacios reducidos."
+          },
+          {
+            "id": "carnival-exterior-wheel",
+            "src": "imageMapRef:carnival.exterior.wheel",
+            "alt": "Llantas",
+            "title": "Estilo en movimiento",
+            "description": "Las llantas de aleación de 19\" combinan sofisticación visual con robustez, complementando su imponente presencia en la carretera."
+          },
+          {
+            "id": "carnival-exterior-backlights",
+            "src": "imageMapRef:carnival.exterior.backlights",
+            "alt": "Luces traseras",
+            "title": "Identidad incluso por detrás",
+            "description": "Las luces traseras LED de ancho completo crean una firma lumínica reconocible que enfatiza su diseño contemporáneo y de alta gama."
+          },
+          {
+            "id": "carnival-exterior-grille",
+            "src": "imageMapRef:carnival.exterior.grille",
+            "alt": "Grille",
+            "title": "Carácter frontal distintivo",
+            "description": "La parrilla frontal 'tiger nose' con detalles cromados proyecta un carácter sofisticado y audaz que redefine la categoría."
+          }
+        ]
+      },
+      "interior": {
+        "galleryType": "1",
+        "category": "Interior",
+        "title": "El lujo del espacio bien pensado",
+        "description": "El interior del Carnival es un santuario de confort, con atención meticulosa a los detalles y tecnologías pensadas para hacer cada viaje más placentero.",
+        "images": [
+          {
+            "id": "carnival-interior-steering-wheel",
+            "src": "imageMapRef:carnival.interior.steeringWheel",
+            "alt": "Volante",
+            "title": "Control a tu alcance",
+            "description": "El volante multifunción forrado en cuero integra comandos para audio, conectividad y asistentes de conducción, permitiéndote controlar todo sin quitar las manos del volante."
+          },
+          {
+            "id": "carnival-interior-trunk",
+            "src": "imageMapRef:carnival.interior.trunk",
+            "alt": "Baúl",
+            "title": "Espacio para todas tus necesidades",
+            "description": "Con una capacidad de carga flexible de hasta 2,905 litros con los asientos abatidos, el Carnival se adapta a cualquier tarea, desde las compras familiares hasta equipaje para viajes extensos."
+          },
+          {
+            "id": "carnival-interior-gearbox",
+            "src": "imageMapRef:carnival.interior.gearbox",
+            "alt": "Caja de cambios",
+            "title": "Transmisión refinada",
+            "description": "La transmisión automática de 8 velocidades ofrece cambios suaves y precisos, optimizando tanto el rendimiento como la eficiencia de combustible."
+          },
+          {
+            "id": "carnival-interior-seats",
+            "src": "imageMapRef:carnival.interior.seats",
+            "alt": "Asientos",
+            "title": "Confort personalizado",
+            "description": "Los asientos tipo VIP en la segunda fila con función reclinable, soporte para piernas y calefacción crean una experiencia de viaje similar a la clase ejecutiva de un avión."
+          },
+          {
+            "id": "carnival-interior-panel",
+            "src": "imageMapRef:carnival.interior.panel",
+            "alt": "Panel",
+            "title": "Centro de comando digital",
+            "description": "El panel de instrumentos digital de 12.3\" y la pantalla táctil central del mismo tamaño forman un cockpit integrado que pone toda la información y entretenimiento a tu disposición."
+          }
+        ]
+      }
+    },
+    "specifications": {
+      "carouselImages": [
+        {
+          "id": 1,
+          "src": {
+            "mobile": "imageMapRef:carnival.carousel.front.mobile",
+            "desktop": "imageMapRef:carnival.carousel.front.desktop"
+          },
+          "alt": "Carnival Frente"
+        },
+        {
+          "id": 2,
+          "src": {
+            "mobile": "imageMapRef:carnival.carousel.back.mobile",
+            "desktop": "imageMapRef:carnival.carousel.back.desktop"
+          },
+          "alt": "Carnival Trasera"
+        },
+        {
+          "id": 3,
+          "src": {
+            "mobile": "imageMapRef:carnival.carousel.side.mobile",
+            "desktop": "imageMapRef:carnival.carousel.side.desktop"
+          },
+          "alt": "Carnival Lateral"
+        }
+      ],
+      "features": [
+        {
+          "id": "doors",
+          "title": "Puertas",
+          "value": "Puertas laterales <br/> deslizantes eléctricas"
+        },
+        {
+          "id": "smartkey",
+          "title": "Smart Key",
+          "value": "Smart Key + <br/> Botón de arranque"
+        },
+        {
+          "id": "wheels",
+          "title": "Llantas",
+          "value": "Llantas de <br/> aleación 19\""
+        },
+        {
+          "id": "heating",
+          "title": "Calefacción",
+          "value": "Asientos y <br/> volante calefaccionados"
+        },
+        {
+          "id": "climate",
+          "title": "Climatización",
+          "value": "Climatizador <br/> automático tri-zona"
+        }
+      ],
+      "dimensions": {
+        "title": "Dimensiones (mm)",
+        "details": [
+          {
+            "name": "EXTERIOR largo/ancho/alto",
+            "value": "5.155 / 1.995 / 1.775"
+          },
+          { "name": "Distancia entre ejes", "value": "3.090" },
+          { "name": "Distancia del suelo", "value": "172" },
+          {
+            "name": "Capacidad de baúl (3° Fila arriba/3° Fila abajo)",
+            "value": "627 / 2.905 VDA Lts"
+          },
+          { "name": "Peso Neto", "value": "2.146 Kg" },
+          { "name": "Plazas", "value": "7-8" },
+          { "name": "Medida de neumáticos", "value": "235/55 R19" },
+          { "name": "Auxilio", "value": "Homogéneo" }
+        ]
+      }
+    }
+  }
+}

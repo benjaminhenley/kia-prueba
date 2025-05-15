@@ -341,7 +341,7 @@ const TestDrive = () => {
                         <table className="w-full border border-[#CDD0D2]">
                           <thead className="bg-[#05141F]">
                             <tr className="">
-                              <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px] sticky left-0 z-10 bg-[#05141F]">
+                              <th className="font-bold px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[100px] md:w-1/3 min-w-[100px] sticky left-0 z-10 bg-[#05141F]">
                                 <h4 className="font-bold">Concesionario</h4>
                               </th>
                               <th className="px-3 text-left sm:px-6 py-3 sm:py-4 text-white border-0 w-[240px] md:w-1/3 min-w-[240px]">
@@ -364,7 +364,7 @@ const TestDrive = () => {
                                     : "bg-[#F5F6F6]"
                                 }>
                                 <td
-                                  className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[240px] min-w-[240px] md:w-1/3 sticky left-0 z-10"
+                                  className="px-3 text-left sm:px-6 py-3 sm:py-4 border border-t-2 border-[#CDD0D2] text-[#05141F] w-[100px] min-w-[100px] md:w-1/3 sticky left-0 z-10"
                                   style={{
                                     backgroundColor:
                                       index % 2 === 0 ? "#E1E3E4" : "#F5F6F6",

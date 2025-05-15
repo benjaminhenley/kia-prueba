@@ -4,6 +4,7 @@ import { crossImages } from "./cross";
 import { ceratoImages } from "./cerato";
 import { sportageImages } from "./sportage";
 import { k2500Images } from "./k2500";
+// import { carnivalImages } from "./carnival";
 
 // Export all model images in a single object
 export const imageMap = {
@@ -12,13 +13,8 @@ export const imageMap = {
   cerato: ceratoImages,
   sportage: sportageImages,
   k2500: k2500Images,
+  // carnival: carnivalImages,
 };
-
-/**
- * Resolves an image reference string to its actual path
- * @param {string} imageRef - Reference in format "imageMapRef:model.path.to.image"
- * @returns {string} The resolved image path
- */
 
 export const resolveImageRef = (imageRef) => {
   if (!imageRef || typeof imageRef !== "string") {
