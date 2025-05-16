@@ -94,6 +94,13 @@ const TestDrive = () => {
   );
   const [carCards, setCarCards] = useState(ALL_CAR_MODELS);
 
+  // Add scroll to top effect when form is submitted
+  useEffect(() => {
+    if (isSubmitted) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [isSubmitted]);
+
   const requiredFields = [
     "firstName",
     "lastName",
@@ -181,7 +188,7 @@ const TestDrive = () => {
 
       kiaApiCall({ ...formData, name }, "kiaweb: Test-drive");
       setIsSubmitted(true);
-      resetForm();
+      //resetForm();
     } catch (error) {
       console.log("Error:", error);
     }
@@ -208,13 +215,15 @@ const TestDrive = () => {
           </div>
 
           {isSubmitted ? (
-            <SuccessMessage
-              message="Muchas gracias por interesarte en nuestros servicios. Vamos a estar contactándolo a la brevedad."
-              buttonText="Deseo solicitar otro Test Drive"
-              firstName={formData.firstName}
-              onReset={() => setIsSubmitted(false)}
-              onHome={"goHome"}
-            />
+            <div className="mt-0">
+              <SuccessMessage
+                message="Muchas gracias por interesarte en nuestros servicios. Vamos a estar contactándolo a la brevedad."
+                buttonText="Deseo solicitar otro Test Drive"
+                firstName={formData.firstName}
+                onReset={() => setIsSubmitted(false)}
+                onHome={"goHome"}
+              />
+            </div>
           ) : (
             <div className="flex flex-col gap-5">
               {/* STEP #1 */}
