@@ -11,27 +11,27 @@ const PillButton = ({
 
   const sizeStyles = {
     small: {
-      text: "text-[14px] leading-[18px] py-[2px] pr-[2px] pl-2.5 gap-3 group-hover:underline underline-offset-4",
+      text: "text-[14px] leading-[18px] py-[2px] pr-[2px] pl-2.5 gap-3",
       icon: "w-[18px] h-[18px] md:w-[24px] md:h-[24px]",
     },
     medium: {
-      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-2.5 md:pl-5 gap-[12px] underline-offset-[5px]",
+      text: "text-[14px] leading-[16px] py-[2px] pr-[2px] pl-2.5 md:pl-5 gap-[12px]",
       icon: "w-6 h-6 md:w-8 md:h-8",
     },
     large: {
-      text: "text-[18px] leading-[20px] py-[2px] pr-[2px] pl-5 gap-[15px] group-hover:underline underline-offset-[6px]",
+      text: "text-[18px] leading-[20px] py-[2px] pr-[2px] pl-5 gap-[15px]",
       icon: "w-[32px] h-[32px]",
     },
   };
 
   const colorScheme = {
     primary: {
-      text: "text-[#05141F] group-hover:text-[#37434C] border border-[#05141F] group-hover:border-[#37434C] decoration-[#05141F] group-hover:decoration-[#37434C] disabled:text-[#9BA1A5] disabled:border-[#9BA1A5] disabled:no-underline disabled:cursor-not-allowed disabled:group-hover:text-[#9BA1A5] disabled:group-hover:border-[#9BA1A5] disabled:group-hover:no-underline",
+      text: "text-[#05141F] group-hover:text-[#37434C] border border-[#05141F] group-hover:border-[#37434C] disabled:text-[#9BA1A5] disabled:border-[#9BA1A5] disabled:no-underline disabled:cursor-not-allowed disabled:group-hover:text-[#9BA1A5] disabled:group-hover:border-[#9BA1A5] disabled:group-hover:no-underline",
       svg: "fill-[white] group-hover:fill-[#37434C] disabled:fill-[#9BA1A5] disabled:group-hover:fill-[#9BA1A5]",
     },
 
     secondary: {
-      text: "bg-[#05141F] text-white group-hover:bg-[#37434C] disabled:bg-[#9BA1A5] disabled:text-white group-hover:underline group-hover:decoration-[white] disabled:group-hover:bg-[#9BA1A5] disabled:group-hover:no-underline disabled:cursor-not-allowed",
+      text: "bg-[#05141F] text-white group-hover:bg-[#37434C] disabled:bg-[#9BA1A5] disabled:text-white disabled:group-hover:bg-[#9BA1A5] disabled:group-hover:no-underline disabled:cursor-not-allowed",
       rect: "fill-[white]",
       svg: "fill-[#05141F] group-hover:fill-[#37434C] disabled:fill-[#9BA1A5] disabled:group-hover:fill-[#9BA1A5]",
     },
@@ -61,9 +61,14 @@ const PillButton = ({
       onClick={onClick}
       className={`${sizeStyles[size].text} ${colorScheme[type].text} ${
         isWide ? "w-full sm:w-fit" : "w-fit"
-      } rounded-full flex items-center justify-between`}
+      } rounded-full flex items-center justify-between group relative`}
       aria-label={title}>
-      <span className="font-bold">{title}</span>
+      <div className="flex items-center">
+        <span className="relative inline-block font-bold">
+          {title}
+          <span className="absolute left-0 bottom-[-1px] h-[1px] group-hover:bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </div>
       <svg
         className={sizeStyles[size].icon}
         viewBox="0 0 32 33"

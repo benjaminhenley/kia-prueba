@@ -15,7 +15,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
 
   const cardContent = (
     <>
-      <div className="rounded mb-2 flex items-center justify-center cursor-pointer">
+      <div className="rounded  flex items-center justify-center cursor-pointer">
         {esExterna ? (
           <a href={href} target={target} rel="noreferrer" onClick={handleClick}>
             <img className="text-sm" src={foto} alt={nombre} />
@@ -24,7 +24,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
         ) : (
           <Link to={href} onClick={handleClick}>
             <img className="text-sm" src={foto} alt={nombre} />
-            <p className="text-[1.125rem] font-bold">{nombre}</p>
+            <p className="text-[1.125rem] font-bold mt-2">{nombre}</p>
           </Link>
         )}
       </div>
