@@ -3,11 +3,11 @@
   "name": "K2500",
   "tagline": "A la medida de tu negocio",
   "heroImage": "/images/placeholder-sedan-hero.jpg",
+  "heroVideo": "imageMapRef:k2500.heroVideo",
   "menu": {
     "etiqueta": { "id": "brochures", "link": "imageMapRef:k2500.etiqueta" },
     "fichas": { "id": "technical-sheet", "link": "imageMapRef:k2500.fichas" }
   },
-  "heroVideo": "imageMapRef:k2500.heroVideo",
   "heroInfo": [
     {
       "iconId": "radio",

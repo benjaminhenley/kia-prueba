@@ -3,11 +3,11 @@
   "name": "K3 Sedán",
   "tagline": "Más allá de lo posible",
   "heroImage": "/images/placeholder-sedan-hero.jpg",
+  "heroVideo": "imageMapRef:sedan.heroVideo",
   "menu": {
     "etiqueta": { "id": "brochures", "link": "imageMapRef:sedan.etiqueta" },
     "fichas": { "id": "technical-sheet", "link": "imageMapRef:sedan.fichas" }
   },
-  "heroVideo": "imageMapRef:sedan.heroVideo",
   "heroInfo": [
     {
       "iconId": "stars",
