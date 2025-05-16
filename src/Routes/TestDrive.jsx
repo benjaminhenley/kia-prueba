@@ -177,8 +177,9 @@ const TestDrive = () => {
     try {
       const token = ExecuteRecaptcha();
       setRecaptchaToken(token);
+      const name = `${formData.firstName} ${formData.lastName}`;
 
-      kiaApiCall(formData, "kiaweb: Test-drive");
+      kiaApiCall({ ...formData, name }, "kiaweb: Test-drive");
       setIsSubmitted(true);
       resetForm();
     } catch (error) {
