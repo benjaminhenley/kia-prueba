@@ -11,6 +11,9 @@ import ceratoExteriorRear from "../../../assets/img/models/cerato/exterior/cerat
 import ceratoExteriorWheel from "../../../assets/img/models/cerato/exterior/cerato-exterior-wheel.webp";
 import ceratoExteriorMirror from "../../../assets/img/models/cerato/exterior/cerato-exterior-mirror.webp";
 import ceratoExteriorGrille from "../../../assets/img/models/cerato/exterior/cerato-exterior-grille.webp";
+// Cerato hero video images
+import ceratoHeroVideoDesktop from "../../../assets/videos/cerato-hero-desktop.webp";
+import ceratoHeroVideoMobile from "../../../assets/videos/cerato-hero-mobile.mp4";
 // Cerato interior images
 import ceratoInteriorWheel from "../../../assets/img/models/cerato/interior/cerato-interior-wheel.webp";
 import ceratoInteriorRadio from "../../../assets/img/models/cerato/interior/cerato-interior-radio.webp";
@@ -106,6 +109,10 @@ export const ceratoImages = {
     silkySilver: ceratoSilkySilver,
     snowWhite: ceratoSnowWhite,
     clearPearl: ceratoClearPearl,
+  },
+  heroVideo: {
+    desktop: ceratoHeroVideoDesktop,
+    mobile: ceratoHeroVideoMobile,
   },
   attributes: {
     desktop: ceratoAtributesDesktop,

@@ -4,6 +4,9 @@ import k2500BackDesktop from "../../../assets/img/models/k2500/carousel/k2500-ba
 import k2500BackMobile from "../../../assets/img/models/k2500/carousel/k2500-back-mobile.webp";
 import k2500SideDesktop from "../../../assets/img/models/k2500/carousel/k2500-side-desktop.webp";
 import k2500SideMobile from "../../../assets/img/models/k2500/carousel/k2500-side-mobile.webp";
+// k2500 hero video images
+import k2500HeroVideoDesktop from "../../../assets/videos/k2500-hero-desktop.webp";
+import k2500HeroVideoMobile from "../../../assets/videos/k2500-hero-mobile.mp4";
 // k2500 exterior images
 import k2500ExteriorSide from "../../../assets/img/models/k2500/exterior/k2500-exterior-side.webp";
 import k2500ExteriorDoors from "../../../assets/img/models/k2500/exterior/k2500-exterior-doors.webp";
@@ -87,6 +90,10 @@ export const k2500Images = {
   },
   colors: {
     white: k2500White,
+  },
+  heroVideo: {
+    desktop: k2500HeroVideoDesktop,
+    mobile: k2500HeroVideoMobile,
   },
   attributes: {
     desktop: k2500AtributesDesktop,

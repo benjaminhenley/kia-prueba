@@ -3,7 +3,7 @@
   "name": "Cerato",
   "tagline": "Inspirate con un viaje a las montañas",
   "heroImage": "/images/placeholder-cerato-hero.jpg",
-  "heroVideo": "imageMapRef:cross.heroVideo",
+  "heroVideo": "imageMapRef:cerato.heroVideo",
   "menu": {
     "etiqueta": { "id": "brochures", "link": "imageMapRef:cross.etiqueta" },
     "fichas": { "id": "technical-sheet", "link": "imageMapRef:cross.fichas" }

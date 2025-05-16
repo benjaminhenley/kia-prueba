@@ -8,12 +8,32 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
   const [showPlayButton, setShowPlayButton] = useState(true);
+  const [isImage, setIsImage] = useState(false);
   const videoRef = useRef(null);
   const isMobile = useRef(window.innerWidth < 768);
 
+  // Determine if the media is an image based on the file extension
+  useEffect(() => {
+    if (videoSrc) {
+      const desktopFile = videoSrc.desktop || "";
+      const mobileFile = videoSrc.mobile || "";
+
+      const isDesktopImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(
+        desktopFile
+      );
+      const isMobileImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(mobileFile);
+
+      // Set as image if both sources are images, or if the current device's source is an image
+      setIsImage(
+        (isDesktopImage && isMobileImage) ||
+          (isMobile.current ? isMobileImage : isDesktopImage)
+      );
+    }
+  }, [videoSrc]);
+
   // Reset video state when videoSrc changes (user selects different car)
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && !isImage) {
       // Stop any current playback
       videoRef.current.pause();
 
@@ -26,11 +46,11 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
       // Force the video element to reload
       videoRef.current.load();
     }
-  }, [videoSrc]);
+  }, [videoSrc, isImage]);
 
   // Auto-play video on desktop when loaded
   useEffect(() => {
-    if (videoRef.current && isVideoLoaded && !isMobile.current) {
+    if (videoRef.current && isVideoLoaded && !isMobile.current && !isImage) {
       const playPromise = videoRef.current.play();
 
       if (playPromise !== undefined) {
@@ -44,7 +64,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
           });
       }
     }
-  }, [isVideoLoaded]);
+  }, [isVideoLoaded, isImage]);
 
   // Set up listener for window resize to detect mobile/desktop
   useEffect(() => {
@@ -57,6 +77,8 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   }, []);
 
   const handlePlayClick = () => {
+    if (isImage) return; // Don't handle play click for images
+
     if (videoRef.current && !hasVideoError) {
       if (isPlaying) {
         videoRef.current.pause();
@@ -105,13 +127,26 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   };
 
   // Determine if we should show the video element
-  const showVideo = videoSrc && !hasVideoError;
+  const showVideo = videoSrc && !hasVideoError && !isImage;
+  // Determine if we should show the image element
+  const showImage = videoSrc && isImage;
+  // Get current source based on device
+  const currentSrc = isMobile.current ? videoSrc?.mobile : videoSrc?.desktop;
 
   return (
     <div className="relative w-full h-[calc(100vh-55px)] md:h-[calc(100vh-20px)] overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
-        {/* Video element - only rendered if we have a valid source */}
+        {/* Image element - only rendered if source is an image */}
+        {showImage && (
+          <img
+            src={currentSrc}
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        )}
+
+        {/* Video element - only rendered if we have a valid video source */}
         {showVideo && (
           <div className="absolute inset-0 w-full">
             <video
@@ -125,10 +160,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}>
               {/* Proporciona múltiples formatos de fuente para mejor compatibilidad */}
-              <source
-                src={isMobile.current ? videoSrc.mobile : videoSrc.desktop}
-                type="video/mp4"
-              />
+              <source src={currentSrc} type="video/mp4" />
               {/* Puedes agregar más formatos de fuente si están disponibles */}
               Your browser does not support the video tag.
             </video>
@@ -136,7 +168,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
         )}
 
         {/* Play button overlay - only shown if video is available and on mobile */}
-        {!hasVideoError && showPlayButton && (
+        {!hasVideoError && showPlayButton && !isImage && (
           <div className="absolute inset-0 flex items-center justify-center z-20 md:hidden">
             <PlayIcon
               onClick={handlePlayClick}

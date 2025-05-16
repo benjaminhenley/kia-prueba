@@ -5,6 +5,9 @@ import sportageBackDesktop from "../../../assets/img/models/sportage/carousel/sp
 import sportageBackMobile from "../../../assets/img/models/sportage/carousel/sportage-back-mobile.webp";
 import sportageSideDesktop from "../../../assets/img/models/sportage/carousel/sportage-side-desktop.webp";
 import sportageSideMobile from "../../../assets/img/models/sportage/carousel/sportage-side-mobile.webp";
+// Sportage hero video images
+import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.mp4";
+import sportageHeroVideoMobile from "../../../assets/videos/sportage-hero-mobile.mp4";
 // Sportage exterior images
 import sportageExteriorBacklights from "../../../assets/img/models/sportage/exterior/sportage-exterior-backlights.webp";
 import sportageExteriorGrille from "../../../assets/img/models/sportage/exterior/sportage-exterior-grille.webp";
@@ -87,6 +90,10 @@ export const sportageImages = {
   attributes: {
     desktop: sportageAtributesDesktop,
     mobile: sportageAtributesMobile,
+  },
+  heroVideo: {
+    desktop: sportageHeroVideoDesktop,
+    mobile: sportageHeroVideoMobile,
   },
   etiqueta: sportageEtiqueta,
   fichas: sportageFichas,

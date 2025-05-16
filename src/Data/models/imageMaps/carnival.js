@@ -5,6 +5,9 @@ import carnivalBackDesktop from "../../../assets/img/models/carnival/carousel/ca
 import carnivalBackMobile from "../../../assets/img/models/carnival/carousel/carnival-back-mobile.webp";
 import carnivalSideDesktop from "../../../assets/img/models/carnival/carousel/carnival-side-desktop.webp";
 import carnivalSideMobile from "../../../assets/img/models/carnival/carousel/carnival-side-mobile.webp";
+// Carnival hero video images
+import carnivalHeroVideoDesktop from "../../../assets/videos/carnival-hero-desktop.mp4";
+import carnivalHeroVideoMobile from "../../../assets/videos/carnival-hero-mobile.mp4";
 // Carnival exterior images
 import carnivalExteriorBacklights from "../../../assets/img/models/carnival/exterior/carnival-exterior-backlights.webp";
 import carnivalExteriorDoors from "../../../assets/img/models/carnival/exterior/carnival-exterior-doors.webp";
@@ -96,6 +99,10 @@ export const carnivalImages = {
     pantheraMetal: carnivalPantheraMetal,
     ceramicSilver: carnivalCeramicSilver,
     snowWhitePearl: carnivalSnowWhitePearl,
+  },
+  heroVideo: {
+    desktop: carnivalHeroVideoDesktop,
+    mobile: carnivalHeroVideoMobile,
   },
   attributes: {
     desktop: carnivalAtributesDesktop,
