@@ -31,7 +31,7 @@ const PillButton = ({
     },
 
     secondary: {
-      text: "bg-[#05141F] text-white group-hover:bg-[#37434C] disabled:bg-[#9BA1A5] disabled:text-white disabled:group-hover:bg-[#9BA1A5] disabled:group-hover:no-underline disabled:cursor-not-allowed",
+      text: "bg-[#05141F] text-white group-hover:bg-[#37434C] disabled:bg-[#9BA1A5] disabled:text-white disabled:group-hover:bg-[#9BA1A5] disabled:group-hover:no-underline disabled:cursor-not-allowed transition-all duration-300",
       rect: "fill-[white]",
       svg: "fill-[#05141F] group-hover:fill-[#37434C] disabled:fill-[#9BA1A5] disabled:group-hover:fill-[#9BA1A5]",
     },
@@ -66,7 +66,9 @@ const PillButton = ({
       <div className="flex items-center">
         <span className="relative inline-block font-bold">
           {title}
-          <span className="absolute left-0 bottom-[-1px] h-[1px] group-hover:bg-[#37434C] transition-all duration-300 group-hover:w-full"></span>
+          <span className={`absolute left-0 bottom-[-1px] h-[1px] transition-all duration-300 group-hover:w-full ${
+            type === "secondary" ? "group-hover:bg-white" : "group-hover:bg-[#37434C]"
+          }`}></span>
         </span>
       </div>
       <svg

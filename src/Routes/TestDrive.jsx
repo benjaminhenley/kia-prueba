@@ -319,7 +319,7 @@ const TestDrive = () => {
                           type="secondary"
                           label="Buscar"
                           title="Buscar"
-                          size="medium"
+                          size="small"
                           className="w-full md:w-fit"
                           onClick={() => searchProvince(selectedProvince)}
                         />
