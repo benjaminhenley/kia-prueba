@@ -188,7 +188,6 @@ const TestDrive = () => {
 
       kiaApiCall({ ...formData, name }, "kiaweb: Test-drive");
       setIsSubmitted(true);
-      //resetForm();
     } catch (error) {
       console.log("Error:", error);
     }
@@ -202,6 +201,12 @@ const TestDrive = () => {
     setCarModelElement(null);
     setIsValid(false);
     setIsSubmitted(false);
+    setSelectedStep(1);
+    setSelectedProvince(null);
+    setSelectedDealers(CAR_DEALERS_BY_PROVINCE);
+    setCarCards(ALL_CAR_MODELS);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -537,7 +542,9 @@ const TestDrive = () => {
                     <hr className="border-[#CDD0D2]" />
                     {/* Action Buttons */}
                     <div className="flex flex-col-reverse xs:flex-row justify-end gap-2.5 mt-5">
-                      <SquareButton type="secondary" onClick={() => {}}>
+                      <SquareButton type="secondary" onClick={() => {
+                        resetForm()
+                      }}>
                         Cancelar
                       </SquareButton>
                       <SquareButton

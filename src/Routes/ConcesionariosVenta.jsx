@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import FormDropdown from "../Components/Common/forms/FormDropdown";
@@ -301,6 +301,10 @@ const ConcesionariosVenta = () => {
 
     setFilteredDealers(dealers);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     // Padding General

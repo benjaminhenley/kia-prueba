@@ -19,7 +19,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
         {esExterna ? (
           <a href={href} target={target} rel="noreferrer" onClick={handleClick}>
             <img className="text-sm" src={foto} alt={nombre} />
-            <p className="text-[1.125rem] font-bold">{nombre}</p>
+            <p className="text-[1.125rem] font-bold mt-2">{nombre}</p>
           </a>
         ) : (
           <Link to={href} onClick={handleClick}>

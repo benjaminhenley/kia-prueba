@@ -12,6 +12,9 @@ const Modelos = () => {
   const [activeTab, setActiveTab] = useState("characteristics");
   const model = getSafeModelData(modelID);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // Update document title when model changes
   useEffect(() => {
     if (!model) return;
@@ -32,6 +35,7 @@ const Modelos = () => {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
+
 
   return (
     <div className="w-full relative ">
