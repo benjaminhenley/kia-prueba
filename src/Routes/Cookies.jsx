@@ -75,11 +75,11 @@ function Cookies() {
           <Separator />
         </div>
 
-        <PillButton
+{/*         <PillButton
           size="large"
           title="Cambiar configuración de Cookies"
           onClick={handleShowCookieModal}
-        />
+        /> */}
       </div>
     </div>
   );
