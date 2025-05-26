@@ -131,8 +131,7 @@ const DEALERS = [
     provincia: "buenosaires",
     direccion: "Av. 44 n° 1.835 (entre 131 y 132), La Plata, Buenos Aires",
     telefono: "(0221) 470 0707",
-    horario:
-      "Lunes a Viernes de 08:00hs a 19:00hs. Sábados de 09:00hs a 14:00hs",
+    horario: "Lunes a Viernes de 8:00hs a 17:00hs. Sábados de 9:00hs a 12:00hs",
     email: "ventas@giuvisa.com.ar",
     coordinadas: [-57.981087, -34.9343144],
   },
@@ -142,7 +141,7 @@ const DEALERS = [
     provincia: "cordoba",
     direccion: "Av. Fuerza Aérea 3742, Córdoba",
     telefono: "(0351) 485 8830",
-    horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sábados dehs 9:30 a 13:00hs",
+    horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sábados de 9:30hs a 13:00hs",
     email: "afrencia@grupoantun.com.ar / info@gamotsa.com.ar",
     coordinadas: [-64.2374038, -31.432092],
   },
