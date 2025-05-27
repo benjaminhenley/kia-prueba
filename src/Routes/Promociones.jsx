@@ -148,11 +148,9 @@ export default function Promociones() {
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
     try {
-      const response = await kiaApiCall(
-        { ...formData, name },
-        "kiaweb: Promociones"
-      );
+      await kiaApiCall({ ...formData, name }, "kiaweb: Promociones");
       setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.log("Error:", error);
     }

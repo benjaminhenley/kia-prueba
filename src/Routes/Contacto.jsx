@@ -115,6 +115,7 @@ function Contactenos() {
     try {
       await kiaApiCall({ ...formData, name }, "kiaweb: Contactenos");
       setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.log("Error:", error);
     }
