@@ -25,6 +25,11 @@ const CONTACT_PREFERENCES = [
   { value: "phone", label: "Teléfono" },
 ];
 
+const DOCUMENT_TYPES = [
+  { value: "dni", label: "DNI" },
+  { value: "pasaporte", label: "Pasaporte" },
+];
+
 export default function Promociones() {
   const [formData, setFormData] = useState(initialFormDataPromociones);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -68,17 +73,35 @@ export default function Promociones() {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
+    let newValue = value;
+
+    // Apply input filtering based on field type
+    switch (name) {
+      case "documentNumber":
+        // Only allow numbers to be entered for DNI
+        newValue = value.replace(/[^\d]/g, "");
+        break;
+
+      case "firstName":
+      case "lastName":
+        // Only allow letters, spaces, and special characters for names
+        newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
+        break;
+
+      default:
+        break;
+    }
 
     if (name === "province") {
       setFormData((prev) => ({
         ...prev,
-        province: value,
+        province: newValue,
         dealer: "", // Reset dealer when province changes
       }));
     } else {
       setFormData((prev) => ({
         ...prev,
-        [name]: value,
+        [name]: newValue,
       }));
     }
   };
@@ -90,13 +113,11 @@ export default function Promociones() {
       firstName,
       car,
       lastName,
+      documentNumber,
       contactPreference,
       province,
       email,
       phone,
-      birthDay,
-      birthMonth,
-      birthYear,
     } = formData;
 
     // Check if the proper contact info is provided based on contact preference
@@ -110,11 +131,9 @@ export default function Promociones() {
       car !== "" &&
       firstName !== "" &&
       lastName !== "" &&
+      documentNumber !== "" &&
       contactPreference !== "" &&
       isContactInfoValid &&
-      birthDay !== "" &&
-      birthMonth !== "" &&
-      birthYear !== "" &&
       province !== "";
 
     setIsValid(valid);
@@ -244,6 +263,12 @@ export default function Promociones() {
                               value={formData.lastName}
                               onChange={handleFormChange}
                             />
+                            <TextField
+                              placeholder="DNI"
+                              name="documentNumber"
+                              value={formData.documentNumber}
+                              onChange={handleFormChange}
+                            />
                           </div>
                         </div>
 
@@ -275,7 +300,7 @@ export default function Promociones() {
                         </div>
 
                         {/* Birthdate Field */}
-                        <div className="flex flex-col md:flex-row md:items-center gap-5">
+                        {/* <div className="flex flex-col md:flex-row md:items-center gap-5">
                           <FormLabel text="Fecha de nacimiento" />
                           <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                             <FormDropdown
@@ -300,7 +325,7 @@ export default function Promociones() {
                               options={generateYearsOptions()}
                             />
                           </div>
-                        </div>
+                        </div> */}
 
                         {/* Location Field */}
                         <div className="flex flex-col md:flex-row md:items-center gap-5">

@@ -28,3 +28,15 @@ export const generateYearsOptions = () => {
     label: String(new Date().getFullYear() - i - 18),
   }));
 };
+
+// Helper function to generate car years options
+export const generateCarYearsOptions = () => {
+  const currentYear = new Date().getFullYear();
+  const startYear = 1990;
+  const yearsCount = currentYear - startYear + 1;
+
+  return Array.from({ length: yearsCount }, (_, i) => ({
+    value: String(currentYear - i),
+    label: String(currentYear - i),
+  }));
+};

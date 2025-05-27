@@ -85,10 +85,10 @@ export const router = createBrowserRouter([
         path: "/subscribirse",
         element: <Subscribirse />,
       },
-      {
-        path: "/test-drive",
-        element: <TestDrive />,
-      },
+      // {
+      //   path: "/test-drive",
+      //   element: <TestDrive />,
+      // },
     ],
   },
 ]);

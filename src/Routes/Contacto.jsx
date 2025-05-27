@@ -15,6 +15,7 @@ import {
   MONTHS,
   generateDaysOptions,
   generateYearsOptions,
+  generateCarYearsOptions,
 } from "../Data/months";
 import RecaptchaLoader from "../Components/Common/captcha/RecaptchaLoader";
 import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";
@@ -112,10 +113,7 @@ function Contactenos() {
   const handleSubmit = async () => {
     const name = `${formData.firstName} ${formData.lastName}`;
     try {
-      const response = await kiaApiCall(
-        { ...formData, name },
-        "kiaweb: Contactenos"
-      );
+      await kiaApiCall({ ...formData, name }, "kiaweb: Contactenos");
       setIsSubmitted(true);
     } catch (error) {
       console.log("Error:", error);
@@ -126,7 +124,6 @@ function Contactenos() {
     try {
       const token = ExecuteRecaptcha();
       setRecaptchaToken(token);
-
       handleSubmit();
     } catch (error) {
       console.log("Error:", error);
@@ -141,9 +138,6 @@ function Contactenos() {
       documentNumber,
       firstName,
       lastName,
-      birthDay,
-      birthMonth,
-      birthYear,
       street,
       streetNumber,
       province,
@@ -152,6 +146,7 @@ function Contactenos() {
       email,
       phone,
       car,
+      carYear,
       consultationType,
       vinNumber,
       contactedDealer,
@@ -169,9 +164,6 @@ function Contactenos() {
       documentNumber !== "" &&
       firstName !== "" &&
       lastName !== "" &&
-      birthDay !== "" &&
-      birthMonth !== "" &&
-      birthYear !== "" &&
       street !== "" &&
       streetNumber !== "" &&
       province !== "" &&
@@ -181,6 +173,7 @@ function Contactenos() {
       isEmailValid &&
       phone !== "" &&
       car !== "" &&
+      carYear !== "" &&
       consultationType !== "" &&
       isVinValid &&
       isContactedDealerValid &&
@@ -319,7 +312,7 @@ function Contactenos() {
                       </div>
 
                       {/* Birthdate Field */}
-                      <div className="flex flex-col md:flex-row md:items-center gap-5">
+                      {/* <div className="flex flex-col md:flex-row md:items-center gap-5">
                         <FormLabel text="Fecha de nacimiento" />
                         <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
                           <FormDropdown
@@ -344,7 +337,7 @@ function Contactenos() {
                             options={generateYearsOptions()}
                           />
                         </div>
-                      </div>
+                      </div> */}
 
                       {/* Direction Fields */}
                       <div className="flex flex-col md:flex-row md:items-center gap-5">
@@ -426,6 +419,13 @@ function Contactenos() {
                               value: model.id,
                               label: model.name,
                             }))}
+                          />
+                          <FormDropdown
+                            placeholder="Año"
+                            name="carYear"
+                            value={formData.carYear}
+                            onChange={handleFormChange}
+                            options={generateCarYearsOptions()}
                           />
                           <FormDropdown
                             placeholder="Tipo de consulta"
