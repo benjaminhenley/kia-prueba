@@ -34,7 +34,6 @@ export default function Promociones() {
   const [formData, setFormData] = useState(initialFormDataPromociones);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [showModelGallery, setShowModelGallery] = useState(true);
-  const [availableDealers, setAvailableDealers] = useState([]);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -51,25 +50,6 @@ export default function Promociones() {
       source,
     }));
   }, []);
-
-  useEffect(() => {
-    if (formData.province) {
-      const selectedProvinceLabel = PROVINCES.find(
-        (p) => p.value === parseInt(formData.province)
-      )?.label;
-
-      if (selectedProvinceLabel) {
-        const dealers = CAR_DEALERS.filter(
-          (dealer) => dealer.province === selectedProvinceLabel
-        );
-        setAvailableDealers(dealers);
-      } else {
-        setAvailableDealers([]);
-      }
-    } else {
-      setAvailableDealers([]);
-    }
-  }, [formData.province]);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -92,18 +72,10 @@ export default function Promociones() {
         break;
     }
 
-    if (name === "province") {
-      setFormData((prev) => ({
-        ...prev,
-        province: newValue,
-        dealer: "", // Reset dealer when province changes
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: newValue,
-      }));
-    }
+    setFormData((prev) => ({
+      ...prev,
+      [name]: newValue,
+    }));
   };
 
   // Update the form validation function
@@ -341,11 +313,7 @@ export default function Promociones() {
                               name="dealer"
                               value={formData.dealer}
                               onChange={handleFormChange}
-                              options={availableDealers}
-                              disabled={
-                                !formData.province ||
-                                availableDealers.length === 0
-                              }
+                              options={CAR_DEALERS}
                             />
                           </div>
                         </div>
