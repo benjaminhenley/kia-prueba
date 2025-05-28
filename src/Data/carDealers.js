@@ -1,17 +1,17 @@
 export const CAR_DEALERS = [
   {
     value: 8,
-    label: "Alpina Motors",
+    label: "Alpina Motors - Av. Libertador 2814 - CABA",
     province: "Ciudad Autónoma de Buenos Aires",
   },
   {
     value: 34,
-    label: "Armando Automotores - Av Tierra del Fuego 2082 - Posadas",
+    label: "Armando Automotores - Av. Tierra del Fuego 2082 - Posadas",
     province: "Misiones",
   },
   {
     value: 58,
-    label: "Autodrive - Av Córdoba 3886 - CABA",
+    label: "Autodrive - Av. Córdoba 3886 - CABA",
     province: "Ciudad Autónoma de Buenos Aires",
   },
   {
@@ -26,7 +26,7 @@ export const CAR_DEALERS = [
   },
   {
     value: 45,
-    label: "Autovisiones",
+    label: "Autovisiones - Av. Libertador 5750 - CABA",
     province: "Ciudad Autónoma de Buenos Aires",
   },
   {
@@ -66,7 +66,7 @@ export const CAR_DEALERS = [
   },
   {
     value: 85,
-    label: "Javimar Neuquén - Av Arturo Illia 510 - Neuquén",
+    label: "Javimar Neuquén - Av. Arturo Illia 510 - Neuquén",
     province: "Neuquén",
   },
   {
@@ -76,7 +76,7 @@ export const CAR_DEALERS = [
   },
   {
     value: 59,
-    label: "Kinor Motors - Av Santa Fe 1581 - Martinez",
+    label: "Kinor Motors - Av. Santa Fe 1581 - Martinez",
     province: "Buenos Aires",
   },
   {
@@ -89,10 +89,12 @@ export const CAR_DEALERS = [
     label: "Neostar - Pasaje Colidge 1211 - Rosario",
     province: "Santa Fe",
   },
-  { value: 50, label: "Neostar Rosario", province: "Santa Fe" },
+  { value: 50, 
+    label: "Neostar Rosario - Av. Mendoza 4631 - Rosario", 
+    province: "Santa Fe" },
   {
     value: 51,
-    label: "Neostar - San Lorenzo 3440 - Santa Fe",
+    label: "Neostar Santa Fe - San Lorenzo 3440 - Santa Fe",
     province: "Santa Fe",
   },
   {
@@ -112,7 +114,7 @@ export const CAR_DEALERS = [
   },
   {
     value: 55,
-    label: "Sebastian Bronstein e Hijo - Fray L. Beltrán 2584",
+    label: "Sebastian Bronstein e Hijo - Fray L. Beltrán 2584 - Córdoba",
     province: "Córdoba",
   },
   {
@@ -125,7 +127,6 @@ export const CAR_DEALERS = [
     label: "Surkai - Av. San Martín 598 - Godoy Cruz",
     province: "Mendoza",
   },
-  { value: 100, label: "Zalazar", province: "Buenos Aires" },
 ];
 
 export const CAR_DEALERS_BY_PROVINCE = [
