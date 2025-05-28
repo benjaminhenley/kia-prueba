@@ -69,6 +69,7 @@ const FormDropdown = ({
           <style jsx>{`
             div::-webkit-scrollbar {
               width: 14px;
+              height: 14px;
             }
             div::-webkit-scrollbar-track {
               background: #f8f8f8;
@@ -84,6 +85,7 @@ const FormDropdown = ({
             div::-webkit-scrollbar-button {
               display: block;
               height: 14px;
+              width: 14px;
               background-color: #f8f8f8;
             }
             div::-webkit-scrollbar-button:vertical:start:decrement {
@@ -101,17 +103,28 @@ const FormDropdown = ({
               background-position: center;
               border-top: none;
             }
-            div::-webkit-scrollbar-button:horizontal,
+            div::-webkit-scrollbar-button:horizontal:start:decrement {
+              background-color: #f8f8f8;
+              background-image: url("data:image/svg+xml,%3Csvg width='4' height='9' viewBox='0 0 4 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0.849609V8.84961L0 4.84961L4 0.849609Z' fill='%239BA1A5'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            div::-webkit-scrollbar-button:horizontal:end:increment {
+              background-color: #f8f8f8;
+              background-image: url("data:image/svg+xml,%3Csvg width='4' height='9' viewBox='0 0 4 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8.84961V0.849609L4 4.84961L0 8.84961Z' fill='%23697279'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-position: center;
+            }
             div::-webkit-scrollbar-button:vertical:start:increment,
             div::-webkit-scrollbar-button:vertical:end:decrement {
               display: none;
             }
           `}</style>
-          <div className="max-h-40 overflow-y-auto">
+          <div className="max-h-40 overflow-auto">
             {options.map((option) => (
               <div
                 key={option.value}
-                className={`px-2.5 py-1 hover:bg-stone-50 cursor-pointer text-[#05141F] font-normal font-kia truncate hover:outline hover:outline-1 hover:outline-gray-200 ${
+                className={`px-2.5 py-1 hover:bg-stone-50 cursor-pointer text-[#05141F] font-normal font-kia whitespace-nowrap hover:outline hover:outline-1 hover:outline-gray-200 ${
                   option.value === value ? "bg-stone-100" : ""
                 }`}
                 onClick={() => handleOptionClick(option)}>
