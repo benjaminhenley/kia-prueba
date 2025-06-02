@@ -49,7 +49,8 @@ const DEALERS = [
     provincia: "buenosaires",
     direccion: "Av. Libertador 2230, Vicente López, Buenos Aires",
     telefono: "(011) 4799 6698",
-    horario: "Lunes a Viernes de 9:00hs a 18:30hs. Sabados de 10:00hs a 14:00hs",
+    horario:
+      "Lunes a Viernes de 9:00hs a 18:30hs. Sabados de 10:00hs a 14:00hs",
     email: "ventas@kiaolivos.com.ar",
     coordinadas: [-58.478294, -34.5109242],
   },
@@ -109,7 +110,8 @@ const DEALERS = [
     provincia: "chaco",
     direccion: "Av. 25 de Mayo 1934, Resistencia, Chaco",
     telefono: "(0362) 412 9734",
-    horario: "Lunes a Viernes de 8:00hs a 12:30hs / 16:00hs a 20:00hs. Sábados de 9:00hs a 12:30hs",
+    horario:
+      "Lunes a Viernes de 8:00hs a 12:30hs / 16:00hs a 20:00hs. Sábados de 9:00hs a 12:30hs",
     email: "venta2@meucci.com.ar",
     coordinadas: [-58.982534, -27.447252],
   },
@@ -199,7 +201,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. Perito Moreno 1917, Ushuaia, Tierra del Fuego",
     telefono: "(02901) 494793",
-    horario: "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
+    horario:
+      "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
     email: "infonovo@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
   },
@@ -209,7 +212,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
     telefono: "(0296) 4418959",
-    horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
+    horario:
+      "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
   },

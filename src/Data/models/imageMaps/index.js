@@ -5,6 +5,7 @@ import { ceratoImages } from "./cerato";
 import { sportageImages } from "./sportage";
 import { k2500Images } from "./k2500";
 import { carnivalImages } from "./carnival";
+import { seltosImages } from "./seltos";
 
 // Export all model images in a single object
 export const imageMap = {
@@ -14,6 +15,7 @@ export const imageMap = {
   sportage: sportageImages,
   k2500: k2500Images,
   carnival: carnivalImages,
+  seltos: seltosImages,
 };
 
 /**

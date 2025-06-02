@@ -361,6 +361,20 @@ export const DriveWise = ({ className, fill = "#ffffff" }) => (
   </svg>
 );
 
+export const FrontLightsIcon = ({ className, color = "#697279" }) => (
+  <svg
+    width="33"
+    height="32"
+    viewBox="0 0 33 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M14.3625 9.015L12.7312 10.555L10.3687 8.19L11.9437 6.65L14.3625 9.015ZM25.5 27H23.25V5H25.5V27ZM10.875 17.1H7.5V14.9H10.875V17.1ZM14.3062 22.985L11.8875 25.295L10.3125 23.755L12.7312 21.39L14.3062 22.985ZM18.75 21.0325V10.9675C17.7375 11.3892 16.9219 12.0492 16.3031 12.9475C15.6844 13.8458 15.375 14.8633 15.375 16C15.375 17.1367 15.6844 18.1542 16.3031 19.0525C16.9219 19.9508 17.7375 20.6108 18.75 21.0325ZM21 23.7C18.8062 23.7 16.9453 22.9529 15.4172 21.4588C13.8891 19.9646 13.125 18.145 13.125 16C13.125 13.855 13.8891 12.0354 15.4172 10.5413C16.9453 9.04708 18.8062 8.3 21 8.3V23.7Z"
+      fill="white"
+    />
+  </svg>
+);
+
 export const getHeroIcon = (icon, className) => {
   const icons = {
     stars: <Stars className={className} />,
@@ -376,6 +390,7 @@ export const getHeroIcon = (icon, className) => {
     antitheft: <AntiTheft className={className} />,
     audio: <Audio className={className} />,
     drivewise: <DriveWise className={className}></DriveWise>,
+    frontlights: <FrontLightsIcon className={className}></FrontLightsIcon>,
   };
 
   return icons[icon];

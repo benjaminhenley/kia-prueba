@@ -1,0 +1,312 @@
+{
+  "id": "seltos",
+  "name": "Seltos",
+  "tagline": "Que nada te detenga",
+  "heroImage": "/images/placeholder-seltos-hero.jpg",
+  "heroVideo": "imageMapRef:seltos.heroVideo",
+  "menu": {
+    "etiqueta": { "id": "brochures", "link": "imageMapRef:seltos.etiqueta" },
+    "fichas": { "id": "technical-sheet", "link": "imageMapRef:seltos.fichas" }
+  },
+  "heroInfo": [
+    {
+      "iconId": "radio",
+      "title": "Pantalla",
+      "description": "Pantalla <br/> panorámica <br/> 10,25\" + 10,25\"",
+      "description_mobile": "Pantalla panorámica <br/> 10,25\" + 10,25\""
+    },
+    {
+      "iconId": "drivewise",
+      "title": "Drive Wise",
+      "description": "Drive Wise <br/> Asistencias a <br/> la Conducción",
+      "description_mobile": "Drive Wise <br/> Asistencias a la Conducción"
+    },
+    {
+      "iconId": "roof",
+      "title": "Techo panorámico",
+      "description": "Techo panorámico <br/> con apertura <br/> eléctrica",
+      "description_mobile": "Techo panorámico <br/> con apertura eléctrica"
+    },
+    {
+      "iconId": "frontlights",
+      "title": "Luces",
+      "description": "Luces <br/> ambientales",
+      "description_mobile": "Luces <br/> ambientales"
+    }
+  ],
+  "sections": {
+    "characteristics": {
+      "features": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "1.5 MPI | 1,497cc"
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "value": "113hp | 144Nm"
+        },
+        {
+          "id": "warranty",
+          "title": "Garantía",
+          "value": "5 años o 100.000km"
+        }
+      ],
+      "colorPicker": [
+        {
+          "id": "black",
+          "name": "Aurora Black Pearl",
+          "border": "#05141F",
+          "color": "#1B171B",
+          "outline": "#05141F",
+          "thumbnail": "imageMapRef:seltos.colors.black"
+        },
+        {
+          "id": "gray",
+          "name": "Steel Gray",
+          "border": "#4C4C4C",
+          "color": "#7E7E7E",
+          "outline": "#6B6B6B",
+          "thumbnail": "imageMapRef:seltos.colors.gray"
+        },
+        {
+          "id": "silver",
+          "name": "Silky Silver",
+          "border": "#817F7F",
+          "color": "#B8B6B6",
+          "outline": "#A6A4A4",
+          "thumbnail": "imageMapRef:seltos.colors.silver"
+        },
+        {
+          "id": "white",
+          "name": "Snow White Pearl",
+          "border": "#D6D6D6",
+          "color": "#F6F6F6",
+          "outline": "#EFEFEF",
+          "thumbnail": "imageMapRef:seltos.colors.white"
+        },
+        {
+          "id": "red",
+          "name": "Runway Red",
+          "border": "#8B0000",
+          "color": "#DC143C",
+          "outline": "#B22222",
+          "thumbnail": "imageMapRef:seltos.colors.red"
+        }
+      ],
+      "atributes": {
+        "category": "Atributos",
+        "title": "Diseño audaz, seguridad total y funcionalidad en cada detalle",
+        "subtitle": "Diseño audaz, seguridad total y funcionalidad en cada detalle",
+        "image": "imageMapRef:seltos.attributes",
+        "bulletPoints": [
+          "**Diseño que impone:** Con líneas deportivas, molduras laterales y detalles que resaltan su carácter urbano, el Seltos no pasa desapercibido. Cada ángulo está diseñado para transmitir movimiento y personalidad.",
+          "**Protección en todo momento:** El Kia Seltos incorpora 6 airbags, frenos a disco en las cuatro ruedas, control de estabilidad y carrocería con acero avanzado (AHSS). Está pensado para que disfrutes el camino con tranquilidad.",
+          "**Tecnología para moverte conectado:** Cuenta con una pantalla multimedia de 8\" con Android Auto™ y Apple CarPlay™, control de velocidad crucero, cámara de retroceso y computadora de a bordo de 3,5\". Todo lo que necesitás, en un solo lugar."
+        ],
+        "description": "El Kia Seltos es el compañero ideal para moverte con estilo y confianza. Su estética deportiva, su equipamiento de seguridad y su conectividad total lo convierten en un SUV pensado para quienes nunca se detienen."
+      },
+      "exterior": {
+        "galleryType": "1",
+        "category": "Exterior",
+        "title": "Redefine tu camino como vos querés",
+        "description": "Sus contornos deportivos y detalles refinados transmiten una fuerza y compostura que cobran vida en las calles.",
+        "images": [
+          {
+            "id": "exterior-presencia",
+            "src": "imageMapRef:seltos.exterior.presencia",
+            "alt": "Presencia que se hace notar",
+            "title": "Presencia que se hace notar",
+            "description": "El Kia Seltos combina carácter, elegancia y versatilidad elementos que lo hacen único, desde su silueta audaz hasta su acabado meticuloso."
+          },
+          {
+            "id": "exterior-proteccion",
+            "src": "imageMapRef:seltos.exterior.proteccion",
+            "alt": "Protección inteligente",
+            "title": "Protección inteligente",
+            "description": "Con un sistema de seguridad de pre-colisión, reconocimiento y seguimiento de carril y control de punto ciego. Está pensado para anticiparse a los imprevistos."
+          },
+          {
+            "id": "exterior-estilo",
+            "src": "imageMapRef:seltos.exterior.estilo",
+            "alt": "Estilo que pisa fuerte",
+            "title": "Estilo que pisa fuerte",
+            "description": "Equipado con llantas de aleación de 17\", que combinan con estética deportiva de este SUV diseñado para nunca pasar desapercibido."
+          },
+          {
+            "id": "exterior-listo",
+            "src": "imageMapRef:seltos.exterior.listo",
+            "alt": "Listo para cualquier plan",
+            "title": "Listo para cualquier plan",
+            "description": "La altura de Seltos favorece circunstancias geográficas complicadas y garantiza visión de alto para permitir tener más lejos de riesgo en condiciones complejas."
+          },
+          {
+            "id": "exterior-diseno",
+            "src": "imageMapRef:seltos.exterior.diseno",
+            "alt": "Diseño que fluye",
+            "title": "Diseño que fluye",
+            "description": "La fusión del diseño elegante y rasgos imponentes y asertivos que enfatiza únicamente el potencial diferenciador del Seltos."
+          }
+        ]
+      },
+      "interior": {
+        "galleryType": "1",
+        "category": "Interior",
+        "title": "Un espacio interior intuitivo y de alta tecnología",
+        "description": "Los elementos de diseño horizontales enfatizan la amplitud. Las pantallas como sus equipamientos están ubicados de manera óptima para brindar alta visibilidad y fácil acceso.",
+        "images": [
+          {
+            "id": "interior-mandas",
+            "src": "imageMapRef:seltos.interior.mandas",
+            "alt": "Mandás vos",
+            "title": "Mandás vos",
+            "description": "Tu tiempo es valioso y mereces, como de velocidad y comando. sentirte de asumo para manejar sin por el camino, del volante."
+          },
+          {
+            "id": "interior-confort",
+            "src": "imageMapRef:seltos.interior.confort",
+            "alt": "Confort en cada centímetro",
+            "title": "Confort en cada centímetro",
+            "description": "Amplificando confort. Las butacas de cuero están pensadas y son cómodas, para hacerte vivir mejor en Seltos asiento desde tu viejo en casa."
+          },
+          {
+            "id": "interior-espacio",
+            "src": "imageMapRef:seltos.interior.espacio",
+            "alt": "Espacio que se adapta a vos",
+            "title": "Espacio que se adapta a vos",
+            "description": "Espacio y función elementos del Kia Seltos en que recorridos, sin sacrificar el confort de los huevos."
+          },
+          {
+            "id": "interior-conectado",
+            "src": "imageMapRef:seltos.interior.conectado",
+            "alt": "Todo conectado, siempre",
+            "title": "Todo conectado, siempre",
+            "description": "Pantalla multimedia de 8\" con Android Auto™ y Apple CarPlay™ inalámbrico. Música, mapas y mensajes sin cables. Android con cabrera de retroceso, sin hacer perder el control de volante."
+          },
+          {
+            "id": "interior-clima",
+            "src": "imageMapRef:seltos.interior.clima",
+            "alt": "Clima ideal, todo el viaje",
+            "title": "Clima ideal, todo el viaje",
+            "description": "Con el climatizador automático, podés elegir la temperatura. Esta está de intérvalo a tu posee. Climate asaltos tu clima como en casa."
+          }
+        ]
+      }
+    },
+    "specifications": {
+      "carouselImages": [
+        {
+          "id": 1,
+          "src": {
+            "mobile": "imageMapRef:seltos.carousel.front.mobile",
+            "desktop": "imageMapRef:seltos.carousel.front.desktop"
+          },
+          "alt": "Seltos Front"
+        },
+        {
+          "id": 2,
+          "src": {
+            "mobile": "imageMapRef:seltos.carousel.back.mobile",
+            "desktop": "imageMapRef:seltos.carousel.back.desktop"
+          },
+          "alt": "Seltos Back"
+        },
+        {
+          "id": 3,
+          "src": {
+            "mobile": "imageMapRef:seltos.carousel.side.mobile",
+            "desktop": "imageMapRef:seltos.carousel.side.desktop"
+          },
+          "alt": "Seltos Side"
+        }
+      ],
+      "features": [
+        {
+          "id": "frontlights",
+          "title": "Faros LED",
+          "value": "Faros LED <br/> (traseros antimiebla)"
+        },
+        {
+          "id": "wheels",
+          "title": "Llantas de aleación",
+          "value": "Llantas de <br/> aleación 17\""
+        },
+        {
+          "id": "seats",
+          "title": "Butacas traseras",
+          "value": "Butacas traseras regulables <br/> en 3 posiciones"
+        }
+      ],
+      "motorFeatures": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "1.5 MPI"
+        },
+        {
+          "id": "cylinders",
+          "title": "Cilindrada",
+          "value": "1,497cc"
+        },
+        {
+          "id": "power",
+          "title": "Potencia",
+          "value": "113hp"
+        },
+        {
+          "id": "torque",
+          "title": "Torque",
+          "value": "144Nm"
+        },
+        {
+          "id": "transmission",
+          "title": "Transmisión",
+          "value": "CVT"
+        },
+        {
+          "id": "traction",
+          "title": "Tracción",
+          "value": "Delantera"
+        }
+      ],
+      "dimensions": {
+        "title": "Dimensiones (mm)",
+        "details": [
+          {
+            "name": "EXTERIOR largo / ancho / alto",
+            "value": "4.385 / 1.800 / 1.620"
+          },
+          {
+            "name": "Distancia entre ejes",
+            "value": "2.630"
+          },
+          {
+            "name": "Distancia del suelo",
+            "value": "190"
+          },
+          {
+            "name": "Capacidad de baúl (2° Fila / 1° Fila)",
+            "value": "429 VDA Lts"
+          },
+          {
+            "name": "Peso Neto",
+            "value": "1.280 Kg"
+          },
+          {
+            "name": "Plazas",
+            "value": "5"
+          },
+          {
+            "name": "Medida de neumáticos",
+            "value": "215 / 60R17"
+          },
+          {
+            "name": "Auxilio",
+            "value": "Homogéneo - Aleación"
+          }
+        ]
+      }
+    }
+  }
+}
