@@ -17,18 +17,12 @@ import seltosInteriorConfort from "../../../assets/img/models/seltos/interior/se
 import seltosInteriorEspacio from "../../../assets/img/models/seltos/interior/seltos-interior-espacio.webp";
 import seltosInteriorConectado from "../../../assets/img/models/seltos/interior/seltos-interior-conectado.webp";
 import seltosInteriorClima from "../../../assets/img/models/seltos/interior/seltos-interior-clima.webp";
-// // Seltos color images
-// import seltosBlack from "../../../assets/img/models/seltos/colors/seltos-black.webp";
-// import seltosGray from "../../../assets/img/models/seltos/colors/seltos-gray.webp";
-// import seltosSilver from "../../../assets/img/models/seltos/colors/seltos-silver.webp";
-// import seltosWhite from "../../../assets/img/models/seltos/colors/seltos-white.webp";
-// import seltosRed from "../../../assets/img/models/seltos/colors/seltos-red.webp";
 // Seltos Attributes
 import seltosAtributesDesktop from "../../../assets/img/models/seltos/atributes/seltos-atributes-desktop.webp";
 import seltosAtributesMobile from "../../../assets/img/models/seltos/atributes/seltos-atributes-mobile.webp";
 // Hero Videos
-import heroVideoSeltosDesktop from "../../../assets/videos/carnival-hero-desktop.mp4";
-import heroVideoSeltosMobile from "../../../assets/videos/carnival-hero-mobile.mp4";
+import heroVideoSeltosDesktop from "../../../assets/videos/seltos-hero-desktop.mp4";
+import heroVideoSeltosMobile from "../../../assets/videos/seltos-hero-mobile.mp4";
 // Seltos Etiqueta
 import seltosEtiqueta from "../../../assets/fichas/seltos-ficha.pdf";
 // Seltos Fichas
@@ -93,13 +87,6 @@ export const seltosImages = {
       mobile: seltosInteriorClima,
     },
   },
-  // colors: {
-  //   black: seltosBlack,
-  //   gray: seltosGray,
-  //   silver: seltosSilver,
-  //   white: seltosWhite,
-  //   red: seltosRed,
-  // },
   attributes: {
     desktop: seltosAtributesDesktop,
     mobile: seltosAtributesMobile,

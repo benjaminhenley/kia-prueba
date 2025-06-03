@@ -26,7 +26,7 @@ const Precios = () => {
       { key: "version", label: "Versión", width: "33%" },
       {
         key: "price",
-        label: isMobile ? "Precio" : "Precio sugerido al público",
+        label: "Precio sugerido al público",
         width: "33%",
         bold: true,
       },

@@ -53,48 +53,7 @@
           "value": "5 años o 100.000km"
         }
       ],
-      "colorPicker": [
-        {
-          "id": "black",
-          "name": "Aurora Black Pearl",
-          "border": "#05141F",
-          "color": "#1B171B",
-          "outline": "#05141F",
-          "thumbnail": "imageMapRef:seltos.colors.black"
-        },
-        {
-          "id": "gray",
-          "name": "Steel Gray",
-          "border": "#4C4C4C",
-          "color": "#7E7E7E",
-          "outline": "#6B6B6B",
-          "thumbnail": "imageMapRef:seltos.colors.gray"
-        },
-        {
-          "id": "silver",
-          "name": "Silky Silver",
-          "border": "#817F7F",
-          "color": "#B8B6B6",
-          "outline": "#A6A4A4",
-          "thumbnail": "imageMapRef:seltos.colors.silver"
-        },
-        {
-          "id": "white",
-          "name": "Snow White Pearl",
-          "border": "#D6D6D6",
-          "color": "#F6F6F6",
-          "outline": "#EFEFEF",
-          "thumbnail": "imageMapRef:seltos.colors.white"
-        },
-        {
-          "id": "red",
-          "name": "Runway Red",
-          "border": "#8B0000",
-          "color": "#DC143C",
-          "outline": "#B22222",
-          "thumbnail": "imageMapRef:seltos.colors.red"
-        }
-      ],
+      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/seltos/lhdfull2/index.html#/seltos/exterior",
       "atributes": {
         "category": "Atributos",
         "title": "Diseño audaz, seguridad total y funcionalidad en cada detalle",
