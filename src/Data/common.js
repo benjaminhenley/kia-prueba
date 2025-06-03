@@ -109,9 +109,9 @@ export const camionetasSuv = [
   },
   {
     nombre: "Seltos",
-    href: "https://www.kia.com.ar/seltos",
+    href: "/seltos",
     target: "",
-    esExterna: true,
+    esExterna: false,
     esNuevo: null,
     foto: Seltos,
     precio: (

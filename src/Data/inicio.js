@@ -76,9 +76,9 @@ export const homeSlider = [
     titulo: "Seltos",
     subtitulo: "Que nada te detenga",
     textoBoton: "Conocer más",
-    linkBoton: "https://www.kia.com.ar/seltos",
+    linkBoton: "/seltos",
     target: "",
-    esExterna: true,
+    esExterna: false,
   },
 /*   {
     imagen: Cerato,
@@ -86,9 +86,9 @@ export const homeSlider = [
     titulo: "Cerato",
     subtitulo: "Inspirate con un viaje a las montañas",
     textoBoton: "Conocer más",
-    linkBoton: "https://www.kia.com.ar/cerato",
+    linkBoton: "/cerato",
     target: "",
-    esExterna: true,
+    esExterna: false,
   }, */
   {
     imagen: K2500,
