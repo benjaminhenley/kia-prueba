@@ -66,24 +66,6 @@ export const autos = [
       </>
     ),
   },
-  {
-    nombre: "Cerato",
-    href: "/cerato",
-    target: "",
-    esExterna: false,
-    esNuevo: null,
-    foto: Cerato,
-    precio: (
-      <>
-        <p className="text-sm font-bold py-0.5">
-          $34.000USD{" "}
-          <span className="font-regular text-kia-gray">SX 2.0 AT*</span>
-        </p>
-        <p className="text-sm font-bold py-0.5"></p>
-        <p className="text-sm font-bold py-0.5"></p>
-      </>
-    ),
-  },
 ];
 
 export const camionetasSuv = [

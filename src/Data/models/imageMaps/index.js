@@ -1,7 +1,6 @@
 // src/Data/imageMaps/index.js
 import { sedanImages } from "./sedan";
 import { crossImages } from "./cross";
-import { ceratoImages } from "./cerato";
 import { sportageImages } from "./sportage";
 import { k2500Images } from "./k2500";
 import { carnivalImages } from "./carnival";
@@ -11,7 +10,6 @@ import { seltosImages } from "./seltos";
 export const imageMap = {
   sedan: sedanImages,
   cross: crossImages,
-  cerato: ceratoImages,
   sportage: sportageImages,
   k2500: k2500Images,
   carnival: carnivalImages,
