@@ -5,7 +5,6 @@ import AllNewK3Sedan from "../assets/img/inicio/homeSlider/desktop/All-new K3 Se
 import Carnival from "../assets/img/inicio/homeSlider/desktop/Carnival.webp";
 import Sportage from "../assets/img/inicio/homeSlider/desktop/Sportage.webp";
 import Seltos from "../assets/img/inicio/homeSlider/desktop/Seltos.webp";
-// import Cerato from "../assets/img/inicio/homeSlider/desktop/Cerato.webp";
 import K2500 from "../assets/img/inicio/homeSlider/desktop/K2500.webp";
 
 //Imports fotos Mobile
@@ -15,7 +14,6 @@ import AllNewK3SedanMobile from "../assets/img/inicio/homeSlider/mobile/All-new 
 import CarnivalMobile from "../assets/img/inicio/homeSlider/mobile/Carnival Mobile.webp";
 import SportageMobile from "../assets/img/inicio/homeSlider/mobile/Sportage Mobile.webp";
 import SeltosMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Mobile.webp";
-//import CeratoMobile from "../assets/img/inicio/homeSlider/mobile/Cerato Mobile.webp";
 import K2500Mobile from "../assets/img/inicio/homeSlider/mobile/K2500 Mobile.webp";
 
 // Este archivo contiene los datos para el slider
@@ -80,16 +78,6 @@ export const homeSlider = [
     target: "",
     esExterna: false,
   },
-/*   {
-    imagen: Cerato,
-    imagenMobile: CeratoMobile,
-    titulo: "Cerato",
-    subtitulo: "Inspirate con un viaje a las montañas",
-    textoBoton: "Conocer más",
-    linkBoton: "/cerato",
-    target: "",
-    esExterna: false,
-  }, */
   {
     imagen: K2500,
     imagenMobile: K2500Mobile,
@@ -101,4 +89,3 @@ export const homeSlider = [
     esExterna: false,
   },
 ];
-

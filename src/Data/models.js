@@ -1,5 +1,4 @@
 import sedanImg from "../assets/img/common/modelos/AllNewK3Sedan.webp";
-import ceratoImg from "../assets/img/common/modelos/Cerato.webp";
 import crossImg from "../assets/img/common/modelos/AllNewK3Cross.webp";
 import SeltosImg from "../assets/img/common/modelos/Seltos.webp";
 import SportageImg from "../assets/img/common/modelos/Sportage.webp";
@@ -11,11 +10,6 @@ const CAR_MODELS = [
     id: 24,
     name: "All-new K3 Sedán",
     image: sedanImg,
-  },
-  {
-    id: 3,
-    name: "Cerato",
-    image: ceratoImg,
   },
   {
     id: 25,
