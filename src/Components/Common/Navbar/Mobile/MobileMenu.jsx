@@ -4,7 +4,7 @@ import MobileMenuSection from "./MobileMenuSection";
 import FiltroVehiculos from "../FiltroVehiculos";
 import VehiculoCard from "../VehiculoCard";
 import MobileLinksAdicionales from "./MobileLinksAdicionales";
-import { concesionarios } from "../../../../Data/common"; // Asegúrate de que la ruta sea correcta
+import { concesionarios, nuevaKia } from "../../../../Data/common"; // Asegúrate de que la ruta sea correcta
 
 const MobileMenu = ({
   isOpen,
@@ -109,17 +109,33 @@ const MobileMenu = ({
           </a>
         </div>
 
-        {/* Nueva Kia (sin desplegable) */}
-        <div>
-          <a
-            href="https://www.kia.com.ar/ourmovement/"
-            target=""
-            rel="noreferrer">
-            <div className="p-3 border-b border-[#CDD0D2]">
-              <span className="font-semibold">Nueva Kia</span>
-            </div>
-          </a>
-        </div>
+        {/* Nueva Kia */}
+        <MobileMenuSection
+          title="Nueva Kia"
+          isActive={activeSubMenu === "nuevaKia"}
+          onClick={() => toggleSubMenu("nuevaKia")}>
+          <div className="bg-[#F8F8F8]">
+            {nuevaKia.map((opcion, index) => (
+              <div
+                key={index}
+                className="block py-2 px2 pl-7 hover:font-bold border-b border-[#CDD0D2]">
+                {opcion.esExterna ? (
+                  <a
+                    href={opcion.href}
+                    target={opcion.target}
+                    rel="noreferrer"
+                    onClick={(e) => onLinkClick(e)}>
+                    {opcion.nombre}
+                  </a>
+                ) : (
+                  <Link to={opcion.href} onClick={(e) => onLinkClick(e)}>
+                    {opcion.nombre}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </MobileMenuSection>
 
         {/* Enlaces adicionales */}
         <MobileLinksAdicionales onLinkClick={onLinkClick} />

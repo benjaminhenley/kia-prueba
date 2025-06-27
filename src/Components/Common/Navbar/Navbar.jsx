@@ -4,6 +4,7 @@ import Blackbar from "./Blackbar";
 import { autos, camionetasSuv, utilitarios } from "../../../Data/common";
 import ModelosDropdown from "./ModelosDropdown";
 import ConcesionariosDropdown from "./ConcesionariosDropdown";
+import NuevaKiaDropdown from "./NuevaKiaDropdown";
 import HamburgerButton from "./Mobile/HamburgerButton";
 import MobileMenu from "./Mobile/MobileMenu";
 import { Link, useLocation, useParams } from "react-router-dom";
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [activeFilter, setActiveFilter] = useState("todos");
   const [activeConcesionariosOption, setActiveConcesionariosOption] =
     useState("");
+  const [activeNuevaKiaOption, setActiveNuevaKiaOption] = useState("");
 
   // Estados para los botones activos
   const [activeButton, setActiveButton] = useState("");
@@ -35,9 +37,11 @@ const Navbar = () => {
 
   const modelosDropdownRef = useRef(null);
   const concesionariosDropdownRef = useRef(null);
+  const nuevaKiaDropdownRef = useRef(null);
 
   const modelosButtonRef = useRef(null);
   const concesionariosButtonRef = useRef(null);
+  const nuevaKiaButtonRef = useRef(null);
 
   const isTransparent = pathname === "/" || pathname === "/" + modelID;
   // Efecto para detectar el scroll
@@ -100,6 +104,14 @@ const Navbar = () => {
         setActiveDropdown("");
         setActiveButton(""); // Restablecer el botón activo al cerrar el dropdown de concesionarios
       }
+      if (
+        nuevaKiaDropdownRef.current &&
+        !nuevaKiaButtonRef.current.contains(event.target) &&
+        !nuevaKiaDropdownRef.current.contains(event.target)
+      ) {
+        setActiveDropdown("");
+        setActiveButton(""); // Restablecer el botón activo al cerrar el dropdown de nueva kia
+      }
     };
 
     const handleScroll = () => {
@@ -132,6 +144,10 @@ const Navbar = () => {
 
   const handleConcesionariosOptionClick = (option) => {
     setActiveConcesionariosOption(option);
+  };
+
+  const handleNuevaKiaOptionClick = (option) => {
+    setActiveNuevaKiaOption(option);
   };
 
   // Funciones para menú móvil
@@ -167,9 +183,7 @@ const Navbar = () => {
 
   // Determinar si algún dropdown está activo para cambiar el estilo del navbar
   const isAnyDropdownActive =
-    activeDropdown !== "" ||
-    activeButton === "postVenta" ||
-    activeButton === "nuevaKia";
+    activeDropdown !== "" || activeButton === "postVenta";
 
   // Determinar si el logo debe invertirse (negro)
   const shouldInvertLogo =
@@ -209,13 +223,13 @@ const Navbar = () => {
               className="relative group inline-block">
               <p
                 className={`${
-                  activeButton === "modelos" ? "font-bold" : ""
+                  activeDropdown === "modelos" ? "font-bold" : ""
                 } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
                 Modelos
               </p>
               <div
                 className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
-                  activeButton === "modelos"
+                  activeDropdown === "modelos"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
@@ -231,13 +245,13 @@ const Navbar = () => {
               className="relative group inline-block">
               <p
                 className={`${
-                  activeButton === "concesionarios" ? "font-bold" : ""
+                  activeDropdown === "concesionarios" ? "font-bold" : ""
                 } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
                 Concesionarios
               </p>
               <div
                 className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
-                  activeButton === "concesionarios"
+                  activeDropdown === "concesionarios"
                     ? "bg-midnight-black"
                     : "bg-transparent group-hover:bg-midnight-black"
                 }`}></div>
@@ -294,23 +308,40 @@ const Navbar = () => {
               }`}></div>
           </a>
 
-          <a
-            href="https://www.kia.com.ar/ourmovement/"
-            target=""
-            className="relative group inline-block">
-            <p
-              className={`${
-                activeButton === "nuevaKia" ? "font-bold" : ""
-              } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
-              Nueva Kia
-            </p>
-            <div
-              className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
-                activeButton === "nuevaKia"
-                  ? "bg-midnight-black"
-                  : "bg-transparent group-hover:bg-midnight-black"
-              }`}></div>
-          </a>
+          <div className="relative">
+            <button
+              ref={nuevaKiaButtonRef}
+              onClick={(e) => {
+                toggleActiveDropdown(e, "nuevaKia");
+              }}
+              className="relative group inline-block">
+              <p
+                className={`${
+                  activeDropdown === "nuevaKia" ? "font-bold" : ""
+                } cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap`}>
+                Nueva Kia
+              </p>
+              <div
+                className={`absolute bottom-[2px] left-0 w-full h-[1px] transition-all duration-200 ${
+                  activeDropdown === "nuevaKia"
+                    ? "bg-midnight-black"
+                    : "bg-transparent group-hover:bg-midnight-black"
+                }`}></div>
+            </button>
+
+            {/* Posicionar el dropdown de Nueva Kia debajo de su botón */}
+            {activeDropdown === "nuevaKia" && (
+              <div
+                className="relative top-full left-0 w-full"
+                ref={nuevaKiaDropdownRef}>
+                <NuevaKiaDropdown
+                  activeOption={activeNuevaKiaOption}
+                  onOptionClick={handleNuevaKiaOptionClick}
+                  onLinkClick={handleLinkClick}
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Placeholder para mantener la estructura en móvil */}

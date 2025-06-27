@@ -189,6 +189,23 @@ export const concesionarios = [
   },
 ];
 
+export const nuevaKia = [
+  {
+    id: "ourMovement",
+    nombre: "Nueva Kia",
+    href: "https://www.kia.com.ar/ourmovement/",
+    target: "_blank",
+    esExterna: true,
+  },
+  {
+    id: "talentLounge",
+    nombre: "Kia Talent Lounge",
+    href: "https://career.kia.com/eng/main/main.kc?utm_source=kia-dealership-site-ktl&utm_medium=link&utm_campaign=ktl-pr",
+    target: "_blank",
+    esExterna: true,
+  },
+];
+
 export const postVentaFooter = [
   {
     nombre: "Agendá tu cita",
