@@ -5,8 +5,16 @@
   "heroImage": "/images/placeholder-seltos-hero.jpg",
   "heroVideo": "imageMapRef:seltos.heroVideo",
   "menu": {
-    "etiqueta": { "id": "brochures", "link": "imageMapRef:seltos.etiqueta" },
-    "fichas": { "id": "technical-sheet", "link": "imageMapRef:seltos.fichas" }
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:seltos.etiqueta",
+      "originalFilename": "Ficha técnica K3 Seltos LX.pdf"
+    },
+    "fichas": {
+      "id": "technical-sheet",
+      "link": "imageMapRef:seltos.fichas",
+      "originalFilename": "Ficha técnica K3 Seltos LX.pdf"
+    }
   },
   "heroInfo": [
     {

@@ -5,8 +5,16 @@
   "heroImage": "/images/placeholder-cross-hero.jpg",
   "heroVideo": "imageMapRef:cross.heroVideo",
   "menu": {
-    "etiqueta": { "id": "brochures", "link": "imageMapRef:cross.etiqueta" },
-    "fichas": { "id": "technical-sheet", "link": "imageMapRef:cross.fichas" }
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:cross.etiqueta",
+      "originalFilename": "Etiqueta K3 Cross EX_GT.pdf"
+    },
+    "fichas": {
+      "id": "technical-sheet",
+      "link": "imageMapRef:cross.fichas",
+      "originalFilename": "Ficha técnica K3 Cross EX_GT.pdf"
+    }
   },
   "heroInfo": [
     {

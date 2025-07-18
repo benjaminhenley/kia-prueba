@@ -6,8 +6,16 @@
   "heroVideo": "imageMapRef:sportage.heroVideo",
 
   "menu": {
-    "etiqueta": { "id": "brochures", "link": "imageMapRef:sportage.etiqueta" },
-    "fichas": { "id": "technical-sheet", "link": "imageMapRef:sportage.fichas" }
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:sportage.etiqueta",
+      "originalFilename": "Etiqueta Sportage EX.pdf"
+    },
+    "fichas": {
+      "id": "technical-sheet",
+      "link": "imageMapRef:sportage.fichas",
+      "originalFilename": "Ficha técnica Sportage EX.pdf"
+    }
   },
   "heroInfo": [
     {

@@ -30,9 +30,9 @@ import crossAtributesMobile from "../../../assets/img/models/cross/atributes/cro
 import heroVideoCrossDesktop from "../../../assets/videos/cross-hero-desktop.mp4";
 import heroVideoCrossMobile from "../../../assets/videos/cross-hero-mobile.mp4";
 // Cross Etiqueta
-import crossEtiqueta from "../../../assets/etiquetas/cross-etiqueta.pdf";
+import crossEtiqueta from "../../../assets/etiquetas/Etiqueta K3 Cross EX_GT.pdf";
 // Cross Fichas
-import crossFichas from "../../../assets/fichas/cross-ficha.pdf";
+import crossFichas from "../../../assets/fichas/Ficha técnica K3 Cross EX_GT.pdf";
 
 export const crossImages = {
   carousel: {

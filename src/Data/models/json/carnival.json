@@ -6,8 +6,16 @@
   "heroVideo": "imageMapRef:carnival.heroVideo",
 
   "menu": {
-    "etiqueta": { "id": "brochures", "link": "imageMapRef:carnival.etiqueta" },
-    "fichas": { "id": "technical-sheet", "link": "imageMapRef:carnival.fichas" }
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:carnival.etiqueta",
+      "originalFilename": "Ficha técnica K3 Carnival EX.pdf"
+    },
+    "fichas": {
+      "id": "technical-sheet",
+      "link": "imageMapRef:carnival.fichas",
+      "originalFilename": "Ficha técnica K3 Carnival EX.pdf"
+    }
   },
   "heroInfo": [
     {

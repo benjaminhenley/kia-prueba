@@ -5,8 +5,16 @@
   "heroImage": "/images/placeholder-sedan-hero.jpg",
   "heroVideo": "imageMapRef:sedan.heroVideo",
   "menu": {
-    "etiqueta": { "id": "brochures", "link": "imageMapRef:sedan.etiqueta" },
-    "fichas": { "id": "technical-sheet", "link": "imageMapRef:sedan.fichas" }
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:sedan.etiqueta",
+      "originalFilename": "Etiqueta K3 Sedan EX_GT.pdf"
+    },
+    "fichas": {
+      "id": "technical-sheet",
+      "link": "imageMapRef:sedan.fichas",
+      "originalFilename": "Ficha técnica K3 Sedan EX_GT.pdf"
+    }
   },
   "heroInfo": [
     {

@@ -24,9 +24,9 @@ import sportageInteriorTrunk from "../../../assets/img/models/sportage/interior/
 import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop.webp";
 import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-mobile.webp";
 // Sportage Etiqueta
-import sportageEtiqueta from "../../../assets/etiquetas/sportage-etiqueta.pdf";
+import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
 // Sportage Fichas
-import sportageFichas from "../../../assets/fichas/sportage-ficha.pdf";
+import sportageFichas from "../../../assets/fichas/Ficha técnica Sportage EX.pdf";
 
 export const sportageImages = {
   carousel: {

@@ -36,9 +36,9 @@ import sedanInteriorGearsMobile from "../../../assets/img/models/sedan/interior/
 import sedanAtributesDesktop from "../../../assets/img/models/sedan/atributes/sedan-atributes-desktop.webp";
 import sedanAtributesMobile from "../../../assets/img/models/sedan/atributes/sedan-atributes-mobile.webp";
 // Sedan Etiqueta
-import sedanEtiqueta from "../../../assets/etiquetas/sedan-etiqueta.pdf";
+import sedanEtiqueta from "../../../assets/etiquetas/Etiqueta K3 Sedan EX_GT.pdf";
 // Sedan Fichas
-import sedanFichas from "../../../assets/fichas/sedan-ficha.pdf";
+import sedanFichas from "../../../assets/fichas/Ficha técnica K3 Sedan EX_GT.pdf";
 
 export const sedanImages = {
   carousel: {

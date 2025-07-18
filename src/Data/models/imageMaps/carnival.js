@@ -30,9 +30,9 @@ import carnivalSnowWhitePearl from "../../../assets/img/models/carnival/colors/c
 import carnivalAtributesDesktop from "../../../assets/img/models/carnival/atributes/carnival-atributes-desktop.webp";
 import carnivalAtributesMobile from "../../../assets/img/models/carnival/atributes/carnival-atributes-mobile.webp";
 // Carnival Etiqueta
-// import carnivalEtiqueta from "../../../assets/etiquetas/carnival-etiqueta.pdf";
+import carnivalEtiqueta from "../../../assets/fichas/Ficha técnica K3 Carnival EX.pdf";
 // Carnival Fichas
-import carnivalFichas from "../../../assets/fichas/carnival-ficha.pdf";
+import carnivalFichas from "../../../assets/fichas/Ficha técnica K3 Carnival EX.pdf";
 
 export const carnivalImages = {
   carousel: {
@@ -108,6 +108,6 @@ export const carnivalImages = {
     desktop: carnivalAtributesDesktop,
     mobile: carnivalAtributesMobile,
   },
-  etiqueta: carnivalFichas,
+  etiqueta: carnivalEtiqueta,
   fichas: carnivalFichas,
 };

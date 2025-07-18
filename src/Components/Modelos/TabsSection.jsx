@@ -43,6 +43,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
   const menuItems = menu
     ? Object.entries(menu).map(([key, item]) => ({
         id: item.id,
+        originalFilename: item.originalFilename,
         text:
           key === "etiqueta"
             ? "Etiqueta"
@@ -157,7 +158,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
                     <a
                       key={option.id}
                       href={option.link}
-                      download
+                      download={option.originalFilename || option.text + ".pdf"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center p-3 sm:p-4 text-gray-800 hover:bg-gray-100 ${

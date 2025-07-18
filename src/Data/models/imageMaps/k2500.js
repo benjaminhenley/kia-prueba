@@ -23,9 +23,9 @@ import k2500InteriorAirConditioner from "../../../assets/img/models/k2500/interi
 import k2500AtributesDesktop from "../../../assets/img/models/k2500/atributes/k2500-atributes-desktop.webp";
 import k2500AtributesMobile from "../../../assets/img/models/k2500/atributes/k2500-atributes-mobile.webp";
 // k2500 Etiqueta
-import k2500Etiqueta from "../../../assets/etiquetas/k2500-etiqueta.pdf";
+import k2500Etiqueta from "../../../assets/etiquetas/Etiqueta K2500 CS.pdf";
 // k2500 Fichas
-import k2500Fichas from "../../../assets/fichas/k2500-ficha.pdf";
+import k2500Fichas from "../../../assets/fichas/Ficha técnica K2500 CS.pdf";
 // k2500 colors images
 import k2500White from "../../../assets/img/models/k2500/colors/k2500-white.webp";
 
