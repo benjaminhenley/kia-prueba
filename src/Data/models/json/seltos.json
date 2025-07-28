@@ -85,35 +85,35 @@
             "src": "imageMapRef:seltos.exterior.presencia",
             "alt": "Presencia que se hace notar",
             "title": "Presencia que se hace notar",
-            "description": "El Kia Seltos combina carácter, elegancia y versatilidad elementos que lo hacen único, desde su silueta audaz hasta su acabado meticuloso."
+            "description": "El Kia Seltos combina líneas audaces, proporciones robustas y detalles modernos que lo hacen destacar donde sea que vaya."
           },
           {
             "id": "exterior-proteccion",
             "src": "imageMapRef:seltos.exterior.proteccion",
             "alt": "Protección inteligente",
             "title": "Protección inteligente",
-            "description": "Con un sistema de seguridad de pre-colisión, reconocimiento y seguimiento de carril y control de punto ciego. Está pensado para anticiparse a los imprevistos."
+            "description": "Con su sistema de asistencia de pre-colisión, mantenimiento y seguimiento de carril y control de crucero adaptativo, cada trayecto es más seguro y fluido."
           },
           {
             "id": "exterior-estilo",
             "src": "imageMapRef:seltos.exterior.estilo",
             "alt": "Estilo que pisa fuerte",
             "title": "Estilo que pisa fuerte",
-            "description": "Equipado con llantas de aleación de 17\", que combinan con estética deportiva de este SUV diseñado para nunca pasar desapercibido."
+            "description": "Exclusivo diseño de llantas diamantadas bitono aro 17', que combinan una estética agresiva con elegancia urbana. Deportividad con actitud."
           },
           {
             "id": "exterior-listo",
             "src": "imageMapRef:seltos.exterior.listo",
             "alt": "Listo para cualquier plan",
             "title": "Listo para cualquier plan",
-            "description": "La altura de Seltos favorece circunstancias geográficas complicadas y garantiza visión de alto para permitir tener más lejos de riesgo en condiciones complejas."
+            "description": "Las barras de techo funcionales acompañan el diseño y te permiten llevar más allá tus aventuras."
           },
           {
             "id": "exterior-diseno",
             "src": "imageMapRef:seltos.exterior.diseno",
             "alt": "Diseño que fluye",
             "title": "Diseño que fluye",
-            "description": "La fusión del diseño elegante y rasgos imponentes y asertivos que enfatiza únicamente el potencial diferenciador del Seltos."
+            "description": "Los paragolpes al color de la carrocería eliminan contrastes y aportan una estética uniforme y sofisticada. Porque los detalles también hablan de vos."
           }
         ]
       },
@@ -128,35 +128,35 @@
             "src": "imageMapRef:seltos.interior.mandas",
             "alt": "Mandás vos",
             "title": "Mandás vos",
-            "description": "Tu tiempo es valioso y mereces, como de velocidad y comando. sentirte de asumo para manejar sin por el camino, del volante."
+            "description": "Volante regulable en altura y profundidad, control de velocidad crucero y comando satelital de audio para manejar sin quitar las manos del volante."
           },
           {
             "id": "interior-confort",
             "src": "imageMapRef:seltos.interior.confort",
             "alt": "Confort en cada centímetro",
             "title": "Confort en cada centímetro",
-            "description": "Amplificando confort. Las butacas de cuero están pensadas y son cómodas, para hacerte vivir mejor en Seltos asiento desde tu viejo en casa."
+            "description": "Apoyabrazos central deslizable, consola con portavasos y más detalles que hacen que cada viaje se sienta como estar en casa."
           },
           {
             "id": "interior-espacio",
             "src": "imageMapRef:seltos.interior.espacio",
             "alt": "Espacio que se adapta a vos",
             "title": "Espacio que se adapta a vos",
-            "description": "Espacio y función elementos del Kia Seltos en que recorridos, sin sacrificar el confort de los huevos."
+            "description": "Asientos traseros rebatibles 60:40 para llevar todo lo que necesites, sin sacrificar el confort de los tuyos."
           },
           {
             "id": "interior-conectado",
             "src": "imageMapRef:seltos.interior.conectado",
             "alt": "Todo conectado, siempre",
             "title": "Todo conectado, siempre",
-            "description": "Pantalla multimedia de 8\" con Android Auto™ y Apple CarPlay™ inalámbrico. Música, mapas y mensajes sin cables. Android con cabrera de retroceso, sin hacer perder el control de volante."
+            "description": "Pantalla multimedia de 8” con Android Auto™ y Apple CarPlay™ inalámbrico. Música, mapas y mensajes sin cables. Además con cámara de retroceso, ver hacia atrás también es avanzar."
           },
           {
             "id": "interior-clima",
             "src": "imageMapRef:seltos.interior.clima",
             "alt": "Clima ideal, todo el viaje",
             "title": "Clima ideal, todo el viaje",
-            "description": "Con el climatizador automático, podés elegir la temperatura. Esta está de intérvalo a tu posee. Climate asaltos tu clima como en casa."
+            "description": "Con ll climatizador electrónico, elegí tu temperatura ideal y dejá que el Seltos se encargue del resto. Cada viaje se siente como en casa."
           }
         ]
       }

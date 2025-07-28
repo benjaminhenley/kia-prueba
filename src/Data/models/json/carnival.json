@@ -126,35 +126,35 @@
             "src": "imageMapRef:carnival.exterior.lights",
             "alt": "Luces",
             "title": "Ilumina tu camino",
-            "description": "Los faros delanteros Full LED ofrecen una iluminación poderosa y precisa, combinando estética y funcionalidad para garantizar la mejor visibilidad en todo momento."
+            "description": "Los faros delanteros Full LED ofrecen una iluminación poderosa y precisa, combinando estética y seguridad para que veas y te vean en todo momento."
           },
           {
             "id": "carnival-exterior-backlights",
             "src": "imageMapRef:carnival.exterior.backlights",
             "alt": "Luces traseras",
             "title": "Visible desde dónde la mires",
-            "description": "Las luces traseras con tecnología LED avanzada, combinan potencia y distinción que se integra perfectamente con la silueta deportiva del vehículo."
+            "description": "Los faros traseros con firma luminosa aportan un diseño moderno y distintivo que se integra con la carrocería, elevando su presencia en cada maniobra."
           },
           {
             "id": "carnival-exterior-doors",
             "src": "imageMapRef:carnival.exterior.doors",
             "alt": "Puertas",
             "title": "Apertura que piensa en vos",
-            "description": "Las puertas laterales automáticas facilitan cómodamente el acceso y el descenso, facilitando el ingreso de equipaje, compras o lo que necesites trasladar."
+            "description": "Las puertas laterales automáticas deslizan suavemente al toque o a distancia, facilitando el acceso con estilo y sin esfuerzos, incluso con las manos ocupadas."
           },
           {
             "id": "carnival-exterior-trunk",
             "src": "imageMapRef:carnival.exterior.trunk",
             "alt": "Baúl",
             "title": "Abre y cierra de un solo toque a distancia",
-            "description": "El portón trasero eléctrico con apertura y cierre automático se activa por proximidad o desde el Smart Key, facilitando la carga incluso cuando tenés las manos ocupadas."
+            "description": "El portón trasero eléctrico con apertura y cierre automático se activa por proximidad o desde la llave, adaptándose a tus necesidades sin que muevas un dedo."
           },
           {
             "id": "carnival-exterior-wheel",
             "src": "imageMapRef:carnival.exterior.wheel",
             "alt": "Llantas",
             "title": "Elegancia sobre ruedas",
-            "description": "Las llantas de aleación de 17\" combinan diseño y eficiencia, completando una estética moderna que refleja la potencia y carácter deportivo de Carnival."
+            "description": "Las llantas de aleación de 17' combinan diseño y robustez, completando una estética moderna que realza la postura firme y segura de la Carnival."
           }
         ]
       },
@@ -169,35 +169,35 @@
             "src": "imageMapRef:carnival.interior.panel",
             "alt": "Panel",
             "title": "Tecnología al frente",
-            "description": "El tablero digital de 12,3\" ofrece una visual clara y personalizable de toda la información de manejo. Tus viajes múltiples estarán a la distancia adecuada y como tales."
+            "description": "El tablero digital de 12.3” ofrece una visual clara y personalizable de toda la información de manejo. Tecnología intuitiva que te mantiene enfocado y conectado."
           },
           {
             "id": "carnival-interior-seats",
             "src": "imageMapRef:carnival.interior.seats",
             "alt": "Asientos",
             "title": "Asientos pensados para tu bienestar",
-            "description": "Las butacas delanteras cuentan con calefacción y ventilación integradas, adaptándose a cualquier clima para brindar una experiencia de primera en cada trayecto."
+            "description": "Las butacas delanteras cuentan con calefacción y ventilación integradas, adaptándose a cualquier clima para brindar una experiencia de primera en cada estación."
           },
           {
             "id": "carnival-interior-rooftop",
             "src": "imageMapRef:carnival.interior.rooftop",
             "alt": "Techo",
             "title": "Luz que abre el interior",
-            "description": "El doble techo solar inunda de luz natural el habitáculo, creando junto a los parasoles con espejo y luz integrada la sensación de amplitud y apertura."
+            "description": "El doble techo solar inunda de luz natural el habitáculo, conectando a los pasajeros con el entorno y ampliando la sensación de amplitud y libertad."
           },
           {
             "id": "carnival-interior-whole",
             "src": "imageMapRef:carnival.interior.whole",
             "alt": "Interior",
             "title": "Espacio para lo que imaginás",
-            "description": "Con capacidad para siete personas y modulación inteligente, la Carnival transforma su interior según tu día, tu plan o tu carga."
+            "description": "Con capacidad para once personas y modularidad inteligente, la Carnival transforma su interior según tu día, tu plan o tu carga."
           },
           {
             "id": "carnival-interior-air-conditioning",
             "src": "imageMapRef:carnival.interior.airConditioning",
             "alt": "Climatizador",
             "title": "Confort térmico a medida",
-            "description": "El climatizador automático de triple zona, con controles táctiles, permite personalizar la temperatura por secciones. Cada fila elige con su propio microclima."
+            "description": "El climatizador automático de triple zona, con controles táctiles, permite personalizar la temperatura por sectores. Cada fila viaja con su propio microclima."
           }
         ]
       }
