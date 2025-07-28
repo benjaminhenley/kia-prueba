@@ -154,15 +154,15 @@ const DEALERS = [
     email: "servicios@kinormotors.com.ar",
     coordinadas: [-58.503151, -34.485193],
   },
-  {
+    {
     id: 15,
-    nombre: "Kipercar",
-    provincia: "buenosaires",
-    direccion: "San Luis 895, Pergamino, Buenos Aires",
-    telefono: "(02477) 15488254",
-    horario: "Lunes a Viernes 8:00hs a 16:00hs",
-    email: "kipercar@gmail.com",
-    coordinadas: [-60.556988, -33.897137],
+    nombre: "Neostar Rosario",
+    provincia: "santafe",
+    direccion: "Av. Mendoza 4631, Rosario, Santa Fe",
+    telefono: "(0341) 421 8999",
+    horario: "Lunes a Viernes de 9:00hs a 19:00hs. Sábados de 9:00 a 13:00hs",
+    email: "info@neostar.com.ar",
+    coordinadas: [-60.687842, -32.942768],
   },
   {
     id: 16,
@@ -206,7 +206,7 @@ const DEALERS = [
   },
   {
     id: 20,
-    nombre: "Sebastian Bronstein",
+    nombre: "Servicio Bronstein",
     provincia: "cordoba",
     direccion: "Fray L. Beltrán 2550, Córdoba",
     telefono: "(0351) 476 1881 / (351) 15 508 1208",
