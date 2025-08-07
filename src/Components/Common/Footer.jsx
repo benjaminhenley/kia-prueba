@@ -8,7 +8,7 @@ import {
 } from "../../Data/common";
 import Kia from "../../assets/img/common/Kia.svg";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 
 const Footer = () => {
@@ -28,6 +28,8 @@ const Footer = () => {
       setOpenPostVenta(!openPostVenta);
     } 
   };
+
+  const location = useLocation();
 
   return (
     <div className="bg-midnight-black p-5 md:p-10 lg:p-20 lg:pb-10">
@@ -215,9 +217,22 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2 md:flex-row justify-between pt-7 pb-[50px] text-[0.75rem]"> 
-        <Breadcrumbs/>
+        <div>
+          <Breadcrumbs/>
+          { !location.pathname.endsWith("/terminos-y-condiciones") && (
+            <div className="mt-5">
+              <Link to="/terminos-y-condiciones">
+                <span className="pl-1 font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-colors relative group">
+                  Términos y Condiciones
+                  <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
+                </span>
+              </Link>
+            </div>
+          )}
+        </div>
+
         <div className="md:w-1/2">
-          <p className="pt-1 font-semibold text-kia-polar-white md:text-end">
+          <p className="pt-1 pl-1 font-semibold text-kia-polar-white md:text-end">
             Kia Argentina. Todos los derechos reservados 2025.
           </p>
         </div>
