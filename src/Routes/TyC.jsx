@@ -2,7 +2,7 @@ import React from 'react'
 
 const TyC = () => {
   return (
-    <div className='bg-[#05141F] text-white p-6'>
+    <div className='bg-[#05141F] text-white p-6 min-h-screen'>
       <h3 className='text-center text-2xl font-bold mt-[6rem] mb-6'>Términos y Condiciones</h3>
       <section className='mb-8'>
         <h4 className='text-lg font-semibold mb-2'>Kia Seltos – Tasa UVA 0% 12 MESES - Santander</h4>
