@@ -74,7 +74,6 @@ module.exports = {
             lineHeight: "2.375rem", // 38px
           },
         },
-
         // H2 Title (30px/32px on desktop, 16px/18px on mobile)
         h2: {
           fontSize: "1.25rem", // 20px
@@ -85,7 +84,6 @@ module.exports = {
             lineHeight: "2rem", // 32px
           },
         },
-
         // H3 Subtitle (24px/26px on desktop, 14px/16px on mobile)
         h3: {
           fontSize: "1.125rem", // 18px
@@ -96,7 +94,6 @@ module.exports = {
             lineHeight: "1.625rem", // 26px
           },
         },
-
         // H4 (T1 Body large) (18px/20px on desktop, 14px/16px on mobile)
         h4: {
           fontSize: "1rem", // 16px
@@ -107,7 +104,6 @@ module.exports = {
             lineHeight: "1.25rem", // 20px
           },
         },
-
         // H5 (T2 Body medium) (16px/18px on desktop, 12px/14px on mobile)
         h5: {
           fontSize: "0.875rem", // 14px
@@ -118,7 +114,6 @@ module.exports = {
             lineHeight: "1.125rem", // 18px
           },
         },
-
         // H6 (T3 Body small) (14px/16px on desktop, 10px/12px on mobile)
         h6: {
           fontSize: "0.75rem", // 12px

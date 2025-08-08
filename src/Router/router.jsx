@@ -55,40 +55,40 @@ export const router = createBrowserRouter([
         path: "/precios",
         element: <Precios />,
       },
-      // {
-      //   path: "/cotizar-service/",
-      //   element: <CotizarService />,
-      //   children: [
-      //     {
-      //       path: "",
-      //       element: <CotizaTuService />,
-      //     },
-      //     {
-      //       path: "promise",
-      //       element: <PromiseToCare />,
-      //     },
-      //     {
-      //       path: "garantia",
-      //       element: <Garantia />,
-      //     },
-      //     {
-      //       path: "originales",
-      //       element: <Originales />,
-      //     },
-      //     {
-      //       path: "asistencia",
-      //       element: <Asistencia />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/cotizar-service/",
+        element: <CotizarService />,
+        children: [
+          {
+            path: "",
+            element: <CotizaTuService />,
+          },
+          {
+            path: "promise",
+            element: <PromiseToCare />,
+          },
+          {
+            path: "garantia",
+            element: <Garantia />,
+          },
+          {
+            path: "originales",
+            element: <Originales />,
+          },
+          {
+            path: "asistencia",
+            element: <Asistencia />,
+          },
+        ],
+      },
       {
         path: "/subscribirse",
         element: <Subscribirse />,
       },
-      // {
-      //   path: "/test-drive",
-      //   element: <TestDrive />,
-      // },
+      {
+        path: "/test-drive",
+        element: <TestDrive />,
+      },
     ],
   },
 ]);
