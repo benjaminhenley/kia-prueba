@@ -53,7 +53,8 @@ const specialRoutes = {
     "red-venta": "Venta",
     "red-postventa": "Post Venta",
     "politica-de-cookies": "Política de Cookies",
-    "contacto": "Contáctenos"
+    "contacto": "Contáctenos",
+    "terminos-y-condiciones": "Términos y Condiciones",
     // Agrega más según sea necesario
   },
   
@@ -92,7 +93,10 @@ const Breadcrumbs = () => {
 
   // Función para obtener el título personalizado de un segmento
   const getSegmentTitle = (segment) => {
-    return specialRoutes.customTitles[segment] || segment.replace(/-/g, ' ');
+    if (specialRoutes.customTitles[segment]) {
+      return { title: specialRoutes.customTitles[segment], isCustom: true };
+    }
+    return { title: segment.replace(/-/g, ' '), isCustom: false };
   };
 
   return (
@@ -144,16 +148,16 @@ const Breadcrumbs = () => {
             const routeTo = "/" + paths.slice(0, index + 1).join("/");
             const isLast = index === paths.length - 1;
             const shouldBeClickable = isSegmentClickable(segment, index);
-            const segmentTitle = getSegmentTitle(segment);
+            const { title: segmentTitle, isCustom } = getSegmentTitle(segment);
 
             return (
               <Fragment key={routeTo}>
                 <SeparatorIcon />
                 {isLast || !shouldBeClickable ? (
-                  <span className="pt-1 font-semibold capitalize">{segmentTitle}</span>
+                  <span className={`pt-1 font-semibold${!isCustom ? " capitalize" : ""}`}>{segmentTitle}</span>
                 ) : (
                   <Link to={routeTo}>
-                    <div className="pt-1 cursor-pointer capitalize relative group font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-all duration-300">
+                    <div className={`pt-1 cursor-pointer relative group font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-all duration-300${!isCustom ? " capitalize" : ""}`}>
                       {segmentTitle}
                       <span className="absolute left-0 bottom-[1px] h-[1px] bg-transparent group-hover:bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                     </div>

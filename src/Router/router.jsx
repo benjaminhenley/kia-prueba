@@ -17,6 +17,9 @@ import Asistencia from "../Components/CotizarService/Sections/Asistencia";
 import Precios from "../Routes/Precios";
 import Subscribirse from "../Routes/Subscribirse";
 import TestDrive from "../Routes/TestDrive";
+import TyC from "../Routes/TyC";
+
+
 export const router = createBrowserRouter([
   {
     element: <Layout />,
