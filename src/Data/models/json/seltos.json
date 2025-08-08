@@ -20,8 +20,8 @@
     {
       "iconId": "radio",
       "title": "Pantalla",
-      "description": "Pantalla <br/> panorámica <br/> 10,25\" + 10,25\"",
-      "description_mobile": "Pantalla panorámica <br/> 10,25\" + 10,25\""
+      "description": "Pantalla <br/> panorámica <br/> 10,25\" + 10,25\" <br/> 6 airbags",
+      "description_mobile": "Pantalla panorámica <br/> 10,25\" + 10,25\" <br/> 6 airbags"
     },
     {
       "iconId": "drivewise",
@@ -38,8 +38,8 @@
     {
       "iconId": "frontlights",
       "title": "Luces",
-      "description": "Luces <br/> ambientales",
-      "description_mobile": "Luces <br/> ambientales"
+      "description": "Luces <br/> ambientales <br/> Selector de modos <br/> de manejo + terreno",
+      "description_mobile": "Luces  ambientales <br/> Selector de modos <br/> de manejo + terreno"
     }
   ],
   "sections": {
@@ -69,8 +69,8 @@
         "image": "imageMapRef:seltos.attributes",
         "bulletPoints": [
           "**Diseño que impone:** Con líneas deportivas, molduras laterales y detalles que resaltan su carácter urbano, el Seltos no pasa desapercibido. Cada ángulo está diseñado para transmitir movimiento y personalidad.",
-          "**Protección en todo momento:** El Kia Seltos incorpora 6 airbags, frenos a disco en las cuatro ruedas, control de estabilidad y carrocería con acero avanzado (AHSS). Está pensado para que disfrutes el camino con tranquilidad.",
-          "**Tecnología para moverte conectado:** Cuenta con una pantalla multimedia de 8\" con Android Auto™ y Apple CarPlay™, control de velocidad crucero, cámara de retroceso y computadora de a bordo de 3,5\". Todo lo que necesitás, en un solo lugar."
+          "**Protección en todo momento:** El Kia Seltos incorpora 6 airbags, frenos a disco en las cuatro ruedas, control de estabilidad y un completo paquete de ADAS (Kia DriveWise): Control Crucero adaptativo, Asistencia de Pre-colisión delantera y de mantenimiento y seguimiento de carril). Está pensado para que disfrutes el camino con tranquilidad.",
+          "**Tecnología para moverte conectado:** Cuenta con una pantalla multimedia de 8\" con Android Auto™ y Apple CarPlay™ con conexión inalámbrica, cámara de retroceso y Instrumental digital de 10,25” con LCD configurable de 4,2”. Todo lo que necesitás, en un solo lugar."
         ],
         "description": "El Kia Seltos es el compañero ideal para moverte con estilo y confianza. Su estética deportiva, su equipamiento de seguridad y su conectividad total lo convierten en un SUV pensado para quienes nunca se detienen."
       },
@@ -191,13 +191,13 @@
       "features": [
         {
           "id": "frontlights",
-          "title": "Faros LED",
-          "value": "Faros LED <br/> (traseros antimiebla)"
+          "title": "Barras de Techo",
+          "value": "Barras de Techo"
         },
         {
           "id": "wheels",
           "title": "Llantas de aleación",
-          "value": "Llantas de <br/> aleación 17\""
+          "value": "Llantas de aleación <br/> diamantadas 17\""
         },
         {
           "id": "seats",
