@@ -222,7 +222,7 @@ const Footer = () => {
           { !location.pathname.endsWith("/terminos-y-condiciones") && (
             <div className="mt-5">
               <Link to="/terminos-y-condiciones">
-                <span className="pl-1 font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-colors relative group">
+                <span className="ml-1 font-semibold text-kia-polar-white hover:text-[#CDD0D2] transition-colors relative group">
                   Términos y Condiciones
                   <span className="absolute left-0 bottom-0 h-[0.5px] bg-[#CDD0D2] transition-all duration-300 group-hover:w-full"></span>
                 </span>
