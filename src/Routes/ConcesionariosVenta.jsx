@@ -200,9 +200,8 @@ const DEALERS = [
     nombre: "Novo Automotores (Ushuaia)",
     provincia: "tierradelfuego",
     direccion: "Av. Perito Moreno 1917, Ushuaia, Tierra del Fuego",
-    telefono: "(02901) 494793",
-    horario:
-      "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
+    telefono: "2901 50-6835",
+    horario: "Lunes a Viernes de 09:30hs a 13:00hs / 16:00hs a 20:30hs. Sabados de 09:30hs a 13:00hs",
     email: "infonovo@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
   },
@@ -212,8 +211,7 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
     telefono: "(0296) 4418959",
-    horario:
-      "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
+    horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
   },

@@ -179,7 +179,7 @@ const DEALERS = [
     nombre: "Novo Automotores (Ushuaia)",
     provincia: "tierradelfuego",
     direccion: "Perito Moreno 2597, Ushuaia, Tierra del Fuego",
-    telefono: "(02901) 477489",
+    telefono: "2901 47-7489",
     horario: "Lunes a Viernes de 010:00hs a 13:00hs / 15:00hs a 20:00hs. Sabados de 10:00hs a 13:00hs",
     email: "postventa@ushuaiaautomotores.com.ar",
     coordinadas: [-68.304872, -54.802612],
