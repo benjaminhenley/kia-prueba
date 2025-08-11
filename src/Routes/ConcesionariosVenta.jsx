@@ -210,7 +210,7 @@ const DEALERS = [
     nombre: "Novo Automotores (Río Grande)",
     provincia: "tierradelfuego",
     direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
-    telefono: "(0296) 4418959",
+    telefono: "2964 61-5395",
     horario: "Lunes a Viernes de 10:00hs a 13:00hs / 15:00hs a 20:00hs. Sábados de 10:00hs a 13:00hs",
     email: "daniel.szarapo@ushuaiaautomotores.com.ar",
     coordinadas: [-67.72622, -53.77318],
