@@ -218,19 +218,19 @@
         "title": "Dimensiones (mm)",
         "details": [
           {
-            "name": "EXTERIOR largo/ancho/alto",
-            "value": "4.660 / 1.865 / 1.665"
+            "name": "Exterior (largo/ancho/alto)",
+            "value": "4.685/1.865/1.680"
           },
-          { "name": "Distancia entre ejes", "value": "2.755" },
-          { "name": "Distancia del suelo", "value": "181" },
+          { "name": "Distancia entre ejes (mm)", "value": "2.755" },
+          { "name": "Distancia del suelo (mm)", "value": "181" },
           {
-            "name": "Capacidad de baúl (2° Fila/ 1° Fila)",
-            "value": "543 VDA Lts"
+            "name": "Capacidad del baúl  (VDA LTS.) (2° FILA / 1° FILA)",
+            "value": "503/1789"
           },
-          { "name": "Peso Neto", "value": "1.517 Kg" },
+          { "name": "Peso neto (kg)", "value": "1771" },
           { "name": "Plazas", "value": "5" },
           { "name": "Medida de neumáticos", "value": "235 / 60R18" },
-          { "name": "Auxilio", "value": "Homogéneo" }
+          { "name": "Auxilio", "value": "HOMOGÉNEO" }
         ]
       }
     }
