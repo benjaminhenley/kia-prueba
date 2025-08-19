@@ -1,4 +1,5 @@
 import React from "react";
+import airConditioning from "../../../assets/img/air.webp";
 
 // CHARACTERISTICS:
 export const MotorIcon = ({ className, color = "#697279" }) => (
@@ -136,6 +137,18 @@ export const FrontLightsIcon = ({ className, color = "#697279" }) => (
   </svg>
 );
 
+export const AirConditioningIcon = ({ className, color = "#697279" }) => {
+  return (
+    <img
+      className={className}
+      src={airConditioning}
+      alt="Air Conditioning"
+      height={30}
+      width={30}
+    />
+  );
+};
+
 export const SmartKeyIcon = ({ className, color = "#697279" }) => (
   <svg
     className={className}
@@ -268,6 +281,7 @@ export const getFeatureIcon = (icon, className) => {
     consumption: <ConsumptionIcon className={className} />,
     warranty: <WarrantyIcon className={className} />,
     heatedseat: <HeatedSeatIcon className={className} />,
+    air: <AirConditioningIcon className={className} />,
   };
 
   return icons[icon];

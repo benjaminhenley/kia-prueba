@@ -112,44 +112,44 @@
             "id": "sportage-exterior-grille",
             "src": "imageMapRef:sportage.exterior.grille",
             "alt": "Grille",
-            "title": "Personalidad que se nota",
-            "description": "La parrilla frontal de diseño audaz, inspirada en formas naturales, transmite movimiento y fuerza desde el primer vistazo."
+            "title": "Una identidad que impone respeto",
+            "description": "La nueva parrilla frontal con patrón distintivo no solo define una presencia más audaz y moderna, también le otorga a la Sportage una personalidad inconfundible que impone en cada camino."
           }
         ]
       },
       "interior": {
         "galleryType": "1",
         "category": "Interior",
-        "title": "Un lugar al que siempre querés volver",
-        "description": "El interior del Sportage es mucho más que un espacio de tránsito. Es un entorno cuidado, intuitivo y preparado para inspirarte en cada viaje.",
+        "title": "Un espacio pensado para vos",
+        "description": "Es más que comodidad: es un refugio moderno donde diseño y tecnología se encuentran para inspirarte en cada trayecto. Amplio, envolvente y sofisticado, convierte cada viaje en una experiencia que siempre vas a querer repetir.",
         "images": [
           {
             "id": "sportage-interior-steering-wheel",
             "src": "imageMapRef:sportage.interior.steeringWheel",
             "alt": "Steering Wheel",
-            "title": "Un espacio que se vive",
-            "description": "Elegante, funcional y conectado con tu estilo. Así es el interior del Sportage: un espacio diseñado para inspirarte en cada trayecto."
+            "title": "Un espacio pensado para inspirarte",
+            "description": "El interior de la nueva Sportage no solo ofrece un espacio amplio y confortable, también combina tecnología de vanguardia y diseño sofisticado para que cada viaje se convierta en una experiencia única."
           },
           {
             "id": "sportage-interior-trunk",
             "src": "imageMapRef:sportage.interior.trunk",
             "alt": "Baúl",
-            "title": "Llevá con vos todo lo que necesitás",
-            "description": "El baúl del Sportage ofrece hasta 543 litros de capacidad, ideales para lo cotidiano o una escapada de fin de semana. Si necesitás más, sus asientos rebatibles permiten expandirlo hasta los 1.829 litros, con apertura eléctrica y función manos libres."
+            "title": "Más espacio para todo lo que vivís",
+            "description": "El baúl con apertura eléctrica inteligente no solo facilita la carga y descarga, también se adapta a tus necesidades con un espacio versátil y generoso, pensado para acompañarte en cada plan y cada viaje."
           },
           {
             "id": "sportage-interior-gearbox",
             "src": "imageMapRef:sportage.interior.gearbox",
             "alt": "Caja de cambios",
-            "title": "El cielo ya no es el límite",
-            "description": "El techo panorámico amplía la percepción de espacio e ilumina el interior, generando una sensación de libertad y conexión con el exterior."
+            "title": "La precisión que mueve cada uno de tus caminos",
+            "description": "La transmisión automática de 8 marchas no solo garantiza un manejo suave y eficiente, también brinda la potencia justa en cada situación, asegurando una experiencia de conducción dinámica y sin esfuerzos."
           },
           {
             "id": "sportage-interior-rooftop",
             "src": "imageMapRef:sportage.interior.rooftop",
             "alt": "Techo",
-            "title": "Precisión que se siente en cada cambio",
-            "description": "Gracias a su transmisión automática de doble embrague (DCT) de 7 velocidades, el Sportage entrega una conducción más fluida, ágil y eficiente."
+            "title": "Abrí tu viaje a nuevas perspectivas",
+            "description": "El techo panorámico no sólo inunda el interior de luz natural, también crea una sensación de amplitud y libertad que transforma cada viaje en un momento único para disfrutar."
           },
           {
             "id": "sportage-interior-panel",
@@ -190,9 +190,9 @@
       ],
       "features": [
         {
-          "id": "frontlights",
-          "title": "Faros Antiniebla LED",
-          "value": "Faros Antiniebla LED <br/> (delanteros LED MFR)"
+          "id": "heatedseat",
+          "title": "Butacas",
+          "value": "Butacas dalanteras <br/> calefaccionadas y <br/> ventiladas"
         },
         {
           "id": "smartkey",
@@ -200,9 +200,9 @@
           "value": "Smart Key + <br/> Botón de arranque"
         },
         {
-          "id": "wheels",
-          "title": "Llantas",
-          "value": "Llantas de <br/> aleación 18\""
+          "id": "air",
+          "title": "Climatización",
+          "value": " Climatizador automático <br/> bizona con comando táctil"
         },
         {
           "id": "battery",
@@ -210,9 +210,9 @@
           "value": "Cargador <br/> inalámbrico"
         },
         {
-          "id": "heatedseat",
-          "title": "Butacas",
-          "value": "Butacas delanteras <br/> calefaccionadas"
+          "id": "wheels",
+          "title": "Llantas",
+          "value": "Llantas de aleación <br/> diamantadas 18\""
         }
       ],
       "dimensions": {
