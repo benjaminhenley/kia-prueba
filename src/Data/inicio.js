@@ -4,7 +4,7 @@ import AllNewK3 from "../assets/img/inicio/homeSlider/desktop/All-new K3.webp";
 import AllNewK3Cross from "../assets/img/inicio/homeSlider/desktop/All-new K3 Cross.webp";
 import AllNewK3Sedan from "../assets/img/inicio/homeSlider/desktop/All-new K3 Sedan.webp";
 import Carnival from "../assets/img/inicio/homeSlider/desktop/Carnival.webp";
-import Sportage from "../assets/img/inicio/homeSlider/desktop/Sportage.webp";
+import Sportage from "../assets/img/inicio/homeSlider/desktop/Sportage nuevo.webp";
 import Seltos from "../assets/img/inicio/homeSlider/desktop/Seltos.webp";
 import K2500 from "../assets/img/inicio/homeSlider/desktop/K2500.webp";
 
@@ -73,7 +73,7 @@ export const homeSlider = [
   {
     imagen: Sportage,
     imagenMobile: SportageMobile,
-    titulo: "Sportage",
+    titulo: "Nueva Sportage",
     subtitulo: "Inspiración sin límites",
     textoBoton: "Conocer más",
     linkBoton: "/sportage",

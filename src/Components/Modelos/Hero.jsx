@@ -142,7 +142,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
           <img
             src={currentSrc}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-bottom"
           />
         )}
 
