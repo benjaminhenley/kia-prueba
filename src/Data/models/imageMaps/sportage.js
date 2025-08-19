@@ -23,7 +23,7 @@ import sportageInteriorSteeringWheel from "../../../assets/img/models/sportage/i
 import sportageInteriorTrunk from "../../../assets/img/models/sportage/interior/sportage-interior-trunk.webp";
 // Sportage Atributes
 import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
-import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-mobile.webp";
+import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
 // Sportage Etiqueta
 import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
 // Sportage Fichas
