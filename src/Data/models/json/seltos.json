@@ -18,10 +18,10 @@
   },
   "heroInfo": [
     {
-      "iconId": "radio",
-      "title": "Pantalla",
-      "description": "Pantalla <br/> panorámica <br/> 10,25\" + 10,25\" <br/> 6 airbags",
-      "description_mobile": "Pantalla panorámica <br/> 10,25\" + 10,25\" <br/> 6 airbags"
+      "iconId": "airbag",
+      "title": "Airbag",
+      "description": "6 <br/> airbags",
+      "description_mobile": "6 <br/> airbags"
     },
     {
       "iconId": "drivewise",
@@ -36,10 +36,10 @@
       "description_mobile": "Techo panorámico <br/> con apertura eléctrica"
     },
     {
-      "iconId": "frontlights",
-      "title": "Luces",
-      "description": "Luces <br/> ambientales <br/> Selector de modos <br/> de manejo + terreno",
-      "description_mobile": "Luces  ambientales <br/> Selector de modos <br/> de manejo + terreno"
+      "iconId": "adas",
+      "title": "ADAS",
+      "description": "Selector de <br/> modos de manejo <br/> + terreno",
+      "description_mobile": "Selector de <br/> modos de manejo <br/> + terreno"
     }
   ],
   "sections": {
