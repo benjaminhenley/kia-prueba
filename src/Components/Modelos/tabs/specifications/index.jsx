@@ -20,9 +20,11 @@ const Specifications = ({ content }) => {
             }}></div>
         </div>
 
-        <div className="relative z-10 mx-auto">
-          <ModelCarousel images={content.carouselImages} />
-        </div>
+        {content.carouselImages && (
+          <div className="relative z-10 mx-auto">
+            <ModelCarousel images={content.carouselImages} />
+          </div>
+        )}
       </section>
 
       {/* Dimensions Section */}

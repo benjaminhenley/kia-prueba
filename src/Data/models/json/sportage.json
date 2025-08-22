@@ -49,12 +49,12 @@
         {
           "id": "motor",
           "title": "Motor",
-          "value": "1.6 T-GDI | 1,598cc"
+          "value": "2.0 MPI | 1,999cc"
         },
         {
           "id": "performance",
           "title": "Performance",
-          "value": "178hp | 265Nm"
+          "value": "154hp | 192Nm"
         },
         {
           "id": "warranty",
@@ -161,32 +161,6 @@
       }
     },
     "specifications": {
-      "carouselImages": [
-        {
-          "id": 1,
-          "src": {
-            "mobile": "imageMapRef:sportage.carousel.front.mobile",
-            "desktop": "imageMapRef:sportage.carousel.front.desktop"
-          },
-          "alt": "sportage Front"
-        },
-        {
-          "id": 2,
-          "src": {
-            "mobile": "imageMapRef:sportage.carousel.back.mobile",
-            "desktop": "imageMapRef:sportage.carousel.back.desktop"
-          },
-          "alt": "sportage Interior"
-        },
-        {
-          "id": 3,
-          "src": {
-            "mobile": "imageMapRef:sportage.carousel.side.mobile",
-            "desktop": "imageMapRef:sportage.carousel.side.desktop"
-          },
-          "alt": "sportage Side"
-        }
-      ],
       "features": [
         {
           "id": "heatedseat",
