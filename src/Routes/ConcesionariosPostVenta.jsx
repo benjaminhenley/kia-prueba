@@ -128,7 +128,7 @@ const DEALERS = [
     nombre: "Hiperplatinum",
     provincia: "cordoba",
     direccion: "Av. Fuerza Aérea 3742, Córdoba",
-    telefono: "(0351) 485 8830",
+    telefono: "(0351) 485 8830 (351)",
     horario: "Lunes a Viernes de 8:00 a 13:30hs / 14:30 a 18:00hs",
     email: "maxicirelli@gmail.com",
     coordinadas: [-64.2374038, -31.432092],

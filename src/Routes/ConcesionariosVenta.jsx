@@ -148,7 +148,7 @@ const DEALERS = [
     nombre: "Hiperplatinum",
     provincia: "cordoba",
     direccion: "Av. Fuerza Aérea 3742, Córdoba",
-    telefono: "(0351) 485 8830",
+    telefono: "(0351) 466 8990",
     horario: "Lunes a Viernes de 8:30 a 19:30hs. Sábados de 9:30hs a 13:30hs",
     email: "afrencia@grupoantun.com.ar / info@gamotsa.com.ar",
     coordinadas: [-64.2374038, -31.432092],
