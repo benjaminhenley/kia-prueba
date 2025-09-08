@@ -25,9 +25,9 @@ import sportageInteriorTrunk from "../../../assets/img/models/sportage/interior/
 import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
 import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
 // Sportage Etiqueta
-import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
+// import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
 // Sportage Fichas
-import sportageFichas from "../../../assets/fichas/Ficha técnica Sportage EX.pdf";
+import sportageFichas from "../../../assets/fichas/Ficha-Tecnica-Nueva_Sportage_25.pdf";
 
 export const sportageImages = {
   carousel: {
@@ -96,6 +96,6 @@ export const sportageImages = {
     desktop: sportageHeroVideoDesktop,
     mobile: sportageHeroVideoMobile,
   },
-  etiqueta: sportageEtiqueta,
+  // etiqueta: sportageEtiqueta,
   fichas: sportageFichas,
 };

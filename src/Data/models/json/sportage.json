@@ -6,11 +6,6 @@
   "heroVideo": "imageMapRef:sportage.heroVideo",
 
   "menu": {
-    "etiqueta": {
-      "id": "brochures",
-      "link": "imageMapRef:sportage.etiqueta",
-      "originalFilename": "Etiqueta Sportage EX.pdf"
-    },
     "fichas": {
       "id": "technical-sheet",
       "link": "imageMapRef:sportage.fichas",
