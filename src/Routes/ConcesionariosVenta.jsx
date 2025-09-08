@@ -85,7 +85,7 @@ const DEALERS = [
   },
   {
     id: 8,
-    nombre: "Chahín Automotores",
+    nombre: "Kia Car Bareau",
     provincia: "cordoba",
     direccion: "Av. Fuerza Aérea 1810, Córdoba",
     telefono: "(0351) 465 7536",
@@ -95,7 +95,7 @@ const DEALERS = [
   },
   {
     id: 9,
-    nombre: "Chahín Automotores",
+    nombre: "Kia Car Bareau",
     provincia: "cordoba",
     direccion: "Av. Urquiza 474, San Fransisco, Córdoba",
     telefono: "(03564) 43 6660",

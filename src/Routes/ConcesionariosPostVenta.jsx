@@ -75,7 +75,7 @@ const DEALERS = [
   },
   {
     id: 7,
-    nombre: "Chahín Automotores",
+    nombre: "Kia Car Bareau",
     provincia: "cordoba",
     direccion: "Sol de Mayo 1700, Córdoba",
     telefono: "(0351) 465 7536",
