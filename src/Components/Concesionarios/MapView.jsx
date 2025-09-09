@@ -202,17 +202,17 @@ const MapView = ({ dealers }) => {
       const bounds = new mapboxgl.LngLatBounds();
 
       dealers.forEach((dealer) => {
-        if (dealer.coordinadas) {
+        if (dealer.coordenadas) {
           // Crear el marcador por defecto de Mapbox en color rojo
           new mapboxgl.Marker({ color: "#EA0029" })
-            .setLngLat(dealer.coordinadas)
+            .setLngLat(dealer.coordenadas)
             .setPopup(
               new mapboxgl.Popup({ offset: 35, className: "custom-popup" })
                 .setHTML(`
                   <div class="text-center p-4">
                     <h3 class="font-bold text-lg mb-4 text-midnight-black">${dealer.nombre}</h3>
                     <div>
-                      <a onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${dealer.coordinadas[1]},${dealer.coordinadas[0]}&travelmode=driving', '_blank')" style="cursor: pointer;">
+                      <a onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${dealer.coordenadas[1]},${dealer.coordenadas[0]}&travelmode=driving', '_blank')" style="cursor: pointer;">
                         <button class="border border-midnight-black bg-midnight-black hover:bg-[#37434C] text-sm text-white font-bold rounded-full flex items-center mx-auto hover:border-[#37434C] transition-all duration-300 group relative">
                           <div class="flex items-center py-[0.046875rem] pl-3 pr-[0.046875rem]">
                             <span class="relative inline-block mr-3">
@@ -234,7 +234,7 @@ const MapView = ({ dealers }) => {
             )
             .addTo(map.current);
 
-          bounds.extend(dealer.coordinadas);
+          bounds.extend(dealer.coordenadas);
         }
       });
 
@@ -323,15 +323,15 @@ const MapView = ({ dealers }) => {
                   : "overflow-y-auto max-h-[380px] bg-white "
               }
             `}>
-            {dealers.map((dealer) => (
-              <div key={dealer.id} className="bg-white cursor-pointer ">
+            {dealers.map((dealer, index) => (
+              <div key={index} className="bg-white cursor-pointer ">
                 <ConcesionarioCard
                   onClick={() => {
-                    if (map.current && dealer.coordinadas) {
+                    if (map.current && dealer.coordenadas) {
                       // Usar nuestra nueva función para centrar con offset
-                      centerMapOnDealer(dealer.coordinadas);
-                      setSelectedDealerId(dealer.id);
-                      showRoute(dealer.coordinadas);
+                      centerMapOnDealer(dealer.coordenadas);
+                      setSelectedDealerId(index);
+                      showRoute(dealer.coordenadas);
 
                       // En móvil, hacer scroll hacia arriba para ver el mapa
                       if (isMobile) {
@@ -341,7 +341,7 @@ const MapView = ({ dealers }) => {
                       }
                     }
                   }}
-                  isSelected={selectedDealerId === dealer.id}
+                  isSelected={selectedDealerId === index}
                   nombre={dealer.nombre}
                   direccion={dealer.direccion}
                   telefono={dealer.telefono}
