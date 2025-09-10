@@ -59,6 +59,10 @@ export const router = createBrowserRouter([
         element: <Precios />,
       },
       {
+        path: "/terminos-y-condiciones",
+        element: <TyC />,
+      },
+      {
         path: "/cotizar-service/",
         element: <CotizarService />,
         children: [
