@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Hero from "../Components/Modelos/Hero.jsx";
 import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
