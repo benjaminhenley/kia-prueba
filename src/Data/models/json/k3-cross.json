@@ -277,6 +277,10 @@
           { "name": "Medida de neumáticos", "value": "205 / 50R17" },
           { "name": "Auxilio", "value": "Acero temporal" }
         ]
+      },
+      "cta": {
+        "name": "Quiero mi All-new K3",
+        "to": "https://reservak3.kia.com.ar/es"
       }
     }
   }

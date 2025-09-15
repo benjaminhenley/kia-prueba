@@ -1,8 +1,5 @@
 import React from "react";
 import { getFeatureIcon } from "../Common/Icons/FeatureIcons";
-import PillButton from "../../Components/Common/ui/PillButton"
-import { getSafeModelData } from "../../Data/models/modelMapper";
-import { useParams } from "react-router-dom";
 
 const renderIcon = (icon, className) => {
   return (
@@ -29,16 +26,13 @@ const FeatureSummary = ({ features, mode }) => {
     return text.replace(/<br\/>/g, " ");
   };
 
-  const { modelID } = useParams();
-  const model = getSafeModelData(modelID);
-
-  const totalFeatures = features?.length || 0;
+  //const totalFeatures = features?.length || 0;
 
   // Calculate how many empty spaces to add before features to center them
-  const emptySpacesToAdd = Math.floor((5 - totalFeatures) / 2);
+  //const emptySpacesToAdd = Math.floor((5 - totalFeatures) / 2);
 
   // Create array of empty spaces for centering
-  const emptySpaces = Array(emptySpacesToAdd).fill(null);
+  //const emptySpaces = Array(emptySpacesToAdd).fill(null);
 
   return (
     <section className="w-full bg-white px-4 py-5 md:py-0 md:px-0">
@@ -111,20 +105,6 @@ const FeatureSummary = ({ features, mode }) => {
           </div>
         </div>
       </div>
-      {model.sections.specifications.cta &&
-        <div
-          className={`px-5 md:px-10 lg:px-20 py-10 flex justify-end`}
-        >
-          <PillButton
-            title={model.sections.specifications.cta.name}
-            onClick={() => {
-              window.open(model.sections.specifications.cta.to, "_blank");
-            }}
-            type="secondary"
-            size= "small"
-          />
-        </div>
-      }
     </section>
   );
 };
