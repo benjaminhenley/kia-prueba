@@ -247,6 +247,10 @@
           { "name": "Capacidad de tanque", "value": "65 / 60 Lts" },
           { "name": "Radio de giro", "value": "4,93 mts" }
         ]
+      },
+      "cta": {
+        "name": "Quiero mi k2500",
+        "to": "https://www.kia.com.ar/kia-k2500"
       }
     }
   }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Hero from "../Components/Modelos/Hero.jsx";
 import TabSelector from "../Components/Modelos/TabsSection.jsx";
 import Specifications from "../Components/Modelos/tabs/specifications";
@@ -69,18 +69,16 @@ const Modelos = () => {
       </div>
 
       {/* Sticky Button */}
-      {model.id === "k3-sedan" || model.id === "k3-cross" ? (
+      {model.sections.specifications.cta && (
         <div className="fixed z-100 bottom-5  right-4 z-50 flex justify-end lg:mr-20 md:mb-3 ">
           <PillButton
             type="secondary"
-            title="Quiero mi All-new K3"
+            title={model.sections.specifications.cta.name}
             onClick={() => {
-              window.open("https://reservak3.kia.com.ar/es", "_blank");
+              window.open(model.sections.specifications.cta.to, "_blank");
             }}
           />
         </div>
-      ) : (
-        ""
       )}
     </div>
   );

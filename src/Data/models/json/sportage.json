@@ -1,5 +1,5 @@
 {
-  "id": "sportage ",
+  "id": "sportage",
   "name": "Nueva Sportage",
   "tagline": "Inspiración sin límites",
   "heroImage": "/images/placeholder-sportage-hero.jpg",
@@ -44,12 +44,12 @@
         {
           "id": "motor",
           "title": "Motor",
-          "value": "2.0 MPI | 1,999cc"
+          "value": "2.0 CRDI | 1,998cc"
         },
         {
           "id": "performance",
           "title": "Performance",
-          "value": "154hp | 192Nm"
+          "value": "193hp | 416Nm"
         },
         {
           "id": "warranty",
@@ -201,6 +201,10 @@
           { "name": "Medida de neumáticos", "value": "235 / 60R18" },
           { "name": "Auxilio", "value": "HOMOGÉNEO" }
         ]
+      },
+      "cta": {
+          "name": "Quiero mi Sportage",
+          "to": "https://www.kia.com.ar/kia-sportage"
       }
     }
   }

@@ -273,7 +273,11 @@
             "value": "Homogéneo - Aleación"
           }
         ]
-      }
+      },
+      "cta": {
+        "name": "Quiero mi Seltos",
+        "to": "https://www.kia.com.ar/kia-seltos"
+    }
     }
   }
 }

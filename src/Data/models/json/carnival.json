@@ -274,6 +274,10 @@
           { "name": "Medida de neumáticos", "value": "235 / 65R17" },
           { "name": "Auxilio", "value": "Temporal - Acero" }
         ]
+      },
+      "cta": {
+        "name": "Quiero mi Carnival",
+        "to": "https://www.kia.com.ar/kia-carnival"
       }
     }
   }
