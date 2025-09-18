@@ -29,7 +29,8 @@ const DEALERS = [
     provincia: "misiones",
     direccion: "Av. Uruguay 6132, Posadas, Misiones",
     telefono: "(0376) 445 0900",
-    horario: "Lunes a Viernes de 8:00 a 12:30hs / 15:00 a 19:00hs. Sábados de 9:00 a 13:00hs",
+    horario:
+      "Lunes a Viernes de 8:00 a 12:30hs / 15:00 a 19:00hs. Sábados de 9:00 a 13:00hs",
     email: "agencia@armandoautomotores.com.ar",
     coordinadas: [-55.9144325, -27.4031935],
   },
@@ -85,7 +86,7 @@ const DEALERS = [
   },
   {
     id: 8,
-    nombre: "Kia Car Bareau",
+    nombre: "Kia Car Bureau",
     provincia: "cordoba",
     direccion: "Av. Fuerza Aérea 1810, Córdoba",
     telefono: "(0351) 465 7536",
@@ -95,7 +96,7 @@ const DEALERS = [
   },
   {
     id: 9,
-    nombre: "Kia Car Bareau",
+    nombre: "Kia Car Bureau",
     provincia: "cordoba",
     direccion: "Av. Urquiza 474, San Fransisco, Córdoba",
     telefono: "(03564) 43 6660",
@@ -119,7 +120,8 @@ const DEALERS = [
     provincia: "chaco",
     direccion: "Av. 25 de Mayo 1934, Resistencia, Chaco",
     telefono: "(0362) 4466835",
-    horario: "Lunes a Viernes de 9:00 a 12:30hs / 16:30 a 20:30hs. Sábados de 8:00 a 12:30hs / 17:30 a 20:30hs",
+    horario:
+      "Lunes a Viernes de 9:00 a 12:30hs / 16:30 a 20:30hs. Sábados de 8:00 a 12:30hs / 17:30 a 20:30hs",
     email: "info@kiadelnorte.com.ar",
     coordinadas: [-58.982534, -27.447252],
   },
@@ -182,7 +184,6 @@ const DEALERS = [
     horario: "Lunes a Viernes de 9:00 a 18:00hs. Sábados de 8:30 a 12:30hs",
     email: "info@neostar.com.ar / dgiauque@neostar.com.ar",
     coordinadas: [-60.69562452682497, -31.64599060213668],
-    
   },
   {
     id: 18,
@@ -200,7 +201,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. Perito Moreno 1917, Ushuaia, Tierra del Fuego",
     telefono: "(02901) 536975 / 494793",
-    horario: "Lunes a Viernes de 10:00 a 13:00hs / 15:30 a 20:00hs. Sabados de 10:00 a 13:00hs",
+    horario:
+      "Lunes a Viernes de 10:00 a 13:00hs / 15:30 a 20:00hs. Sabados de 10:00 a 13:00hs",
     email: "ezequiel.delprado@tdfmotors.com",
     coordinadas: [-68.304872, -54.802612],
   },
@@ -210,7 +212,8 @@ const DEALERS = [
     provincia: "tierradelfuego",
     direccion: "Av. San Martín 2427, Río Grande, Tierra del Fuego",
     telefono: "(0296) 444 5938",
-    horario: "Lunes a Viernes de 10:00 a 13:00hs / 15:30 a 20:00hs. Sábados de 10:00 a 13:00hs",
+    horario:
+      "Lunes a Viernes de 10:00 a 13:00hs / 15:30 a 20:00hs. Sábados de 10:00 a 13:00hs",
     email: "infonovo@ushuaiaautomotores.com.arr",
     coordinadas: [-67.72622, -53.77318],
   },
@@ -230,7 +233,8 @@ const DEALERS = [
     provincia: "entrerios",
     direccion: "Mendiburu 91, Concordia, Entre Ríos",
     telefono: "(0345) 421 4675",
-    horario: "Lunes a Viernes de 8:00 a 13:00hs / 16:00 a 20:00hs. Sábados de 8:00 a 13:00hs.",
+    horario:
+      "Lunes a Viernes de 8:00 a 13:00hs / 16:00 a 20:00hs. Sábados de 8:00 a 13:00hs.",
     email: "sevekautos@gmail.com",
     coordinadas: [-58.016649, -31.3833671],
   },

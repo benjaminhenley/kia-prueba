@@ -10,15 +10,11 @@ import CarModelGallery from "../Components/Common/CarModelGallery";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
 import { PROVINCES } from "../Data/provinces";
 import { CAR_DEALERS } from "../Data/carDealers";
-import kiaApiCall from "../utils/apiCall";
-import {
-  MONTHS,
-  generateDaysOptions,
-  generateYearsOptions,
-} from "../Data/months";
+import kiaApiCallPromociones from "../utils/apiCall";
 import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";
 import { initialFormDataPromociones } from "../Data/initialFormsData";
 import RecaptchaLoader from "../Components/Common/captcha/RecaptchaLoader";
+import CAR_MODELS from "../Data/modelsPromociones";
 
 const CONTACT_PREFERENCES = [
   { value: "email", label: "Email" },
@@ -38,6 +34,31 @@ export default function Promociones() {
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
+  const [concesionarios, setConcesionarios] = useState([]);
+  const [concesionariosFiltro, setConcesionariosFiltro] = useState([]);
+  const [provinces, setProvinces] = useState(PROVINCES);
+
+  function fetchAndMapConcesionarios() {
+    fetch("https://fusio.encender-dev.online/public/kia/concesionarios")
+      .then((response) => response.json())
+      .then((data) => {
+        const mappedConcesionarios = data.concesionarios.map((dealer, key) => ({
+          id: key,
+          value: dealer.codigo,
+          label: dealer.nombre + " " + dealer.direccion,
+          province: dealer.provincia,
+        }));
+        setConcesionarios(mappedConcesionarios);
+        setConcesionariosFiltro(mappedConcesionarios);
+      })
+      .catch((error) => {
+        setConcesionarios(CAR_DEALERS);
+      });
+  }
+
+  useEffect(() => {
+    fetchAndMapConcesionarios();
+  }, []);
 
   useEffect(() => {
     validateForm();
@@ -54,7 +75,6 @@ export default function Promociones() {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     let newValue = value;
-
     // Apply input filtering based on field type
     switch (name) {
       case "documentNumber":
@@ -67,7 +87,18 @@ export default function Promociones() {
         // Only allow letters, spaces, and special characters for names
         newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
         break;
+      case "province":
+        const provinceObject = provinces.find(
+          (province) => province.value === newValue
+        );
 
+        const provinceLabel = provinceObject.label;
+        const filteredConcesionarios = concesionarios.filter(
+          (dealer) => dealer.province === provinceLabel
+        );
+
+        console.log(filteredConcesionarios);
+        setConcesionariosFiltro(filteredConcesionarios);
       default:
         break;
     }
@@ -117,10 +148,25 @@ export default function Promociones() {
     setShowModelGallery(!showModelGallery);
   };
 
+  const buildPromosPayload = (fd) => ({
+    // Mapped fields
+    nombre: fd.firstName.trim() || "",
+    apellido: fd.lastName.trim() || "",
+    fecha_nacimiento: new Date().toISOString().split("T")[0],
+    mail: fd.email || "",
+    celular: fd.phone || "",
+    ubicacion: fd.dealer || "",
+    newsletter: 0,
+    contacto: 1,
+    origen: "HomePromociones",
+    tipoLanding: "promocional",
+    modeloAuto: CAR_MODELS.find((car) => car.id === fd.car).name,
+  });
+
   const handleSubmit = async () => {
-    const name = `${formData.firstName} ${formData.lastName}`;
     try {
-      await kiaApiCall({ ...formData, name }, "kiaweb: Promociones");
+      const payload = buildPromosPayload(formData);
+      await kiaApiCallPromociones(payload, "kiaweb: Promociones");
       setIsSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -269,34 +315,6 @@ export default function Promociones() {
                           </div>
                         </div>
 
-                        {/* Birthdate Field */}
-                        {/* <div className="flex flex-col md:flex-row md:items-center gap-5">
-                          <FormLabel text="Fecha de nacimiento" />
-                          <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                            <FormDropdown
-                              placeholder="Día"
-                              name="birthDay"
-                              value={formData.birthDay}
-                              onChange={handleFormChange}
-                              options={generateDaysOptions()}
-                            />
-                            <FormDropdown
-                              placeholder="Mes"
-                              name="birthMonth"
-                              value={formData.birthMonth}
-                              onChange={handleFormChange}
-                              options={MONTHS}
-                            />
-                            <FormDropdown
-                              placeholder="Año"
-                              name="birthYear"
-                              value={formData.birthYear}
-                              onChange={handleFormChange}
-                              options={generateYearsOptions()}
-                            />
-                          </div>
-                        </div> */}
-
                         {/* Location Field */}
                         <div className="flex flex-col md:flex-row md:items-center gap-5">
                           <FormLabel text="Ubicación" />
@@ -306,14 +324,14 @@ export default function Promociones() {
                               name="province"
                               value={formData.province}
                               onChange={handleFormChange}
-                              options={PROVINCES}
+                              options={provinces}
                             />
                             <FormDropdown
                               placeholder="Concesionario"
                               name="dealer"
                               value={formData.dealer}
                               onChange={handleFormChange}
-                              options={CAR_DEALERS}
+                              options={concesionariosFiltro}
                             />
                           </div>
                         </div>

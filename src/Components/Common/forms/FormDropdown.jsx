@@ -121,9 +121,9 @@ const FormDropdown = ({
             }
           `}</style>
           <div className="max-h-40 overflow-auto">
-            {options.map((option) => (
+            {options.map((option, key) => (
               <div
-                key={option.value}
+                key={key}
                 className={`px-2.5 py-1 hover:bg-stone-50 cursor-pointer text-[#05141F] font-normal font-kia whitespace-nowrap hover:outline hover:outline-1 hover:outline-gray-200 ${
                   option.value === value ? "bg-stone-100" : ""
                 }`}
