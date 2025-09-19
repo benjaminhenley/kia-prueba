@@ -329,6 +329,7 @@ export default function Promociones() {
                             <FormDropdown
                               placeholder="Concesionario"
                               name="dealer"
+                              disabled={concesionariosFiltro.length === 0}
                               value={formData.dealer}
                               onChange={handleFormChange}
                               options={concesionariosFiltro}
