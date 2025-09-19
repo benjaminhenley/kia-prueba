@@ -87,18 +87,25 @@ export default function Promociones() {
         // Only allow letters, spaces, and special characters for names
         newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
         break;
-      case "province":
-        const provinceObject = provinces.find(
-          (province) => province.value === newValue
-        );
 
-        const provinceLabel = provinceObject.label;
-        const filteredConcesionarios = concesionarios.filter(
-          (dealer) => dealer.province === provinceLabel
+      case "province": {
+        const provinceObject = provinces.find((p) => p.value === newValue);
+        const provinceLabel = provinceObject?.label ?? "";
+        const filtered = concesionarios.filter(
+          (d) => d.province === provinceLabel
         );
+        setConcesionariosFiltro(filtered);
 
-        console.log(filteredConcesionarios);
-        setConcesionariosFiltro(filteredConcesionarios);
+        // actualizar provincia y resetear dealer si no aplica
+        setFormData((prev) => ({
+          ...prev,
+          province: newValue,
+          dealer: filtered.some((d) => d.value === prev.dealer)
+            ? prev.dealer
+            : "",
+        }));
+        return; // importante: no seguir al setFormData genérico
+      }
       default:
         break;
     }
