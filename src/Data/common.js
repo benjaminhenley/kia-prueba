@@ -118,11 +118,11 @@ export const camionetasSuv = [
       <>
         <p className="text-sm font-bold py-0.5">
           $48.000USD{" "}
-          <span className="font-regular text-kia-gray">EX 1.6T 4X2 DCT*</span>
+          <span className="font-regular text-kia-gray">EX 2.0 4x2 ATT*</span>
         </p>
         <p className="text-sm font-bold py-0.5">
-          $56.000USD{" "}
-          <span className="font-regular text-kia-gray">1.6T AWD DCT*</span>
+          $62.000USD{" "}
+          <span className="font-regular text-kia-gray">X-line 2.0R AWD AT*</span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
