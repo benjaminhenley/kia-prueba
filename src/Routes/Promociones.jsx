@@ -38,6 +38,19 @@ export default function Promociones() {
   const [concesionariosFiltro, setConcesionariosFiltro] = useState([]);
   const [provinces, setProvinces] = useState(PROVINCES);
 
+  const [errors, setErrors] = useState({});
+
+  const MIN_PHONE_DIGITS = 8; // pick the N you want
+
+  const validateEmail = (v) => {
+    return v === "" || v.includes("@");
+  };
+
+  const validatePhone = (v) => {
+    const digits = v.replace(/\D/g, "");
+    return digits.length >= MIN_PHONE_DIGITS;
+  };
+
   function fetchAndMapConcesionarios() {
     fetch("https://fusio.encender-dev.online/public/kia/concesionarios")
       .then((response) => response.json())
@@ -114,11 +127,27 @@ export default function Promociones() {
       ...prev,
       [name]: newValue,
     }));
+
+    if (name === "email") {
+      setErrors((prev) => ({
+        ...prev,
+        email: validateEmail(newValue)
+          ? undefined
+          : "Email inválido (falta '@').",
+      }));
+    }
+    if (name === "phone") {
+      setErrors((prev) => ({
+        ...prev,
+        phone: validatePhone(newValue)
+          ? undefined
+          : `Teléfono inválido (mínimo ${MIN_PHONE_DIGITS} dígitos).`,
+      }));
+    }
   };
 
   // Update the form validation function
   const validateForm = () => {
-    // Basic validation - check if required fields are filled
     const {
       firstName,
       car,
@@ -127,14 +156,12 @@ export default function Promociones() {
       contactPreference,
       province,
       email,
+      dealer,
       phone,
     } = formData;
 
-    // Check if the proper contact info is provided based on contact preference
-    const isContactInfoValid =
-      (contactPreference === "email" && email !== "") ||
-      (contactPreference === "phone" && phone !== "") ||
-      (contactPreference !== "" && email !== "" && phone !== "");
+    const emailOk = validateEmail(email);
+    const phoneOk = validatePhone(phone);
 
     const valid =
       acceptedTerms &&
@@ -142,9 +169,13 @@ export default function Promociones() {
       firstName !== "" &&
       lastName !== "" &&
       documentNumber !== "" &&
-      contactPreference !== "" &&
-      isContactInfoValid &&
-      province !== "";
+      contactPreference !== "" && // still required if you want them to pick one
+      dealer !== "" &&
+      province !== "" &&
+      email !== "" &&
+      phone !== "" &&
+      emailOk &&
+      phoneOk;
 
     setIsValid(valid);
     return valid;
@@ -298,27 +329,44 @@ export default function Promociones() {
                         {/* Contact Field */}
                         <div className="flex flex-col md:flex-row md:items-center gap-5">
                           <FormLabel text="Contacto" />
-                          <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
+                          <div className="flex flex-col md:grid grid-cols-3 gap-5 w-full md:flex-1">
                             <FormDropdown
                               placeholder="Preferencia de contacto"
                               name="contactPreference"
                               value={formData.contactPreference}
                               onChange={handleFormChange}
                               options={CONTACT_PREFERENCES}
+                              className="h-fit"
                             />
-                            <TextField
-                              placeholder="Email"
-                              name="email"
-                              value={formData.email}
-                              onChange={handleFormChange}
-                            />
-                            <TextField
-                              placeholder="Teléfono"
-                              name="phone"
-                              type="tel"
-                              value={formData.phone}
-                              onChange={handleFormChange}
-                            />
+                            <div>
+                              <TextField
+                                className="w-full"
+                                placeholder="Email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleFormChange}
+                              />
+                              {errors.email && (
+                                <p className="text-red-600 text-sm mt-1">
+                                  {errors.email}
+                                </p>
+                              )}
+                            </div>
+                            <div>
+                              <TextField
+                                className="w-full"
+                                placeholder="Teléfono"
+                                name="phone"
+                                type="tel"
+                                value={formData.phone}
+                                onChange={handleFormChange}
+                              />
+                              {errors.phone && (
+                                <p className="text-red-600 text-sm mt-1">
+                                  {errors.phone}
+                                </p>
+                              )}
+                            </div>
                           </div>
                         </div>
 
