@@ -33,10 +33,11 @@ export default function Promociones() {
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const [concesionarios, setConcesionarios] = useState([]);
   const [concesionariosFiltro, setConcesionariosFiltro] = useState([]);
-  const [provinces, setProvinces] = useState(PROVINCES);
+  // const [provinces, setProvinces] = useState(PROVINCES);
 
   const [errors, setErrors] = useState({});
 
@@ -59,7 +60,7 @@ export default function Promociones() {
           id: key,
           value: dealer.codigo,
           label: dealer.nombre + " " + dealer.direccion,
-          province: dealer.provincia,
+          // province: dealer.provincia,
         }));
         setConcesionarios(mappedConcesionarios);
         setConcesionariosFiltro(mappedConcesionarios);
@@ -101,24 +102,24 @@ export default function Promociones() {
         newValue = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s'-]/g, "");
         break;
 
-      case "province": {
-        const provinceObject = provinces.find((p) => p.value === newValue);
-        const provinceLabel = provinceObject?.label ?? "";
-        const filtered = concesionarios.filter(
-          (d) => d.province === provinceLabel
-        );
-        setConcesionariosFiltro(filtered);
+      // case "province": {
+      //   const provinceObject = provinces.find((p) => p.value === newValue);
+      //   const provinceLabel = provinceObject?.label ?? "";
+      //   const filtered = concesionarios.filter(
+      //     (d) => d.province === provinceLabel
+      //   );
+      //   setConcesionariosFiltro(filtered);
 
-        // actualizar provincia y resetear dealer si no aplica
-        setFormData((prev) => ({
-          ...prev,
-          province: newValue,
-          dealer: filtered.some((d) => d.value === prev.dealer)
-            ? prev.dealer
-            : "",
-        }));
-        return; // importante: no seguir al setFormData genérico
-      }
+      //   // actualizar provincia y resetear dealer si no aplica
+      //   setFormData((prev) => ({
+      //     ...prev,
+      //     province: newValue,
+      //     dealer: filtered.some((d) => d.value === prev.dealer)
+      //       ? prev.dealer
+      //       : "",
+      //   }));
+      //   return; // importante: no seguir al setFormData genérico
+      // }
       default:
         break;
     }
@@ -154,7 +155,7 @@ export default function Promociones() {
       lastName,
       documentNumber,
       contactPreference,
-      province,
+      // province,
       email,
       dealer,
       phone,
@@ -171,7 +172,7 @@ export default function Promociones() {
       documentNumber !== "" &&
       contactPreference !== "" && // still required if you want them to pick one
       dealer !== "" &&
-      province !== "" &&
+      // province !== "" &&
       email !== "" &&
       phone !== "" &&
       emailOk &&
@@ -201,25 +202,20 @@ export default function Promociones() {
     modeloAuto: CAR_MODELS.find((car) => car.id === fd.car).name,
   });
 
-  const handleSubmit = async () => {
-    try {
-      const payload = buildPromosPayload(formData);
-      await kiaApiCallPromociones(payload, "kiaweb: Promociones");
-      setIsSubmitted(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (error) {
-      console.log("Error:", error);
-    }
-  };
-
-  const submitForm = () => {
+  const submitForm = async () => {
     try {
       const token = ExecuteRecaptcha();
       setRecaptchaToken(token);
 
-      handleSubmit();
+      const payload = buildPromosPayload(formData);
+      await kiaApiCallPromociones(payload, "kiaweb: Promociones");
+      setIsSubmitting(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.log("Error:", error);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
     }
   };
 
@@ -372,15 +368,15 @@ export default function Promociones() {
 
                         {/* Location Field */}
                         <div className="flex flex-col md:flex-row md:items-center gap-5">
-                          <FormLabel text="Ubicación" />
-                          <div className="flex flex-col md:flex-row gap-5 w-full md:flex-1">
-                            <FormDropdown
+                          <FormLabel text="Concesionario" />
+                          <div className="flex flex-col md:flex-row gap-5 flex-1">
+                            {/* <FormDropdown
                               placeholder="Provincia"
                               name="province"
                               value={formData.province}
                               onChange={handleFormChange}
                               options={provinces}
-                            />
+                            /> */}
                             <FormDropdown
                               placeholder="Concesionario"
                               name="dealer"
@@ -432,7 +428,7 @@ export default function Promociones() {
                 <SquareButton type="secondary">Cancelar</SquareButton>
                 <SquareButton
                   type="primary"
-                  disabled={!isValid}
+                  disabled={!isValid | isSubmitting}
                   onClick={submitForm}>
                   Enviar
                 </SquareButton>
