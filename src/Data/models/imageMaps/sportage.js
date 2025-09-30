@@ -7,7 +7,7 @@ import sportageSideDesktop from "../../../assets/img/models/sportage/carousel/sp
 import sportageSideMobile from "../../../assets/img/models/sportage/carousel/sportage-side-mobile.webp";
 // Sportage hero video images
 //import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.mp4";
-import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.webp";
+import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.mp4";
 import sportageHeroVideoMobile from "../../../assets/videos/sportage-hero-mobile.webp";
 // Sportage exterior images
 import sportageExteriorBacklights from "../../../assets/img/models/sportage/exterior/sportage-exterior-backlights.webp";
