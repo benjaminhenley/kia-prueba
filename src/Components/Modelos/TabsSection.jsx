@@ -46,7 +46,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
         originalFilename: item.originalFilename,
         text:
           key === "etiqueta"
-            ? "Etiqueta"
+            ? "Etiqueta de Eficiencia"
             : key === "fichas"
             ? "Ficha técnica"
             : item.id,

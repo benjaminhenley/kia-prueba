@@ -8,7 +8,7 @@
     "etiqueta": {
       "id": "brochures",
       "link": "imageMapRef:seltos.etiqueta",
-      "originalFilename": "Ficha técnica K3 Seltos LX.pdf"
+      "originalFilename": "Etiqueta K3 Seltos LX.pdf"
     },
     "fichas": {
       "id": "technical-sheet",
@@ -277,7 +277,7 @@
       "cta": {
         "name": "Quiero mi Seltos",
         "to": "https://www.kia.com.ar/kia-seltos"
-    }
+      }
     }
   }
 }

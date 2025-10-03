@@ -8,7 +8,6 @@ import Arrow from "../Components/Common/Icons/Arrow";
 import Checkbox from "../Components/Common/Icons/Checkbox";
 import CarModelGallery from "../Components/Common/CarModelGallery";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
-import { PROVINCES } from "../Data/provinces";
 import { CAR_DEALERS } from "../Data/carDealers";
 import kiaApiCallPromociones from "../utils/apiCall";
 import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";

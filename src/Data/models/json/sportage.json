@@ -6,6 +6,11 @@
   "heroVideo": "imageMapRef:sportage.heroVideo",
 
   "menu": {
+    "etiqueta": {
+      "id": "brochures",
+      "link": "imageMapRef:sportage.etiqueta",
+      "originalFilename": "Etiqueta Sportage EX.pdf"
+    },
     "fichas": {
       "id": "technical-sheet",
       "link": "imageMapRef:sportage.fichas",
@@ -49,7 +54,7 @@
         {
           "id": "performance",
           "title": "Performance",
-          "value": "193hp | 416Nm"
+          "value": "183hp | 416Nm"
         },
         {
           "id": "warranty",
@@ -203,8 +208,8 @@
         ]
       },
       "cta": {
-          "name": "Quiero mi Sportage",
-          "to": "https://www.kia.com.ar/kia-sportage"
+        "name": "Quiero mi Sportage",
+        "to": "https://www.kia.com.ar/kia-sportage"
       }
     }
   }

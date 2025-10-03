@@ -6,6 +6,7 @@ const initialFormDataContact = {
   street: "",
   streetNumber: "",
   province: "",
+  provinceName: "",
   city: "",
   country: "",
   email: "",

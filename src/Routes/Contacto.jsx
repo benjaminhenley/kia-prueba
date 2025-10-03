@@ -40,7 +40,42 @@ function Contactenos() {
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [concesionarios, setConcesionarios] = useState([]);
+  const [provinces, setProvinces] = useState([]);
   const navigate = useNavigate();
+
+  function fetchAndMapConcesionarios() {
+    fetch("https://fusio.encender-dev.online/public/kia/concesionarios")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+        const mappedConcesionarios = data.concesionarios.map((dealer, key) => ({
+          id: key,
+          value: dealer.codigo,
+          label: dealer.nombre + " - " + dealer.direccion,
+        }));
+        setConcesionarios(mappedConcesionarios);
+
+        const filterProvinces = data.concesionarios.map((dealer) => {
+          return dealer.provincia;
+        });
+
+        const uniqueProvinces = [
+          ...new Set(
+            filterProvinces.filter((province) => province !== undefined)
+          ),
+        ];
+
+        setProvinces(uniqueProvinces);
+      })
+      .catch((error) => {
+        setConcesionarios(CAR_DEALERS);
+      });
+  }
+
+  useEffect(() => {
+    fetchAndMapConcesionarios();
+  }, []);
 
   // Add useEffect to validate form on every change
   useEffect(() => {
@@ -58,6 +93,7 @@ function Contactenos() {
   }, []);
 
   const handleFormChange = (e) => {
+    console.log("handleFormChange", e);
     const { name, value } = e.target;
     let newValue = value;
 
@@ -94,6 +130,14 @@ function Contactenos() {
         newValue = value.replace(/[^\d]/g, "");
         break;
 
+      case "province":
+        setFormData((prev) => ({
+          ...prev,
+          province: newValue,
+          provinceName: e.target.label,
+        }));
+        break;
+
       default:
         break;
     }
@@ -111,9 +155,15 @@ function Contactenos() {
   };
 
   const handleSubmit = async () => {
-    const name = `${formData.firstName} ${formData.lastName}`;
+    const formDataOfficial = {
+      ...formData,
+      source: "Contacto Web",
+      name: `${formData.firstName} ${formData.lastName}`,
+      dealer: formData.dealer,
+      // car:
+    };
     try {
-      await kiaApiCall({ ...formData, name }, "kiaweb: Contactenos");
+      await kiaApiCall(...formDataOfficial, "kiaweb: Contactenos");
       setIsSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -141,7 +191,7 @@ function Contactenos() {
       lastName,
       street,
       streetNumber,
-      province,
+      provinceName,
       city,
       country,
       email,
@@ -158,7 +208,7 @@ function Contactenos() {
 
     const isVinValid = !vinNumber || vinNumber.length >= 17;
 
-    const isContactedDealerValid = contactedDealer !== null;
+    const isContactedDealerValid = contactedDealer !== null && dealer !== null;
 
     const valid =
       documentType !== "" &&
@@ -167,7 +217,7 @@ function Contactenos() {
       lastName !== "" &&
       street !== "" &&
       streetNumber !== "" &&
-      province !== "" &&
+      provinceName !== "" &&
       city !== "" &&
       country !== "" &&
       email !== "" &&
@@ -367,7 +417,7 @@ function Contactenos() {
                             name="province"
                             value={formData.province}
                             onChange={handleFormChange}
-                            options={PROVINCES}
+                            options={provinces}
                           />
                           <TextField
                             placeholder="Localidad"
@@ -501,7 +551,7 @@ function Contactenos() {
                                   disabled={!contactedDealer}
                                   placeholder="Nombre del concesionario"
                                   name="dealer"
-                                  options={CAR_DEALERS}
+                                  options={concesionarios}
                                   value={formData.dealer}
                                   onChange={handleFormChange}
                                 />
