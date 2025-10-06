@@ -6,9 +6,8 @@ import sportageBackMobile from "../../../assets/img/models/sportage/carousel/spo
 import sportageSideDesktop from "../../../assets/img/models/sportage/carousel/sportage-side-desktop.webp";
 import sportageSideMobile from "../../../assets/img/models/sportage/carousel/sportage-side-mobile.webp";
 // Sportage hero video images
-//import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.mp4";
 import sportageHeroVideoDesktop from "../../../assets/videos/sportage-hero-desktop.mp4";
-import sportageHeroVideoMobile from "../../../assets/videos/sportage-hero-mobile.webp";
+import sportageHeroVideoMobile from "../../../assets/videos/sportage-hero-mobile.mp4";
 // Sportage exterior images
 import sportageExteriorBacklights from "../../../assets/img/models/sportage/exterior/sportage-exterior-backlights.webp";
 import sportageExteriorGrille from "../../../assets/img/models/sportage/exterior/sportage-exterior-grille.webp";
@@ -22,8 +21,8 @@ import sportageInteriorRooftop from "../../../assets/img/models/sportage/interio
 import sportageInteriorSteeringWheel from "../../../assets/img/models/sportage/interior/sportage-interior-steering-wheel.webp";
 import sportageInteriorTrunk from "../../../assets/img/models/sportage/interior/sportage-interior-trunk.webp";
 // Sportage Atributes
-import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
-import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop-nueva.webp";
+import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop.webp";
+import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-mobile.webp";
 // Sportage Etiqueta
 import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
 // Sportage Fichas
