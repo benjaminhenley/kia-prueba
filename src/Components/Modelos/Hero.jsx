@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PlayIcon } from "../Common/Icons/PlayButton";
 import { getHeroIcon } from "../Common/Icons/HeroIcons";
 import renderWithLineBreaks from "../../Data/mappers/renderWithLineBreaks";
 
@@ -7,7 +6,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
-  const [showPlayButton, setShowPlayButton] = useState(true);
   const [isImage, setIsImage] = useState(false);
   const videoRef = useRef(null);
   const isMobile = useRef(window.innerWidth < 768);
@@ -41,16 +39,15 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
       setIsVideoLoaded(false);
       setIsPlaying(false);
       setHasVideoError(false);
-      setShowPlayButton(true);
 
       // Force the video element to reload
       videoRef.current.load();
     }
   }, [videoSrc, isImage]);
 
-  // Auto-play video on desktop when loaded
+  // Auto-play video when loaded (both mobile and desktop)
   useEffect(() => {
-    if (videoRef.current && isVideoLoaded && !isMobile.current && !isImage) {
+    if (videoRef.current && isVideoLoaded && !isImage) {
       const playPromise = videoRef.current.play();
 
       if (playPromise !== undefined) {
@@ -75,38 +72,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handlePlayClick = () => {
-    if (isImage) return; // Don't handle play click for images
-
-    if (videoRef.current && !hasVideoError) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        // Attempt to play and catch any errors (browsers may block autoplay)
-        const playPromise = videoRef.current.play();
-
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Video playback started successfully");
-              setIsPlaying(true);
-              // Hide play button on mobile after clicking
-              if (isMobile.current) {
-                setShowPlayButton(false);
-              }
-            })
-            .catch((error) => {
-              console.error("Play was prevented:", error);
-              setIsPlaying(false);
-            });
-        }
-      }
-    } else {
-      console.warn("Video reference not available or has error");
-    }
-  };
 
   const handleVideoLoaded = () => {
     // Enable hardware acceleration to improve video quality
@@ -164,16 +129,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
               {/* Puedes agregar más formatos de fuente si están disponibles */}
               Your browser does not support the video tag.
             </video>
-          </div>
-        )}
-
-        {/* Play button overlay - only shown if video is available and on mobile */}
-        {!hasVideoError && showPlayButton && !isImage && (
-          <div className="absolute inset-0 flex items-center justify-center z-20 md:hidden">
-            <PlayIcon
-              onClick={handlePlayClick}
-              className="w-[106px] h-[106px]"
-            />
           </div>
         )}
       </div>
