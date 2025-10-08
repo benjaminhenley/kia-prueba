@@ -20,6 +20,7 @@ import {
 import RecaptchaLoader from "../Components/Common/captcha/RecaptchaLoader";
 import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";
 import { initialFormDataContact } from "../Data/initialFormsData";
+import kiaApiContacto from "../utils/apiCallContacto";
 
 // Dropdown data collections
 const DOCUMENT_TYPES = [
@@ -42,13 +43,13 @@ function Contactenos() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [concesionarios, setConcesionarios] = useState([]);
   const [provinces, setProvinces] = useState([]);
+  const [vinError, setVinError] = useState(false);
   const navigate = useNavigate();
 
   function fetchAndMapConcesionarios() {
     fetch("https://fusio.encender-dev.online/public/kia/concesionarios")
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
         const mappedConcesionarios = data.concesionarios.map((dealer, key) => ({
           id: key,
           value: dealer.codigo,
@@ -66,7 +67,12 @@ function Contactenos() {
           ),
         ];
 
-        setProvinces(uniqueProvinces);
+        const provincesMapped = uniqueProvinces.map((province) => ({
+          value: province,
+          label: province,
+        }));
+
+        setProvinces(provincesMapped);
       })
       .catch((error) => {
         setConcesionarios(CAR_DEALERS);
@@ -130,13 +136,30 @@ function Contactenos() {
         newValue = value.replace(/[^\d]/g, "");
         break;
 
+      case "vinNumber":
+        // Validate VIN length (should be 17 digits)
+        if (newValue.length > 0 && newValue.length < 17) {
+          setVinError(true);
+        } else {
+          setVinError(false);
+        }
+        break;
+
+      case "car":
+        setFormData((prev) => ({
+          ...prev,
+          car: newValue,
+          carName: e.target.label,
+        }));
+        return;
+
       case "province":
         setFormData((prev) => ({
           ...prev,
           province: newValue,
           provinceName: e.target.label,
         }));
-        break;
+        return;
 
       default:
         break;
@@ -155,15 +178,17 @@ function Contactenos() {
   };
 
   const handleSubmit = async () => {
+    const { carName, provinceName, ...restFormData } = formData;
     const formDataOfficial = {
-      ...formData,
+      ...restFormData,
+      car: carName,
+      province: provinceName,
       source: "Contacto Web",
       name: `${formData.firstName} ${formData.lastName}`,
       dealer: formData.dealer,
-      // car:
     };
     try {
-      await kiaApiCall(...formDataOfficial, "kiaweb: Contactenos");
+      await kiaApiContacto(formDataOfficial);
       setIsSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -517,11 +542,18 @@ function Contactenos() {
                                 value={formData.vinNumber}
                                 onChange={handleFormChange}
                               />
-                              <h5 className="text-[#697279]">
-                                VIN del vehículo. Ingrese los 17 dígitos de su
-                                vehículo. Esta información podrá verla en la
-                                documentación de su unidad.
-                              </h5>
+                              {vinError ? (
+                                <h5 className="text-red-600 font-medium">
+                                  El VIN debe tener 17 dígitos. Por favor,
+                                  ingrese el número completo.
+                                </h5>
+                              ) : (
+                                <h5 className="text-[#697279]">
+                                  VIN del vehículo. Ingrese los 17 dígitos de su
+                                  vehículo. Esta información podrá verla en la
+                                  documentación de su unidad.
+                                </h5>
+                              )}
                             </div>
 
                             <div className="flex flex-col gap-5 md:items-start w-full md:flex-1">

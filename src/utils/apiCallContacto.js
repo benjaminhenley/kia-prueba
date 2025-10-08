@@ -1,9 +1,9 @@
 import "process";
 
-const kiaApiCallPromociones = async (data) => {
+const kiaApiContacto = async (data) => {
   try {
     const response = await fetch(
-      "https://fusio.encender-dev.online/public/kia/lead-register",
+      "https://fusio.encender-dev.online/public/kia/contacto-web",
       {
         method: "POST",
         headers: {
@@ -21,4 +21,4 @@ const kiaApiCallPromociones = async (data) => {
   }
 };
 
-export default kiaApiCallPromociones;
+export default kiaApiContacto;
