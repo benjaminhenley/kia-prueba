@@ -37,7 +37,14 @@ const Precios = () => {
       ["K3 Sedán", "GT-Line 1.6 A/T", "-", "28.500 USD"],
       ["K3 Cross", "EX 1.6 A/T", "-", "25.000 USD"],
       ["K3 Cross", "GT-Line 1.6 A/T", "-", "28.500 USD"],
-      ["Seltos", "LX 1.5 A/T", "2.000 USD", "34.000 USD"],
+      [
+        "Seltos",
+        "LX 1.5 A/T",
+        "2.000 USD",
+        <>
+          <span className="line-through">36.000 USD</span> 34.000 USD
+        </>,
+      ],
       ["Nueva Sportage", "EX 2.0 4x2 AT", "-", "48.000 USD"],
       ["Nueva Sportage", "X-line 2.0R AWD AT", "-", "62.000 USD"],
       ["Carnival", "EX 2.2R A/T", "-", "65.000 USD"],
