@@ -7,16 +7,9 @@ import SquareButton from "../Components/Common/ui/SquareButton";
 import Checkbox from "../Components/Common/Icons/Checkbox";
 import RadioButton from "../Components/Common/ui/RadioButton";
 import SuccessMessage from "../Components/Common/ui/SuccessMessage";
-import kiaApiCall from "../utils/apiCall";
-import { PROVINCES } from "../Data/provinces";
 import CAR_MODELS from "../Data/models";
 import { CAR_DEALERS } from "../Data/carDealers";
-import {
-  MONTHS,
-  generateDaysOptions,
-  generateYearsOptions,
-  generateCarYearsOptions,
-} from "../Data/months";
+import { generateCarYearsOptions } from "../Data/months";
 import RecaptchaLoader from "../Components/Common/captcha/RecaptchaLoader";
 import ExecuteRecaptcha from "../Components/Common/captcha/ExecuteRecaptcha";
 import { initialFormDataContact } from "../Data/initialFormsData";
@@ -52,7 +45,7 @@ function Contactenos() {
       .then((data) => {
         const mappedConcesionarios = data.concesionarios.map((dealer, key) => ({
           id: key,
-          value: dealer.codigo,
+          value: dealer.nombre + " - " + dealer.direccion,
           label: dealer.nombre + " - " + dealer.direccion,
         }));
         setConcesionarios(mappedConcesionarios);
@@ -178,6 +171,7 @@ function Contactenos() {
   };
 
   const handleSubmit = async () => {
+    console.log("handleSubmit", formData);
     const { carName, provinceName, ...restFormData } = formData;
     const formDataOfficial = {
       ...restFormData,

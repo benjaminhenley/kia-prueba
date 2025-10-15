@@ -89,9 +89,11 @@ export const CAR_DEALERS = [
     label: "Neostar - Pasaje Colidge 1211 - Rosario",
     province: "Santa Fe",
   },
-  { value: 50, 
-    label: "Neostar Rosario - Av. Mendoza 4631 - Rosario", 
-    province: "Santa Fe" },
+  {
+    value: 50,
+    label: "Neostar Rosario - Av. Mendoza 4631 - Rosario",
+    province: "Santa Fe",
+  },
   {
     value: 51,
     label: "Neostar Santa Fe - San Lorenzo 3440 - Santa Fe",
