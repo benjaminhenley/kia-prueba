@@ -22,26 +22,27 @@ const Precios = () => {
 
   const carPriceData = {
     headers: [
-      { key: "model", label: "Modelo", width: "33%", bold: true },
-      { key: "version", label: "Versión", width: "33%" },
+      { key: "model", label: "Modelo", width: "20%", bold: true },
+      { key: "version", label: "Versión", width: "18%" },
+      { key: "bonification", label: "Bonificación", width: "18%" },
       {
         key: "price",
         label: "Precio sugerido al público",
-        width: "33%",
+        width: "44%",
         bold: true,
       },
     ],
     details: [
-      ["K3 Sedán", "EX 1.6 A/T", "25.000 USD"],
-      ["K3 Sedán", "GT-Line 1.6 A/T", "28.500 USD"],
-      ["K3 Cross", "EX 1.6 A/T", "25.000 USD"],
-      ["K3 Cross", "GT-Line 1.6 A/T", "28.500 USD"],
-      ["Seltos", "LX 1.5 A/T", "36.000 USD"],
-      ["Nueva Sportage", "EX 2.0 4x2 AT", "48.000 USD"],
-      ["Nueva Sportage", "X-line 2.0R AWD AT", "62.000 USD"],
-      ["Carnival", "EX 2.2R A/T", "65.000 USD"],
-      ["Carnival", "SX 2.2R A/T", "75.000 USD"],
-      ["K2500", "CS 2.5T MT", "33.000 USD"],
+      ["K3 Sedán", "EX 1.6 A/T", "-", "25.000 USD"],
+      ["K3 Sedán", "GT-Line 1.6 A/T", "-", "28.500 USD"],
+      ["K3 Cross", "EX 1.6 A/T", "-", "25.000 USD"],
+      ["K3 Cross", "GT-Line 1.6 A/T", "-", "28.500 USD"],
+      ["Seltos", "LX 1.5 A/T", "2.000 USD", "34.000 USD"],
+      ["Nueva Sportage", "EX 2.0 4x2 AT", "-", "48.000 USD"],
+      ["Nueva Sportage", "X-line 2.0R AWD AT", "-", "62.000 USD"],
+      ["Carnival", "EX 2.2R A/T", "-", "65.000 USD"],
+      ["Carnival", "SX 2.2R A/T", "-", "75.000 USD"],
+      ["K2500", "CS 2.5T MT", "-", "33.000 USD"],
     ],
   };
 
