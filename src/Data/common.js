@@ -99,10 +99,15 @@ export const camionetasSuv = [
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
-          $36.000USD{" "}
+          <span className="line-through">$36.000USD</span>{" "}
           <span className="font-regular text-kia-gray">LX 1.5 A/T*</span>
         </p>
-        <p className="text-sm font-bold py-0.5"></p>
+        <p className="text-sm font-bold py-0.5">
+          $34.000USD{" "}
+          <span className="font-normal text-black">
+            (bonificación $2.000USD)
+          </span>
+        </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>
     ),
@@ -122,7 +127,9 @@ export const camionetasSuv = [
         </p>
         <p className="text-sm font-bold py-0.5">
           $62.000USD{" "}
-          <span className="font-regular text-kia-gray">X-line 2.0R AWD AT*</span>
+          <span className="font-regular text-kia-gray">
+            X-line 2.0R AWD AT*
+          </span>
         </p>
         <p className="text-sm font-bold py-0.5"></p>
       </>

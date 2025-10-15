@@ -185,7 +185,7 @@ const ConcesionariosVenta = () => {
           </h2>
           <div className="relative">
             <h1 className="text-2xl md:text-4xl font-bold text-midnight-black">
-              Venta
+              Post Venta
             </h1>
             <div className="relative top-7px] md:top-2 left-0 w-6 md:w-12 h-[2px] bg-midnight-black"></div>
           </div>

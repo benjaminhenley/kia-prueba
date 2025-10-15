@@ -8,12 +8,12 @@
     "etiqueta": {
       "id": "brochures",
       "link": "imageMapRef:seltos.etiqueta",
-      "originalFilename": "Etiqueta K3 Seltos LX.pdf"
+      "originalFilename": "Etiqueta Seltos 1.5 CVT"
     },
     "fichas": {
       "id": "technical-sheet",
       "link": "imageMapRef:seltos.fichas",
-      "originalFilename": "Ficha técnica K3 Seltos LX.pdf"
+      "originalFilename": "Ficha técnica Seltos"
     }
   },
   "heroInfo": [

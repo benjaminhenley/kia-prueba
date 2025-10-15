@@ -24,7 +24,7 @@ import sportageInteriorTrunk from "../../../assets/img/models/sportage/interior/
 import sportageAtributesDesktop from "../../../assets/img/models/sportage/atributes/sportage-atributes-desktop.webp";
 import sportageAtributesMobile from "../../../assets/img/models/sportage/atributes/sportage-atributes-mobile.webp";
 // Sportage Etiqueta
-import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage EX.pdf";
+import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage 2.0R AWD AT-2.0 AT.pdf";
 // Sportage Fichas
 import sportageFichas from "../../../assets/fichas/Ficha-Tecnica-Nueva_Sportage_25.pdf";
 

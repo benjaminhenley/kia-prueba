@@ -24,9 +24,9 @@ import seltosAtributesMobile from "../../../assets/img/models/seltos/atributes/s
 import heroVideoSeltosDesktop from "../../../assets/videos/seltos-hero-desktop.mp4";
 import heroVideoSeltosMobile from "../../../assets/videos/seltos-hero-mobile.mp4";
 // Seltos Etiqueta
-import seltosEtiqueta from "../../../assets/etiquetas/Etiqueta K3 Seltos LX.pdf";
+import seltosEtiqueta from "../../../assets/etiquetas/Etiqueta Seltos 1.5 CVT.pdf";
 // Seltos Fichas
-import seltosFichas from "../../../assets/fichas/Ficha técnica K3 Seltos LX.pdf";
+import seltosFichas from "../../../assets/fichas/Ficha técnica Seltos LX.pdf";
 
 export const seltosImages = {
   carousel: {
