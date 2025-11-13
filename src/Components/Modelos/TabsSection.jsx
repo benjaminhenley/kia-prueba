@@ -158,7 +158,7 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
                     <a
                       key={option.id}
                       href={option.link}
-                      download={option.originalFilename || option.text + ".pdf"}
+                      // download={option.originalFilename || option.text + ".pdf"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center p-3 sm:p-4 text-gray-800 hover:bg-gray-100 ${
