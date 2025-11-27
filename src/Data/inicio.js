@@ -22,16 +22,16 @@ import K3TasaUVAMobile from "../assets/img/inicio/homeSlider/mobile/k3-tasa-uva 
 
 // Este archivo contiene los datos para el slider del home
 export const homeSlider = [
-  // {
-  //   imagen: K3TasaUVA,
-  //   imagenMobile: K3TasaUVAMobile,
-  //   titulo: "",
-  //   subtitulo: "",
-  //   textoBoton: "Quiero mi K3",
-  //   linkBoton: "https://www.kia.com.ar/kia-k3/",
-  //   target: "_blank",
-  //   esExterna: true,
-  // },
+  {
+    imagen: K3TasaUVA,
+    imagenMobile: K3TasaUVAMobile,
+    titulo: "",
+    subtitulo: "",
+    textoBoton: "Quiero mi K3",
+    linkBoton: "https://www.kia.com.ar/kia-k3/",
+    target: "_blank",
+    esExterna: true,
+  },
   {
     imagen: SeltosSantander,
     imagenMobile: SeltosSantanderMobile,
