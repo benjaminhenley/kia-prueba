@@ -1,6 +1,5 @@
 // Imports fotos Desktop
 import SeltosSantander from "../assets/img/inicio/homeSlider/desktop/Seltos Santander.webp";
-import AllNewK3 from "../assets/img/inicio/homeSlider/desktop/All-new K3.webp";
 import AllNewK3Cross from "../assets/img/inicio/homeSlider/desktop/All-new K3 Cross.webp";
 import AllNewK3Sedan from "../assets/img/inicio/homeSlider/desktop/All-new K3 Sedan.webp";
 import Carnival from "../assets/img/inicio/homeSlider/desktop/Carnival.webp";
@@ -11,7 +10,6 @@ import K3TasaUVA from "../assets/img/inicio/homeSlider/desktop/k3-tasa-uva.webp"
 
 //Imports fotos Mobile
 import SeltosSantanderMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Santander Mobile.webp";
-import AllNewK3Mobile from "../assets/img/inicio/homeSlider/mobile/All-new K3 Mobile.webp";
 import AllNewK3CrossMobile from "../assets/img/inicio/homeSlider/mobile/All-new K3 Cross Mobile.webp";
 import AllNewK3SedanMobile from "../assets/img/inicio/homeSlider/mobile/All-new K3 Sedan Mobile.webp";
 import CarnivalMobile from "../assets/img/inicio/homeSlider/mobile/Carnival Mobile.webp";
@@ -28,7 +26,7 @@ export const homeSlider = [
     titulo: "",
     subtitulo: "",
     textoBoton: "Quiero mi K3",
-    linkBoton: "https://www.kia.com.ar/kia-k3/",
+    linkBoton: "https://www.kia.com.ar/kia-k3-bonificacion/",
     target: "_blank",
     esExterna: true,
   },
@@ -40,16 +38,6 @@ export const homeSlider = [
     textoBoton: "Quiero mi Seltos",
     linkBoton:
       "https://www.kia.com.ar/red-venta?utm_source=web&utm_medium=banner&utm_campaign=12y18cuotas&utm_content=web-santander-seltos",
-    target: "_blank",
-    esExterna: true,
-  },
-  {
-    imagen: AllNewK3,
-    imagenMobile: AllNewK3Mobile,
-    titulo: "All-new K3",
-    subtitulo: "Más allá de lo posible",
-    textoBoton: "Lo quiero",
-    linkBoton: "https://reservak3.kia.com.ar/ess",
     target: "_blank",
     esExterna: true,
   },
