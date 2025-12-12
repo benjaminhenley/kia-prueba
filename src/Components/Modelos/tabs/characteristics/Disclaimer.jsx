@@ -5,6 +5,10 @@ const Disclaimer = () => {
     <section className="py-5 sm:py-10 px-4 bg-[#F8F8F8] text-center">
       <div className="container mx-auto px-4 sm:px-6">
         <h6 className="font-bold text-[#697279]">
+          Sistemas avanzados de asistencia a la conducción ADAS disponibles como
+          estándar u opcionales en todas las versiones.
+        </h6>
+        <h6 className="font-bold text-[#697279]">
           Las opciones pueden variar según la región.
         </h6>
         <h6 className="font-bold text-[#697279]">
