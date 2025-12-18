@@ -4,18 +4,20 @@
   "tagline": "Que nada te detenga",
   "heroImage": "/images/placeholder-seltos-hero.jpg",
   "heroVideo": "imageMapRef:seltos.heroVideo",
-  "menu": {
-    "etiqueta": {
+  "menu": [
+    {
       "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
       "link": "imageMapRef:seltos.etiqueta",
       "originalFilename": "Etiqueta Seltos 1.5 CVT"
     },
-    "fichas": {
+    {
       "id": "technical-sheet",
+      "title": "Ficha técnica",
       "link": "imageMapRef:seltos.fichas",
       "originalFilename": "Ficha técnica Seltos"
     }
-  },
+  ],
   "heroInfo": [
     {
       "iconId": "airbag",

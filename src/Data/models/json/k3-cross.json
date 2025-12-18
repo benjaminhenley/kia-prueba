@@ -4,18 +4,20 @@
   "tagline": "Mas allá de lo posible",
   "heroImage": "/images/placeholder-cross-hero.jpg",
   "heroVideo": "imageMapRef:cross.heroVideo",
-  "menu": {
-    "etiqueta": {
+  "menu": [
+    {
       "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
       "link": "imageMapRef:cross.etiqueta",
       "originalFilename": "Etiqueta K3 Cross EX_GT.pdf"
     },
-    "fichas": {
+    {
       "id": "technical-sheet",
+      "title": "Ficha técnica",
       "link": "imageMapRef:cross.fichas",
       "originalFilename": "Ficha técnica K3 Cross EX_GT.pdf"
     }
-  },
+  ],
   "heroInfo": [
     {
       "iconId": "stars",

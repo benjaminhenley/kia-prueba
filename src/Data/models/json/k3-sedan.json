@@ -4,18 +4,20 @@
   "tagline": "Más allá de lo posible",
   "heroImage": "/images/placeholder-sedan-hero.jpg",
   "heroVideo": "imageMapRef:sedan.heroVideo",
-  "menu": {
-    "etiqueta": {
+  "menu": [
+    {
       "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
       "link": "imageMapRef:sedan.etiqueta",
       "originalFilename": "Etiqueta K3 Sedan EX_GT.pdf"
     },
-    "fichas": {
+    {
       "id": "technical-sheet",
+      "title": "Ficha técnica",
       "link": "imageMapRef:sedan.fichas",
       "originalFilename": "Ficha técnica K3 Sedan EX_GT.pdf"
     }
-  },
+  ],
   "heroInfo": [
     {
       "iconId": "stars",

@@ -5,23 +5,26 @@
   "heroImage": "/images/placeholder-sportage-hero.jpg",
   "heroVideo": "imageMapRef:sportage.heroVideo",
 
-  "menu": {
-    "etiqueta": {
+  "menu": [
+    {
       "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
       "link": "imageMapRef:sportage.etiqueta",
       "originalFilename": "Etiqueta Sportage 2.0R AWD AT-2.0 AT"
     },
-    "fichas": {
+    {
       "id": "technical-sheet",
+      "title": "Ficha técnica",
       "link": "imageMapRef:sportage.fichas",
       "originalFilename": "Ficha-Tecnica-Nueva_Sportage_25"
     },
-    "seguridad": {
+    {
       "id": "security-sheet",
+      "title": "Hoja De Seguridad",
       "link": "imageMapRef:sportage.hojasSeguridad",
       "originalFilename": "Hoja de Seguridad - Sportage"
     }
-  },
+  ],
   "heroInfo": [
     {
       "iconId": "drivewise",

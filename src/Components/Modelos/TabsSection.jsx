@@ -39,22 +39,6 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
     return iconMap[iconId] || MenuIcons.car; // Fallback to car icon
   };
 
-  // Convert menu object to array for mapping
-  const menuItems = menu
-    ? Object.entries(menu).map(([key, item]) => ({
-        id: item.id,
-        originalFilename: item.originalFilename,
-        text:
-          key === "etiqueta"
-            ? "Etiqueta de Eficiencia"
-            : key === "fichas"
-            ? "Ficha técnica"
-            : item.id,
-        link: item.link,
-        icon: getIcon(item.id),
-      }))
-    : [];
-
   return (
     <div className="bg-[#05141f] text-white w-full">
       <div className="flex flex-row justify-between items-center w-full py-3 sm:py-4 md:px-20 px-4">
@@ -153,25 +137,25 @@ const ModelTabSelector = ({ activeTab, onTabChange, menu }) => {
               role="menu">
               {/* Menu items mapped from the model's menu */}
               <div>
-                {menuItems.length > 0 ? (
-                  menuItems.map((option, index) => (
+                {menu && menu.length > 0 ? (
+                  menu.map((item, index) => (
                     <a
-                      key={option.id}
-                      href={option.link}
-                      // download={option.originalFilename || option.text + ".pdf"}
+                      key={item.id}
+                      href={item.link}
+                      // download={item.originalFilename || (item.title || item.id) + ".pdf"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center p-3 sm:p-4 text-gray-800 hover:bg-gray-100 ${
-                        index < menuItems.length - 1
+                        index < menu.length - 1
                           ? "border-b border-gray-100"
                           : ""
                       }`}
                       onClick={() => setShowPopup(false)}>
                       <div className="w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4 flex items-center justify-center">
-                        {option.icon}
+                        {getIcon(item.id)}
                       </div>
                       <span className="text-xs sm:text-sm md:text-base font-medium">
-                        {option.text}
+                        {item.title || item.id}
                       </span>
                     </a>
                   ))

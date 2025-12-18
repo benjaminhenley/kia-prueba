@@ -4,18 +4,20 @@
   "tagline": "A la medida de tu negocio",
   "heroImage": "/images/placeholder-sedan-hero.jpg",
   "heroVideo": "imageMapRef:k2500.heroVideo",
-  "menu": {
-    "etiqueta": {
+  "menu": [
+    {
       "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
       "link": "imageMapRef:k2500.etiqueta",
       "originalFilename": "Etiqueta K2500 CS.pdf"
     },
-    "fichas": {
+    {
       "id": "technical-sheet",
+      "title": "Ficha técnica",
       "link": "imageMapRef:k2500.fichas",
       "originalFilename": "Ficha técnica K2500 CS.pdf"
     }
-  },
+  ],
   "heroInfo": [
     {
       "iconId": "radio",
