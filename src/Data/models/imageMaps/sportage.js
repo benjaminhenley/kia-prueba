@@ -27,6 +27,7 @@ import sportageAtributesMobile from "../../../assets/img/models/sportage/atribut
 import sportageEtiqueta from "../../../assets/etiquetas/Etiqueta Sportage 2.0R AWD AT-2.0 AT.pdf";
 // Sportage Fichas
 import sportageFichas from "../../../assets/fichas/Ficha-Tecnica-Nueva_Sportage_25.pdf";
+import sportageHojaSeguridad from "../../../assets/hojasSeguridad/Hoja de Seguridad - Sportage.pdf";
 
 export const sportageImages = {
   carousel: {
@@ -97,4 +98,5 @@ export const sportageImages = {
   },
   etiqueta: sportageEtiqueta,
   fichas: sportageFichas,
+  hojasSeguridad: sportageHojaSeguridad,
 };

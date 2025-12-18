@@ -15,6 +15,11 @@
       "id": "technical-sheet",
       "link": "imageMapRef:sportage.fichas",
       "originalFilename": "Ficha-Tecnica-Nueva_Sportage_25"
+    },
+    "seguridad": {
+      "id": "security-sheet",
+      "link": "imageMapRef:sportage.hojasSeguridad",
+      "originalFilename": "Hoja de Seguridad - Sportage"
     }
   },
   "heroInfo": [
