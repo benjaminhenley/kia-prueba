@@ -27,6 +27,12 @@
   ],
   "heroInfo": [
     {
+      "iconId": "stars",
+      "title": "Stars",
+      "description": "5 <br/> Estrellas Latin <br/> NCAP",
+      "description_mobile": "5 Estrellas Latin <br/> NCAP"
+    },
+    {
       "iconId": "drivewise",
       "title": "Drive Wise",
       "description": "Drive Wise <br/> Asistencia a <br/> la Conducción",

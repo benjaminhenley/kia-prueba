@@ -154,7 +154,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
                   <div
                     key={item.id}
                     className={`${
-                      heroInfo.length === 4 ? "w-fit" : "w-fit min-w-[70px]"
+                      heroInfo.length === 4
+                        ? "w-fit min-w-[100px]"
+                        : "w-fit min-w-[100px]"
                     } md:w-fit flex flex-col items-center text-center py-2 xl:p-2`}>
                     <div className="flex justify-center items-end h-8 w-full md:h-10">
                       {getHeroIcon(item.iconId, "w-6 h-6 md:h-8 md:w-8")}
