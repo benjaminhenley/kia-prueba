@@ -76,6 +76,22 @@
       ],
       "colorPicker": [
         {
+          "id": "red",
+          "name": "Fiery Red",
+          "border": "#740000",
+          "color": "#C20000",
+          "outline": "#A50000",
+          "thumbnail": "imageMapRef:cross.colors.fiery"
+        },
+        {
+          "id": "blue",
+          "name": "Azure Blue",
+          "border": "#0B293B",
+          "color": "#124463",
+          "outline": "#0F3A54",
+          "thumbnail": "imageMapRef:cross.colors.azure"
+        },
+        {
           "id": "black",
           "name": "Aurora Black Pearl",
           "border": "#05141F",

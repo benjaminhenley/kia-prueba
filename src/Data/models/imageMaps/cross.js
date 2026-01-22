@@ -12,6 +12,8 @@ import crossExteriorWheel from "../../../assets/img/models/cross/exterior/cross-
 import crossExteriorMirror from "../../../assets/img/models/cross/exterior/cross-exterior-4.webp";
 import crossExteriorGrille from "../../../assets/img/models/cross/exterior/cross-exterior-5.webp";
 // Cross color images
+import crossFiery from "../../../assets/img/models/cross/colors/cross-fiery.webp";
+import crossAzure from "../../../assets/img/models/cross/colors/cross-azure.webp";
 import crossBlack from "../../../assets/img/models/cross/colors/cross-black.webp";
 import crossGray from "../../../assets/img/models/cross/colors/cross-gray.webp";
 import crossSilver from "../../../assets/img/models/cross/colors/cross-silver.webp";
@@ -94,6 +96,8 @@ export const crossImages = {
     },
   },
   colors: {
+    azure: crossAzure,
+    fiery: crossFiery,
     blue: crossBlue,
     black: crossBlack,
     gray: crossGray,

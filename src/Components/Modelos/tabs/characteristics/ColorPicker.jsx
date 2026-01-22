@@ -26,29 +26,6 @@ const ColorPicker = ({ colorPickerData = [], glossy }) => {
   const activeColorName = activeColorData?.name || "";
   const activeColorThumbnail = activeColorData?.thumbnail || "";
 
-  // Set grid columns based on number of colors
-  let colorCount = hasValidColors ? colorPickerData.length : 0;
-  const columns = colorCount > 5 ? Math.ceil(colorCount / 2) : colorCount;
-
-  const columnClass =
-    {
-      1: "grid-cols-1",
-      2: "grid-cols-2",
-      3: "grid-cols-3",
-      4: "grid-cols-4",
-      5: "grid-cols-5",
-      6: "grid-cols-6",
-      7: "grid-cols-7",
-      8: "grid-cols-8",
-      9: "grid-cols-9",
-      10: "grid-cols-10",
-    }[columns] || "grid-cols-1";
-
-  // If no valid colors, render a fallback or return null
-  if (!hasValidColors) {
-    return null; // Hide the component completely when no colors are available
-  }
-
   return (
     <section className="py-12 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
@@ -76,7 +53,7 @@ const ColorPicker = ({ colorPickerData = [], glossy }) => {
 
         {/* Color Options */}
         <div
-          className={`grid ${columnClass} gap-4 md:gap-5 justify-center items-center justify-items-center w-fit mx-auto px-4`}>
+          className={`flex gap-4 md:gap-5 justify-center items-center justify-items-center w-fit mx-auto px-4`}>
           {colorPickerData.map((color) => {
             // Skip rendering invalid color entries
             if (!color || !color.id) return null;
