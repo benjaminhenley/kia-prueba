@@ -1,4 +1,9 @@
 import React from "react";
+import PiaIcon from "../../../assets/img/icons/pia-blanco.svg";
+
+export const Pia = ({ className, alt = "PIA" }) => (
+  <img className={className} src={PiaIcon} alt={alt} />
+);
 
 export const Airbags = ({ className, fill = "#ffffff" }) => (
   <svg
@@ -378,6 +383,7 @@ export const FrontLightsIcon = ({ className, color = "#697279" }) => (
 export const getHeroIcon = (icon, className) => {
   const icons = {
     stars: <Stars className={className} />,
+    pia: <Pia className={className} />,
     airbag: <Airbags className={className} />,
     adas: <Adas className={className} />,
     radio: <Radio className={className} />,

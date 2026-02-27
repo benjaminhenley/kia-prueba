@@ -7,6 +7,7 @@ import Sportage from "../assets/img/inicio/homeSlider/desktop/Sportage nuevo.web
 import Seltos from "../assets/img/inicio/homeSlider/desktop/Seltos.webp";
 import K2500 from "../assets/img/inicio/homeSlider/desktop/K2500.webp";
 import K3TasaUVA from "../assets/img/inicio/homeSlider/desktop/k3-tasa-uva.webp";
+import K3Pia from "../assets/img/inicio/homeSlider/desktop/K3 Mejor Auto Regional.webp";
 
 //Imports fotos Mobile
 import SeltosSantanderMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Santander Mobile.webp";
@@ -17,9 +18,20 @@ import SportageMobile from "../assets/img/inicio/homeSlider/mobile/Sportage Mobi
 import SeltosMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Mobile.webp";
 import K2500Mobile from "../assets/img/inicio/homeSlider/mobile/K2500 Mobile.webp";
 import K3TasaUVAMobile from "../assets/img/inicio/homeSlider/mobile/k3-tasa-uva Mobile.webp";
+import K3PiaMobile from "../assets/img/inicio/homeSlider/mobile/K3 Mejor Auto Regional.webp";
 
 // Este archivo contiene los datos para el slider del home
 export const homeSlider = [
+  {
+    imagen: K3Pia,
+    imagenMobile: K3PiaMobile,
+    titulo: "",
+    subtitulo: "",
+    textoBoton: "Quiero mi K3",
+    linkBoton: "https://www.kia.com.ar/k3-cross",
+    target: "_blank",
+    esExterna: true,
+  },
   {
     imagen: K3TasaUVA,
     imagenMobile: K3TasaUVAMobile,

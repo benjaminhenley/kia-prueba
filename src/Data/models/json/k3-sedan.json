@@ -20,6 +20,12 @@
   ],
   "heroInfo": [
     {
+      "iconId": "pia",
+      "title": "Pia",
+      "description": "Mejor <br/> auto/SUV <br/> del año 2025",
+      "description_mobile": "Mejor <br/> auto/SUV <br/> del año 2025"
+    },
+    {
       "iconId": "stars",
       "title": "Stars",
       "description": "5 <br/> Estrellas Latin <br/> NCAP",
