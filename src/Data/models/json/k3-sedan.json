@@ -83,7 +83,7 @@
       "vr": "https://worldwide.kia.com/int/vr-showroom/csa/k3/lhd/index.html#/k3/exterior",
       "atributes": {
         "category": "Atributos",
-        "title": "All-new K3 Sedán",
+        "title": "K3 Sedán",
         "subtitle": "Seguridad y funcionalidad en cada detalle",
         "image": "imageMapRef:sedan.attributes",
         "bulletPoints": [
@@ -91,7 +91,7 @@
           "**Tecnología y conectividad:** Infotainment LCD de 10,25 con Apple CarPlay y Android Auto inalámbrico, cargador inalámbrico y acceso keyless para una experiencia sin interrupciones.",
           "**Estilo y confort premium:** Tapizados exclusivos, techo solar OneTouch y climatizador Bi-Zona crean un espacio sofisticado y confortable."
         ],
-        "description": "El All-new K3 Sedán combina diseño sofisticado, tecnología intuitiva y un alto nivel de seguridad. Su interior premium y sus asistencias avanzadas elevan cada experiencia al volante."
+        "description": "El K3 Sedán combina diseño sofisticado, tecnología intuitiva y un alto nivel de seguridad. Su interior premium y sus asistencias avanzadas elevan cada experiencia al volante."
       },
       "exterior": {
         "galleryType": "1",
@@ -119,7 +119,7 @@
             "src": "imageMapRef:sedan.exterior.wheel",
             "alt": "Wheel",
             "title": "Llantas de aleación diamantadas de 17'",
-            "description": "Con un diseño que impone personalidad y realza su perfil deportivo, el All-new K3 Sedán se destaca por su carácter audaz y contemporáneo."
+            "description": "Con un diseño que impone personalidad y realza su perfil deportivo, el K3 Sedán se destaca por su carácter audaz y contemporáneo."
           },
           {
             "id": "exterior-mirror",
@@ -133,7 +133,7 @@
             "src": "imageMapRef:sedan.exterior.grille",
             "alt": "Front grille",
             "title": "Elegancia y estilo en movimiento",
-            "description": "Un diseño audaz, tecnología intuitiva y confort superior hacen del All-new K3 Sedán el compañero ideal para quienes buscan estilo y desempeño en cada viaje."
+            "description": "Un diseño audaz, tecnología intuitiva y confort superior hacen del K3 Sedán el compañero ideal para quienes buscan estilo y desempeño en cada viaje."
           }
         ]
       },
@@ -149,7 +149,7 @@
             "src": "imageMapRef:sedan.interior.seats",
             "alt": "Interior seats",
             "title": "Confort pensado al detalle",
-            "description": "Con un espacio interior muy amplio, el All-new K3 es innovador y confortable. Kia reinterpretó la selección y concentración de todos los elementos de diseño de una manera funcional."
+            "description": "Con un espacio interior muy amplio, el K3 es innovador y confortable. Kia reinterpretó la selección y concentración de todos los elementos de diseño de una manera funcional."
           },
           {
             "id": "interior-panel",
@@ -170,21 +170,21 @@
             "src": "imageMapRef:sedan.interior.airConditioner",
             "alt": "Interior air conditioner",
             "title": "Infotainment full LCD 10,25'",
-            "description": "El All-new K3 se adelanta a su tiempo incorporando una pantalla táctil de alta definición, equipada con conectividad inalámbrica para Android Auto™ y Apple CarPlay™, que lleva la experiencia digital más allá de las expectativas."
+            "description": "El K3 se adelanta a su tiempo incorporando una pantalla táctil de alta definición, equipada con conectividad inalámbrica para Android Auto™ y Apple CarPlay™, que lleva la experiencia digital más allá de las expectativas."
           },
           {
             "id": "interior-gears",
             "src": "imageMapRef:sedan.interior.gears",
             "alt": "gears",
             "title": "Apertura con llave inteligente y botón de arranque",
-            "description": "Con la tecnología \"Keyless\", accedé y arrancá tu All-new K3 con total comodidad, sin necesidad de sacar las llaves del bolsillo."
+            "description": "Con la tecnología \"Keyless\", accedé y arrancá tu K3 con total comodidad, sin necesidad de sacar las llaves del bolsillo."
           },
           {
             "id": "interior-trunk",
             "src": "imageMapRef:sedan.interior.trunk",
             "alt": "Panel de aire y radio",
             "title": "Espacio sin límites, comodidad sin esfuerzo",
-            "description": "El baúl con apertura manos libres del All-new K3 Sedán destaca por su gran capacidad de 544 litros, ofreciendo el mayor espacio en comparación al resto del segmento."
+            "description": "El baúl con apertura manos libres del K3 Sedán destaca por su gran capacidad de 544 litros, ofreciendo el mayor espacio en comparación al resto del segmento."
           }
         ]
       }
@@ -263,7 +263,7 @@
         ]
       },
       "cta": {
-        "name": "Quiero mi All-new K3",
+        "name": "Quiero mi K3",
         "to": "https://www.kia.com.ar/kia-k3/"
       }
     }

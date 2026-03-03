@@ -44,7 +44,6 @@ const HomeCarousel = ({ carouselData }) => {
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col items-start justify-end p-12 sm:p-16 md:p-24 text-white">
             <div>
-              <h2 className="text-xl md:text-2xl font-light mb-2">All-new</h2>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
                 {slide.title}
               </h1>

@@ -132,7 +132,7 @@
       ],
       "atributes": {
         "category": "Atributos",
-        "title": "All-new K3 Cross",
+        "title": "K3 Cross",
         "subtitle": "Aventura y estilo en cada recorrido",
         "image": "imageMapRef:cross.attributes",
         "bulletPoints": [
@@ -140,13 +140,13 @@
           "**Seguridad y confianza en cada trayecto:** Equipado con Kia DriveWise: asistentes de pre-colisión frontal, en punto ciego y de tráfico cruzado trasero y de mantenimiento y seguimiento de carril, además de una calificación de 5 estrellas en Latin NCAP.",
           "**Tecnología para un viaje conectado:** Pantalla full LCD de 10,25 con Apple CarPlay y Android Auto inalámbrico, climatizador Bi-Zona y cargador inalámbrico para estar siempre conectado."
         ],
-        "description": "El All-new K3 Cross combina diseño dinámico con un interior refinado y la mejor tecnología en su segmento. Un Crossover versátil, seguro y equipado para acompañarte en cada aventura."
+        "description": "El K3 Cross combina diseño dinámico con un interior refinado y la mejor tecnología en su segmento. Un Crossover versátil, seguro y equipado para acompañarte en cada aventura."
       },
       "exterior": {
         "galleryType": "1",
         "category": "Exterior",
         "title": "Presencia imponente y diseño innovador",
-        "description": "Con un diseño audaz y líneas deportivas, el All-new K3 Cross combina elegancia y funcionalidad en cada detalle.",
+        "description": "Con un diseño audaz y líneas deportivas, el K3 Cross combina elegancia y funcionalidad en cada detalle.",
         "images": [
           {
             "id": "exterior-front",
@@ -167,14 +167,14 @@
             "src": "imageMapRef:cross.exterior.rear",
             "alt": "Rear light",
             "title": "Llantas de aleación diamantadas de 17'",
-            "description": "El diseño definitivo que añade una dosis de actitud y deportividad al diseño del All-new K3."
+            "description": "El diseño definitivo que añade una dosis de actitud y deportividad al diseño del K3."
           },
           {
             "id": "exterior-grille",
             "src": "imageMapRef:cross.exterior.wheel",
             "alt": "Faros",
-            "title": "El All-new K3 Cross va más allá de lo conocido",
-            "description": "Con el All-new K3 Cross la diversión está garantizada, ofrece una experiencia de manejo entretenida, eficiente y dinámica que te dará la mejor experiencia al conducir."
+            "title": "El K3 Cross va más allá de lo conocido",
+            "description": "Con el K3 Cross la diversión está garantizada, ofrece una experiencia de manejo entretenida, eficiente y dinámica que te dará la mejor experiencia al conducir."
           },
           {
             "id": "exterior-espejo",
@@ -196,7 +196,7 @@
             "src": "imageMapRef:cross.interior.seats",
             "alt": "Asientos tapizados",
             "title": "Modelo a seguir en espacio",
-            "description": "El All-new K3 reinterpreta la forma de conectarse con el interior, con elementos de diseño ergonómicos y que priorizan la funcionalidad, logra un espacio interior amplio, innovador y confortable."
+            "description": "El K3 reinterpreta la forma de conectarse con el interior, con elementos de diseño ergonómicos y que priorizan la funcionalidad, logra un espacio interior amplio, innovador y confortable."
           },
           {
             "id": "interior-seats",
@@ -303,7 +303,7 @@
         ]
       },
       "cta": {
-        "name": "Quiero mi All-new K3",
+        "name": "Quiero mi K3",
         "to": "https://www.kia.com.ar/kia-k3/"
       }
     }

@@ -83,9 +83,7 @@ const VehiculoCard = ({ vehiculo, onClick }) => {
     <div
       className="text-center hover:bg-gray-100 transition-bg p-3 relative cursor-pointer"
       onClick={onClick}>
-      <div className="h-6 flex justify-start">
-        {esNuevo && <img src={esNuevo} alt="Nuevo" className="h-5" />}
-      </div>
+      {esNuevo && <img src={esNuevo} alt="Nuevo" className="h-5 absolute top-3 left-3" />}
       {cardContent}
     </div>
   );

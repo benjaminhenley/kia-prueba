@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight src/assets/img/common/modelos/*.webp)",
+      "Bash(sips --resampleWidth 304 k4-sedan.webp)",
+      "Bash(sips --cropToHeightWidth 88 304 --cropOffset 14 0 k4-sedan.webp)",
+      "Bash(sips -g pixelWidth -g pixelHeight k4-sedan.webp)",
+      "Bash(ffmpeg -version)",
+      "Bash(ffmpeg -i k4-sedan.webp -vf \"scale=304:-1,crop=304:88:0:\\(ih-88\\)/2\" -y k4-sedan.webp)",
+      "Bash(ffmpeg -i k4-sedan.webp -vf \"scale=304:-1,crop=304:88:0:\\(ih-88\\)/2\" k4-sedan-tmp.webp)"
+    ]
+  }
+}

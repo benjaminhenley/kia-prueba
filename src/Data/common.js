@@ -3,9 +3,9 @@ import Facebook from "../assets/img/footer/Facebook.svg";
 import Youtube from "../assets/img/footer/Youtube.svg";
 import Instagram from "../assets/img/footer/Instagram.svg";
 import X from "../assets/img/footer/X.svg";
-import AllNewK3Cross from "../assets/img/common/modelos/AllNewK3Cross.webp";
-import AllNewK3Sedan from "../assets/img/common/modelos/AllNewK3Sedan.webp";
-import Cerato from "../assets/img/common/modelos/Cerato.webp";
+import K3Cross from "../assets/img/common/modelos/k3-cross.webp";
+import K4Sedan from "../assets/img/common/modelos/k4-sedan.webp";
+import K3Sedan from "../assets/img/common/modelos/k3-sedan.webp";
 import Carnival from "../assets/img/common/modelos/Carnival.webp";
 import Sportage from "../assets/img/common/modelos/Sportage.webp";
 import Seltos from "../assets/img/common/modelos/Seltos.webp";
@@ -47,12 +47,31 @@ export const redes = [
 // Datos de los modelos tanto para el Footer como para el Navbar
 export const autos = [
   {
-    nombre: "All-new K3 Sedán",
+    nombre: "Nuevo K4 Sedán",
+    href: "https://www.kia.com.ar/kia-k4/",
+    target: "_blank",
+    esExterna: true,
+    esNuevo: Nuevo,
+    foto: K4Sedan,
+    precio: (
+      <>
+        <p className="text-sm font-bold py-0.5">
+          $33.000USD <span className="font-regular text-kia-gray">EX*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5">
+          $38.000USD <span className="font-regular text-kia-gray">GT*</span>
+        </p>
+        <p className="text-sm font-bold py-0.5"></p>
+      </>
+    ),
+  },
+  {
+    nombre: "K3 Sedán",
     href: "/k3-sedan",
     target: "",
     esExterna: false,
-    esNuevo: Nuevo,
-    foto: AllNewK3Sedan,
+    esNuevo: null,
+    foto: K3Sedan,
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">
@@ -70,12 +89,12 @@ export const autos = [
 
 export const camionetasSuv = [
   {
-    nombre: "All-new K3 Cross",
+    nombre: "K3 Cross",
     href: "/k3-cross",
     target: "",
     esExterna: false,
-    esNuevo: Nuevo,
-    foto: AllNewK3Cross,
+    esNuevo: null,
+    foto: K3Cross,
     precio: (
       <>
         <p className="text-sm font-bold py-0.5">

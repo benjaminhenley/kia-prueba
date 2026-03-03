@@ -1,5 +1,5 @@
-import sedanImg from "../assets/img/common/modelos/AllNewK3Sedan.webp";
-import crossImg from "../assets/img/common/modelos/AllNewK3Cross.webp";
+import sedanImg from "../assets/img/common/modelos/k3-sedan.webp";
+import crossImg from "../assets/img/common/modelos/k3-cross.webp";
 import SeltosImg from "../assets/img/common/modelos/Seltos.webp";
 import SportageImg from "../assets/img/common/modelos/Sportage.webp";
 import carnivalImg from "../assets/img/common/modelos/Carnival.webp";
@@ -8,12 +8,12 @@ import k2500Img from "../assets/img/common/modelos/K2500.webp";
 const CAR_MODELS = [
   {
     id: 24,
-    name: "All-new K3 Sedán",
+    name: "K3 Sedán",
     image: sedanImg,
   },
   {
     id: 25,
-    name: "All-new K3 Cross",
+    name: "K3 Cross",
     image: crossImg,
   },
   {

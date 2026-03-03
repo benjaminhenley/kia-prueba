@@ -142,7 +142,6 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
               {/* Decorative border line */}
               <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500"></div>
 
-              {allNew && <h2 className="font-normal mb-1">All-new</h2>}
               <h1 className="font-bold mb-1">{title}</h1>
               <h3 className=" font-normal">{tagline}</h3>
               <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>

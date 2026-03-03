@@ -49,10 +49,10 @@ export const serviceBenefits = [
 ];
 
 const carVariants = [
-  { name: "K3 Cross EX", baseModel: "All-new K3 Cross" },
-  { name: "K3 Cross GT-Line", baseModel: "All-new K3 Cross" },
-  { name: "K3 Sedán EX", baseModel: "All-new K3 Sedán" },
-  { name: "K3 Sedán GT-Line", baseModel: "All-new K3 Sedán" },
+  { name: "K3 Cross EX", baseModel: "K3 Cross" },
+  { name: "K3 Cross GT-Line", baseModel: "K3 Cross" },
+  { name: "K3 Sedán EX", baseModel: "K3 Sedán" },
+  { name: "K3 Sedán GT-Line", baseModel: "K3 Sedán" },
   { name: "Cerato SX", baseModel: "Cerato" },
   { name: "Seltos LX", baseModel: "Seltos" },
   { name: "Sportage EX", baseModel: "Sportage" },

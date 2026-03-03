@@ -1,5 +1,5 @@
-import sedanImg from "../assets/img/common/modelos/AllNewK3Sedan.webp";
-import crossImg from "../assets/img/common/modelos/AllNewK3Cross.webp";
+import sedanImg from "../assets/img/common/modelos/k3-sedan.webp";
+import crossImg from "../assets/img/common/modelos/k3-cross.webp";
 import SeltosImg from "../assets/img/common/modelos/Seltos.webp";
 import SportageImg from "../assets/img/common/modelos/Sportage.webp";
 import carnivalImg from "../assets/img/common/modelos/Carnival.webp";

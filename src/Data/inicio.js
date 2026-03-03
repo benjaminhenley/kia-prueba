@@ -1,7 +1,7 @@
 // Imports fotos Desktop
 import SeltosSantander from "../assets/img/inicio/homeSlider/desktop/Seltos Santander.webp";
-import AllNewK3Cross from "../assets/img/inicio/homeSlider/desktop/All-new K3 Cross.webp";
-import AllNewK3Sedan from "../assets/img/inicio/homeSlider/desktop/All-new K3 Sedan.webp";
+import AllNewK3Cross from "../assets/img/inicio/homeSlider/desktop/k3-cross.webp";
+import AllNewK3Sedan from "../assets/img/inicio/homeSlider/desktop/k3-sedan.webp";
 import Carnival from "../assets/img/inicio/homeSlider/desktop/Carnival.webp";
 import Sportage from "../assets/img/inicio/homeSlider/desktop/Sportage nuevo.webp";
 import Seltos from "../assets/img/inicio/homeSlider/desktop/Seltos.webp";
@@ -11,8 +11,8 @@ import K3Pia from "../assets/img/inicio/homeSlider/desktop/K3 Mejor Auto Regiona
 
 //Imports fotos Mobile
 import SeltosSantanderMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Santander Mobile.webp";
-import AllNewK3CrossMobile from "../assets/img/inicio/homeSlider/mobile/All-new K3 Cross Mobile.webp";
-import AllNewK3SedanMobile from "../assets/img/inicio/homeSlider/mobile/All-new K3 Sedan Mobile.webp";
+import AllNewK3CrossMobile from "../assets/img/inicio/homeSlider/mobile/k3-cross-mobile.webp";
+import AllNewK3SedanMobile from "../assets/img/inicio/homeSlider/mobile/k3-sedan-mobile.webp";
 import CarnivalMobile from "../assets/img/inicio/homeSlider/mobile/Carnival Mobile.webp";
 import SportageMobile from "../assets/img/inicio/homeSlider/mobile/Sportage Mobile.webp";
 import SeltosMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Mobile.webp";
@@ -56,7 +56,7 @@ export const homeSlider = [
   {
     imagen: AllNewK3Cross,
     imagenMobile: AllNewK3CrossMobile,
-    titulo: "All-new K3 Cross",
+    titulo: "K3 Cross",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
     linkBoton: "/k3-cross",
@@ -66,7 +66,7 @@ export const homeSlider = [
   {
     imagen: AllNewK3Sedan,
     imagenMobile: AllNewK3SedanMobile,
-    titulo: "All-new K3 Sedán",
+    titulo: "K3 Sedán",
     subtitulo: "Más allá de lo posible",
     textoBoton: "Conocer más",
     linkBoton: "/k3-sedan",
