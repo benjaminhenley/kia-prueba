@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "WebFetch(domain:www.kia.com.ar)",
+      "WebFetch(domain:kiacleber.com)",
+      "WebFetch(domain:api.figma.com)",
+      "WebFetch(domain:www.kia.com)",
+      "WebFetch(domain:www.kiamedia.com)",
+      "Bash(npm install -g sharp-cli)",
+      "Bash(sharp --help)",
+      "Bash(cmd.exe /c \"type \"\"C:\\\\Users\\\\Notebook 295\\\\.claude\\\\settings.json\"\"\")"
+    ]
+  }
+}

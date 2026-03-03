@@ -1,0 +1,315 @@
+{
+  "id": "k4",
+  "name": "K4",
+  "tagline": "Una nueva forma de avanzar",
+  "heroImage": "imageMapRef:k4.heroImage",
+  "menu": [
+    {
+      "id": "brochures",
+      "title": "Etiqueta de Eficiencia",
+      "link": "imageMapRef:k4.etiqueta",
+      "originalFilename": "Etiqueta K4 Sedan EX_GT"
+    },
+    {
+      "id": "technical-sheet",
+      "title": "Ficha técnica",
+      "link": "imageMapRef:k4.fichas",
+      "originalFilename": "Ficha técnica K4 Sedan EX_GT"
+    }
+  ],
+
+  "heroInfo": [
+    {
+      "iconId": "stars",
+      "title": "Stars",
+      "description": "5 <br/> Estrellas Latin <br/> NCAP",
+      "description_mobile": "5 Estrellas Latin <br/> NCAP"
+    },
+    {
+      "iconId": "airbag",
+      "title": "Airbag",
+      "description": "6 <br/> Airbags",
+      "description_mobile": "6 <br/> Airbags"
+    },
+    {
+      "iconId": "adas",
+      "title": "ADAS",
+      "description": "Asistencias <br/> Avanzadas a <br/> la conducción",
+      "description_mobile": "Asistencias Avanzadas <br/> a la conducción"
+    },
+    {
+      "iconId": "radio",
+      "title": "Radio",
+      "description": "Radio de 12,3\" <br/> con conectividad <br/> inalámbrica",
+      "description_mobile": "Radio de 12,3\" <br/> con conectividad <br/> inalámbrica"
+    },
+    {
+      "iconId": "roof",
+      "title": "Roof",
+      "description": "Techo solar <br/> OneTouch <br/> + Safety",
+      "description_mobile": "Techo solar <br/> OneTouch + Safety"
+    }
+  ],
+
+  "sections": {
+    "characteristics": {
+      "features": [
+        {
+          "id": "motor",
+          "title": "Motor",
+          "value": "2.0 MPI | 1,999cc"
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "value": "150hp | 192Nm"
+        },
+        {
+          "id": "consumption",
+          "title": "Consumo",
+          "value": "XL / XXXkm"
+        },
+        {
+          "id": "warranty",
+          "title": "Garantía",
+          "value": "5 años o 100.000km"
+        }
+      ],
+      "colorPicker": [
+        {
+          "id": "fiery-red",
+          "name": "Fiery Red",
+          "border": "#740000",
+          "color": "#C20000",
+          "outline": "#A50000",
+          "thumbnail": "imageMapRef:k4.colors.fieryRed"
+        },
+        {
+          "id": "azure-blue",
+          "name": "Azure Blue",
+          "border": "#0B293B",
+          "color": "#124463",
+          "outline": "#0F3A54",
+          "thumbnail": "imageMapRef:k4.colors.azureBlue"
+        },
+        {
+          "id": "morning-haze",
+          "name": "Morning Haze",
+          "border": "#474c3d",
+          "color": "#777e66",
+          "outline": "#656b57",
+          "thumbnail": "imageMapRef:k4.colors.morningHaze"
+        },
+        {
+          "id": "black-pearl",
+          "name": "Aurora Black Pearl",
+          "border": "#24313b",
+          "color": "#1B171B",
+          "outline": "#05141F",
+          "thumbnail": "imageMapRef:k4.colors.blackPearl"
+        },
+        {
+          "id": "interstellar-gray",
+          "name": "Interstellar Gray",
+          "border": "#232323",
+          "color": "#474646",
+          "outline": "#393838",
+          "thumbnail": "imageMapRef:k4.colors.interstellarGray"
+        },
+        {
+          "id": "steel-gray",
+          "name": "Steel Gray",
+          "border": "#4c4c4c",
+          "color": "#7e7e7e",
+          "outline": "#6b6b6b",
+          "thumbnail": "imageMapRef:k4.colors.steelGray"
+        },
+        {
+          "id": "snow-white-pearl",
+          "name": "Snow White Pearl",
+          "border": "#d6d6d6",
+          "color": "#f6f6f6",
+          "outline": "#efeefe",
+          "thumbnail": "imageMapRef:k4.colors.snowWhitePearl"
+        }
+      ],
+      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/k4/lhd/index.html",
+      "atributes": {
+        "category": "Atributos",
+        "title": "K4",
+        "subtitle": "Evolución y carácter en cada detalle",
+        "image": "imageMapRef:k4.attributes",
+        "bulletPoints": [
+          "**Diseño que marca el camino:** Con una silueta aerodinámica y sofisticada, iluminación LED distintiva y una presencia que impone desde cualquier ángulo, el Kia K4 redefine el estilo dentro del segmento. Cada línea fue pensada para destacar tanto en la ciudad como en la ruta.",
+          "**Seguridad que inspira confianza:** Equipado con sistemas avanzados de asistencia a la conducción (ADAS), el K4 integra tecnologías que acompañan cada trayecto, brindando mayor control, protección y tranquilidad en cada movimiento.",
+          "**Tecnología que simplifica tu experiencia:** Pantalla panorámica digital, conectividad inalámbrica con Apple CarPlay™ y Android Auto™, cargador inalámbrico y una interfaz intuitiva que integran innovación y confort en un entorno pensado para vos."
+        ],
+        "description": "El nuevo Kia K4 combina diseño audaz, tecnología inteligente y una experiencia de manejo superior para ofrecer una nueva forma de avanzar. Un sedán que evoluciona con vos y transforma cada recorrido en algo más."
+      },
+      "exterior": {
+        "galleryType": "1",
+        "category": "Exterior",
+        "title": "Presencia sofisticada y diseño que evoluciona",
+        "description": "Con una silueta aerodinámica, proporciones equilibradas y una identidad visual distintiva, el nuevo Kia K4 Sedán combina elegancia contemporánea con carácter deportivo. Cada detalle de su diseño exterior fue concebido para proyectar confianza y modernidad, destacándose en cada recorrido.",
+        "images": [
+          {
+            "id": "k4-exterior-lights",
+            "src": "imageMapRef:k4.exterior.lights",
+            "alt": "Luces delanteras",
+            "title": "Firma luminosa que define carácter",
+            "description": "Los faros LED delanteros con DRL de firma ámbar crean una identidad visual única e inconfundible. Una iluminación que no solo mejora la visibilidad, sino que proyecta una personalidad audaz y moderna desde el primer vistazo."
+          },
+          {
+            "id": "k4-exterior-grille",
+            "src": "imageMapRef:k4.exterior.grille",
+            "alt": "Grille frontal",
+            "title": "Una presencia que no pasa desapercibida",
+            "description": "El frente del K4 impone con su diseño limpio y estructurado. La parrilla integrada y el bumper deportivo conforman una expresión frontal que combina fuerza, modernidad y elegancia en perfecta armonía."
+          },
+          {
+            "id": "k4-exterior-backlights",
+            "src": "imageMapRef:k4.exterior.backlights",
+            "alt": "Luces traseras",
+            "title": "Elegancia que se recuerda al partir",
+            "description": "Las luces traseras LED conectadas de extremo a extremo definen una firma luminosa trasera de alto impacto visual. Una expresión de diseño moderna que convierte al K4 en protagonista en cualquier escenario."
+          },
+          {
+            "id": "k4-exterior-side",
+            "src": "imageMapRef:k4.exterior.side",
+            "alt": "Perfil lateral",
+            "title": "Silueta que comunica dinamismo",
+            "description": "El perfil fastback del K4 combina una línea de techo descendente con proporciones musculosas y una caída de techo que aporta deportividad y un coeficiente aerodinámico optimizado para mayor eficiencia."
+          },
+          {
+            "id": "k4-exterior-front",
+            "src": "imageMapRef:k4.exterior.front",
+            "alt": "Vista frontal 3/4",
+            "title": "Proporciones pensadas para destacar",
+            "description": "La vista 3/4 frontal revela la perfección de sus proporciones: guardabarros amplios, techo tipo fastback y detalles de diseño que fluyen con armonía desde el frente hasta la zaga, creando una silueta de alto nivel."
+          }
+        ]
+      },
+      "interior": {
+        "galleryType": "1",
+        "category": "Interior",
+        "title": "Confort, innovación y seguridad en armonía",
+        "description": "Cada trayecto en el Kia K4 está pensado para disfrutarse con el máximo confort y tecnología intuitiva. Su pantalla panorámica digital, la conectividad inalámbrica y los sistemas avanzados de asistencia a la conducción crean una experiencia más segura y envolvente, respaldada por la máxima calificación de 5 estrellas en Latin NCAP.",
+        "images": [
+          {
+            "id": "k4-interior-panel",
+            "src": "imageMapRef:k4.interior.panel",
+            "alt": "Panel e infotainment",
+            "title": "Tecnología que te envuelve en 30 pulgadas",
+            "description": "La pantalla panorámica de 30\" integra un triple display: 12.3\" de instrumentación digital, 5\" de climatización y 12.3\" de infotainment. Una interfaz envolvente con gráficos avanzados, respuesta inmediata y conectividad inalámbrica para Android Auto™ y Apple CarPlay™."
+          },
+          {
+            "id": "k4-interior-gearbox",
+            "src": "imageMapRef:k4.interior.gearbox",
+            "alt": "Consola central y cargador",
+            "title": "Conectado, sin cables, sin límites",
+            "description": "La consola central integra un cargador inalámbrico de alta velocidad junto al botón de arranque y la transmisión automática. Todo al alcance de tu mano para que la tecnología sea una extensión natural de tu conducción."
+          },
+          {
+            "id": "k4-interior-rooftop",
+            "src": "imageMapRef:k4.interior.rooftop",
+            "alt": "Techo solar y asientos",
+            "title": "Luz y confort: una combinación perfecta",
+            "description": "El techo solar panorámico OneTouch inunda el habitáculo de luz natural, amplificando la sensación de espacio. Los asientos GT-Line con tapizados bi-tono ofrecen el soporte y el confort que cada viaje merece."
+          },
+          {
+            "id": "k4-interior-seats",
+            "src": "imageMapRef:k4.interior.seats",
+            "alt": "Habitáculo completo",
+            "title": "Espacio clase líder en cada centímetro",
+            "description": "El K4 ofrece el mayor espacio para piernas en la segunda fila de su categoría. Un habitáculo amplio y envolvente donde el diseño, los materiales y la ergonomía se combinan para crear el ambiente perfecto para cada pasajero."
+          },
+          {
+            "id": "k4-interior-rear",
+            "src": "imageMapRef:k4.interior.rear",
+            "alt": "Asientos traseros",
+            "title": "Segunda fila: donde el espacio es protagonista",
+            "description": "Con un espacio para piernas clase líder de 965 mm, los pasajeros traseros disfrutan de un nivel de comodidad excepcional. Los tapizados bi-tono GT-Line y el espacio interior generoso convierten cada viaje en un momento de verdadero placer."
+          }
+        ]
+      }
+    },
+    "specifications": {
+      "carouselImages": [
+        {
+          "id": 1,
+          "src": {
+            "mobile": "imageMapRef:k4.carousel.front.mobile",
+            "desktop": "imageMapRef:k4.carousel.front.desktop"
+          },
+          "alt": "K4 Frente"
+        },
+        {
+          "id": 2,
+          "src": {
+            "mobile": "imageMapRef:k4.carousel.back.mobile",
+            "desktop": "imageMapRef:k4.carousel.back.desktop"
+          },
+          "alt": "K4 Trasera"
+        },
+        {
+          "id": 3,
+          "src": {
+            "mobile": "imageMapRef:k4.carousel.side.mobile",
+            "desktop": "imageMapRef:k4.carousel.side.desktop"
+          },
+          "alt": "K4 Lateral"
+        }
+      ],
+      "features": [
+        {
+          "id": "frontlights",
+          "title": "Faros delanteros LED",
+          "value": "Faros LED con <br/> firma ámbar DRL"
+        },
+        {
+          "id": "smartkey",
+          "title": "Smart Key",
+          "value": "Smart Key + <br/> Digital Key 2.0"
+        },
+        {
+          "id": "wheels",
+          "title": "Aleación",
+          "value": "Llantas de aleación <br/> 18\""
+        },
+        {
+          "id": "battery",
+          "title": "Cargador",
+          "value": "Cargador <br/> inalámbrico"
+        },
+        {
+          "id": "upholstery",
+          "title": "Tapizado",
+          "value": "Tapizados Bi-Tono <br/> GT-Line"
+        }
+      ],
+      "dimensions": {
+        "title": "Dimensiones (mm)",
+        "details": [
+          {
+            "name": "EXTERIOR largo / ancho / alto",
+            "value": "4.709 / 1.849 / 1.440"
+          },
+          { "name": "Distancia entre ejes", "value": "2.750" },
+          { "name": "Distancia del suelo", "value": "155" },
+          {
+            "name": "Capacidad de baúl",
+            "value": "413 VDA Lts"
+          },
+          { "name": "Peso Neto", "value": "1.380 Kg" },
+          { "name": "Plazas", "value": "5" },
+          { "name": "Medida de neumáticos", "value": "205 / 55R17" },
+          { "name": "Auxilio", "value": "Acero temporal" }
+        ]
+      },
+      "cta": {
+        "name": "Quiero mi K4",
+        "to": "https://www.kia.com.ar/kia-k4/"
+      }
+    }
+  }
+}

@@ -48,9 +48,9 @@ export const redes = [
 export const autos = [
   {
     nombre: "Nuevo K4 Sedán",
-    href: "https://www.kia.com.ar/kia-k4/",
-    target: "_blank",
-    esExterna: true,
+    href: "/k4",
+    target: "",
+    esExterna: false,
     esNuevo: Nuevo,
     foto: K4Sedan,
     precio: (
