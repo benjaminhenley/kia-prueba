@@ -65,7 +65,7 @@ const HomeSlider = () => {
     eventoDL_hero(
       "hero_banner_click",
       slide.titulo || "kia slide",
-      slide.linkBoton || "#"
+      slide.linkBoton || "#",
     );
 
     // Redirigimos después de un pequeño retraso para asegurar que el dataLayer se registre
@@ -84,12 +84,12 @@ const HomeSlider = () => {
     eventoDL_hero(
       "hero_banner_click",
       slide.titulo || "kia slide",
-      slide.linkBoton || "#"
+      slide.linkBoton || "#",
     );
   };
 
   return (
-    <div className="relative w-full h-[calc(100dvh-1rem)] overflow-hidden">
+    <div className="relative w-full h-[100vh] overflow-hidden">
       {/* Contenedor de imagen para móvil con proporción definida */}
       <div className="relative w-full h-full">
         {/* Imagen Mobile - Ahora con 100vh */}
@@ -147,12 +147,12 @@ const HomeSlider = () => {
           )}
 
           {/* Indicatores Dots */}
-          <div className="flex space-x-2 md:space-x-3 mb-4 md:mb-6">
+          <div className="flex gap-2 md:gap-3 mb-4 md:mb-6 w-full px-5">
             {homeSlider.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-8 sm:w-10 h-[4px] transition-all duration-300 ease-in-out ${
+                className={`flex-1 h-[4px] transition-all duration-300 ease-in-out ${
                   index === currentSlide ? "bg-white" : "bg-white bg-opacity-50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}></button>

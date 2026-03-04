@@ -8,6 +8,7 @@ import Seltos from "../assets/img/inicio/homeSlider/desktop/Seltos.webp";
 import K2500 from "../assets/img/inicio/homeSlider/desktop/K2500.webp";
 import K3TasaUVA from "../assets/img/inicio/homeSlider/desktop/k3-tasa-uva.webp";
 import K3Pia from "../assets/img/inicio/homeSlider/desktop/K3 Mejor Auto Regional.webp";
+import K4Sedan from "../assets/img/inicio/homeSlider/desktop/K4-desktop.webp";
 
 //Imports fotos Mobile
 import SeltosSantanderMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Santander Mobile.webp";
@@ -19,9 +20,20 @@ import SeltosMobile from "../assets/img/inicio/homeSlider/mobile/Seltos Mobile.w
 import K2500Mobile from "../assets/img/inicio/homeSlider/mobile/K2500 Mobile.webp";
 import K3TasaUVAMobile from "../assets/img/inicio/homeSlider/mobile/k3-tasa-uva Mobile.webp";
 import K3PiaMobile from "../assets/img/inicio/homeSlider/mobile/K3 Mejor Auto Regional.webp";
+import K4SedanMobile from "../assets/img/inicio/homeSlider/mobile/K4-mobile.webp";
 
 // Este archivo contiene los datos para el slider del home
 export const homeSlider = [
+  {
+    imagen: K4Sedan,
+    imagenMobile: K4SedanMobile,
+    titulo: "K4 Sedán",
+    subtitulo: "Una nueva forma de avanzar",
+    textoBoton: "Quiero mi K4",
+    linkBoton: "https://www.kia.com.ar/kia-k4-reserva/",
+    target: "_blank",
+    esExterna: false,
+  },
   {
     imagen: K3Pia,
     imagenMobile: K3PiaMobile,
