@@ -133,7 +133,6 @@
           "thumbnail": "imageMapRef:k4.colors.snowWhitePearl"
         }
       ],
-      "vr": "https://worldwide.kia.com/int/vr-showroom/csa/k4/lhd/index.html",
       "atributes": {
         "category": "Atributos",
         "title": "K4",
@@ -153,39 +152,39 @@
         "description": "Con una silueta aerodinámica, proporciones equilibradas y una identidad visual distintiva, el nuevo Kia K4 Sedán combina elegancia contemporánea con carácter deportivo. Cada detalle de su diseño exterior fue concebido para proyectar confianza y modernidad, destacándose en cada recorrido.",
         "images": [
           {
-            "id": "k4-exterior-lights",
-            "src": "imageMapRef:k4.exterior.lights",
-            "alt": "Luces delanteras",
-            "title": "Firma luminosa que define carácter",
-            "description": "Los faros LED delanteros con DRL de firma ámbar crean una identidad visual única e inconfundible. Una iluminación que no solo mejora la visibilidad, sino que proyecta una personalidad audaz y moderna desde el primer vistazo."
+            "id": "k4-exterior-1",
+            "src": "imageMapRef:k4.exterior.image1",
+            "alt": "Diseño exterior",
+            "title": "Diseño que redefine lo compacto",
+            "description": "Concebido para establecer un nuevo estándar para los autos compactos, el diseño de la carrocería es un reflejo del enfoque disruptivo del Kia K4, con formas modernas y elegantes que logran un perfil deportivo, elevando la experiencia de manejo."
           },
           {
-            "id": "k4-exterior-grille",
-            "src": "imageMapRef:k4.exterior.grille",
-            "alt": "Grille frontal",
-            "title": "Una presencia que no pasa desapercibida",
-            "description": "El frente del K4 impone con su diseño limpio y estructurado. La parrilla integrada y el bumper deportivo conforman una expresión frontal que combina fuerza, modernidad y elegancia en perfecta armonía."
+            "id": "k4-exterior-2",
+            "src": "imageMapRef:k4.exterior.image2",
+            "alt": "Faros traseros",
+            "title": "Faros que consolidan su presencia",
+            "description": "Las luces verticales situadas en los extremos del vehículo se integran con el resto del diseño para proyectar fuerza y dinamismo."
           },
           {
-            "id": "k4-exterior-backlights",
-            "src": "imageMapRef:k4.exterior.backlights",
-            "alt": "Luces traseras",
-            "title": "Elegancia que se recuerda al partir",
-            "description": "Las luces traseras LED conectadas de extremo a extremo definen una firma luminosa trasera de alto impacto visual. Una expresión de diseño moderna que convierte al K4 en protagonista en cualquier escenario."
+            "id": "k4-exterior-3",
+            "src": "imageMapRef:k4.exterior.image3",
+            "alt": "Llantas",
+            "title": "Llantas que refuerzan su carácter",
+            "description": "Todos los detalles son fundamentales cuando se trata de alcanzar lo extraordinario. Las llantas de aluminio de 18\" bitono acentúan el aspecto deportivo de Kia K4, además de lucir poderosas y espectaculares."
           },
           {
-            "id": "k4-exterior-side",
-            "src": "imageMapRef:k4.exterior.side",
+            "id": "k4-exterior-4",
+            "src": "imageMapRef:k4.exterior.image4",
             "alt": "Perfil lateral",
-            "title": "Silueta que comunica dinamismo",
-            "description": "El perfil fastback del K4 combina una línea de techo descendente con proporciones musculosas y una caída de techo que aporta deportividad y un coeficiente aerodinámico optimizado para mayor eficiencia."
+            "title": "Una silueta que marca el camino",
+            "description": "Su perfil dinámico y proporciones equilibradas reflejan una nueva forma de entender el diseño. El Kia K4 no solo se mueve con decisión, también transmite seguridad y sofisticación en cada trayecto."
           },
           {
-            "id": "k4-exterior-front",
-            "src": "imageMapRef:k4.exterior.front",
-            "alt": "Vista frontal 3/4",
-            "title": "Proporciones pensadas para destacar",
-            "description": "La vista 3/4 frontal revela la perfección de sus proporciones: guardabarros amplios, techo tipo fastback y detalles de diseño que fluyen con armonía desde el frente hasta la zaga, creando una silueta de alto nivel."
+            "id": "k4-exterior-5",
+            "src": "imageMapRef:k4.exterior.image5",
+            "alt": "Baúl integrado",
+            "title": "Un diseño que rompe esquemas",
+            "description": "El baúl integrado redefine la proporción clásica del sedán, generando una línea más estilizada y aerodinámica. Cada detalle está pensado para ofrecer un diseño que no solo se ve diferente, sino que se siente más avanzado."
           }
         ]
       },
@@ -196,39 +195,39 @@
         "description": "Cada trayecto en el Kia K4 está pensado para disfrutarse con el máximo confort y tecnología intuitiva. Su pantalla panorámica digital, la conectividad inalámbrica y los sistemas avanzados de asistencia a la conducción crean una experiencia más segura y envolvente, respaldada por la máxima calificación de 5 estrellas en Latin NCAP.",
         "images": [
           {
-            "id": "k4-interior-panel",
-            "src": "imageMapRef:k4.interior.panel",
-            "alt": "Panel e infotainment",
-            "title": "Tecnología que te envuelve en 30 pulgadas",
-            "description": "La pantalla panorámica de 30\" integra un triple display: 12.3\" de instrumentación digital, 5\" de climatización y 12.3\" de infotainment. Una interfaz envolvente con gráficos avanzados, respuesta inmediata y conectividad inalámbrica para Android Auto™ y Apple CarPlay™."
+            "id": "k4-interior-1",
+            "src": "imageMapRef:k4.interior.image1",
+            "alt": "Interior cabina",
+            "title": "Diseñado para envolverte",
+            "description": "El carácter único del interior del Kia K4 se centra tanto en la sensación envolvente de la cabina, como en sus atributos funcionales y prácticos, combinando elementos técnicos pensados para el conductor con elementos de confort diseñados para el pasajero. Un equilibrio ideal entre lo racional y lo emocional."
           },
           {
-            "id": "k4-interior-gearbox",
-            "src": "imageMapRef:k4.interior.gearbox",
-            "alt": "Consola central y cargador",
-            "title": "Conectado, sin cables, sin límites",
-            "description": "La consola central integra un cargador inalámbrico de alta velocidad junto al botón de arranque y la transmisión automática. Todo al alcance de tu mano para que la tecnología sea una extensión natural de tu conducción."
+            "id": "k4-interior-2",
+            "src": "imageMapRef:k4.interior.image2",
+            "alt": "Consola central",
+            "title": "Control al alcance de tu mano",
+            "description": "La consola central combina diseño y funcionalidad en un espacio pensado para el conductor. Cada elemento está ubicado estratégicamente para ofrecer comodidad, control y una experiencia de manejo más intuitiva."
           },
           {
-            "id": "k4-interior-rooftop",
-            "src": "imageMapRef:k4.interior.rooftop",
-            "alt": "Techo solar y asientos",
-            "title": "Luz y confort: una combinación perfecta",
-            "description": "El techo solar panorámico OneTouch inunda el habitáculo de luz natural, amplificando la sensación de espacio. Los asientos GT-Line con tapizados bi-tono ofrecen el soporte y el confort que cada viaje merece."
+            "id": "k4-interior-3",
+            "src": "imageMapRef:k4.interior.image3",
+            "alt": "Asientos interiores",
+            "title": "Espacio pensado para disfrutar",
+            "description": "El interior del Kia K4 es una invitación a la comodidad. El amplio espacio interior es sorprendente, con vestiduras en piel bitono con insertos GT-Line que son el complemento perfecto para su esencia deportiva."
           },
           {
-            "id": "k4-interior-seats",
-            "src": "imageMapRef:k4.interior.seats",
-            "alt": "Habitáculo completo",
-            "title": "Espacio clase líder en cada centímetro",
-            "description": "El K4 ofrece el mayor espacio para piernas en la segunda fila de su categoría. Un habitáculo amplio y envolvente donde el diseño, los materiales y la ergonomía se combinan para crear el ambiente perfecto para cada pasajero."
+            "id": "k4-interior-4",
+            "src": "imageMapRef:k4.interior.image4",
+            "alt": "Pantalla multimedia",
+            "title": "Tecnología que simplifica cada viaje",
+            "description": "La doble pantalla proporciona al conductor información de manera eficiente y segura. La pantalla táctil multimedia ofrece conectividad inalámbrica para Android Auto™ y Apple CarPlay™, asegurando una experiencia integrada y sin complicaciones."
           },
           {
-            "id": "k4-interior-rear",
-            "src": "imageMapRef:k4.interior.rear",
-            "alt": "Asientos traseros",
-            "title": "Segunda fila: donde el espacio es protagonista",
-            "description": "Con un espacio para piernas clase líder de 965 mm, los pasajeros traseros disfrutan de un nivel de comodidad excepcional. Los tapizados bi-tono GT-Line y el espacio interior generoso convierten cada viaje en un momento de verdadero placer."
+            "id": "k4-interior-5",
+            "src": "imageMapRef:k4.interior.image5",
+            "alt": "Paletas al volante",
+            "title": "Dominá cada cambio",
+            "description": "Las paletas al volante te permiten tomar el control de cada marcha con precisión y rapidez, sin quitar las manos del volante. Una experiencia más dinámica que potencia el placer de conducción en cada recorrido."
           }
         ]
       }
@@ -264,17 +263,17 @@
         {
           "id": "frontlights",
           "title": "Faros delanteros LED",
-          "value": "Faros LED con <br/> firma ámbar DRL"
+          "value": "Faros LED + delanteros <br/> con Cornering Light"
         },
         {
           "id": "smartkey",
           "title": "Smart Key",
-          "value": "Smart Key + <br/> Digital Key 2.0"
+          "value": "Smart Key + <br/> Botón de arranque"
         },
         {
           "id": "wheels",
           "title": "Aleación",
-          "value": "Llantas de aleación <br/> 18\""
+          "value": "Llantas de aleación <br/> 17\" y 18\""
         },
         {
           "id": "battery",
@@ -292,18 +291,24 @@
         "details": [
           {
             "name": "EXTERIOR largo / ancho / alto",
-            "value": "4.709 / 1.849 / 1.440"
+            "value": "4.710 / 1.850 / 1.435"
           },
-          { "name": "Distancia entre ejes", "value": "2.750" },
-          { "name": "Distancia del suelo", "value": "155" },
+          { "name": "Distancia entre ejes", "value": "2.720" },
+          { "name": "Distancia del suelo", "value": "150" },
           {
-            "name": "Capacidad de baúl",
-            "value": "413 VDA Lts"
+            "name": "Capacidad de baúl (2° Fila/ 1° Fila)",
+            "value": "508 VDA Lts"
           },
-          { "name": "Peso Neto", "value": "1.380 Kg" },
+          { "name": "Peso Neto", "value": "1.394 Kg" },
           { "name": "Plazas", "value": "5" },
-          { "name": "Medida de neumáticos", "value": "205 / 55R17" },
-          { "name": "Auxilio", "value": "Acero temporal" }
+          {
+            "name": "Medida de neumáticos",
+            "value": "EX 225/45 R17 | GT-Line 235/40 R18"
+          },
+          {
+            "name": "Auxilio",
+            "value": "EX Homogéneo (aleación) | GT-Line Temporal (acero)"
+          }
         ]
       },
       "cta": {

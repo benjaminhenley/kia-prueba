@@ -2,34 +2,28 @@ import React, { useState, useRef, useEffect } from "react";
 import { getHeroIcon } from "../Common/Icons/HeroIcons";
 import renderWithLineBreaks from "../../Data/mappers/renderWithLineBreaks";
 
+const IMAGE_EXT = /\.(jpg|jpeg|png|webp|gif|svg)$/i;
+const MOBILE_BREAKPOINT_QUERY = "(max-width: 767px)";
+
 const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
-  const [isImage, setIsImage] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    window.matchMedia(MOBILE_BREAKPOINT_QUERY).matches,
+  );
   const videoRef = useRef(null);
-  const isMobile = useRef(window.innerWidth < 768);
+  // Get current source based on device
+  const currentSrc = isMobile ? videoSrc?.mobile : videoSrc?.desktop;
 
-  // Determine if the media is an image based on the file extension
-  useEffect(() => {
-    if (videoSrc) {
-      const desktopFile = videoSrc.desktop || "";
-      const mobileFile = videoSrc.mobile || "";
+  // Compute synchronously so the video element is never mounted for image sources
+  const isImage = videoSrc
+    ? IMAGE_EXT.test(
+        isMobile ? videoSrc.mobile || "" : videoSrc.desktop || "",
+      )
+    : false;
 
-      const isDesktopImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(
-        desktopFile
-      );
-      const isMobileImage = /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(mobileFile);
-
-      // Set as image if both sources are images, or if the current device's source is an image
-      setIsImage(
-        (isDesktopImage && isMobileImage) ||
-          (isMobile.current ? isMobileImage : isDesktopImage)
-      );
-    }
-  }, [videoSrc]);
-
-  // Reset video state when videoSrc changes (user selects different car)
+  // Reset video state when source changes (car selection or mobile/desktop swap)
   useEffect(() => {
     if (videoRef.current && !isImage) {
       // Stop any current playback
@@ -43,7 +37,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
       // Force the video element to reload
       videoRef.current.load();
     }
-  }, [videoSrc, isImage]);
+  }, [currentSrc, isImage]);
 
   // Auto-play video when loaded (both mobile and desktop)
   useEffect(() => {
@@ -63,14 +57,21 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
     }
   }, [isVideoLoaded, isImage]);
 
-  // Set up listener for window resize to detect mobile/desktop
+  // React to breakpoint changes so source switches without full page reload.
   useEffect(() => {
-    const handleResize = () => {
-      isMobile.current = window.innerWidth < 768;
-    };
+    const mobileMediaQuery = window.matchMedia(MOBILE_BREAKPOINT_QUERY);
+    const handleBreakpointChange = (event) => setIsMobile(event.matches);
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setIsMobile(mobileMediaQuery.matches);
+
+    if (mobileMediaQuery.addEventListener) {
+      mobileMediaQuery.addEventListener("change", handleBreakpointChange);
+      return () =>
+        mobileMediaQuery.removeEventListener("change", handleBreakpointChange);
+    }
+
+    mobileMediaQuery.addListener(handleBreakpointChange);
+    return () => mobileMediaQuery.removeListener(handleBreakpointChange);
   }, []);
 
   const handleVideoLoaded = () => {
@@ -95,11 +96,9 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
   const showVideo = videoSrc && !hasVideoError && !isImage;
   // Determine if we should show the image element
   const showImage = videoSrc && isImage;
-  // Get current source based on device
-  const currentSrc = isMobile.current ? videoSrc?.mobile : videoSrc?.desktop;
 
   return (
-    <div className="relative w-full h-[calc(100vh-55px)] md:h-[calc(100vh-20px)] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 w-full h-full bg-black">
         {/* Image element - only rendered if source is an image */}
@@ -121,7 +120,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
               playsInline
               loop
               preload="auto"
-              key={videoSrc.desktop + videoSrc.mobile}
+              key={currentSrc}
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}>
               {/* Proporciona múltiples formatos de fuente para mejor compatibilidad */}
@@ -134,14 +133,20 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
       </div>
 
       {/* Text Overlay - No dark background on mobile */}
-      <div className="mt-[56px] pb-[56px] md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
+      <div className=" md:pb-0 h-full md:h-auto absolute md:bg-black md:bg-opacity-50 top-0 md:top-auto bottom-0 left-0 right-0 flex text-white mx-auto z-10 pointer-events-none">
         <div className=" mx-auto w-full md:py-[30px]">
-          <div className="relative flex flex-col justify-between items-center flex-wrap md:flex-row h-full pointer-events-auto md:px-16">
+          <div className="pt-[140px] md:pt-0 relative flex flex-col justify-between items-center flex-wrap md:flex-row h-full pointer-events-auto md:px-16">
             {/* Title section - No overlay on mobile */}
             <div className="flex flex-col relative mt-5 md:mt-0 pl-4 flex-shrink-0 w-full md:w-fit">
               {/* Decorative border line */}
-              <div className="hidden md:block absolute left-0 h-10 md:h-[66px] w-[1px] bg-gray-500"></div>
+              <div
+                className={`hidden md:block absolute left-0 w-[1px] bg-gray-500 ${allNew ? "h-[90px]" : "h-10 md:h-[66px]"}`}></div>
 
+              {allNew && (
+                <span className="font-light text-2xl md:text-3xl leading-tight">
+                  Nuevo
+                </span>
+              )}
               <h1 className="font-bold mb-1">{title}</h1>
               <h3 className=" font-normal">{tagline}</h3>
               <div className="md:hidden h-[1px] md:h-20 w-7 mt-1 bg-white  md:mx-16"></div>
@@ -163,7 +168,7 @@ const ModelHero = ({ title, tagline, videoSrc, heroInfo, allNew = false }) => {
                     <h6 className="md:hidden mt-1 whitespace-pre-line font-normal text-nowrap">
                       {(item.description_mobile || item.description).replace(
                         /<br\/>/g,
-                        "\n"
+                        "\n",
                       )}
                     </h6>
                     <h6 className="hidden md:block mt-1 font-normal text-center min-w-[80px] text-pretty">

@@ -53,7 +53,7 @@ const GalleryLayoutOne = ({ content, onImageClick, bgColor }) => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 overflow-hidden">
+              <div className={`grid overflow-hidden ${content.images[4] ? "grid-cols-2" : "grid-cols-1"}`}>
                 <div className="overflow-hidden">
                   <img
                     src={content.images[3].src.desktop}
@@ -62,14 +62,16 @@ const GalleryLayoutOne = ({ content, onImageClick, bgColor }) => {
                     onClick={() => onImageClick(content.images[3])}
                   />
                 </div>
-                <div className="overflow-hidden">
-                  <img
-                    src={content.images[4].src.desktop}
-                    alt={content.images[4].alt}
-                    className="w-full h-full object-cover cursor-pointer"
-                    onClick={() => onImageClick(content.images[4])}
-                  />
-                </div>
+                {content.images[4] && (
+                  <div className="overflow-hidden">
+                    <img
+                      src={content.images[4].src.desktop}
+                      alt={content.images[4].alt}
+                      className="w-full h-full object-cover cursor-pointer"
+                      onClick={() => onImageClick(content.images[4])}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

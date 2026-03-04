@@ -9,7 +9,15 @@
       "Bash(ffmpeg -i k4-sedan.webp -vf \"scale=304:-1,crop=304:88:0:\\(ih-88\\)/2\" -y k4-sedan.webp)",
       "Bash(ffmpeg -i k4-sedan.webp -vf \"scale=304:-1,crop=304:88:0:\\(ih-88\\)/2\" k4-sedan-tmp.webp)",
       "Bash(curl -s -H \"X-Figma-Token: figd_UwEN7zJYlvX8tkNp_6cBGasBobkqLZMdrMPUNwkt\" \"https://api.figma.com/v1/files/8spiqK6lfu5bvfuYDhkI8f/nodes?ids=4625:56258\")",
-      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); nodes=data.get\\(''nodes'',{}\\); [print\\(json.dumps\\(v, indent=2\\)\\) for v in list\\(nodes.values\\(\\)\\)[:1]]\")"
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); nodes=data.get\\(''nodes'',{}\\); [print\\(json.dumps\\(v, indent=2\\)\\) for v in list\\(nodes.values\\(\\)\\)[:1]]\")",
+      "Bash(cat ~/.claude/mcp*.json)",
+      "Bash(ls ~/.claude/*.json)",
+      "Bash(cat ~/.config/claude/mcp*.json)",
+      "Bash(claude mcp list)",
+      "mcp__figma__get_design_context"
+    ],
+    "additionalDirectories": [
+      "/Users/benjaminhenley"
     ]
   }
 }

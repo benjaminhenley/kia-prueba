@@ -13,7 +13,7 @@ const Layout = () => {
   return (
     <div className="layout">
       <Navbar />
-      <div className="mt-[-3.5rem] md:mt-[-4.75rem] w-full font-kia text-[#04141f]">
+      <div className="mt-[-116px] w-full font-kia text-[#04141f]">
         <Outlet />
       </div>
       <Footer />

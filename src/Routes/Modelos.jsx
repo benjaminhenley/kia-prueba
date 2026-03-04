@@ -30,7 +30,7 @@ const Modelos = () => {
     return <Navigate to="/" replace />;
   }
 
-  const isK3 = model.id.startsWith("k3");
+  const isNew = model.id.startsWith("k3") || model.id === "k4";
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -41,10 +41,10 @@ const Modelos = () => {
     <div className="w-full relative ">
       {/* Hero Section with Video/Image */}
       <Hero
-        allNew={isK3}
+        allNew={isNew}
         title={model.name}
         tagline={model.tagline}
-        videoSrc={model.heroVideo}
+        videoSrc={model.heroVideo || model.heroImage}
         heroInfo={model.heroInfo}
       />
 

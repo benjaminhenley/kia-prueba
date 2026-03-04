@@ -1,4 +1,4 @@
-// K4 carousel images
+// K4 carousel images (360 visualizer)
 import k4FrontDesktop from "../../../assets/img/models/k4/carousel/k4-front-desktop.webp";
 import k4FrontMobile from "../../../assets/img/models/k4/carousel/k4-front-mobile.webp";
 import k4BackDesktop from "../../../assets/img/models/k4/carousel/k4-back-desktop.webp";
@@ -6,26 +6,33 @@ import k4BackMobile from "../../../assets/img/models/k4/carousel/k4-back-mobile.
 import k4SideDesktop from "../../../assets/img/models/k4/carousel/k4-side-desktop.webp";
 import k4SideMobile from "../../../assets/img/models/k4/carousel/k4-side-mobile.webp";
 // K4 exterior images
-import k4ExteriorLights from "../../../assets/img/models/k4/exterior/k4-exterior-lights.webp";
-import k4ExteriorGrille from "../../../assets/img/models/k4/exterior/k4-exterior-grille.webp";
-import k4ExteriorBacklights from "../../../assets/img/models/k4/exterior/k4-exterior-backlights.webp";
-import k4ExteriorSide from "../../../assets/img/models/k4/exterior/k4-exterior-side.webp";
-import k4ExteriorFront from "../../../assets/img/models/k4/exterior/k4-exterior-front.webp";
+import k4Exterior1 from "../../../assets/img/models/k4/exterior/k4-exterior-1.webp";
+import k4Exterior2 from "../../../assets/img/models/k4/exterior/k4-exterior-2.webp";
+import k4Exterior3 from "../../../assets/img/models/k4/exterior/k4-exterior-3.webp";
+import k4Exterior4 from "../../../assets/img/models/k4/exterior/k4-exterior-4.webp";
+import k4Exterior5 from "../../../assets/img/models/k4/exterior/k4-exterior-5.webp";
 // K4 interior images
-import k4InteriorPanel from "../../../assets/img/models/k4/interior/k4-interior-panel.webp";
-import k4InteriorGearbox from "../../../assets/img/models/k4/interior/k4-interior-gearbox.webp";
-import k4InteriorRooftop from "../../../assets/img/models/k4/interior/k4-interior-rooftop.webp";
-import k4InteriorSeats from "../../../assets/img/models/k4/interior/k4-interior-seats.webp";
-import k4InteriorRear from "../../../assets/img/models/k4/interior/k4-interior-rear.webp";
+import k4Interior1 from "../../../assets/img/models/k4/interior/k4-interior-1.webp";
+import k4Interior2 from "../../../assets/img/models/k4/interior/k4-interior-2.webp";
+import k4Interior3 from "../../../assets/img/models/k4/interior/k4-interior-3.webp";
+import k4Interior4 from "../../../assets/img/models/k4/interior/k4-interior-4.webp";
+import k4Interior5 from "../../../assets/img/models/k4/interior/k4-interior-5.webp";
 // K4 attributes
-import k4AtributesDesktop from "../../../assets/img/models/k4/atributes/k4-atributes-desktop.webp";
-import k4AtributesMobile from "../../../assets/img/models/k4/atributes/k4-atributes-mobile.webp";
-// K4 hero image  
-import k4HeroImage from "../../../assets/img/models/k4/hero/k4-hero-desktop.webp";
-import k4HeroImageMobile from "../../../assets/img/models/k4/hero/k4-hero-desktop.webp";
+import k4AtributesMain from "../../../assets/img/models/k4/atributes/k4-atributes-main.webp";
+// K4 hero image
+import k4Hero from "../../../assets/img/models/k4/hero/k4-hero-desktop.webp";
+import k4HeroMobile from "../../../assets/img/models/k4/hero/k4-hero-mobile.webp";
+// K4 color images
+import k4ColorFieryRed from "../../../assets/img/models/k4/colors/k4-color-fiery-red.webp";
+import k4ColorAzureBlue from "../../../assets/img/models/k4/colors/k4-color-azure-blue.webp";
+import k4ColorMorningHaze from "../../../assets/img/models/k4/colors/k4-color-morning-haze.webp";
+import k4ColorAuroraBlackPearl from "../../../assets/img/models/k4/colors/k4-color-aurora-black-pearl.webp";
+import k4ColorInterstellarGray from "../../../assets/img/models/k4/colors/k4-color-interstellar-gray.webp";
+import k4ColorSteelGray from "../../../assets/img/models/k4/colors/k4-color-steel-gray.webp";
+import k4ColorSnowWhitePearl from "../../../assets/img/models/k4/colors/k4-snow-white-pearl.webp";
 
 export const k4Images = {
-  
+
   carousel: {
     front: {
       desktop: k4FrontDesktop,
@@ -41,62 +48,63 @@ export const k4Images = {
     },
   },
   exterior: {
-    lights: {
-      desktop: k4ExteriorLights,
-      mobile: k4ExteriorLights,
+    image1: {
+      desktop: k4Exterior1,
+      mobile: k4Exterior1,
     },
-    grille: {
-      desktop: k4ExteriorGrille,
-      mobile: k4ExteriorGrille,
+    image2: {
+      desktop: k4Exterior2,
+      mobile: k4Exterior2,
     },
-    backlights: {
-      desktop: k4ExteriorBacklights,
-      mobile: k4ExteriorBacklights,
+    image3: {
+      desktop: k4Exterior3,
+      mobile: k4Exterior3,
     },
-    side: {
-      desktop: k4ExteriorSide,
-      mobile: k4ExteriorSide,
+    image4: {
+      desktop: k4Exterior4,
+      mobile: k4Exterior4,
     },
-    front: {
-      desktop: k4ExteriorFront,
-      mobile: k4ExteriorFront,
+    image5: {
+      desktop: k4Exterior5,
+      mobile: k4Exterior5,
     },
   },
   interior: {
-    panel: {
-      desktop: k4InteriorPanel,
-      mobile: k4InteriorPanel,
+    image1: {
+      desktop: k4Interior1,
+      mobile: k4Interior1,
     },
-    gearbox: {
-      desktop: k4InteriorGearbox,
-      mobile: k4InteriorGearbox,
+    image2: {
+      desktop: k4Interior2,
+      mobile: k4Interior2,
     },
-    rooftop: {
-      desktop: k4InteriorRooftop,
-      mobile: k4InteriorRooftop,
+    image3: {
+      desktop: k4Interior3,
+      mobile: k4Interior3,
     },
-    seats: {
-      desktop: k4InteriorSeats,
-      mobile: k4InteriorSeats,
+    image4: {
+      desktop: k4Interior4,
+      mobile: k4Interior4,
     },
-    rear: {
-      desktop: k4InteriorRear,
-      mobile: k4InteriorRear,
+    image5: {
+      desktop: k4Interior5,
+      mobile: k4Interior5,
     },
   },
   colors: {
-    black: null,
-    white: null,
-    gray: null,
-    silver: null,
-    blue: null,
-    yellow: null,
+    fieryRed: k4ColorFieryRed,
+    azureBlue: k4ColorAzureBlue,
+    morningHaze: k4ColorMorningHaze,
+    blackPearl: k4ColorAuroraBlackPearl,
+    interstellarGray: k4ColorInterstellarGray,
+    steelGray: k4ColorSteelGray,
+    snowWhitePearl: k4ColorSnowWhitePearl,
   },
   attributes: {
-    desktop: k4AtributesDesktop,
-    mobile: k4AtributesMobile,
+    desktop: k4AtributesMain,
+    mobile: k4AtributesMain,
   },
-  heroImage: {desktop: k4HeroImage, mobile: k4HeroImageMobile},
+  heroImage: { desktop: k4Hero, mobile: k4HeroMobile },
   etiqueta: null,
   fichas: null,
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Kia from "../../../assets/img/common/KiaWhite.svg";
+import KiaMundial from "../../../assets/img/common/KiaMundial.webp";
 import Blackbar from "./Blackbar";
 import { autos, camionetasSuv, utilitarios } from "../../../Data/common";
 import ModelosDropdown from "./ModelosDropdown";
@@ -202,8 +202,8 @@ const Navbar = () => {
           isAnyDropdownActive || hasScrolled || mobileMenuOpen
             ? "bg-white text-midnight-black"
             : isTransparent
-            ? "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
-            : "bg-white text-midnight-black"
+              ? "transparency text-kia-polar-white hover:bg-white border-b hover:text-midnight-black"
+              : "bg-white text-midnight-black"
         }`}
         onMouseEnter={() => setIsNavbarHovered(true)}
         onMouseLeave={() => setIsNavbarHovered(false)}>
@@ -276,9 +276,9 @@ const Navbar = () => {
         <div className="flex justify-center items-center">
           <Link to="/">
             <img
-              src={Kia}
+              src={KiaMundial}
               alt="Kia"
-              className={`w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
+              className={`max-h-[75px] w-[6rem] md:w-auto h-auto transition-all duration-300 ease-in-out 
               ${
                 shouldInvertLogo || mobileMenuOpen || !isTransparent
                   ? "filter brightness-0"
