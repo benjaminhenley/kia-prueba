@@ -15,6 +15,7 @@ const MapView = ({ dealers }) => {
   const thumbRef = useRef(null); // Ref for the custom thumb
   const [selectedDealerId, setSelectedDealerId] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
+  const [_routeSelected, setRouteSelected] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [sliderValue, setSliderValue] = useState(0); // State for slider position (0-100)
 
