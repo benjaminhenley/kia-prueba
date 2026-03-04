@@ -1,6 +1,5 @@
 import { useState } from "react";
 import AccordeonItem from "../../Common/ui/AccordeonItem";
-import SquareButton from "../../Common/ui/SquareButton";
 import Separator from "../../Common/ui/Separator";
 import PillButton from "../../Common/ui/PillButton";
 

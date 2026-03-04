@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import ConcesionarioCard from "./ConcesionarioCard";
-import Arrow from "../Common/Icons/Arrow"; // Import Arrow for the slider buttons
 
 // Token de Mapbox
 mapboxgl.accessToken =
@@ -16,10 +15,8 @@ const MapView = ({ dealers }) => {
   const thumbRef = useRef(null); // Ref for the custom thumb
   const [selectedDealerId, setSelectedDealerId] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
-  const [routeSelected, setRouteSelected] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [sliderValue, setSliderValue] = useState(0); // State for slider position (0-100)
-  const [isDragging, setIsDragging] = useState(false); // Track if user is dragging the slider
 
   // Detectar si es dispositivo móvil
   useEffect(() => {
